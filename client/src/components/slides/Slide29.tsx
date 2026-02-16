@@ -1,0 +1,213 @@
+import { motion } from "motion/react";
+import { Bot, TrendingUp, Shield, DollarSign, Database } from "lucide-react";
+import SlideFooter from "../SlideFooter";
+
+const productivityMetrics = [
+  {
+    icon: TrendingUp,
+    metric: "+40-60%",
+    title: "Visitas Efetivas",
+    description: "Roteirização + priorização inteligente",
+    color: "from-blue-500 to-cyan-600",
+  },
+  {
+    icon: TrendingUp,
+    metric: "-50%",
+    title: "Tempo em Tarefas Administrativas",
+    description: "Automação de processos manuais",
+    color: "from-purple-500 to-pink-600",
+  },
+  {
+    icon: TrendingUp,
+    metric: "2-3x",
+    title: "Mais Assertividade",
+    description: "IA sugerindo o que fazer e quando",
+    color: "from-green-500 to-emerald-600",
+  },
+];
+
+const churnMetrics = [
+  {
+    icon: Shield,
+    title: "Identificação Precoce de Risco",
+    description: "30-60 dias de antecedência",
+  },
+  {
+    icon: Shield,
+    title: "Ações Preventivas Automatizadas",
+    description: "Intervenção no momento certo",
+  },
+  {
+    icon: Shield,
+    title: "Taxa de Reativação 3-4x Maior",
+    description: "Ação estratégica baseada em dados",
+  },
+];
+
+const growthMetrics = [
+  {
+    icon: DollarSign,
+    title: "Conversão de Inativos em Ativos",
+    description: "Lojistas de baixa performance recuperados",
+  },
+  {
+    icon: DollarSign,
+    title: "Cross-sell Estruturado",
+    description: "Crédito + seguro + conta PJ",
+  },
+  {
+    icon: DollarSign,
+    title: "Expansão de Share of Wallet",
+    description: "Maior penetração em cada parceiro",
+  },
+];
+
+const dataMetrics = [
+  {
+    icon: Database,
+    title: "Inteligência Competitiva em Tempo Real",
+    description: "Feedback estruturado do campo",
+  },
+  {
+    icon: Database,
+    title: "Identificação de Tendências",
+    description: "Por região e segmento",
+  },
+  {
+    icon: Database,
+    title: "Teste Rápido de Campanhas",
+    description: "Com feedback estruturado",
+  },
+];
+
+export default function Slide29() {
+  return (
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 md:pb-12 lg:pb-15 overflow-y-auto">
+      <div className="max-w-7xl w-full flex flex-col gap-6 md:gap-10 lg:gap-14">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-5"
+        >
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <Bot className="w-14 h-14 text-[#2B7FFF]" />
+            <h2 className="text-5xl font-bold text-white">
+              Impacto Estratégico do <span className="text-[#2B7FFF]">GIO</span>
+            </h2>
+          </div>
+          <h3 className="text-2xl font-bold text-white/90">
+            nos Resultados Bradesco
+          </h3>
+        </motion.div>
+
+        {/* Productivity */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-4"
+        >
+          <h4 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <TrendingUp className="w-6 h-6 text-white" />
+            Aumento de Produtividade
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {productivityMetrics.map((metric, idx) => (
+              <div key={idx} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 text-center hover:border-white/30 transition-all">
+                <div className="w-12 h-12 rounded-lg bg-white p-1 shadow-lg mx-auto mb-3">
+                  <div className="w-full h-full bg-[#0a1628] rounded-[8px] flex items-center justify-center">
+                    <metric.icon className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div className="text-3xl font-bold text-white mb-2">{metric.metric}</div>
+                <h5 className="text-sm font-bold text-white mb-1">{metric.title}</h5>
+                <p className="text-xs text-white/70">{metric.description}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-4">
+          {/* Churn */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <h4 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <Shield className="w-6 h-6 text-white" />
+              Redução de Churn
+            </h4>
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4">
+              <div className="space-y-3">
+                {churnMetrics.map((metric, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <metric.icon className="w-5 h-5 text-white mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h5 className="text-sm font-bold text-white">{metric.title}</h5>
+                      <p className="text-xs text-white/70">{metric.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Growth */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <h4 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <DollarSign className="w-6 h-6 text-green-400" />
+              Crescimento de Performance
+            </h4>
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4">
+              <div className="space-y-3">
+                {growthMetrics.map((metric, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <metric.icon className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h5 className="text-sm font-bold text-white">{metric.title}</h5>
+                      <p className="text-xs text-white/70">{metric.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Data for Strategy */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          <h4 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+            <Database className="w-6 h-6 text-[#2B7FFF]" />
+            Dados para Estratégia
+          </h4>
+          <div className="bg-gradient-to-br from-[#2B7FFF]/20 to-blue-600/20 border-2 border-[#2B7FFF]/50 rounded-xl p-5 shadow-lg shadow-[#2B7FFF]/20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {dataMetrics.map((metric, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <metric.icon className="w-5 h-5 text-[#2B7FFF] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h5 className="text-sm font-bold text-white mb-1">{metric.title}</h5>
+                    <p className="text-xs text-white/70">{metric.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <SlideFooter />
+    </div>
+  );
+}

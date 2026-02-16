@@ -1,0 +1,132 @@
+import { motion } from "motion/react";
+import { Bot, Car, DollarSign, TrendingUp } from "lucide-react";
+import SlideFooter from "../SlideFooter";
+
+const features = [
+  {
+    id: "descubra",
+    number: "2.2.1",
+    title: "Descubra o Carro Ideal",
+    description: "Nossa IA recomenda veículos com base no perfil e capacidade financeira do consumidor, gerando leads altamente qualificados para as revendas.",
+    icon: Car,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: "avaliacao",
+    number: "2.2.2",
+    title: "Quanto Vale o Meu Carro?",
+    description: "Ferramenta de avaliação que capta leads de clientes interessados em trocar de veículo, alimentando a base de captação dos lojistas.",
+    icon: DollarSign,
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    id: "simulacao",
+    number: "2.2.3",
+    title: "Simulação Digital",
+    description: "Cada anúncio destaca a simulação de financiamento e seguros Bradesco, permitindo que o consumidor inicie a jornada de crédito antes mesmo do contato com a revenda.",
+    icon: TrendingUp,
+    color: "from-green-500 to-emerald-500",
+  },
+];
+
+export default function Slide17() {
+  return (
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 md:pb-12 lg:pb-15 overflow-y-auto">
+      <div className="max-w-7xl w-full flex flex-col gap-6 md:gap-10 lg:gap-14">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-10"
+        >
+          
+          <h2 className="text-5xl font-bold text-white mb-4">
+            IA no Marketplace:{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-red-400 to-red-600 drop-shadow-lg">
+              Gerando Leads com Crédito Pré-Aprovado
+            </span>
+          </h2>
+          <p className="text-xl text-white/80 font-medium max-w-5xl mx-auto leading-relaxed">
+            O Marketplace Autoline potencializa a geração de leads qualificados através de ferramentas de Inteligência Artificial, oferecendo uma experiência de compra personalizada e otimizando a jornada do cliente.
+          </p>
+        </motion.div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-4 md:mb-6">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.id}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 + index * 0.15 }}
+              className="relative group"
+            >
+              <div
+                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl blur-2xl"
+                style={{
+                  background: `linear-gradient(135deg, ${
+                    index === 0
+                      ? "#3b82f6"
+                      : index === 1
+                      ? "#a855f7"
+                      : "#22c55e"
+                  }, transparent)`,
+                }}
+              />
+              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 h-full hover:border-white/30 hover:bg-white/10 transition-all">
+                <div className="flex justify-center mb-6">
+                  <div
+                    className={`w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} p-1 shadow-2xl`}
+                  >
+                    <div className="w-full h-full bg-[#0a1628] rounded-[11px] flex items-center justify-center">
+                      <feature.icon className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-white text-center mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-white/80 text-center leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-red-500/20 via-orange-500/20 to-yellow-500/20 border-2 border-orange-400/50 p-6 shadow-lg shadow-orange-500/20">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-lg bg-white p-0.5 shadow-lg flex-shrink-0">
+                <div className="w-full h-full bg-[#0a1628] rounded-[7px] flex items-center justify-center">
+                  <img
+                    src="https://financiamentos.bradesco/content/dam/banco-bradesco/financiamentos/static-files/bradesco-financiamentos-red.svg"
+                    alt="Bradesco"
+                    className="w-6 h-6"
+                  />
+                </div>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-white mb-2">
+                  Vantagem Bradesco
+                </h4>
+                <p className="text-white/80 leading-relaxed">
+                  Ao originar o financiamento no início da jornada de compra, o Bradesco captura dados valiosos do consumidor e envia ao lojista um lead com crédito pré-aprovado, aumentando drasticamente a chance de conversão.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <SlideFooter />
+    </div>
+  );
+}
