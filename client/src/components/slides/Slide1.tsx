@@ -12,14 +12,12 @@ export default function Slide1() {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-8"
         >
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#EDEDEF] flex items-center justify-center">
-              <span className="text-[#0A0A0B] text-sm font-bold">e</span>
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-[#EDEDEF] text-lg font-semibold tracking-wide">ecosys</span>
-              <span className="text-[#8A8A8E] text-[10px] font-medium tracking-widest">AUTO</span>
-            </div>
+          <div className="flex items-center">
+            <img
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/KCJZHdgEFRsEMPJa.png"
+              alt="ecosys AUTO"
+              className="h-12 w-auto"
+            />
           </div>
 
           <div className="w-px h-10 bg-white/10" />

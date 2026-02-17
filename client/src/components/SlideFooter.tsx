@@ -2,14 +2,12 @@ export default function SlideFooter() {
   return (
     <div className="absolute bottom-4 sm:bottom-6 left-4 right-4 sm:left-auto sm:right-8 flex items-center justify-center sm:justify-end gap-4 sm:gap-6 opacity-40">
       {/* ecosys AUTO Logo */}
-      <div className="flex items-center gap-1.5">
-        <div className="w-5 h-5 rounded bg-[#EDEDEF] flex items-center justify-center">
-          <span className="text-[#0A0A0B] text-[10px] font-bold">e</span>
-        </div>
-        <div className="flex flex-col leading-none">
-          <span className="text-[#EDEDEF] text-[11px] font-medium tracking-wide">ecosys</span>
-          <span className="text-[#8A8A8E] text-[9px] font-medium tracking-widest">AUTO</span>
-        </div>
+      <div className="flex items-center">
+        <img
+          src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/KCJZHdgEFRsEMPJa.png"
+          alt="ecosys AUTO"
+          className="h-7 w-auto"
+        />
       </div>
 
       {/* Separator */}
