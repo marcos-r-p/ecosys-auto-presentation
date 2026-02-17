@@ -20,7 +20,19 @@
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
     <script src="https://octalk.ai/widget.js"
-      data-key="oct_YjQTQHVZ21qDgPuNfU01bcJfbGnocOKJYgU2SYmQ"></script>
+      data-key="oct_uAK6SAARuJHDD-xaCbIeYozylK5S6shP4ltjX1lP"
+      data-position="left"></script>
+    <style>
+      /* Posicionar widget Octalk no canto esquerdo */
+      #octalk-widget, [id^="octalk"] {
+        right: auto !important;
+        left: 20px !important;
+      }
+      #octalk-widget iframe, [id^="octalk"] iframe {
+        right: auto !important;
+        left: 20px !important;
+      }
+    </style>
   </body>
 
 </html>
