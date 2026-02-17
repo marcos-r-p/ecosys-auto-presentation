@@ -31,8 +31,8 @@ const stakeholders = [
 
 export default function Slide2() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 md:pb-12 lg:pb-15 overflow-y-auto">
-      <div className="max-w-7xl w-full flex flex-col gap-6 md:gap-10 lg:gap-14">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -41,7 +41,7 @@ export default function Slide2() {
           className="text-center"
         >
           
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#EDEDEF] mb-3 md:mb-4 drop-shadow-2xl">
+          <h2 className="text-2xl sm:text-3xl md:text-2xl sm:text-3xl font-bold text-[#EDEDEF] mb-3 md:mb-4 drop-shadow-2xl">
             Nossa Visão Compartilhada
           </h2>
           <p className="text-base sm:text-lg font-medium text-[#EDEDEF] max-w-5xl mx-auto leading-relaxed mb-2 md:mb-3">

@@ -31,7 +31,7 @@ const pillars = [
 
 export default function SlideEcosysWhy() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 md:pb-12 lg:pb-15 overflow-y-auto">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
       <div className="max-w-5xl w-full flex flex-col gap-8 md:gap-12">
         {/* Header */}
         <motion.div
@@ -40,7 +40,7 @@ export default function SlideEcosysWhy() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#EDEDEF] mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-2xl sm:text-3xl font-semibold text-[#EDEDEF] mb-3">
             Por que a{" "}
             <span className="text-[#2B7FFF]">ecosys AUTO</span>?
           </h2>

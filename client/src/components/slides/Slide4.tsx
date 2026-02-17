@@ -36,8 +36,8 @@ const challenges = [
 
 export default function Slide4() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 md:pb-12 lg:pb-15 overflow-y-auto">
-      <div className="max-w-7xl w-full flex flex-col gap-6 md:gap-10 lg:gap-14">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -46,7 +46,7 @@ export default function Slide4() {
           className="text-center"
         >
           
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#EDEDEF] mb-2 md:mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-2xl sm:text-3xl font-bold text-[#EDEDEF] mb-2 md:mb-3">
             O Desafio do{" "}
             <span className="text-[#EDEDEF]">
               Bradesco
@@ -71,7 +71,7 @@ export default function Slide4() {
               }}
               className="relative group"
             >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 md:p-6 h-full hover:border-white/[0.12] transition-all hover:transform hover:scale-[1.02]">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 md:p-4 h-full hover:border-white/[0.12] transition-all hover:transform hover:scale-[1.02]">
                 <div className="flex items-start gap-4 mb-3">
                   <div
                     className={`w-12 h-12 flex-shrink-0 rounded-xl bg-white/[0.06] p-0.5`}

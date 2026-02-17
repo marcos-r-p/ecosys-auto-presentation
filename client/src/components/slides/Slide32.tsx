@@ -19,24 +19,23 @@ const monthlyInvestments = [
 
 export default function Slide32() {
   return (
-    <div className="flex flex-col items-center justify-center h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 md:pb-12 lg:pb-15 overflow-y-auto">
-      <div className="max-w-7xl w-full flex flex-col gap-6 md:gap-10 lg:gap-14">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 pt-3 pb-2 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col gap-2">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="text-center"
         >
-          <div className="flex items-center justify-center gap-3 mb-3">
-            <DollarSign className="w-10 h-10 text-[#EDEDEF]" />
-            <h2 className="text-4xl font-bold bg-white/[0.04] bg-clip-text text-transparent">
+          <div className="flex items-center justify-center gap-2 mb-1">
+            <DollarSign className="w-7 h-7 text-[#EDEDEF]" />
+            <h2 className="text-xl sm:text-2xl font-bold text-[#EDEDEF]">
               AUTOLINE - Investimento Mensal (12 Meses)
             </h2>
           </div>
-          <p className="text-base text-[#8A8A8E] max-w-4xl mx-auto leading-relaxed">
-            A linha do tempo abaixo ilustra a projeção do investimento mensal ao longo de um ano, 
-            evidenciando o aumento gradual dos recursos alocados à medida que o projeto avança.
+          <p className="text-xs text-[#8A8A8E] max-w-4xl mx-auto leading-snug">
+            Projeção do investimento mensal ao longo de um ano, evidenciando o aumento gradual dos recursos alocados.
           </p>
         </motion.div>
 
@@ -45,54 +44,44 @@ export default function Slide32() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative py-32 overflow-x-auto"
+          className="relative py-6 overflow-x-auto flex-1"
         >
           {/* Horizontal Timeline Line */}
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-white/[0.04] transform -translate-y-1/2 min-w-[900px]" />
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-white/10 transform -translate-y-1/2 min-w-[900px]" />
 
           {/* Grid Container */}
-          <div className="relative grid grid-cols-12 gap-3 min-w-[900px]">
+          <div className="relative grid grid-cols-12 gap-1 min-w-[900px] overflow-hidden">
             {monthlyInvestments.map((item, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: item.position === "top" ? -20 : 20 }}
+                initial={{ opacity: 0, y: item.position === "top" ? -15 : 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 + idx * 0.05 }}
+                transition={{ duration: 0.4, delay: 0.2 + idx * 0.03 }}
                 className="relative flex items-center justify-center"
-                style={{ height: '280px' }}
+                style={{ height: '95px' }}
               >
                 {item.position === "top" ? (
                   <div className="absolute flex flex-col items-center" style={{ bottom: '50%' }}>
-                    {/* Card Above */}
-                    <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-3 w-full min-h-[80px] flex flex-col items-center justify-center text-center hover:bg-white/[0.04] hover:border-white/[0.08] transition-all cursor-default mb-2">
-                      <div className="text-xs font-bold text-[#8A8A8E] mb-1">
+                    <div className="bg-white/[0.04] border border-white/[0.08] rounded-md p-1.5 w-full flex flex-col items-center justify-center text-center mb-1">
+                      <div className="text-[9px] font-bold text-[#8A8A8E] mb-0.5">
                         Mês {item.month}
                       </div>
-                      <div className="text-[10px] font-bold text-[#EDEDEF] leading-tight">
+                      <div className="text-[8px] font-bold text-[#EDEDEF] leading-tight">
                         {item.value}
                       </div>
                     </div>
-                    
-                    {/* Connector Line to Timeline */}
-                    <div className="w-0.5 h-12 bg-white/[0.04]" />
-                    
-                    {/* Dot on Timeline */}
-                    <div className="w-4 h-4 rounded-full bg-white/[0.06] border border-white/[0.12] relative z-10" />
+                    <div className="w-px h-3 bg-white/10" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/10 border border-white/20 relative z-10" />
                   </div>
                 ) : (
                   <div className="absolute flex flex-col items-center" style={{ top: '50%' }}>
-                    {/* Dot on Timeline */}
-                    <div className="w-4 h-4 rounded-full bg-white/[0.06] border border-white/[0.12] relative z-10" />
-                    
-                    {/* Connector Line from Timeline */}
-                    <div className="w-0.5 h-12 bg-white/[0.04]" />
-                    
-                    {/* Card Below */}
-                    <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-3 w-full min-h-[80px] flex flex-col items-center justify-center text-center hover:bg-white/[0.04] hover:border-white/[0.08] transition-all cursor-default mt-2">
-                      <div className="text-xs font-bold text-[#2B7FFF] mb-1">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#2B7FFF]/60 border border-[#2B7FFF]/40 relative z-10" />
+                    <div className="w-px h-3 bg-[#2B7FFF]/30" />
+                    <div className="bg-white/[0.04] border border-white/[0.08] rounded-md p-1.5 w-full flex flex-col items-center justify-center text-center mt-1">
+                      <div className="text-[9px] font-bold text-[#2B7FFF] mb-0.5">
                         Mês {item.month}
                       </div>
-                      <div className="text-[10px] font-bold text-[#EDEDEF] leading-tight">
+                      <div className="text-[8px] font-bold text-[#EDEDEF] leading-tight">
                         {item.value}
                       </div>
                     </div>
@@ -105,39 +94,36 @@ export default function Slide32() {
 
         {/* Summary Cards */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-8"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="grid grid-cols-3 gap-2"
         >
-          {/* Investimento Inicial */}
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 text-center">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <TrendingUp className="w-5 h-5 text-[#8A8A8E]" />
-              <h4 className="text-sm font-bold text-[#8A8A8E]">Investimento Inicial</h4>
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-2.5 text-center">
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <TrendingUp className="w-4 h-4 text-[#8A8A8E]" />
+              <h4 className="text-[10px] font-bold text-[#8A8A8E]">Investimento Inicial</h4>
             </div>
-            <p className="text-2xl font-bold text-[#EDEDEF]">R$ 955.065,75</p>
-            <p className="text-xs text-[#8A8A8E] mt-1">Mês 1</p>
+            <p className="text-lg font-bold text-[#EDEDEF]">R$ 955.065,75</p>
+            <p className="text-[9px] text-[#8A8A8E]">Mês 1</p>
           </div>
 
-          {/* Investimento Final */}
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 text-center">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <TrendingUp className="w-5 h-5 text-[#EDEDEF]" />
-              <h4 className="text-sm font-bold text-[#8A8A8E]">Investimento Final</h4>
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-2.5 text-center">
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <TrendingUp className="w-4 h-4 text-[#EDEDEF]" />
+              <h4 className="text-[10px] font-bold text-[#8A8A8E]">Investimento Final</h4>
             </div>
-            <p className="text-2xl font-bold text-[#EDEDEF]">R$ 1.921.492,50</p>
-            <p className="text-xs text-[#8A8A8E] mt-1">Mês 12</p>
+            <p className="text-lg font-bold text-[#EDEDEF]">R$ 1.921.492,50</p>
+            <p className="text-[9px] text-[#8A8A8E]">Mês 12</p>
           </div>
 
-          {/* Crescimento */}
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 text-center">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <DollarSign className="w-5 h-5 text-[#2B7FFF]" />
-              <h4 className="text-sm font-bold text-[#2B7FFF]">Investimento Total</h4>
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-2.5 text-center">
+            <div className="flex items-center justify-center gap-1.5 mb-1">
+              <DollarSign className="w-4 h-4 text-[#2B7FFF]" />
+              <h4 className="text-[10px] font-bold text-[#2B7FFF]">Investimento Total</h4>
             </div>
-            <p className="text-2xl font-bold text-[#EDEDEF]">R$ 20.554.551,00</p>
-            <p className="text-xs text-[#8A8A8E] mt-1">Ou 12x de R$ 1.712.879,25</p>
+            <p className="text-lg font-bold text-[#EDEDEF]">R$ 20.554.551,00</p>
+            <p className="text-[9px] text-[#8A8A8E]">Ou 12x de R$ 1.712.879,25</p>
           </div>
         </motion.div>
       </div>

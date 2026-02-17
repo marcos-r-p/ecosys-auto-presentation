@@ -45,8 +45,8 @@ const automationRules = [
 
 export default function Slide27() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 md:pb-12 lg:pb-15 overflow-y-auto">
-      <div className="max-w-7xl w-full flex flex-col gap-6 md:gap-10 lg:gap-14">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -56,7 +56,7 @@ export default function Slide27() {
         >
           <div className="flex items-center justify-center gap-3 mb-2">
             <Bot className="w-12 h-12 text-[#2B7FFF]" />
-            <h2 className="text-4xl font-bold text-[#2B7FFF]">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#2B7FFF]">
               Novo GIO
             </h2>
           </div>

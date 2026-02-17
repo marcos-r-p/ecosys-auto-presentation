@@ -4,8 +4,8 @@ import SlideFooter from "../SlideFooter";
 
 export default function Slide18() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 md:pb-12 lg:pb-15 overflow-y-auto">
-      <div className="max-w-7xl w-full flex flex-col gap-6 md:gap-10 lg:gap-14">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -14,7 +14,7 @@ export default function Slide18() {
           className="text-center mb-10"
         >
           
-          <h2 className="text-4xl font-bold text-[#EDEDEF] mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#EDEDEF] mb-4">
             A Plataforma de Conteúdo:{" "}
             <span className="text-[#EDEDEF]">
               Transparência, Credibilidade e Gestão
@@ -35,8 +35,8 @@ export default function Slide18() {
             className="relative group"
           >
             <div className="absolute inset-0 bg-white/[0.04] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-2xl" />
-            <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
-              <div className="flex items-start gap-4 mb-6">
+            <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-4 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
+              <div className="flex items-start gap-4 mb-3">
                 <div className="w-16 h-16 rounded-xl bg-white p-1 flex-shrink-0">
                   <div className="w-full h-full bg-[#0A0A0B] rounded-[11px] flex items-center justify-center">
                     <Award className="w-8 h-8 text-[#EDEDEF]" />
@@ -74,8 +74,8 @@ export default function Slide18() {
             className="relative group"
           >
             <div className="absolute inset-0 bg-white/[0.04] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-2xl" />
-            <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
-              <div className="flex items-start gap-4 mb-6">
+            <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-4 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
+              <div className="flex items-start gap-4 mb-3">
                 <div className="w-16 h-16 rounded-xl bg-white p-1 flex-shrink-0">
                   <div className="w-full h-full bg-[#0A0A0B] rounded-[11px] flex items-center justify-center">
                     <FileCheck className="w-8 h-8 text-[#EDEDEF]" />

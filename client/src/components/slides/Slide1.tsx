@@ -3,7 +3,7 @@ import SlideFooter from "../SlideFooter";
 
 export default function Slide1() {
   return (
-    <div className="flex items-center justify-center h-full px-6 sm:px-10 md:px-16 lg:px-24 py-16">
+    <div className="flex items-center justify-center h-full px-6 sm:px-10 md:px-16 lg:px-24 py-8">
       <div className="max-w-4xl w-full flex flex-col gap-10 items-center text-center">
         {/* Logos */}
         <motion.div
@@ -38,7 +38,7 @@ export default function Slide1() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex flex-col gap-3"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#EDEDEF] leading-tight">
+          <h1 className="text-3xl sm:text-2xl sm:text-3xl md:text-5xl font-semibold text-[#EDEDEF] leading-tight">
             Ecossistema <span className="text-brand-blue">Autoline</span>
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl font-normal text-[#8A8A8E] leading-snug">

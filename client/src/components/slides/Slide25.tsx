@@ -8,7 +8,7 @@ const impacts = [
     title: "Produtividade Multiplicada",
     items: [
       "+40-60% visitas efetivas (roteirização + priorização)",
-      "-50% tempo em tarefas administrativas (automação)",
+      "-50% tempo em tarefas administrativas",
       "2-3x mais assertividade (IA direcionando ações)",
     ],
   },
@@ -67,12 +67,11 @@ const roadmap = [
   {
     phase: "Mês 5-6: IA Avançada + Gamificação",
     items: [
-      "Roteirização inteligente (mapa calor + próxima visita)",
+      "Roteirização inteligente (mapa calor)",
       "First IA - Assistente (resumo + sugestões)",
-      "Health Score v2 (algoritmo refinado + previsão churn)",
-      "Gamificação completa (pontos + badges + ranking)",
-      "Kanban de projetos (campanhas + boards)",
-      "Integração Power BI (dashboards executivos)",
+      "Health Score v2 (previsão churn)",
+      "Gamificação (pontos + badges + ranking)",
+      "Power BI (dashboards executivos)",
     ],
     deliverable: "Sistema completo + 100% usuários",
     highlight: true,
@@ -81,60 +80,55 @@ const roadmap = [
 
 export default function Slide25() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-8 sm:pb-10 md:pb-12 lg:pb-15 overflow-y-auto">
-      <div className="max-w-7xl w-full flex flex-col gap-6 md:gap-10 lg:gap-14">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 pt-2 pb-1 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col gap-2">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold text-[#EDEDEF] mb-2">
+          <h2 className="text-xl font-bold text-[#EDEDEF] mb-0.5">
             <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span>
             <span className="text-[#EDEDEF]">: Impacto, Roadmap e Integração</span>
           </h2>
-          <p className="text-base text-[#8A8A8E] font-medium">
+          <p className="text-xs text-[#8A8A8E] font-medium">
             Transformação mensurável em 6 meses
           </p>
         </motion.div>
 
         {/* Impacto Esperado */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <h3 className="text-xl font-bold text-[#EDEDEF] text-center mb-4">
+          <h3 className="text-sm font-bold text-[#EDEDEF] text-center mb-2">
             Impacto Esperado nos Resultados
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {impacts.map((impact, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 + index * 0.05 }}
-                className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 hover:border-white/[0.12] hover:bg-white/[0.06] transition-all"
+                transition={{ duration: 0.4, delay: 0.15 + index * 0.04 }}
+                className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-3 hover:border-white/[0.12] transition-all"
               >
-                {/* Icon */}
-                <div className="flex justify-center mb-3">
-                  <div className="w-12 h-12 rounded-xl bg-white p-1 shadow-lg">
-                    <div className="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center">
-                      <impact.icon className="w-6 h-6 text-[#EDEDEF]" />
+                <div className="flex justify-center mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-white p-0.5 shadow-lg">
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[6px] flex items-center justify-center">
+                      <impact.icon className="w-4 h-4 text-[#EDEDEF]" />
                     </div>
                   </div>
                 </div>
-
-                {/* Title */}
-                <h4 className="text-base font-bold text-[#EDEDEF] text-center mb-3 leading-tight">{impact.title}</h4>
-
-                {/* Items */}
-                <ul className="space-y-2">
+                <h4 className="text-[11px] font-bold text-[#EDEDEF] text-center mb-1.5 leading-tight">{impact.title}</h4>
+                <ul className="space-y-0.5">
                   {impact.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-2">
-                      <span className="text-[#8A8A8E] flex-shrink-0 mt-0.5">✓</span>
-                      <span className="text-[#8A8A8E] text-sm leading-tight">{item}</span>
+                    <li key={itemIndex} className="flex items-start gap-1">
+                      <span className="text-[#8A8A8E] flex-shrink-0 mt-0.5 text-[8px]">✓</span>
+                      <span className="text-[#8A8A8E] text-[9px] leading-tight">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -145,49 +139,43 @@ export default function Slide25() {
 
         {/* Roadmap */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
         >
-          <h3 className="text-2xl font-bold text-[#EDEDEF] text-center mb-4">
-            🗓️ Roadmap de Entrega (6 Meses)
+          <h3 className="text-sm font-bold text-[#EDEDEF] text-center mb-2">
+            Roadmap de Entrega (6 Meses)
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-2">
             {roadmap.map((phase, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.25 + index * 0.1 }}
-                className="relative group"
+                transition={{ duration: 0.4, delay: 0.2 + index * 0.05 }}
               >
                 <div
-                  className={`relative bg-white/[0.04] border ${
+                  className={`bg-white/[0.04] border ${
                     phase.highlight ? "border-[#2B7FFF]/50" : "border-white/[0.08]"
-                  } rounded-xl p-4 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all`}
+                  } rounded-lg p-3 h-full hover:border-white/[0.12] transition-all`}
                 >
-                  {/* Phase Title */}
-                  <div className="flex items-center gap-2 mb-3">
-                    <Calendar className={`w-5 h-5 ${phase.highlight ? "" : "text-[#2B7FFF]"}`} style={phase.highlight ? { color: '#2B7FFF' } : {}} />
-                    <h4 className={`text-base font-bold leading-tight ${phase.highlight ? "" : "text-[#EDEDEF]"}`} style={phase.highlight ? { color: '#2B7FFF' } : {}}>
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <Calendar className={`w-3.5 h-3.5 ${phase.highlight ? "text-[#2B7FFF]" : "text-[#2B7FFF]"}`} />
+                    <h4 className={`text-[11px] font-bold leading-tight ${phase.highlight ? "text-[#2B7FFF]" : "text-[#EDEDEF]"}`}>
                       {phase.phase}
                     </h4>
                   </div>
-
-                  {/* Items */}
-                  <ul className="space-y-1.5 mb-3">
+                  <ul className="space-y-0.5 mb-2">
                     {phase.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start gap-2">
-                        <span className="text-[#8A8A8E] flex-shrink-0 mt-0.5">✓</span>
-                        <span className="text-[#8A8A8E] text-sm leading-tight">{item}</span>
+                      <li key={itemIndex} className="flex items-start gap-1">
+                        <span className="text-[#8A8A8E] flex-shrink-0 mt-0.5 text-[8px]">✓</span>
+                        <span className="text-[#8A8A8E] text-[9px] leading-tight">{item}</span>
                       </li>
                     ))}
                   </ul>
-
-                  {/* Deliverable */}
-                  <div className={`mt-3 pt-3 border-t ${phase.highlight ? "border-[#2B7FFF]/30" : "border-white/[0.08]"}`}>
-                    <p className="text-xs font-bold text-[#8A8A8E] mb-1">Entregável:</p>
-                    <p className={`text-sm font-bold leading-tight ${phase.highlight ? "" : "text-[#EDEDEF]"}`} style={phase.highlight ? { color: '#2B7FFF' } : {}}>
+                  <div className={`pt-2 border-t ${phase.highlight ? "border-[#2B7FFF]/30" : "border-white/[0.08]"}`}>
+                    <p className="text-[8px] font-bold text-[#8A8A8E] mb-0.5">Entregável:</p>
+                    <p className={`text-[10px] font-bold leading-tight ${phase.highlight ? "text-[#2B7FFF]" : "text-[#EDEDEF]"}`}>
                       {phase.deliverable}
                     </p>
                   </div>
