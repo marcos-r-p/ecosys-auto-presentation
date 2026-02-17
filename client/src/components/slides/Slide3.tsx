@@ -10,7 +10,7 @@ const reasons = [
       "O setor automotivo brasileiro movimenta bilhões anualmente, mas permanece fragmentado e com baixa digitalização nas revendas independentes.",
       "A ecosys AUTO já atende centenas de lojistas com soluções transacionais comprovadas.",
     ],
-    color: "from-blue-500 to-cyan-500",
+    color: "",
   },
   {
     icon: Zap,
@@ -19,7 +19,7 @@ const reasons = [
       "O Bradesco possui produtos financeiros e capilaridade robusta, porém enfrenta dificuldades em se diferenciar no segmento automotivo.",
       "ecosys AUTO está pronta para ser o ecossistema tecnológico Auto do Bradesco, potencializando os resultados.",
     ],
-    color: "from-purple-500 to-pink-500",
+    color: "",
   },
 ];
 
@@ -34,15 +34,15 @@ export default function Slide3() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 mb-2 md:mb-3 px-3 py-1.5 bg-purple-500/20 rounded-full border border-purple-400/30">
-            <Clock className="w-4 h-4 text-white" />
-            <span className="text-purple-400 text-xs font-medium">
+          <div className="inline-flex items-center gap-2 mb-2 md:mb-3 px-3 py-1.5 bg-white/[0.04] rounded-full border border-white/[0.08]">
+            <Clock className="w-4 h-4 text-[#EDEDEF]" />
+            <span className="text-[#8A8A8E] text-xs font-medium">
               Momento Ideal
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#EDEDEF]">
             Por Que Esta Parceria Faz Sentido{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+            <span className="text-[#EDEDEF]">
               Agora
             </span>
           </h2>
@@ -58,25 +58,17 @@ export default function Slide3() {
               transition={{ duration: 0.7, delay: 0.2 + index * 0.2 }}
               className="relative group"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl blur-xl pointer-events-none -z-10"
-                style={{
-                  background: `linear-gradient(135deg, ${
-                    index === 0 ? "#3b82f6" : "#a855f7"
-                  }, transparent)`,
-                }}
-              />
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 hover:border-white/[0.12] transition-all">
                 <div className="flex items-start gap-4">
                   <div
-                    className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${reason.color} p-0.5`}
+                    className={`flex-shrink-0 w-14 h-14 rounded-xl bg-white/[0.06] p-0.5`}
                   >
-                    <div className="w-full h-full bg-[#0a1628] rounded-[11px] flex items-center justify-center">
-                      <reason.icon className="w-7 h-7 text-white" />
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[11px] flex items-center justify-center">
+                      <reason.icon className="w-7 h-7 text-[#EDEDEF]" />
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="text-xl font-bold text-[#EDEDEF] mb-3">
                       {reason.title}
                     </h3>
                     <div className="space-y-2">
@@ -87,12 +79,12 @@ export default function Slide3() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{
                             duration: 0.5,
-                            delay: 0.4 + index * 0.2 + pointIndex * 0.1,
+                            delay: 0.15 + index * 0.2 + pointIndex * 0.1,
                           }}
                           className="flex items-start gap-3"
                         >
-                          <div className="flex-shrink-0 w-1.5 h-1.5 bg-blue-400 rounded-full mt-2" />
-                          <p className="text-white/80 text-sm leading-relaxed">
+                          <div className="flex-shrink-0 w-1.5 h-1.5 bg-white/[0.06] rounded-full mt-2" />
+                          <p className="text-[#8A8A8E] text-sm leading-relaxed">
                             {point}
                           </p>
                         </motion.div>

@@ -8,28 +8,28 @@ const challenges = [
     title: "Diferencial Competitivo",
     description:
       "Produtos financeiros fortes, mas desconectados do fluxo natural de venda.",
-    color: "from-red-500 to-orange-500",
+    color: "",
   },
   {
     icon: Zap,
     title: "Fricção Operacional",
     description:
       "Processos manuais elevam CAC e reduzem conversão.",
-    color: "from-orange-500 to-yellow-500",
+    color: "",
   },
   {
     icon: Brain,
     title: "Falta de Inteligência Comercial",
     description:
       "Sem visão estruturada de performance, engajamento e oportunidades.",
-    color: "from-yellow-500 to-green-500",
+    color: "",
   },
   {
     icon: Users,
     title: "Campo (GEFINS / GIO)",
     description:
       "Baixa priorização, pouca previsibilidade e ausência de alertas acionáveis.",
-    color: "from-green-500 to-teal-500",
+    color: "",
     hasGio: true,
   },
 ];
@@ -46,13 +46,13 @@ export default function Slide4() {
           className="text-center"
         >
           
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#EDEDEF] mb-2 md:mb-3">
             O Desafio do{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
+            <span className="text-[#EDEDEF]">
               Bradesco
             </span>
           </h2>
-          <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
+          <p className="text-[#8A8A8E] text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
             A baixa adoção não é de produto. É de integração operacional.
           </p>
         </motion.div>
@@ -71,32 +71,18 @@ export default function Slide4() {
               }}
               className="relative group"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl blur-2xl pointer-events-none -z-10"
-                style={{
-                  background: `linear-gradient(135deg, ${
-                    index === 0
-                      ? "#ef4444"
-                      : index === 1
-                      ? "#f97316"
-                      : index === 2
-                      ? "#eab308"
-                      : "#22c55e"
-                  }, transparent)`,
-                }}
-              />
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 md:p-6 h-full hover:border-white/20 transition-all hover:transform hover:scale-[1.02]">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 md:p-6 h-full hover:border-white/[0.12] transition-all hover:transform hover:scale-[1.02]">
                 <div className="flex items-start gap-4 mb-3">
                   <div
-                    className={`w-12 h-12 flex-shrink-0 rounded-xl bg-gradient-to-br ${challenge.color} p-0.5`}
+                    className={`w-12 h-12 flex-shrink-0 rounded-xl bg-white/[0.06] p-0.5`}
                   >
-                    <div className="w-full h-full bg-[#0a1628] rounded-[11px] flex items-center justify-center">
-                      <challenge.icon className="w-6 h-6 text-white" />
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[11px] flex items-center justify-center">
+                      <challenge.icon className="w-6 h-6 text-[#EDEDEF]" />
                     </div>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="text-lg font-bold text-white">
+                      <h3 className="text-lg font-bold text-[#EDEDEF]">
                         {challenge.hasGio ? (
                           <>
                             Campo (GEFINS /{" "}
@@ -111,7 +97,7 @@ export default function Slide4() {
                       </h3>
                       {challenge.hasGio && (
                         <span
-                          className="px-2 py-0.5 text-xs font-bold rounded-full text-white"
+                          className="px-2 py-0.5 text-xs font-bold rounded-full text-[#EDEDEF]"
                           style={{ backgroundColor: "#2B7FFF" }}
                         >
                           NOVO
@@ -122,7 +108,7 @@ export default function Slide4() {
                 </div>
                 
                 {challenge.description && (
-                  <p className="text-white/70 leading-relaxed text-sm">
+                  <p className="text-[#8A8A8E] leading-relaxed text-sm">
                     {challenge.description}
                   </p>
                 )}
@@ -135,12 +121,12 @@ export default function Slide4() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-500/10 to-blue-500/10 rounded-full border border-white/10">
-            <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
-            <span className="text-white/60 text-sm">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/[0.04] rounded-full border border-white/[0.08]">
+            <div className="w-2 h-2 bg-white/[0.06] rounded-full animate-pulse" />
+            <span className="text-[#8A8A8E] text-sm">
               A oportunidade está na integração operacional
             </span>
           </div>

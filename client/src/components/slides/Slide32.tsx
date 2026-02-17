@@ -29,12 +29,12 @@ export default function Slide32() {
           className="text-center mb-8"
         >
           <div className="flex items-center justify-center gap-3 mb-3">
-            <DollarSign className="w-10 h-10 text-white" />
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <DollarSign className="w-10 h-10 text-[#EDEDEF]" />
+            <h2 className="text-4xl font-bold bg-white/[0.04] bg-clip-text text-transparent">
               AUTOLINE - Investimento Mensal (12 Meses)
             </h2>
           </div>
-          <p className="text-base text-white/70 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base text-[#8A8A8E] max-w-4xl mx-auto leading-relaxed">
             A linha do tempo abaixo ilustra a projeção do investimento mensal ao longo de um ano, 
             evidenciando o aumento gradual dos recursos alocados à medida que o projeto avança.
           </p>
@@ -48,7 +48,7 @@ export default function Slide32() {
           className="relative py-32 overflow-x-auto"
         >
           {/* Horizontal Timeline Line */}
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-green-500/30 via-blue-500/30 to-purple-500/30 transform -translate-y-1/2 min-w-[900px]" />
+          <div className="absolute top-1/2 left-0 right-0 h-1 bg-white/[0.04] transform -translate-y-1/2 min-w-[900px]" />
 
           {/* Grid Container */}
           <div className="relative grid grid-cols-12 gap-3 min-w-[900px]">
@@ -64,35 +64,35 @@ export default function Slide32() {
                 {item.position === "top" ? (
                   <div className="absolute flex flex-col items-center" style={{ bottom: '50%' }}>
                     {/* Card Above */}
-                    <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 border border-green-500/30 rounded-lg p-3 w-full min-h-[80px] flex flex-col items-center justify-center text-center hover:bg-green-500/20 hover:border-green-500/50 transition-all cursor-default shadow-lg mb-2">
-                      <div className="text-xs font-bold text-green-400 mb-1">
+                    <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-3 w-full min-h-[80px] flex flex-col items-center justify-center text-center hover:bg-white/[0.04] hover:border-white/[0.08] transition-all cursor-default mb-2">
+                      <div className="text-xs font-bold text-[#8A8A8E] mb-1">
                         Mês {item.month}
                       </div>
-                      <div className="text-[10px] font-bold text-white leading-tight">
+                      <div className="text-[10px] font-bold text-[#EDEDEF] leading-tight">
                         {item.value}
                       </div>
                     </div>
                     
                     {/* Connector Line to Timeline */}
-                    <div className="w-0.5 h-12 bg-green-500/40" />
+                    <div className="w-0.5 h-12 bg-white/[0.04]" />
                     
                     {/* Dot on Timeline */}
-                    <div className="w-4 h-4 rounded-full bg-green-500 shadow-lg shadow-green-500/60 border-2 border-[#0a1628] relative z-10" />
+                    <div className="w-4 h-4 rounded-full bg-white/[0.06] border border-white/[0.12] relative z-10" />
                   </div>
                 ) : (
                   <div className="absolute flex flex-col items-center" style={{ top: '50%' }}>
                     {/* Dot on Timeline */}
-                    <div className="w-4 h-4 rounded-full bg-blue-500 shadow-lg shadow-blue-500/60 border-2 border-[#0a1628] relative z-10" />
+                    <div className="w-4 h-4 rounded-full bg-white/[0.06] border border-white/[0.12] relative z-10" />
                     
                     {/* Connector Line from Timeline */}
-                    <div className="w-0.5 h-12 bg-blue-500/40" />
+                    <div className="w-0.5 h-12 bg-white/[0.04]" />
                     
                     {/* Card Below */}
-                    <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/30 rounded-lg p-3 w-full min-h-[80px] flex flex-col items-center justify-center text-center hover:bg-blue-500/20 hover:border-blue-500/50 transition-all cursor-default shadow-lg mt-2">
-                      <div className="text-xs font-bold text-blue-400 mb-1">
+                    <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-3 w-full min-h-[80px] flex flex-col items-center justify-center text-center hover:bg-white/[0.04] hover:border-white/[0.08] transition-all cursor-default mt-2">
+                      <div className="text-xs font-bold text-[#2B7FFF] mb-1">
                         Mês {item.month}
                       </div>
-                      <div className="text-[10px] font-bold text-white leading-tight">
+                      <div className="text-[10px] font-bold text-[#EDEDEF] leading-tight">
                         {item.value}
                       </div>
                     </div>
@@ -107,37 +107,37 @@ export default function Slide32() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-8"
         >
           {/* Investimento Inicial */}
-          <div className="bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/40 rounded-xl p-5 text-center">
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <TrendingUp className="w-5 h-5 text-green-400" />
-              <h4 className="text-sm font-bold text-green-400">Investimento Inicial</h4>
+              <TrendingUp className="w-5 h-5 text-[#8A8A8E]" />
+              <h4 className="text-sm font-bold text-[#8A8A8E]">Investimento Inicial</h4>
             </div>
-            <p className="text-2xl font-bold text-white">R$ 955.065,75</p>
-            <p className="text-xs text-white/60 mt-1">Mês 1</p>
+            <p className="text-2xl font-bold text-[#EDEDEF]">R$ 955.065,75</p>
+            <p className="text-xs text-[#8A8A8E] mt-1">Mês 1</p>
           </div>
 
           {/* Investimento Final */}
-          <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/40 rounded-xl p-5 text-center">
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <TrendingUp className="w-5 h-5 text-white" />
-              <h4 className="text-sm font-bold text-purple-400">Investimento Final</h4>
+              <TrendingUp className="w-5 h-5 text-[#EDEDEF]" />
+              <h4 className="text-sm font-bold text-[#8A8A8E]">Investimento Final</h4>
             </div>
-            <p className="text-2xl font-bold text-white">R$ 1.921.492,50</p>
-            <p className="text-xs text-white/60 mt-1">Mês 12</p>
+            <p className="text-2xl font-bold text-[#EDEDEF]">R$ 1.921.492,50</p>
+            <p className="text-xs text-[#8A8A8E] mt-1">Mês 12</p>
           </div>
 
           {/* Crescimento */}
-          <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/40 rounded-xl p-5 text-center">
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <DollarSign className="w-5 h-5 text-blue-400" />
-              <h4 className="text-sm font-bold text-blue-400">Investimento Total</h4>
+              <DollarSign className="w-5 h-5 text-[#2B7FFF]" />
+              <h4 className="text-sm font-bold text-[#2B7FFF]">Investimento Total</h4>
             </div>
-            <p className="text-2xl font-bold text-white">R$ 20.554.551,00</p>
-            <p className="text-xs text-white/60 mt-1">Ou 12x de R$ 1.712.879,25</p>
+            <p className="text-2xl font-bold text-[#EDEDEF]">R$ 20.554.551,00</p>
+            <p className="text-xs text-[#8A8A8E] mt-1">Ou 12x de R$ 1.712.879,25</p>
           </div>
         </motion.div>
       </div>

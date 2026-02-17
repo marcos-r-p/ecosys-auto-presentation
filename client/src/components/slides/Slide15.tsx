@@ -9,7 +9,7 @@ const features = [
     title: "Catálogo de Veículos",
     description: "Estoque das revendas integrado em tempo real com o Gestor Autoline, garantindo disponibilidade e precisão.",
     icon: Package,
-    color: "from-blue-500 to-cyan-500",
+    color: "",
   },
   {
     id: "ia",
@@ -17,7 +17,7 @@ const features = [
     title: "IA no Marketplace",
     description: "IA que gera leads qualificados com crédito pré-aprovado e recomendações personalizadas.",
     icon: Bot,
-    color: "from-purple-500 to-pink-500",
+    color: "",
   },
   {
     id: "area-logada",
@@ -25,7 +25,7 @@ const features = [
     title: "Área Logada",
     description: "Área personalizada com favoritos, listas de desejo e alertas customizados.",
     icon: UserCircle,
-    color: "from-green-500 to-emerald-500",
+    color: "",
   },
   {
     id: "conteudo",
@@ -33,7 +33,7 @@ const features = [
     title: "Plataforma de Conteúdo",
     description: "Conteúdo curado pelo Bradesco com selos de confiança e estratégia SEO.",
     icon: FileText,
-    color: "from-yellow-500 to-orange-500",
+    color: "",
   },
   {
     id: "app",
@@ -41,7 +41,7 @@ const features = [
     title: "App do Marketplace",
     description: "Aplicativo nativo iOS/Android otimizado para consumo mobile, oferecendo jornada de compra completa, notificações personalizadas e experiência fluida na palma da mão.",
     icon: Smartphone,
-    color: "from-red-500 to-pink-500",
+    color: "",
   },
 ];
 
@@ -57,18 +57,18 @@ export default function Slide15() {
           className="text-center mb-10"
         >
           
-          <h2 className="text-5xl font-bold text-white mb-4">
+          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-4">
             <img
               src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png"
               alt="Autoline"
               className="h-12 inline-block align-middle"
             />
             :{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-red-400 to-red-600 drop-shadow-lg">
+            <span className="text-[#EDEDEF]">
               A Melhor Experiência
             </span>
           </h2>
-          <p className="text-xl text-white/80 font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
             O Marketplace Autoline serve como a vitrine B2C do ecossistema, oferecendo uma jornada intuitiva e segura para o consumidor final na descoberta, compra e financiamento de veículos.
           </p>
         </motion.div>
@@ -83,33 +83,21 @@ export default function Slide15() {
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
               className="relative group"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-xl blur-xl"
-                style={{
-                  background: `linear-gradient(135deg, ${
-                    index === 0
-                      ? "#3b82f6"
-                      : index === 1
-                      ? "#a855f7"
-                      : "#22c55e"
-                  }, transparent)`,
-                }}
-              />
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 h-full hover:border-white/30 hover:bg-white/10 transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
                 <div className="flex justify-center mb-5">
                   <div
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} p-1 shadow-lg`}
+                    className={`w-14 h-14 rounded-xl bg-white/[0.06] p-1 shadow-lg`}
                   >
-                    <div className="w-full h-full bg-[#0a1628] rounded-[10px] flex items-center justify-center">
-                      <feature.icon className="w-7 h-7 text-white" />
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center">
+                      <feature.icon className="w-7 h-7 text-[#EDEDEF]" />
                     </div>
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-white text-center mb-3">
+                <h3 className="text-xl font-bold text-[#EDEDEF] text-center mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-white/80 text-sm text-center leading-relaxed">
+                <p className="text-[#8A8A8E] text-sm text-center leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -124,34 +112,26 @@ export default function Slide15() {
               key={feature.id}
               initial={{ opacity: 0, y: 30, rotateX: -10 }}
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.15 + index * 0.1 }}
               className="relative group"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-xl blur-xl"
-                style={{
-                  background: `linear-gradient(135deg, ${
-                    index === 0 ? "#eab308" : "#ef4444"
-                  }, transparent)`,
-                }}
-              />
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 h-full hover:border-white/30 hover:bg-white/10 transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
                 <div className="flex items-start gap-4 mb-4">
                   <div
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} p-1 shadow-lg flex-shrink-0`}
+                    className={`w-14 h-14 rounded-xl bg-white/[0.06] p-1 flex-shrink-0`}
                   >
-                    <div className="w-full h-full bg-[#0a1628] rounded-[10px] flex items-center justify-center">
-                      <feature.icon className="w-7 h-7 text-white" />
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center">
+                      <feature.icon className="w-7 h-7 text-[#EDEDEF]" />
                     </div>
                   </div>
                   <div>
                     
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-xl font-bold text-[#EDEDEF]">
                       {feature.title}
                     </h3>
                   </div>
                 </div>
-                <p className="text-white/80 text-sm leading-relaxed">
+                <p className="text-[#8A8A8E] text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -163,12 +143,12 @@ export default function Slide15() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-6"
         >
-          <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-500/20 via-red-500/20 to-red-600/20 border border-white/30 p-5 shadow-lg shadow-red-500/10">
+          <div className="relative overflow-hidden rounded-xl bg-white/[0.04] border border-white/[0.12] p-5">
             <div className="text-center">
-              <p className="text-white font-semibold text-lg leading-relaxed">
+              <p className="text-[#EDEDEF] font-semibold text-lg leading-relaxed">
                 O Marketplace cria um ciclo virtuoso, atraindo consumidores e gerando leads qualificados que são direcionados aos lojistas, incentivando o uso do Gestor Autoline e, consequentemente, a conversão de vendas com os produtos Bradesco.
               </p>
             </div>

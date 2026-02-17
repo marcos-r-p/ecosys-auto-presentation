@@ -11,7 +11,7 @@ const dataFlows = [
       { icon: Activity, text: "Engajamento com funcionalidades do sistema" },
       { icon: Star, text: "Qualidade dos anúncios e gestão de estoque" },
     ],
-    color: "from-blue-500 to-cyan-500",
+    color: "",
   },
   {
     title: "GIO Copiloto → Gestor Autoline",
@@ -32,7 +32,7 @@ const dataFlows = [
       { icon: ShoppingCart, text: "Oportunidades de cross-sell (crédito + seguro + conta PJ)" },
       { icon: PieChart, text: "Share of wallet e potencial não explorado" },
     ],
-    color: "from-purple-500 to-pink-600",
+    color: "",
   },
 ];
 
@@ -47,12 +47,12 @@ export default function Slide26() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-5xl font-bold text-white mb-3">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-red-400 to-red-600 drop-shadow-lg">
+          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-3">
+            <span className="text-[#EDEDEF]">
               Integração <span className="font-bold" style={{ color: '#2B7FFF' }}>GIO - Copiloto do GEFIN</span> com Autoline
             </span>
           </h2>
-          <p className="text-xl text-white/80 font-medium max-w-5xl mx-auto leading-snug">
+          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-snug">
             Fluxo Bidirecional de Dados para Máxima Inteligência
           </p>
         </motion.div>
@@ -67,29 +67,29 @@ export default function Slide26() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             {/* Gestor Autoline */}
             <div className="relative group w-full sm:w-56">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-30 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl blur-xl" />
-              <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:border-white/40 transition-all">
-                <h3 className="text-xl font-bold text-white text-center">
+              <div className="absolute inset-0 bg-white/[0.04] opacity-30 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl" />
+              <div className="relative bg-white/[0.06] border border-white/[0.12] rounded-2xl p-6 hover:border-white/40 transition-all">
+                <h3 className="text-xl font-bold text-[#EDEDEF] text-center">
                   GESTOR<br />AUTOLINE
                 </h3>
-                <p className="text-sm text-white/70 text-center mt-2">(Lojista)</p>
+                <p className="text-sm text-[#8A8A8E] text-center mt-2">(Lojista)</p>
               </div>
             </div>
 
             {/* Double Arrow */}
             <div className="flex flex-col items-center gap-1">
-              <ArrowRight className="w-8 h-8 text-white rotate-90 sm:rotate-0" />
-              <ArrowRight className="w-8 h-8 text-white -rotate-90 sm:rotate-180" />
+              <ArrowRight className="w-8 h-8 text-[#EDEDEF] rotate-90 sm:rotate-0" />
+              <ArrowRight className="w-8 h-8 text-[#EDEDEF] -rotate-90 sm:rotate-180" />
             </div>
 
             {/* GIO Copiloto */}
             <div className="relative group w-full sm:w-56">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2B7FFF] to-blue-600 opacity-40 group-hover:opacity-60 transition-opacity duration-300 rounded-2xl blur-xl" />
-              <div className="relative bg-white/10 backdrop-blur-md border border-[#2B7FFF]/50 rounded-2xl p-6 hover:border-[#2B7FFF] transition-all">
+              <div className="absolute inset-0 bg-white/[0.04] from-[#2B7FFF] to-blue-600 opacity-40 group-hover:opacity-60 transition-opacity duration-300 rounded-2xl" />
+              <div className="relative bg-white/[0.06] border border-[#2B7FFF]/50 rounded-2xl p-6 transition-all">
                 <h3 className="text-xl font-bold text-center" style={{ color: '#2B7FFF' }}>
                   GIO COPILOTO<br />GEFIN
                 </h3>
-                <span className="block text-center mt-2 text-xs px-2 py-1 rounded-full shadow-lg font-bold" style={{ backgroundColor: '#2B7FFF', color: 'white' }}>
+                <span className="block text-center mt-2 text-xs px-2 py-1 rounded-full font-bold" style={{ backgroundColor: '#2B7FFF', color: 'white' }}>
                   NOVO
                 </span>
               </div>
@@ -98,15 +98,15 @@ export default function Slide26() {
 
           {/* Arrow Down to Platform */}
           <div className="flex justify-center my-4">
-            <ArrowDown className="w-8 h-8 text-white" />
+            <ArrowDown className="w-8 h-8 text-[#EDEDEF]" />
           </div>
 
           {/* Plataforma de Dados */}
           <div className="flex justify-center">
             <div className="relative group w-full sm:w-64">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-600 opacity-30 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl blur-xl" />
-              <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:border-white/40 transition-all">
-                <h3 className="text-xl font-bold text-white text-center">
+              <div className="absolute inset-0 bg-white/[0.04] opacity-30 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl" />
+              <div className="relative bg-white/[0.06] border border-white/[0.12] rounded-2xl p-6 hover:border-white/40 transition-all">
+                <h3 className="text-xl font-bold text-[#EDEDEF] text-center">
                   PLATAFORMA<br />DE DADOS
                 </h3>
               </div>
@@ -121,19 +121,16 @@ export default function Slide26() {
               key={flowIndex}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 + flowIndex * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.15 + flowIndex * 0.1 }}
               className="relative group"
             >
-              {flow.highlight && (
-                <div className="absolute inset-0 bg-gradient-to-r from-[#2B7FFF] via-blue-500 to-cyan-500 opacity-20 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl blur-2xl" />
-              )}
               <div
-                className={`relative bg-white/5 backdrop-blur-md border ${
-                  flow.highlight ? "border-[#2B7FFF]/50" : "border-white/10"
-                } rounded-2xl p-5 h-full hover:border-white/30 hover:bg-white/10 transition-all`}
+                className={`relative bg-white/[0.04] border ${
+                  flow.highlight ? "border-[#2B7FFF]/50" : "border-white/[0.08]"
+                } rounded-2xl p-5 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all`}
               >
                 {/* Title */}
-                <h3 className={`text-xl mb-4 text-center leading-tight ${flow.highlight ? "font-bold" : "font-bold text-white"}`} style={flow.highlight ? { color: '#2B7FFF' } : {}}>
+                <h3 className={`text-xl mb-4 text-center leading-tight ${flow.highlight ? "font-bold" : "font-bold text-[#EDEDEF]"}`} style={flow.highlight ? { color: '#2B7FFF' } : {}}>
                   {flow.title}
                 </h3>
 
@@ -141,12 +138,12 @@ export default function Slide26() {
                 <div className="space-y-3">
                   {flow.items.map((item, itemIndex) => (
                     <div key={itemIndex} className="flex items-start gap-3">
-                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br ${flow.color} p-1 shadow-lg`}>
-                        <div className="w-full h-full bg-[#0a1628] rounded-[6px] flex items-center justify-center">
-                          <item.icon className="w-5 h-5 text-white" />
+                      <div className={`flex-shrink-0 w-10 h-10 rounded-lg bg-white/[0.06] p-1 shadow-lg`}>
+                        <div className="w-full h-full bg-[#0A0A0B] rounded-[6px] flex items-center justify-center">
+                          <item.icon className="w-5 h-5 text-[#EDEDEF]" />
                         </div>
                       </div>
-                      <p className="text-white/80 text-base leading-tight flex-1">
+                      <p className="text-[#8A8A8E] text-base leading-tight flex-1">
                         {item.text}
                       </p>
                     </div>

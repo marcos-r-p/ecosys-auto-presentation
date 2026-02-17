@@ -9,7 +9,7 @@ const features = [
     title: "Gestão Autoline e ecosys AUTO",
     description: "Escolha a Versão Ideal para Sua Revenda",
     icon: BarChart3,
-    color: "from-blue-500 to-cyan-500",
+    color: "",
   },
   {
     id: "comunicacao",
@@ -17,7 +17,7 @@ const features = [
     title: "Comunicação Unificada",
     description: "Otimize a comunicação do lojista, garantindo que nenhuma oportunidade de venda seja perdida",
     icon: MessageSquare,
-    color: "from-purple-500 to-pink-500",
+    color: "",
   },
   {
     id: "copiloto",
@@ -25,7 +25,7 @@ const features = [
     title: "Copiloto Autoline",
     description: "Uma suíte de agentes de Inteligência Artificial que trabalham 24/7, incluindo o GIO - Copiloto do GEFIN, para transformar a revenda em um hub de alta performance e rentabilidade para o lojista.",
     icon: Bot,
-    color: "from-green-500 to-emerald-500",
+    color: "",
     highlight: true,
   },
   {
@@ -34,7 +34,7 @@ const features = [
     title: "Originação e Produtos Bradesco",
     description: "Produtos financeiros do Bradesco são oferecidos de forma integrada e contextualizada dentro do processo natural de vendas da revenda",
     icon: CreditCard,
-    color: "from-yellow-500 to-orange-500",
+    color: "",
   },
   {
     id: "app-vendedor",
@@ -42,7 +42,7 @@ const features = [
     title: "App do Vendedor",
     description: "Ferramenta móvel para vendas e atendimento em qualquer lugar.",
     icon: Smartphone,
-    color: "from-red-500 to-pink-500",
+    color: "",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function Slide9() {
           className="text-center mb-10"
         >
           
-          <h2 className="text-5xl font-bold text-white mb-4">
+          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-4">
             Gestor{" "}
             <img
               src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png"
@@ -66,11 +66,11 @@ export default function Slide9() {
               className="h-12 inline-block align-middle"
             />
             :{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-red-400 to-red-600 drop-shadow-lg">
+            <span className="text-[#EDEDEF]">
               O Coração da Estratégia
             </span>
           </h2>
-          <p className="text-xl text-white/80 font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
             O Gestor Autoline é o DMS central que digitaliza e organiza o dia a dia da revenda, tornando-se indispensável. Ele integra a originação de produtos Bradesco de forma natural e sem fricção no fluxo de trabalho do lojista.
           </p>
         </motion.div>
@@ -85,31 +85,23 @@ export default function Slide9() {
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
               className="relative group"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-xl blur-xl"
-                style={{
-                  background: `linear-gradient(135deg, ${
-                    index === 0 ? "#3b82f6" : "#a855f7"
-                  }, transparent)`,
-                }}
-              />
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 h-full hover:border-white/30 hover:bg-white/10 transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
                 <div className="flex items-start gap-4 mb-4">
                   <div
-                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${feature.color} p-0.5 shadow-lg flex-shrink-0`}
+                    className={`w-12 h-12 rounded-lg bg-white/[0.06] p-0.5 flex-shrink-0`}
                   >
-                    <div className="w-full h-full bg-[#0a1628] rounded-[9px] flex items-center justify-center">
-                      <feature.icon className="w-6 h-6 text-white" />
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[9px] flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 text-[#EDEDEF]" />
                     </div>
                   </div>
                   <div>
                     
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-xl font-bold text-[#EDEDEF]">
                       {feature.title}
                     </h3>
                   </div>
                 </div>
-                <p className="text-white/80 text-sm leading-relaxed">
+                <p className="text-[#8A8A8E] text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -125,20 +117,20 @@ export default function Slide9() {
           className="mb-6"
         >
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 opacity-20 group-hover:opacity-40 transition-opacity duration-300 rounded-xl blur-2xl" />
-            <div className="relative bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-teal-500/10 backdrop-blur-md border-2 border-green-400/50 rounded-xl p-6 hover:border-green-400/80 transition-all">
+            <div className="absolute inset-0 bg-white/[0.04] opacity-20 group-hover:opacity-40 transition-opacity duration-300 rounded-xl" />
+            <div className="relative bg-white/[0.04] border-2 border-white/[0.08] rounded-xl p-6 hover:border-white/[0.08] transition-all">
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 rounded-xl bg-white p-1 shadow-2xl flex-shrink-0">
-                  <div className="w-full h-full bg-[#0a1628] rounded-[11px] flex items-center justify-center">
-                    <Bot className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 rounded-xl bg-white p-1 flex-shrink-0">
+                  <div className="w-full h-full bg-[#0A0A0B] rounded-[11px] flex items-center justify-center">
+                    <Bot className="w-8 h-8 text-[#EDEDEF]" />
                   </div>
                 </div>
                 <div className="flex-1">
                   
-                  <h3 className="text-2xl font-bold text-white mb-3">
+                  <h3 className="text-2xl font-bold text-[#EDEDEF] mb-3">
                     Copiloto Autoline
                   </h3>
-                  <p className="text-white/80 leading-relaxed">
+                  <p className="text-[#8A8A8E] leading-relaxed">
                     {features[2].description}
                   </p>
                 </div>
@@ -154,34 +146,26 @@ export default function Slide9() {
               key={feature.id}
               initial={{ opacity: 0, y: 30, rotateX: -10 }}
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.15 + index * 0.1 }}
               className="relative group"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-xl blur-xl"
-                style={{
-                  background: `linear-gradient(135deg, ${
-                    index === 0 ? "#eab308" : "#ef4444"
-                  }, transparent)`,
-                }}
-              />
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 h-full hover:border-white/30 hover:bg-white/10 transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
                 <div className="flex items-start gap-4 mb-4">
                   <div
-                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${feature.color} p-0.5 shadow-lg flex-shrink-0`}
+                    className={`w-12 h-12 rounded-lg bg-white/[0.06] p-0.5 flex-shrink-0`}
                   >
-                    <div className="w-full h-full bg-[#0a1628] rounded-[9px] flex items-center justify-center">
-                      <feature.icon className="w-6 h-6 text-white" />
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[9px] flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 text-[#EDEDEF]" />
                     </div>
                   </div>
                   <div>
                     
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-xl font-bold text-[#EDEDEF]">
                       {feature.title}
                     </h3>
                   </div>
                 </div>
-                <p className="text-white/80 text-sm leading-relaxed">
+                <p className="text-[#8A8A8E] text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>

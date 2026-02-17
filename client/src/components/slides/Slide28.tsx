@@ -52,7 +52,7 @@ export default function Slide28() {
               GIO - Copiloto do GEFIN
             </h2>
           </div>
-          <h3 className="text-3xl font-bold text-white mb-2">
+          <h3 className="text-3xl font-bold text-[#EDEDEF] mb-2">
             Assistente Inteligente e Gamificação
           </h3>
         </motion.div>
@@ -64,7 +64,7 @@ export default function Slide28() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-[#2B7FFF]/20 to-blue-600/20 border-2 border-[#2B7FFF]/50 rounded-xl p-5 h-full shadow-lg shadow-[#2B7FFF]/20">
+            <div className="bg-white/[0.04] from-[#2B7FFF]/20 to-blue-600/20 border border-white/[0.12] rounded-xl p-5 h-full shadow-[#2B7FFF]/20">
               <h4 className="text-2xl font-bold text-[#2B7FFF] mb-4 flex items-center gap-2">
                 <Mic className="w-7 h-7" />
                 First IA - Assistente Inteligente
@@ -73,13 +73,13 @@ export default function Slide28() {
               <div className="space-y-3">
                 {firstAIFeatures.map((feature, idx) => (
                   <div key={idx}>
-                    <h5 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                    <h5 className="text-lg font-bold text-[#EDEDEF] mb-2 flex items-center gap-2">
                       <feature.icon className="w-6 h-6 text-[#2B7FFF]" />
                       {feature.title}
                     </h5>
                     <ul className="space-y-1.5">
                       {feature.items.map((item, i) => (
-                        <li key={i} className="text-base text-white/80 flex items-start gap-2">
+                        <li key={i} className="text-base text-[#8A8A8E] flex items-start gap-2">
                           <span className="text-[#2B7FFF] mt-1">•</span>
                           <span>{item}</span>
                         </li>
@@ -97,17 +97,17 @@ export default function Slide28() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5 h-full">
-              <h4 className="text-2xl font-bold text-purple-400 mb-4 flex items-center gap-2">
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 h-full">
+              <h4 className="text-2xl font-bold text-[#8A8A8E] mb-4 flex items-center gap-2">
                 <BarChart3 className="w-7 h-7" />
                 Painel Gerencial
               </h4>
               
-              <h5 className="text-lg font-bold text-white mb-3">Visão Executiva:</h5>
+              <h5 className="text-lg font-bold text-[#EDEDEF] mb-3">Visão Executiva:</h5>
               <ul className="space-y-2">
                 {managerialFeatures.map((feature, idx) => (
-                  <li key={idx} className="text-base text-white/80 flex items-start gap-2">
-                    <span className="text-purple-400 mt-1">•</span>
+                  <li key={idx} className="text-base text-[#8A8A8E] flex items-start gap-2">
+                    <span className="text-[#8A8A8E] mt-1">•</span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -121,27 +121,27 @@ export default function Slide28() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5">
-              <h4 className="text-2xl font-bold text-green-400 mb-4 flex items-center gap-2">
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
+              <h4 className="text-2xl font-bold text-[#8A8A8E] mb-4 flex items-center gap-2">
                 <Award className="w-7 h-7" />
                 Gestão de Times e Gamificação
               </h4>
               
-              <h5 className="text-lg font-bold text-white mb-3">🎯 Execução + Motivação:</h5>
+              <h5 className="text-lg font-bold text-[#EDEDEF] mb-3">🎯 Execução + Motivação:</h5>
               <div className="space-y-2 mb-4">
-                <p className="text-base text-white/80">• Kanban de ações (time + individual) + SLAs</p>
-                <p className="text-base text-white/80">• Metas por squad em tempo real</p>
-                <p className="text-base text-white/80 font-bold">• Gamificação: pontos, badges, ranking</p>
+                <p className="text-base text-[#8A8A8E]">• Kanban de ações (time + individual) + SLAs</p>
+                <p className="text-base text-[#8A8A8E]">• Metas por squad em tempo real</p>
+                <p className="text-base text-[#8A8A8E] font-bold">• Gamificação: pontos, badges, ranking</p>
               </div>
 
-              <div className="bg-[#0a1628]/60 border border-green-400/30 rounded-lg p-3">
+              <div className="bg-[#0A0A0B]/60 border border-white/[0.08] rounded-lg p-3">
                 <div className="grid grid-cols-2 gap-2">
                   {gamificationPoints.map((point, idx) => (
-                    <div key={idx} className="flex items-center justify-between bg-white/5 rounded px-2 py-1">
-                      <span className="text-sm text-white/80">{point.action}</span>
-                      <span className="text-sm font-bold text-green-400">{point.points}</span>
+                    <div key={idx} className="flex items-center justify-between bg-white/[0.04] rounded px-2 py-1">
+                      <span className="text-sm text-[#8A8A8E]">{point.action}</span>
+                      <span className="text-sm font-bold text-[#8A8A8E]">{point.points}</span>
                     </div>
                   ))}
                 </div>
@@ -153,19 +153,19 @@ export default function Slide28() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5">
-              <h4 className="text-2xl font-bold text-blue-400 mb-4 flex items-center gap-2">
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5">
+              <h4 className="text-2xl font-bold text-[#2B7FFF] mb-4 flex items-center gap-2">
                 <Trello className="w-7 h-7" />
                 Gestão de Projetos
               </h4>
               
-              <h5 className="text-lg font-bold text-white mb-3">📋 Projetos Estruturados (Estilo Trello):</h5>
+              <h5 className="text-lg font-bold text-[#EDEDEF] mb-3">📋 Projetos Estruturados (Estilo Trello):</h5>
               <ul className="space-y-2">
                 {projectTypes.map((type, idx) => (
-                  <li key={idx} className="text-base text-white/80 flex items-start gap-2">
-                    <span className="text-blue-400 mt-1">•</span>
+                  <li key={idx} className="text-base text-[#8A8A8E] flex items-start gap-2">
+                    <span className="text-[#2B7FFF] mt-1">•</span>
                     <span>{type}</span>
                   </li>
                 ))}

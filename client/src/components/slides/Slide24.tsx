@@ -76,9 +76,9 @@ export default function Slide24() {
           transition={{ duration: 0.6 }}
           className="text-center mb-6"
         >
-          <h2 className="text-5xl font-bold text-white mb-2">
+          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-2">
             <span className="font-bold" style={{ color: '#2B7FFF' }}>GIO - Copiloto do GEFIN</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-red-400 to-red-600 drop-shadow-lg">: Funcionalidades e Tecnologia</span>
+            <span className="text-[#EDEDEF]">: Funcionalidades e Tecnologia</span>
           </h2>
           
         </motion.div>
@@ -100,28 +100,25 @@ export default function Slide24() {
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.05 }}
                 className="relative group"
               >
-                {feature.highlight && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#2B7FFF] via-blue-500 to-cyan-500 opacity-20 group-hover:opacity-30 transition-opacity duration-300 rounded-xl blur-xl" />
-                )}
                 <div
-                  className={`relative bg-white/5 backdrop-blur-md border ${
-                    feature.highlight ? "border-[#2B7FFF]/50" : "border-white/10"
-                  } rounded-xl p-4 h-full hover:border-white/30 hover:bg-white/10 transition-all`}
+                  className={`relative bg-white/[0.04] border ${
+                    feature.highlight ? "border-[#2B7FFF]/50" : "border-white/[0.08]"
+                  } rounded-xl p-4 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all`}
                 >
                   {/* Icon */}
                   <div className="flex justify-center mb-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 p-1 shadow-lg">
-                      <div className="w-full h-full bg-[#0a1628] rounded-[10px] flex items-center justify-center">
-                        <feature.icon className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 rounded-xl bg-white/[0.04] p-1 shadow-lg">
+                      <div className="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center">
+                        <feature.icon className="w-6 h-6 text-[#EDEDEF]" />
                       </div>
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h4 className={`text-base font-bold text-center mb-3 leading-tight ${feature.highlight ? "" : "text-white"}`} style={feature.highlight ? { color: '#2B7FFF' } : {}}>
+                  <h4 className={`text-base font-bold text-center mb-3 leading-tight ${feature.highlight ? "" : "text-[#EDEDEF]"}`} style={feature.highlight ? { color: '#2B7FFF' } : {}}>
                     {feature.title}
                     {feature.highlight && (
-                      <span className="ml-1 text-xs px-2 py-0.5 rounded-full shadow-lg font-bold" style={{ backgroundColor: '#2B7FFF', color: 'white' }}>
+                      <span className="ml-1 text-xs px-2 py-0.5 rounded-full font-bold" style={{ backgroundColor: '#2B7FFF', color: 'white' }}>
                         NOVO
                       </span>
                     )}
@@ -131,8 +128,8 @@ export default function Slide24() {
                   <ul className="space-y-1.5">
                     {feature.items.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-start gap-2">
-                        <span className="text-blue-400 flex-shrink-0 mt-1">•</span>
-                        <span className="text-white/80 text-sm leading-tight">{item}</span>
+                        <span className="text-[#2B7FFF] flex-shrink-0 mt-1">•</span>
+                        <span className="text-[#8A8A8E] text-sm leading-tight">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -148,48 +145,48 @@ export default function Slide24() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:border-white/30 hover:bg-white/10 transition-all"
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.06] transition-all"
           >
             {/* Icon */}
             <div className="flex justify-center mb-3">
               <div className="w-12 h-12 rounded-xl bg-white p-1 shadow-lg">
-                <div className="w-full h-full bg-[#0a1628] rounded-[10px] flex items-center justify-center">
-                  <Activity className="w-6 h-6 text-white" />
+                <div className="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center">
+                  <Activity className="w-6 h-6 text-[#EDEDEF]" />
                 </div>
               </div>
             </div>
 
-            <h4 className="text-base font-bold text-white text-center mb-3">Health Score Inteligente (0-100)</h4>
+            <h4 className="text-base font-bold text-[#EDEDEF] text-center mb-3">Health Score Inteligente (0-100)</h4>
             <div className="space-y-2 mb-3">
-              <div className="text-xs text-white/80 leading-tight">
+              <div className="text-xs text-[#8A8A8E] leading-tight">
                 <span className="font-bold">30%</span> Performance Financeira
               </div>
-              <div className="text-xs text-white/80 leading-tight">
+              <div className="text-xs text-[#8A8A8E] leading-tight">
                 <span className="font-bold">20%</span> Qualidade
               </div>
-              <div className="text-xs text-white/80 leading-tight">
+              <div className="text-xs text-[#8A8A8E] leading-tight">
                 <span className="font-bold">20%</span> Engajamento
               </div>
-              <div className="text-xs text-white/80 leading-tight">
+              <div className="text-xs text-[#8A8A8E] leading-tight">
                 <span className="font-bold">15%</span> Produtos
               </div>
-              <div className="text-xs text-white/80 leading-tight">
+              <div className="text-xs text-[#8A8A8E] leading-tight">
                 <span className="font-bold">15%</span> Relacionamento
               </div>
             </div>
             <div className="space-y-1.5">
               <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold">✓</span>
-                <span className="text-xs text-white/80">80-100: Manutenção + upsell</span>
+                <span className="w-6 h-6 rounded-full bg-white/[0.06] flex items-center justify-center text-[#EDEDEF] text-xs font-bold">✓</span>
+                <span className="text-xs text-[#8A8A8E]">80-100: Manutenção + upsell</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xs font-bold">!</span>
-                <span className="text-xs text-white/80">50-79: Atenção + plano</span>
+                <span className="w-6 h-6 rounded-full bg-white/[0.06] flex items-center justify-center text-[#EDEDEF] text-xs font-bold">!</span>
+                <span className="text-xs text-[#8A8A8E]">50-79: Atenção + plano</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold">✕</span>
-                <span className="text-xs text-white/80">&lt;50: Risco + ação imediata</span>
+                <span className="w-6 h-6 rounded-full bg-white/[0.06] flex items-center justify-center text-[#EDEDEF] text-xs font-bold">✕</span>
+                <span className="text-xs text-[#8A8A8E]">&lt;50: Risco + ação imediata</span>
               </div>
             </div>
           </motion.div>
@@ -198,35 +195,35 @@ export default function Slide24() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:border-white/30 hover:bg-white/10 transition-all"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.06] transition-all"
           >
             {/* Icon */}
             <div className="flex justify-center mb-3">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 p-1 shadow-lg">
-                <div className="w-full h-full bg-[#0a1628] rounded-[10px] flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 rounded-xl bg-white/[0.04] p-1 shadow-lg">
+                <div className="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-[#EDEDEF]" />
                 </div>
               </div>
             </div>
 
-            <h4 className="text-base font-bold text-white text-center mb-3">Automação Inteligente - Exemplos</h4>
+            <h4 className="text-base font-bold text-[#EDEDEF] text-center mb-3">Automação Inteligente - Exemplos</h4>
             <div className="space-y-2.5">
               <div className="flex items-start gap-2">
-                <Settings className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
-                <span className="text-xs text-white/80 leading-tight">
+                <Settings className="w-4 h-4 text-[#EDEDEF] flex-shrink-0 mt-0.5" />
+                <span className="text-xs text-[#8A8A8E] leading-tight">
                   Performance -20% → Tarefa urgente + Gestor notificado + Campanha sugerida
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <Settings className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
-                <span className="text-xs text-white/80 leading-tight">
+                <Settings className="w-4 h-4 text-[#EDEDEF] flex-shrink-0 mt-0.5" />
+                <span className="text-xs text-[#8A8A8E] leading-tight">
                   Sem visita &gt;30 dias → Roteiro prioritário + Checklist reativação
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <Settings className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
-                <span className="text-xs text-white/80 leading-tight">
+                <Settings className="w-4 h-4 text-[#EDEDEF] flex-shrink-0 mt-0.5" />
+                <span className="text-xs text-[#8A8A8E] leading-tight">
                   Health Score &lt;40 → Plano de recuperação automático
                 </span>
               </div>
@@ -237,41 +234,41 @@ export default function Slide24() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:border-white/30 hover:bg-white/10 transition-all"
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.06] transition-all"
           >
             {/* Icon */}
             <div className="flex justify-center mb-3">
               <div className="w-12 h-12 rounded-xl bg-white p-1 shadow-lg">
-                <div className="w-full h-full bg-[#0a1628] rounded-[10px] flex items-center justify-center">
-                  <Cloud className="w-6 h-6 text-white" />
+                <div className="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center">
+                  <Cloud className="w-6 h-6 text-[#EDEDEF]" />
                 </div>
               </div>
             </div>
 
-            <h4 className="text-base font-bold text-white text-center mb-3">Ecossistema Microsoft</h4>
+            <h4 className="text-base font-bold text-[#EDEDEF] text-center mb-3">Ecossistema Microsoft</h4>
             <div className="space-y-2">
               <div className="flex items-start gap-2">
-                <span className="text-blue-400 flex-shrink-0 mt-0.5">•</span>
-                <span className="text-xs text-white/80 leading-tight">
+                <span className="text-[#2B7FFF] flex-shrink-0 mt-0.5">•</span>
+                <span className="text-xs text-[#8A8A8E] leading-tight">
                   <span className="font-bold">Teams:</span> Comunicação + alertas + colaboração
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-blue-400 flex-shrink-0 mt-0.5">•</span>
-                <span className="text-xs text-white/80 leading-tight">
+                <span className="text-[#2B7FFF] flex-shrink-0 mt-0.5">•</span>
+                <span className="text-xs text-[#8A8A8E] leading-tight">
                   <span className="font-bold">Outlook:</span> Sincronização de agenda e lembretes
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-blue-400 flex-shrink-0 mt-0.5">•</span>
-                <span className="text-xs text-white/80 leading-tight">
+                <span className="text-[#2B7FFF] flex-shrink-0 mt-0.5">•</span>
+                <span className="text-xs text-[#8A8A8E] leading-tight">
                   <span className="font-bold">Power BI:</span> Dashboards executivos
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="text-blue-400 flex-shrink-0 mt-0.5">•</span>
-                <span className="text-xs text-white/80 leading-tight">
+                <span className="text-[#2B7FFF] flex-shrink-0 mt-0.5">•</span>
+                <span className="text-xs text-[#8A8A8E] leading-tight">
                   <span className="font-bold">Azure AD:</span> SSO + governança + auditoria
                 </span>
               </div>

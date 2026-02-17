@@ -21,25 +21,25 @@ const automationRules = [
     icon: CircleAlert,
     trigger: "Performance -20%",
     action: "tarefa urgente + notificar gestor + campanha reativação",
-    color: "text-red-400",
+    color: "text-[#CC092F]",
   },
   {
     icon: Activity,
     trigger: "Sem visita >30 dias",
     action: "roteiro prioritário + checklist",
-    color: "text-yellow-400",
+    color: "text-[#8A8A8E]",
   },
   {
     icon: TrendingUp,
     trigger: "Alto potencial não convertido",
     action: "escalar squad especializado",
-    color: "text-blue-400",
+    color: "text-[#2B7FFF]",
   },
   {
     icon: Zap,
     trigger: "Health Score <40",
     action: "plano recuperação automático",
-    color: "text-orange-400",
+    color: "text-[#8A8A8E]",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Slide27() {
               GIO - Copiloto do GEFIN
             </h2>
           </div>
-          <h3 className="text-2xl font-bold text-white mb-2">
+          <h3 className="text-2xl font-bold text-[#EDEDEF] mb-2">
             Health Score e Automação Inteligente
           </h3>
         </motion.div>
@@ -72,24 +72,24 @@ export default function Slide27() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5 h-full">
-              <h4 className="text-xl font-bold text-white mb-4">
+            <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 h-full">
+              <h4 className="text-xl font-bold text-[#EDEDEF] mb-4">
                 📊 Health Score dos Lojistas (0-100)
               </h4>
               
               {/* Composition */}
               <div className="mb-4">
-                <h5 className="text-base font-bold text-blue-400 mb-3">Composição do Score:</h5>
+                <h5 className="text-base font-bold text-[#2B7FFF] mb-3">Composição do Score:</h5>
                 <div className="space-y-2">
                   {scoreComponents.map((component, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <component.icon className="w-4 h-4 text-white mt-0.5 flex-shrink-0" />
+                      <component.icon className="w-4 h-4 text-[#EDEDEF] mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <span className="text-sm font-bold text-white">{component.label}</span>
-                          <span className="text-xs text-blue-400">({component.percentage}%)</span>
+                          <span className="text-sm font-bold text-[#EDEDEF]">{component.label}</span>
+                          <span className="text-xs text-[#2B7FFF]">({component.percentage}%)</span>
                         </div>
-                        <p className="text-xs text-white/70">{component.description}</p>
+                        <p className="text-xs text-[#8A8A8E]">{component.description}</p>
                       </div>
                     </div>
                   ))}
@@ -98,14 +98,14 @@ export default function Slide27() {
 
               {/* Outputs */}
               <div>
-                <h5 className="text-base font-bold text-green-400 mb-3">Saídas Práticas:</h5>
+                <h5 className="text-base font-bold text-[#8A8A8E] mb-3">Saídas Práticas:</h5>
                 <div className="space-y-2">
                   {scoreOutputs.map((output, idx) => (
-                    <div key={idx} className="flex items-center gap-3 bg-white/5 rounded-lg p-2">
+                    <div key={idx} className="flex items-center gap-3 bg-white/[0.04] rounded-lg p-2">
                       <span className="text-xl">{output.color}</span>
                       <div className="flex-1">
-                        <span className="text-sm font-bold text-white">{output.label} ({output.range})</span>
-                        <p className="text-xs text-white/70">{output.action}</p>
+                        <span className="text-sm font-bold text-[#EDEDEF]">{output.label} ({output.range})</span>
+                        <p className="text-xs text-[#8A8A8E]">{output.action}</p>
                       </div>
                     </div>
                   ))}
@@ -120,25 +120,25 @@ export default function Slide27() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="bg-gradient-to-br from-[#2B7FFF]/20 to-blue-600/20 border-2 border-[#2B7FFF]/50 rounded-xl p-5 h-full shadow-lg shadow-[#2B7FFF]/20">
+            <div className="bg-white/[0.04] from-[#2B7FFF]/20 to-blue-600/20 border border-white/[0.12] rounded-xl p-5 h-full shadow-[#2B7FFF]/20">
               <h4 className="text-xl font-bold text-[#2B7FFF] mb-4 flex items-center gap-2">
                 <Zap className="w-6 h-6" />
                 Automação Baseada em Indicadores
               </h4>
               
-              <h5 className="text-base font-bold text-white mb-3">⚙️ Regras Inteligentes (Exemplos):</h5>
+              <h5 className="text-base font-bold text-[#EDEDEF] mb-3">⚙️ Regras Inteligentes (Exemplos):</h5>
               
               <div className="space-y-3">
                 {automationRules.map((rule, idx) => (
-                  <div key={idx} className="bg-[#0a1628]/60 border border-white/10 rounded-lg p-3">
+                  <div key={idx} className="bg-[#0A0A0B]/60 border border-white/[0.08] rounded-lg p-3">
                     <div className="flex items-start gap-3">
                       <rule.icon className={`w-5 h-5 ${rule.color} mt-0.5 flex-shrink-0`} />
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-sm font-bold text-white">{rule.trigger}</span>
-                          <span className="text-white/60">→</span>
+                          <span className="text-sm font-bold text-[#EDEDEF]">{rule.trigger}</span>
+                          <span className="text-[#8A8A8E]">→</span>
                         </div>
-                        <p className="text-sm text-white/80">{rule.action}</p>
+                        <p className="text-sm text-[#8A8A8E]">{rule.action}</p>
                       </div>
                     </div>
                   </div>

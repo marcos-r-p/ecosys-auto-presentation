@@ -28,7 +28,7 @@ const gioPhases = [
       "Comunicação",
     ],
     phase: "PILOTO (20-30 usuários)",
-    color: "#8B5CF6",
+    color: "#2B7FFF",
   },
   {
     months: "3-4",
@@ -41,7 +41,7 @@ const gioPhases = [
       "Gestão de Ganhos",
     ],
     phase: "ROLLOUT (50-100 usuários)",
-    color: "#8B5CF6",
+    color: "#2B7FFF",
   },
   {
     months: "5-6",
@@ -54,7 +54,7 @@ const gioPhases = [
       "Power BI",
     ],
     phase: "100% OPERACIONAL",
-    color: "#8B5CF6",
+    color: "#2B7FFF",
   },
 ];
 
@@ -69,12 +69,12 @@ export default function Slide30() {
           transition={{ duration: 0.6 }}
           className="text-center mb-6"
         >
-          <h2 className="text-5xl font-bold text-white mb-2">
+          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-2">
             Cronograma de Entregas Integrado
           </h2>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-[#8A8A8E]">
             <span className="text-[#2B7FFF] font-bold">Autoline (12 meses)</span> +{" "}
-            <span className="font-bold" style={{ color: '#8B5CF6' }}>GIO - Copiloto do GEFIN (6 meses)</span>
+            <span className="font-bold" style={{ color: '#2B7FFF' }}>GIO - Copiloto do GEFIN (6 meses)</span>
           </p>
         </motion.div>
 
@@ -92,7 +92,7 @@ export default function Slide30() {
           {/* Timeline Container */}
           <div className="relative py-24 overflow-x-auto">
             {/* Horizontal Line */}
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-green-500/30 via-[#2B7FFF]/30 to-purple-500/30 transform -translate-y-1/2 min-w-[900px]" />
+            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-white/[0.04] from-green-500/30 via-[#2B7FFF]/30 to-purple-500/30 transform -translate-y-1/2 min-w-[900px]" />
 
             {/* Curved connectors between dots */}
             <svg className="absolute top-1/2 left-0 w-full h-full transform -translate-y-1/2 pointer-events-none min-w-[900px]" style={{ overflow: 'visible' }}>
@@ -139,26 +139,26 @@ export default function Slide30() {
                       <div className="absolute flex flex-col items-center" style={{ bottom: '50%' }}>
                         {/* Card Above */}
                         <div
-                          className={`bg-gradient-to-br from-green-500/10 to-emerald-500/10 border rounded-lg p-2.5 w-full min-h-[70px] flex flex-col items-center justify-center text-center transition-all cursor-default shadow-lg mb-2 ${
+                          className={`bg-white/[0.04] border rounded-lg p-2.5 w-full min-h-[70px] flex flex-col items-center justify-center text-center transition-all cursor-default mb-2 ${
                             delivery.highlight 
-                              ? "border-green-400 bg-green-500/15 shadow-green-500/20" 
-                              : "border-green-500/30 hover:bg-green-500/15 hover:border-green-400/50"
+                              ? "border-white/[0.08] bg-white/[0.04] shadow-green-500/20" 
+                              : "border-white/[0.08] hover:bg-white/[0.04] hover:border-white/[0.08]"
                           }`}
                         >
-                          <div className="text-xs font-bold text-green-400 mb-1">
+                          <div className="text-xs font-bold text-[#8A8A8E] mb-1">
                             Mês {delivery.month}
                           </div>
-                          <div className="text-[10px] text-white/90 leading-tight font-medium">
+                          <div className="text-[10px] text-[#EDEDEF] leading-tight font-medium">
                             {delivery.short}
                           </div>
                         </div>
                         
                         {/* Connector Line */}
-                        <div className="w-0.5 h-10 bg-green-500/40" />
+                        <div className="w-0.5 h-10 bg-white/[0.04]" />
                         
                         {/* Dot on Timeline */}
                         <div
-                          className={`w-4 h-4 rounded-full bg-green-500 shadow-lg border-2 border-[#0a1628] relative z-10 transition-all ${
+                          className={`w-4 h-4 rounded-full bg-white/[0.06] border border-white/[0.12] relative z-10 transition-all ${
                             delivery.highlight ? "shadow-green-500/60 scale-110" : "shadow-green-500/40"
                           }`}
                         />
@@ -167,7 +167,7 @@ export default function Slide30() {
                       <div className="absolute flex flex-col items-center" style={{ top: '50%' }}>
                         {/* Dot on Timeline */}
                         <div
-                          className={`w-4 h-4 rounded-full bg-[#2B7FFF] shadow-lg border-2 border-[#0a1628] relative z-10 transition-all ${
+                          className={`w-4 h-4 rounded-full bg-[#2B7FFF] border border-white/[0.12] relative z-10 transition-all ${
                             delivery.highlight ? "shadow-[#2B7FFF]/60 scale-110" : "shadow-[#2B7FFF]/40"
                           }`}
                         />
@@ -177,16 +177,16 @@ export default function Slide30() {
                         
                         {/* Card Below */}
                         <div
-                          className={`bg-gradient-to-br from-blue-500/10 to-purple-500/10 border rounded-lg p-2.5 w-full min-h-[70px] flex flex-col items-center justify-center text-center transition-all cursor-default shadow-lg mt-2 ${
+                          className={`bg-white/[0.04] border rounded-lg p-2.5 w-full min-h-[70px] flex flex-col items-center justify-center text-center transition-all cursor-default mt-2 ${
                             delivery.highlight 
-                              ? "border-[#2B7FFF] bg-blue-500/15 shadow-[#2B7FFF]/20" 
-                              : "border-blue-500/30 hover:bg-blue-500/15 hover:border-[#2B7FFF]/50"
+                              ? "border-[#2B7FFF] bg-white/[0.04] shadow-[#2B7FFF]/20" 
+                              : "border-white/[0.08] hover:bg-white/[0.04] "
                           }`}
                         >
                           <div className="text-xs font-bold text-[#2B7FFF] mb-1">
                             Mês {delivery.month}
                           </div>
-                          <div className="text-[10px] text-white/90 leading-tight font-medium">
+                          <div className="text-[10px] text-[#EDEDEF] leading-tight font-medium">
                             {delivery.short}
                           </div>
                         </div>
@@ -203,10 +203,10 @@ export default function Slide30() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="mb-6"
         >
-          <h3 className="text-lg font-bold whitespace-nowrap flex items-center justify-center gap-2 mb-3" style={{ color: '#8B5CF6' }}>
+          <h3 className="text-lg font-bold whitespace-nowrap flex items-center justify-center gap-2 mb-3" style={{ color: '#2B7FFF' }}>
             <Bot className="w-5 h-5" />
             GIO - COPILOTO DO GEFIN (6 MESES)
           </h3>
@@ -214,7 +214,7 @@ export default function Slide30() {
           {/* GIO Phases */}
           <div className="relative">
             {/* Horizontal Line */}
-            <div className="absolute top-2 left-0 right-0 h-0.5 bg-purple-500/30" />
+            <div className="absolute top-2 left-0 right-0 h-0.5 bg-white/[0.04]" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {gioPhases.map((phase, idx) => (
@@ -222,7 +222,7 @@ export default function Slide30() {
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 + idx * 0.15 }}
+                  transition={{ duration: 0.5, delay: 0.2 + idx * 0.15 }}
                   className="relative"
                 >
                   {/* Dot */}
@@ -230,27 +230,27 @@ export default function Slide30() {
                     <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: phase.color }} />
                   </div>
 
-                  <div className="bg-white/5 border border-purple-500/30 rounded-xl p-4 mt-6">
+                  <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 mt-6">
                     <div className="text-center mb-3">
-                      <div className="text-xs font-bold text-purple-400 mb-1">
+                      <div className="text-xs font-bold text-[#8A8A8E] mb-1">
                         Meses {phase.months}
                       </div>
-                      <h4 className="text-sm font-bold text-white leading-tight">
+                      <h4 className="text-sm font-bold text-[#EDEDEF] leading-tight">
                         {phase.title}
                       </h4>
                     </div>
 
                     <ul className="space-y-1.5 mb-3">
                       {phase.items.map((item, i) => (
-                        <li key={i} className="text-[10px] text-white/70 flex items-start gap-1">
-                          <span className="text-purple-400">•</span>
+                        <li key={i} className="text-[10px] text-[#8A8A8E] flex items-start gap-1">
+                          <span className="text-[#8A8A8E]">•</span>
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
 
-                    <div className="text-center pt-2 border-t border-purple-400/20">
-                      <div className="text-[10px] font-bold text-purple-300">
+                    <div className="text-center pt-2 border-t border-white/[0.08]">
+                      <div className="text-[10px] font-bold text-[#8A8A8E]">
                         {phase.phase}
                       </div>
                     </div>
@@ -265,20 +265,20 @@ export default function Slide30() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
         >
-          <div className="bg-white/5 border border-green-400/30 rounded-xl p-4">
+          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4">
             <div className="flex items-center justify-center gap-8">
               <div className="text-center">
-                <div className="text-xs font-bold text-green-400 mb-1">Integração a partir do Mês 7</div>
-                <div className="text-[10px] text-white/60">
+                <div className="text-xs font-bold text-[#8A8A8E] mb-1">Integração a partir do Mês 7</div>
+                <div className="text-[10px] text-[#8A8A8E]">
                   Autoline ↔ GIO integrados via Plataforma de Dados
                 </div>
               </div>
-              <div className="text-2xl text-green-400">⚡</div>
+              <div className="text-2xl text-[#8A8A8E]">⚡</div>
               <div className="text-center">
-                <div className="text-xs font-bold text-white">Time to Market</div>
-                <div className="text-[10px] text-white/60">
+                <div className="text-xs font-bold text-[#EDEDEF]">Time to Market</div>
+                <div className="text-[10px] text-[#8A8A8E]">
                   GIO: 6 meses | Autoline: 12 meses
                 </div>
               </div>

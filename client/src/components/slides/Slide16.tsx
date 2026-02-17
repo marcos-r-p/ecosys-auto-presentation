@@ -9,7 +9,7 @@ const features = [
     title: "Filtros Avançados",
     description: "Explore opções de filtragem detalhadas por marca, modelo, ano, faixa de preço, quilometragem, tipo de combustível, transmissão e cor. Personalize sua busca para encontrar exatamente o que você procura, otimizando o tempo do cliente e do vendedor.",
     icon: Filter,
-    color: "from-blue-500 to-cyan-500",
+    color: "",
   },
   {
     id: "busca-ia",
@@ -17,7 +17,7 @@ const features = [
     title: "Busca Inteligente com IA",
     description: "Utilize um motor de busca aprimorado com inteligência artificial que entende sinônimos e sugere resultados relevantes. Basta digitar o que deseja e a plataforma apresentará as melhores opções, acelerando a jornada de compra.",
     icon: Sparkles,
-    color: "from-purple-500 to-pink-500",
+    color: "",
   },
   {
     id: "localidade",
@@ -25,7 +25,7 @@ const features = [
     title: "Filtro por Localidade",
     description: "Localize veículos disponíveis em sua região ou em cidades específicas. Defina o raio de busca para encontrar o carro dos seus sonhos na revenda mais próxima, facilitando a visita e a negociação presencial.",
     icon: MapPin,
-    color: "from-green-500 to-emerald-500",
+    color: "",
   },
 ];
 
@@ -41,13 +41,13 @@ export default function Slide16() {
           className="text-center mb-10"
         >
           
-          <h2 className="text-5xl font-bold text-white mb-4">
+          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-4">
             Catálogo de Veículos:{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-red-400 to-red-600 drop-shadow-lg">
+            <span className="text-[#EDEDEF]">
               Encontre o Carro Perfeito
             </span>
           </h2>
-          <p className="text-xl text-white/80 font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
             O Catálogo de Veículos da Autoline oferece uma experiência de busca intuitiva e poderosa, permitindo que os consumidores encontrem o veículo ideal com facilidade e precisão, através de recursos avançados de filtragem e inteligência artificial.
           </p>
         </motion.div>
@@ -62,26 +62,14 @@ export default function Slide16() {
               transition={{ duration: 0.6, delay: 0.1 + index * 0.15 }}
               className="relative group"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl blur-2xl"
-                style={{
-                  background: `linear-gradient(135deg, ${
-                    index === 0
-                      ? "#3b82f6"
-                      : index === 1
-                      ? "#a855f7"
-                      : "#22c55e"
-                  }, transparent)`,
-                }}
-              />
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 h-full hover:border-white/30 hover:bg-white/10 transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
                 {/* Icon */}
                 <div className="flex justify-center mb-6">
                   <div
-                    className={`w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} p-1 shadow-2xl`}
+                    className={`w-16 h-16 rounded-xl bg-white/[0.06] p-1 shadow-2xl`}
                   >
-                    <div className="w-full h-full bg-[#0a1628] rounded-[11px] flex items-center justify-center">
-                      <feature.icon className="w-8 h-8 text-white" />
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[11px] flex items-center justify-center">
+                      <feature.icon className="w-8 h-8 text-[#EDEDEF]" />
                     </div>
                   </div>
                 </div>
@@ -90,12 +78,12 @@ export default function Slide16() {
                 
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-white text-center mb-4">
+                <h3 className="text-2xl font-bold text-[#EDEDEF] text-center mb-4">
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-white/80 text-center leading-relaxed">
+                <p className="text-[#8A8A8E] text-center leading-relaxed">
                   {feature.description}
                 </p>
               </div>

@@ -9,7 +9,7 @@ const features = [
     title: "CRM e Fluxo de Vendas Móvel",
     description: "Gerencie o funil de vendas, acompanhe leads e atualize status de negociações diretamente pelo celular, com total flexibilidade.",
     icon: Users,
-    color: "from-blue-500 to-cyan-500",
+    color: "",
   },
   {
     id: "comunicacao",
@@ -17,7 +17,7 @@ const features = [
     title: "Comunicação Integrada",
     description: "Acesse o eConversa de qualquer lugar para responder leads do WhatsApp, OLX e redes sociais, sem perder nenhuma oportunidade.",
     icon: MessageCircle,
-    color: "from-purple-500 to-pink-500",
+    color: "",
   },
   {
     id: "originacao",
@@ -25,7 +25,7 @@ const features = [
     title: "Originação de Produtos Bradesco",
     description: "Envie propostas de financiamento e seguros Bradesco em tempo real, agilizando o fechamento de negócios diretamente do app.",
     icon: CreditCard,
-    color: "from-green-500 to-emerald-500",
+    color: "",
   },
   {
     id: "copiloto",
@@ -33,7 +33,7 @@ const features = [
     title: "Copiloto de Atendimento para App",
     description: "Conte com a Inteligência Artificial para auxiliar na qualificação de leads e fornecer respostas rápidas e precisas aos clientes.",
     icon: Bot,
-    color: "from-yellow-500 to-orange-500",
+    color: "",
   },
   {
     id: "precificacao",
@@ -41,7 +41,7 @@ const features = [
     title: "Precificação Rápida e Checklist para o App",
     description: "Avalie veículos na hora e realize checklists de entrada de forma digital, garantindo agilidade e padronização no processo.",
     icon: ClipboardCheck,
-    color: "from-red-500 to-pink-500",
+    color: "",
   },
 ];
 
@@ -57,13 +57,13 @@ export default function Slide14() {
           className="text-center mb-10"
         >
           
-          <h2 className="text-5xl font-bold text-white mb-4">
+          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-4">
             App do Vendedor:{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-red-400 to-red-600 drop-shadow-lg">
+            <span className="text-[#EDEDEF]">
               A Venda na Palma da Mão
             </span>
           </h2>
-          <p className="text-xl text-white/80 font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
             O App do Vendedor é a ferramenta móvel essencial que coloca o poder da Autoline e dos produtos Bradesco na palma da mão do seu time. Projetado para acelerar o processo de vendas e garantir autonomia, ele permite acessar todas as informações necessárias, seja no pátio da loja ou em um atendimento externo.
           </p>
         </motion.div>
@@ -78,35 +78,23 @@ export default function Slide14() {
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
               className="relative group"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-xl blur-xl"
-                style={{
-                  background: `linear-gradient(135deg, ${
-                    index === 0
-                      ? "#3b82f6"
-                      : index === 1
-                      ? "#a855f7"
-                      : "#22c55e"
-                  }, transparent)`,
-                }}
-              />
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 h-full hover:border-white/30 hover:bg-white/10 transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
                 <div className="flex items-start gap-4 mb-4">
                   <div
-                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${feature.color} p-0.5 shadow-lg flex-shrink-0`}
+                    className={`w-12 h-12 rounded-lg bg-white/[0.06] p-0.5 flex-shrink-0`}
                   >
-                    <div className="w-full h-full bg-[#0a1628] rounded-[9px] flex items-center justify-center">
-                      <feature.icon className="w-6 h-6 text-white" />
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[9px] flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 text-[#EDEDEF]" />
                     </div>
                   </div>
                   <div>
                     
-                    <h3 className="text-lg font-bold text-white">
+                    <h3 className="text-lg font-bold text-[#EDEDEF]">
                       {feature.title}
                     </h3>
                   </div>
                 </div>
-                <p className="text-white/80 text-sm leading-relaxed">
+                <p className="text-[#8A8A8E] text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -121,34 +109,26 @@ export default function Slide14() {
               key={feature.id}
               initial={{ opacity: 0, y: 30, rotateX: -10 }}
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.15 + index * 0.1 }}
               className="relative group"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-xl blur-xl pointer-events-none -z-10"
-                style={{
-                  background: `linear-gradient(135deg, ${
-                    index === 0 ? "#eab308" : "#ef4444"
-                  }, transparent)`,
-                }}
-              />
-              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5 h-full hover:border-white/30 hover:bg-white/10 transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
                 <div className="flex items-start gap-4 mb-3">
                   <div
-                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${feature.color} p-0.5 shadow-lg flex-shrink-0`}
+                    className={`w-12 h-12 rounded-lg bg-white/[0.06] p-0.5 flex-shrink-0`}
                   >
-                    <div className="w-full h-full bg-[#0a1628] rounded-[9px] flex items-center justify-center">
-                      <feature.icon className="w-6 h-6 text-white" />
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[9px] flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 text-[#EDEDEF]" />
                     </div>
                   </div>
                   <div>
                     
-                    <h3 className="text-lg font-bold text-white">
+                    <h3 className="text-lg font-bold text-[#EDEDEF]">
                       {feature.title}
                     </h3>
                   </div>
                 </div>
-                <p className="text-white/80 text-sm leading-relaxed">
+                <p className="text-[#8A8A8E] text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>
