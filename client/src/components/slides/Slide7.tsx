@@ -37,7 +37,7 @@ const stakeholders = [
     ),
     icon: Bot,
     color: "from-[#2B7FFF] to-blue-600",
-    description: "Potencializa a força de campo do Bradesco com inteligência, automação e gestão estratégica da rede de parceiros através do GIO - Copiloto Comercial.",
+    description: "Potencializa a força de campo do Bradesco com inteligência, automação e gestão estratégica da rede de parceiros através do Novo GIO.",
   },
 ];
 

@@ -23,7 +23,7 @@ const features = [
     id: "copiloto",
     number: "1.3",
     title: "Copiloto Autoline",
-    description: "Uma suíte de agentes de Inteligência Artificial que trabalham 24/7, incluindo o GIO - Copiloto do GEFIN, para transformar a revenda em um hub de alta performance e rentabilidade para o lojista.",
+    description: "Uma suíte de agentes de Inteligência Artificial que trabalham 24/7, incluindo o Novo GIO, para transformar a revenda em um hub de alta performance e rentabilidade para o lojista.",
     icon: Bot,
     color: "",
     highlight: true,

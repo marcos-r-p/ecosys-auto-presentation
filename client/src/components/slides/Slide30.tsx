@@ -74,7 +74,7 @@ export default function Slide30() {
           </h2>
           <p className="text-xl text-[#8A8A8E]">
             <span className="text-[#2B7FFF] font-bold">Autoline (12 meses)</span> +{" "}
-            <span className="font-bold" style={{ color: '#2B7FFF' }}>GIO - Copiloto do GEFIN (6 meses)</span>
+            <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO (6 meses)</span>
           </p>
         </motion.div>
 

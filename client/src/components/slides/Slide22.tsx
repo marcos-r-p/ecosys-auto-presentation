@@ -17,7 +17,7 @@ const integrations = [
   },
   {
     icon: Radio,
-    title: "APIs para GIO - Copiloto do GEFIN",
+    title: "APIs para Novo GIO",
     description: "Fluxo bidirecional de dados entre força comercial e operação dos lojistas",
     color: "from-[#2B7FFF] to-blue-600",
     highlight: true,

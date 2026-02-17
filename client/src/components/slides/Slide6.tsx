@@ -75,7 +75,7 @@ const sections = [
       "Ecossistema B2B + B2C integrado",
       "IA em todos os processos",
       <div key="gio-novo" className="flex items-center gap-2">
-        <span className="font-bold" style={{ color: '#2B7FFF' }}>GIO - Copiloto do GEFIN</span>
+        <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span>
         <span className="text-lg">⭐</span>
         <span className="px-2 py-0.5 text-xs font-bold rounded-full" style={{ backgroundColor: '#2B7FFF', color: 'white' }}>
           NOVO
@@ -197,7 +197,7 @@ export default function Slide6() {
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <h3 className="text-2xl font-bold text-[#2B7FFF]">
-                      GIO - Copiloto Comercial do GEFIN
+                      Novo GIO
                     </h3>
                     <span className="text-lg">⭐</span>
                     <span className="px-3 py-1 text-sm font-bold rounded-full shadow-lg" style={{ backgroundColor: '#2B7FFF', color: 'white' }}>

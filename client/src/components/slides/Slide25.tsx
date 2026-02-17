@@ -91,7 +91,7 @@ export default function Slide25() {
           className="text-center"
         >
           <h2 className="text-3xl font-bold text-[#EDEDEF] mb-2">
-            <span className="font-bold" style={{ color: '#2B7FFF' }}>GIO - Copiloto do GEFIN</span>
+            <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span>
             <span className="text-[#EDEDEF]">: Impacto, Roadmap e Integração</span>
           </h2>
           <p className="text-base text-[#8A8A8E] font-medium">

@@ -77,7 +77,7 @@ export default function Slide24() {
           className="text-center mb-6"
         >
           <h2 className="text-5xl font-bold text-[#EDEDEF] mb-2">
-            <span className="font-bold" style={{ color: '#2B7FFF' }}>GIO - Copiloto do GEFIN</span>
+            <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span>
             <span className="text-[#EDEDEF]">: Funcionalidades e Tecnologia</span>
           </h2>
           

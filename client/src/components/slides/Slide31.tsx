@@ -132,7 +132,7 @@ export default function Slide31() {
             Roadmap de Lançamento por Fases
           </h2>
           <p className="text-lg text-[#8A8A8E]">
-            Evolução estratégica e validada: <span className="text-[#2B7FFF] font-semibold">Marketplace Autoline</span> + <span className="text-[#8A8A8E] font-semibold">DMS Autoline</span> + <span className="text-[#2B7FFF] font-bold">GIO - Copiloto do GEFIN</span>
+            Evolução estratégica e validada: <span className="text-[#2B7FFF] font-semibold">Marketplace Autoline</span> + <span className="text-[#8A8A8E] font-semibold">DMS Autoline</span> + <span className="text-[#2B7FFF] font-bold">Novo GIO</span>
           </p>
         </motion.div>
 

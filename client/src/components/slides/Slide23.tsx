@@ -57,7 +57,7 @@ export default function Slide23() {
           className="text-center mb-6"
         >
           <h2 className="text-5xl font-bold text-[#EDEDEF] mb-2">
-            <span className="font-bold" style={{ color: '#2B7FFF' }}>GIO - Copiloto do GEFIN</span>
+            <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span>
             <span className="text-[#EDEDEF]">: Transformando a Gestão Comercial</span>
           </h2>
           <p className="text-lg text-[#8A8A8E] font-medium">

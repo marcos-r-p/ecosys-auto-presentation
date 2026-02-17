@@ -49,7 +49,7 @@ export default function Slide28() {
           <div className="flex items-center justify-center gap-3 mb-2">
             <Bot className="w-14 h-14 text-[#2B7FFF]" />
             <h2 className="text-5xl font-bold text-[#2B7FFF]">
-              GIO - Copiloto do GEFIN
+              Novo GIO
             </h2>
           </div>
           <h3 className="text-3xl font-bold text-[#EDEDEF] mb-2">

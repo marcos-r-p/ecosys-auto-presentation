@@ -49,7 +49,7 @@ export default function Slide26() {
         >
           <h2 className="text-5xl font-bold text-[#EDEDEF] mb-3">
             <span className="text-[#EDEDEF]">
-              Integração <span className="font-bold" style={{ color: '#2B7FFF' }}>GIO - Copiloto do GEFIN</span> com Autoline
+              Integração <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span> com Autoline
             </span>
           </h2>
           <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-snug">
