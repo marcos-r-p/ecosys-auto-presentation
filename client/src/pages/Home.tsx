@@ -35,9 +35,8 @@ import Slide27 from "@/components/slides/Slide27";
 import Slide28 from "@/components/slides/Slide28";
 import Slide30 from "@/components/slides/Slide30";
 import Slide31 from "@/components/slides/Slide31";
-import Slide32 from "@/components/slides/Slide32";
-import Slide33 from "@/components/slides/Slide33";
-import Slide34 from "@/components/slides/Slide34";
+import SlideInvestimento1 from "@/components/slides/SlideInvestimento1";
+import SlideInvestimento2 from "@/components/slides/SlideInvestimento2";
 
 // Chapter definitions
 const CHAPTERS = [
@@ -113,9 +112,8 @@ const slideEntries: SlideEntry[] = [
   { type: "separator", chapterIndex: 7, separatorData: CHAPTERS[7] },
   { type: "content", component: Slide30, chapterIndex: 7 },
   { type: "content", component: Slide31, chapterIndex: 7 },
-  { type: "content", component: Slide32, chapterIndex: 7 },
-  { type: "content", component: Slide33, chapterIndex: 7 },
-  { type: "content", component: Slide34, chapterIndex: 7 },
+  { type: "content", component: SlideInvestimento1, chapterIndex: 7 },
+  { type: "content", component: SlideInvestimento2, chapterIndex: 7 },
 ];
 
 const TOTAL_SLIDES = slideEntries.length;
