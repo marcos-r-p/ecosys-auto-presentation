@@ -43,7 +43,7 @@ const dmsPhases = [
     color: "from-green-500/20 to-green-600/20",
     borderColor: "border-white/[0.08]",
     items: [
-      { icon: Database, title: "Gestão Autoline", features: ["Fork DMS Lite", "Versão simplificada", "Controle de acessos"] },
+      { icon: Database, title: "Gestão Autoline", features: ["Fork Gestor Lite", "Versão simplificada", "Controle de acessos"] },
       { icon: Smartphone, title: "App do Vendedor", features: ["Ferramenta móvel essencial", "Equipe de vendas"] },
     ]
   },
@@ -113,8 +113,8 @@ const gioPhases = [
 
 const timeline = [
   { product: "MARKETPLACE", v1: "Mês 5", v2: "Mês 9", v3: "Mês 12", color: "bg-white/[0.06]" },
-  { product: "DMS", v1: "Mês 5", v2: "Mês 9", v3: "Mês 12", color: "bg-white/[0.06]" },
-  { product: "GIO", v1: "Mês 1-2", v2: "Mês 3-4", v3: "Mês 5-6", color: "bg-[#2B7FFF]", special: "Evolução Contínua" },
+  { product: "Gestor Autoline", v1: "Mês 5", v2: "Mês 9", v3: "Mês 12", color: "bg-white/[0.06]" },
+  { product: "Novo GIO", v1: "Mês 1-2", v2: "Mês 3-4", v3: "Mês 5-6", color: "bg-[#2B7FFF]", special: "Evolução Contínua" },
 ];
 
 export default function Slide31() {
@@ -132,7 +132,7 @@ export default function Slide31() {
             Roadmap de Lançamento por Fases
           </h2>
           <p className="text-lg text-[#8A8A8E]">
-            Evolução estratégica e validada: <span className="text-[#2B7FFF] font-semibold">Marketplace Autoline</span> + <span className="text-[#8A8A8E] font-semibold">DMS Autoline</span> + <span className="text-[#2B7FFF] font-bold">Novo GIO</span>
+            Evolução estratégica e validada: <span className="text-[#2B7FFF] font-semibold">Marketplace Autoline</span> + <span className="text-[#8A8A8E] font-semibold">Gestor Autoline</span> + <span className="text-[#2B7FFF] font-bold">Novo GIO</span>
           </p>
         </motion.div>
 
@@ -183,7 +183,7 @@ export default function Slide31() {
           </div>
         </motion.div>
 
-        {/* DMS AUTOLINE */}
+        {/* GESTOR AUTOLINE */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -192,7 +192,7 @@ export default function Slide31() {
         >
           <div className="flex items-center gap-2 mb-3">
             <Database className="w-7 h-7 text-[#EDEDEF]" />
-            <h3 className="text-2xl font-bold text-[#8A8A8E]">DMS AUTOLINE</h3>
+            <h3 className="text-2xl font-bold text-[#8A8A8E]">GESTOR AUTOLINE</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {dmsPhases.map((phase, idx) => (

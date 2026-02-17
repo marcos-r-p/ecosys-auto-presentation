@@ -74,8 +74,8 @@ export default function Slide34() {
                   <div className="text-xs font-bold text-[#8A8A8E] mb-1">Duração e Transferência:</div>
                   <p className="text-[10px] text-[#8A8A8E] leading-relaxed">
                     Durante <span className="text-[#2B7FFF] font-bold">4 anos</span> após o desenvolvimento mantemos a operação por esse valor mensal. 
-                    Após esse período, o código do Gestor Autoline (DMS Lite), Marketplace e App do Marketplace é repassado ao Bradesco. 
-                    Os códigos da ecosys AUTO (DMS Pro) e App do Vendedor permanecem com a ecosys.
+                    Após esse período, o código do Gestor Autoline, Marketplace e App do Marketplace é repassado ao Bradesco. 
+                    Os códigos da ecosys AUTO (Gestor Autoline) e App do Vendedor permanecem com a ecosys.
                   </p>
                 </div>
               </div>

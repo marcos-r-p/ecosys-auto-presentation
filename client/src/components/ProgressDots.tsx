@@ -4,7 +4,7 @@ const chapters = [
   { id: 1, label: "Contexto", startSlide: 0, endSlide: 4 },
   { id: 2, label: "Proposta", startSlide: 5, endSlide: 8 },
   { id: 3, label: "ecosys AUTO", startSlide: 9, endSlide: 10 },
-  { id: 4, label: "DMS Autoline", startSlide: 11, endSlide: 15 },
+  { id: 4, label: "Gestor Autoline", startSlide: 11, endSlide: 15 },
   { id: 5, label: "Marketplace", startSlide: 16, endSlide: 23 },
   { id: 6, label: "Motor Comercial", startSlide: 24, endSlide: 27 },
   { id: 7, label: "Novo GIO", startSlide: 28, endSlide: 34 },

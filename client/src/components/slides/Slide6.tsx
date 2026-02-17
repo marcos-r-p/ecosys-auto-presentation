@@ -35,9 +35,9 @@ const sections = [
           alt="Autoline"
           className="h-3 inline-block"
         />
-        <span>- DMS Lite</span>
+        <span>- Gestor Autoline Lite</span>
       </div>,
-      "ecosys AUTO - DMS Pro",
+      "ecosys AUTO - Gestor Autoline",
       "App Vendedor",
       "Copiloto Autoline (IA)",
       "Originação Bradesco",

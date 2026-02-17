@@ -71,7 +71,7 @@ export default function Slide9() {
             </span>
           </h2>
           <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
-            O Gestor Autoline é o DMS central que digitaliza e organiza o dia a dia da revenda, tornando-se indispensável. Ele integra a originação de produtos Bradesco de forma natural e sem fricção no fluxo de trabalho do lojista.
+            O Gestor Autoline é o sistema central que digitaliza e organiza o dia a dia da revenda, tornando-se indispensável. Ele integra a originação de produtos Bradesco de forma natural e sem fricção no fluxo de trabalho do lojista.
           </p>
         </motion.div>
 

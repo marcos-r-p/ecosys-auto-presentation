@@ -5,7 +5,7 @@ import SlideFooter from "../SlideFooter";
 const integrations = [
   {
     icon: Link2,
-    title: "Integração com Outros DMS",
+    title: "Integração com Outros Sistemas",
     description: "Conexão fluida com diversos sistemas de gestão de concessionárias, garantindo dados sempre atualizados",
     color: "",
   },

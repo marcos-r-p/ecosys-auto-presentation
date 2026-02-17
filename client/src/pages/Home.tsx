@@ -44,7 +44,7 @@ const CHAPTERS = [
   { number: "01", title: "Contexto e Visão", subtitle: "Por que estamos aqui e qual é a oportunidade" },
   { number: "02", title: "A Proposta", subtitle: "O que estamos propondo, para quem e como evoluiu" },
   { number: "03", title: "Por que a ecosys AUTO", subtitle: "Inovação, tecnologia e maturidade corporativa" },
-  { number: "04", title: "DMS Autoline", subtitle: "Gestão inteligente para lojistas, dados estratégicos para o Bradesco" },
+  { number: "04", title: "Gestor Autoline", subtitle: "Gestão inteligente para lojistas, dados estratégicos para o Bradesco" },
   { number: "05", title: "Marketplace Autoline", subtitle: "Vitrine digital que conecta lojistas, consumidores e financiamento Bradesco" },
   { number: "06", title: "Motor Comercial", subtitle: "Inteligência que antecipa demanda e amplifica resultados" },
   { number: "07", title: "Novo GIO", subtitle: "O copiloto inteligente que transforma estratégia em execução para o GEFIN" },
@@ -77,7 +77,7 @@ const slideEntries: SlideEntry[] = [
   { type: "separator", chapterIndex: 2, separatorData: CHAPTERS[2] },
   { type: "content", component: SlideEcosysWhy, chapterIndex: 2 },
 
-  // 04 — DMS Autoline
+  // 04 — Gestor Autoline
   { type: "separator", chapterIndex: 3, separatorData: CHAPTERS[3] },
   { type: "content", component: Slide9, chapterIndex: 3 },
   { type: "content", component: Slide10, chapterIndex: 3 },

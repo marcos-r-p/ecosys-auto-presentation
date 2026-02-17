@@ -25,7 +25,7 @@ const autolineDeliveries: TimelineMonth[] = [
     title: "Ajuste Arquitetura & Discovery",
     details: [
       {
-        product: "DMS Autoline",
+        product: "Gestor Autoline",
         icon: Database,
         items: ["Discovery e levantamento", "Ajuste de arquitetura base", "Definição de infraestrutura"],
         color: "#2B7FFF",
@@ -44,7 +44,7 @@ const autolineDeliveries: TimelineMonth[] = [
     title: "Ampliação Arquitetura",
     details: [
       {
-        product: "DMS Autoline",
+        product: "Gestor Autoline",
         icon: Database,
         items: ["Ampliação da arquitetura", "Preparação de ambientes", "Setup de CI/CD"],
         color: "#2B7FFF",
@@ -98,7 +98,7 @@ const autolineDeliveries: TimelineMonth[] = [
   {
     month: 5,
     short: "MVP V1",
-    title: "Marketplace V1 + DMS Lite + App Vendedor",
+    title: "Marketplace V1 + Gestor Autoline V1 + App Vendedor",
     highlight: true,
     details: [
       {
@@ -108,9 +108,9 @@ const autolineDeliveries: TimelineMonth[] = [
         color: "#2B7FFF",
       },
       {
-        product: "DMS Lite V1",
+        product: "Gestor Autoline V1",
         icon: Database,
-        items: ["Fork DMS simplificado", "Controle de acessos", "Gestão básica de estoque"],
+        items: ["Fork Gestor simplificado", "Controle de acessos", "Gestão básica de estoque"],
         color: "#2B7FFF",
       },
       {
@@ -183,7 +183,7 @@ const autolineDeliveries: TimelineMonth[] = [
   {
     month: 9,
     short: "Evolução V2",
-    title: "Marketplace V2 + DMS Pro V2 + App Marketplace",
+    title: "Marketplace V2 + Gestor Autoline V2 + App Marketplace",
     highlight: true,
     details: [
       {
@@ -193,7 +193,7 @@ const autolineDeliveries: TimelineMonth[] = [
         color: "#2B7FFF",
       },
       {
-        product: "DMS Pro V2",
+        product: "Gestor Autoline V2",
         icon: Database,
         items: ["Comunicação Unificada (eConversa)", "Integradores de portais e redes sociais", "Originação Bradesco integrada", "Analytics e dashboards avançados"],
         color: "#2B7FFF",
@@ -235,7 +235,7 @@ const autolineDeliveries: TimelineMonth[] = [
   {
     month: 12,
     short: "Final V3",
-    title: "Marketplace V3 + DMS Pro V3 + Embedded App Bradesco",
+    title: "Marketplace V3 + Gestor Autoline V3 + Embedded App Bradesco",
     highlight: true,
     details: [
       {
@@ -245,7 +245,7 @@ const autolineDeliveries: TimelineMonth[] = [
         color: "#2B7FFF",
       },
       {
-        product: "DMS Pro V3",
+        product: "Gestor Autoline V3",
         icon: Database,
         items: ["Copiloto Autoline (IA assistente)", "Carteira de Clientes avançada", "Relacionamento e fidelização", "Automações inteligentes"],
         color: "#2B7FFF",

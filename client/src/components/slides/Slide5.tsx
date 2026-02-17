@@ -74,7 +74,7 @@ export default function Slide5() {
                 <div className="bg-white/[0.04] rounded-2xl p-8 border border-white/[0.08]">
                   <div className="flex items-center gap-3 mb-3">
                     <Package className="w-8 h-8 text-[#EDEDEF]" />
-                    <h3 className="text-2xl font-bold text-[#EDEDEF]">DMS Lite</h3>
+                    <h3 className="text-2xl font-bold text-[#EDEDEF]">Gestor Autoline Lite</h3>
                   </div>
                   <div className="h-1 w-full bg-white/[0.04] rounded-full mb-5" />
                   <p className="text-[#8A8A8E] text-lg">
