@@ -143,6 +143,15 @@
     color: #8A8A8E;
   }
 
+  /* Octalk widget — posicionar no canto esquerdo */
+  div[id*="octalk"],
+  div[class*="octalk"],
+  div[data-octalk],
+  iframe[src*="octalk"] {
+    right: auto !important;
+    left: 20px !important;
+  }
+
   /* Badge — minimal */
   .quiet-badge {
     background: rgba(255, 255, 255, 0.06);
