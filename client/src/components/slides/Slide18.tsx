@@ -21,7 +21,7 @@ export default function Slide18() {
             </span>
           </h2>
           <p className="text-[#8A8A8E] text-xl font-medium max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
-            A Plataforma de Conteúdo Autoline é um pilar estratégico que atua em três frentes para garantir a máxima transparência e informação detalhada no marketplace. Essa sinergia eleva o desempenho orgânico (SEO) e qualifica drasticamente o lead, reduzindo a fricção na compra.
+            A Plataforma de Conteúdo Autoline é um pilar estratégico que atua em três frentes para garantir a máxima transparência e informação detalhada no marketplace. Essa sinergia eleva o desempenho orgânico (SEO/GEO) e qualifica drasticamente o lead, reduzindo a fricção na compra.
           </p>
         </motion.div>
 

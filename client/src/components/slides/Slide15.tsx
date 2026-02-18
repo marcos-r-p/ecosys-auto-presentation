@@ -31,7 +31,7 @@ const features = [
     id: "conteudo",
     number: "2.4",
     title: "Plataforma de Conteúdo",
-    description: "Conteúdo curado pelo Bradesco com selos de confiança e estratégia SEO.",
+    description: "Conteúdo curado pelo Bradesco com selos de confiança e estratégia SEO/GEO.",
     icon: FileText,
     color: "",
   },
