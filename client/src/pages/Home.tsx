@@ -1,42 +1,51 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
 import FixedBackground from "@/components/BackgroundElements";
 import ChapterSeparator from "@/components/ChapterSeparator";
 import ProgressDots from "@/components/ProgressDots";
 import SlideBreadcrumb from "@/components/SlideBreadcrumb";
 
-// Slides
-import Slide1 from "@/components/slides/Slide1";
-import Slide2 from "@/components/slides/Slide2";
-import Slide3 from "@/components/slides/Slide3";
-import Slide4 from "@/components/slides/Slide4";
-import Slide5 from "@/components/slides/Slide5";
-import Slide6 from "@/components/slides/Slide6";
-import Slide7 from "@/components/slides/Slide7";
-import SlideEcosysWhy from "@/components/slides/SlideEcosysWhy";
-import Slide9 from "@/components/slides/Slide9";
-import Slide10 from "@/components/slides/Slide10";
-import Slide11 from "@/components/slides/Slide11";
-import Slide12 from "@/components/slides/Slide12";
-import Slide13 from "@/components/slides/Slide13";
-import Slide14 from "@/components/slides/Slide14";
-import Slide15 from "@/components/slides/Slide15";
-import Slide16 from "@/components/slides/Slide16";
-import Slide17 from "@/components/slides/Slide17";
-import Slide18 from "@/components/slides/Slide18";
-import Slide19 from "@/components/slides/Slide19";
-import Slide20 from "@/components/slides/Slide20";
-import Slide21 from "@/components/slides/Slide21";
-import Slide22 from "@/components/slides/Slide22";
-import Slide23 from "@/components/slides/Slide23";
-import Slide24 from "@/components/slides/Slide24";
-import Slide25 from "@/components/slides/Slide25";
-import Slide26 from "@/components/slides/Slide26";
-import Slide27 from "@/components/slides/Slide27";
-import Slide28 from "@/components/slides/Slide28";
-import Slide30 from "@/components/slides/Slide30";
-import Slide31 from "@/components/slides/Slide31";
-import SlideInvestimento1 from "@/components/slides/SlideInvestimento1";
-import SlideInvestimento2 from "@/components/slides/SlideInvestimento2";
+// Lazy-loaded slides for better performance
+const Slide1 = lazy(() => import("@/components/slides/Slide1"));
+const Slide2 = lazy(() => import("@/components/slides/Slide2"));
+const Slide3 = lazy(() => import("@/components/slides/Slide3"));
+const Slide4 = lazy(() => import("@/components/slides/Slide4"));
+const Slide5 = lazy(() => import("@/components/slides/Slide5"));
+const Slide6 = lazy(() => import("@/components/slides/Slide6"));
+const Slide7 = lazy(() => import("@/components/slides/Slide7"));
+const SlideEcosysWhy = lazy(() => import("@/components/slides/SlideEcosysWhy"));
+const Slide9 = lazy(() => import("@/components/slides/Slide9"));
+const Slide10 = lazy(() => import("@/components/slides/Slide10"));
+const Slide11 = lazy(() => import("@/components/slides/Slide11"));
+const Slide12 = lazy(() => import("@/components/slides/Slide12"));
+const Slide13 = lazy(() => import("@/components/slides/Slide13"));
+const Slide14 = lazy(() => import("@/components/slides/Slide14"));
+const Slide15 = lazy(() => import("@/components/slides/Slide15"));
+const Slide16 = lazy(() => import("@/components/slides/Slide16"));
+const Slide17 = lazy(() => import("@/components/slides/Slide17"));
+const Slide18 = lazy(() => import("@/components/slides/Slide18"));
+const Slide19 = lazy(() => import("@/components/slides/Slide19"));
+const Slide20 = lazy(() => import("@/components/slides/Slide20"));
+const Slide21 = lazy(() => import("@/components/slides/Slide21"));
+const Slide22 = lazy(() => import("@/components/slides/Slide22"));
+const Slide23 = lazy(() => import("@/components/slides/Slide23"));
+const Slide24 = lazy(() => import("@/components/slides/Slide24"));
+const Slide25 = lazy(() => import("@/components/slides/Slide25"));
+const Slide26 = lazy(() => import("@/components/slides/Slide26"));
+const Slide27 = lazy(() => import("@/components/slides/Slide27"));
+const Slide28 = lazy(() => import("@/components/slides/Slide28"));
+const Slide30 = lazy(() => import("@/components/slides/Slide30"));
+const Slide31 = lazy(() => import("@/components/slides/Slide31"));
+const SlideInvestimento1 = lazy(() => import("@/components/slides/SlideInvestimento1"));
+const SlideInvestimento2 = lazy(() => import("@/components/slides/SlideInvestimento2"));
+
+// Minimal loading fallback that matches the dark theme
+function SlideFallback() {
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-white/20 border-t-white/60 rounded-full animate-spin" />
+    </div>
+  );
+}
 
 // Chapter definitions
 const CHAPTERS = [
@@ -53,8 +62,8 @@ const CHAPTERS = [
 // Slide structure: each entry is either a chapter separator or a content slide
 interface SlideEntry {
   type: "separator" | "content";
-  component?: React.ComponentType;
-  chapterIndex: number; // which chapter this belongs to
+  component?: React.LazyExoticComponent<React.ComponentType>;
+  chapterIndex: number;
   separatorData?: { number: string; title: string; subtitle: string };
 }
 
@@ -222,7 +231,9 @@ export default function Home() {
                   subtitle={entry.separatorData.subtitle}
                 />
               ) : entry.component ? (
-                <entry.component />
+                <Suspense fallback={<SlideFallback />}>
+                  <entry.component />
+                </Suspense>
               ) : null}
             </div>
           );
