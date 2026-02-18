@@ -26,9 +26,9 @@ const challenges = [
   },
   {
     icon: Users,
-    title: "Campo (GEFINS / GIO)",
+    title: "Gestão Comercial (GEFINS) - GIO",
     description:
-      "Baixa priorização, pouca previsibilidade e ausência de alertas acionáveis.",
+      "Gestão comercial dos GEFINS complexa, com baixa priorização, pouca previsibilidade e ausência de alertas acionáveis.",
     color: "",
     hasGio: true,
   },
@@ -85,11 +85,10 @@ export default function Slide4() {
                       <h3 className="text-lg font-bold text-[#EDEDEF]">
                         {challenge.hasGio ? (
                           <>
-                            Campo (GEFINS /{" "}
+                            Gestão Comercial (GEFINS) -{" "}
                             <span className="font-bold" style={{ color: "#2B7FFF" }}>
                               GIO
                             </span>
-                            )
                           </>
                         ) : (
                           challenge.title
