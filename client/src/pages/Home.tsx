@@ -28,11 +28,9 @@ import Slide20 from "@/components/slides/Slide20";
 import Slide21 from "@/components/slides/Slide21";
 import Slide22 from "@/components/slides/Slide22";
 import Slide23 from "@/components/slides/Slide23";
-import Slide24 from "@/components/slides/Slide24";
-import Slide25 from "@/components/slides/Slide25";
-import Slide26 from "@/components/slides/Slide26";
-import Slide27 from "@/components/slides/Slide27";
-import Slide28 from "@/components/slides/Slide28";
+import SlideGioPlataforma from "@/components/slides/SlideGioPlataforma";
+import SlideGioIntegracao from "@/components/slides/SlideGioIntegracao";
+import SlideGioImpacto from "@/components/slides/SlideGioImpacto";
 import Slide30 from "@/components/slides/Slide30";
 import Slide31 from "@/components/slides/Slide31";
 import SlideInvestimento1 from "@/components/slides/SlideInvestimento1";
@@ -102,11 +100,9 @@ const slideEntries: SlideEntry[] = [
   // 07 — Novo GIO
   { type: "separator", chapterIndex: 6, separatorData: CHAPTERS[6] },
   { type: "content", component: Slide23, chapterIndex: 6 },
-  { type: "content", component: Slide24, chapterIndex: 6 },
-  { type: "content", component: Slide26, chapterIndex: 6 },
-  { type: "content", component: Slide27, chapterIndex: 6 },
-  { type: "content", component: Slide28, chapterIndex: 6 },
-  { type: "content", component: Slide25, chapterIndex: 6 },
+  { type: "content", component: SlideGioPlataforma, chapterIndex: 6 },
+  { type: "content", component: SlideGioIntegracao, chapterIndex: 6 },
+  { type: "content", component: SlideGioImpacto, chapterIndex: 6 },
 
   // 08 — Investimento e Roadmap
   { type: "separator", chapterIndex: 7, separatorData: CHAPTERS[7] },
