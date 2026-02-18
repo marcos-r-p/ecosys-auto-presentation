@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
 import FixedBackground from "@/components/BackgroundElements";
 import ChapterSeparator from "@/components/ChapterSeparator";
 import ProgressDots from "@/components/ProgressDots";
@@ -130,19 +130,39 @@ const RENDER_WINDOW = 2; // Render current slide + 2 before and after
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const isNavigating = useRef(false);
+  const currentSlideRef = useRef(0);
+  const isLocked = useRef(false);
+  const TRANSITION_LOCK_MS = 1200; // Lock navigation for 1.2s after each slide change
 
-  // Determine which slides to render (virtualization window)
-  const visibleRange = useMemo(() => {
-    const start = Math.max(0, currentSlide - RENDER_WINDOW);
-    const end = Math.min(TOTAL_SLIDES - 1, currentSlide + RENDER_WINDOW);
-    return { start, end };
+  // Keep ref in sync with state
+  useEffect(() => {
+    currentSlideRef.current = currentSlide;
   }, [currentSlide]);
 
-  // Navigate to a specific slide
+  // Navigate to a specific slide with lock
   const navigateToSlide = useCallback((index: number) => {
     const clamped = Math.max(0, Math.min(index, TOTAL_SLIDES - 1));
+    if (clamped === currentSlideRef.current) return;
+    if (isLocked.current) return;
+    isLocked.current = true;
     setCurrentSlide(clamped);
+    currentSlideRef.current = clamped;
+    setTimeout(() => {
+      isLocked.current = false;
+    }, TRANSITION_LOCK_MS);
+  }, []);
+
+  // Direct navigation (from dots/chapters) bypasses lock
+  const navigateToSlideDirect = useCallback((index: number) => {
+    const clamped = Math.max(0, Math.min(index, TOTAL_SLIDES - 1));
+    isLocked.current = false;
+    setCurrentSlide(clamped);
+    currentSlideRef.current = clamped;
+    // Re-lock briefly to prevent accidental scroll after click
+    isLocked.current = true;
+    setTimeout(() => {
+      isLocked.current = false;
+    }, 800);
   }, []);
 
   // Keyboard navigation
@@ -150,61 +170,76 @@ export default function Home() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") {
         e.preventDefault();
-        navigateToSlide(currentSlide + 1);
+        navigateToSlide(currentSlideRef.current + 1);
       } else if (e.key === "ArrowUp" || e.key === "PageUp") {
         e.preventDefault();
-        navigateToSlide(currentSlide - 1);
+        navigateToSlide(currentSlideRef.current - 1);
       } else if (e.key === "Home") {
         e.preventDefault();
-        navigateToSlide(0);
+        navigateToSlideDirect(0);
       } else if (e.key === "End") {
         e.preventDefault();
-        navigateToSlide(TOTAL_SLIDES - 1);
+        navigateToSlideDirect(TOTAL_SLIDES - 1);
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentSlide, navigateToSlide]);
+  }, [navigateToSlide, navigateToSlideDirect]);
 
-  // Mouse wheel / touch navigation with debounce
+  // Mouse wheel navigation with accumulation threshold
   useEffect(() => {
-    let lastWheelTime = 0;
-    const WHEEL_DEBOUNCE = 600; // ms between slide transitions
+    let accumulatedDelta = 0;
+    let resetTimer: ReturnType<typeof setTimeout> | null = null;
+    const DELTA_THRESHOLD = 80; // Accumulated pixels before triggering
 
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
-      const now = Date.now();
-      if (now - lastWheelTime < WHEEL_DEBOUNCE) return;
-      lastWheelTime = now;
+      if (isLocked.current) return;
 
-      if (e.deltaY > 0) {
-        navigateToSlide(currentSlide + 1);
-      } else if (e.deltaY < 0) {
-        navigateToSlide(currentSlide - 1);
+      accumulatedDelta += e.deltaY;
+
+      // Reset accumulation after 300ms of no scrolling
+      if (resetTimer) clearTimeout(resetTimer);
+      resetTimer = setTimeout(() => {
+        accumulatedDelta = 0;
+      }, 300);
+
+      if (Math.abs(accumulatedDelta) >= DELTA_THRESHOLD) {
+        if (accumulatedDelta > 0) {
+          navigateToSlide(currentSlideRef.current + 1);
+        } else {
+          navigateToSlide(currentSlideRef.current - 1);
+        }
+        accumulatedDelta = 0;
+        if (resetTimer) clearTimeout(resetTimer);
       }
     };
 
     window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, [currentSlide, navigateToSlide]);
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      if (resetTimer) clearTimeout(resetTimer);
+    };
+  }, [navigateToSlide]);
 
-  // Touch navigation
+  // Touch navigation with lock
   useEffect(() => {
     let touchStartY = 0;
-    const SWIPE_THRESHOLD = 50;
+    const SWIPE_THRESHOLD = 80;
 
     const handleTouchStart = (e: TouchEvent) => {
       touchStartY = e.touches[0].clientY;
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
+      if (isLocked.current) return;
       const deltaY = touchStartY - e.changedTouches[0].clientY;
       if (Math.abs(deltaY) > SWIPE_THRESHOLD) {
         if (deltaY > 0) {
-          navigateToSlide(currentSlide + 1);
+          navigateToSlide(currentSlideRef.current + 1);
         } else {
-          navigateToSlide(currentSlide - 1);
+          navigateToSlide(currentSlideRef.current - 1);
         }
       }
     };
@@ -215,7 +250,7 @@ export default function Home() {
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [currentSlide, navigateToSlide]);
+  }, [navigateToSlide]);
 
   // Current slide entry
   const entry = slideEntries[currentSlide];
@@ -231,7 +266,7 @@ export default function Home() {
       <ProgressDots
         currentSlide={currentSlide}
         totalSlides={TOTAL_SLIDES}
-        onDotClick={navigateToSlide}
+        onDotClick={navigateToSlideDirect}
       />
 
       {/* Single slide viewport - only renders current slide */}
