@@ -15,12 +15,26 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
-    <script defer src="https://octalk.ai/widget.js"
-      data-key="oct_uAK6SAARuJHDD-xaCbIeYozylK5S6shP4ltjX1lP"></script>
+    <script>
+      // Only load external scripts when NOT inside an iframe (preview panel)
+      if (window.top === window.self) {
+        // Umami analytics
+        var umamiSrc = '%VITE_ANALYTICS_ENDPOINT%/umami';
+        if (umamiSrc && !umamiSrc.includes('VITE_ANALYTICS')) {
+          var s1 = document.createElement('script');
+          s1.defer = true;
+          s1.src = umamiSrc;
+          s1.dataset.websiteId = '%VITE_ANALYTICS_WEBSITE_ID%';
+          document.body.appendChild(s1);
+        }
+        // Octalk chat widget
+        var s2 = document.createElement('script');
+        s2.defer = true;
+        s2.src = 'https://octalk.ai/widget.js';
+        s2.dataset.key = 'oct_uAK6SAARuJHDD-xaCbIeYozylK5S6shP4ltjX1lP';
+        document.body.appendChild(s2);
+      }
+    </script>
   </body>
 
 </html>
