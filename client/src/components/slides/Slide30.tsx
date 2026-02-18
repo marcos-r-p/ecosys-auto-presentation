@@ -139,8 +139,8 @@ export default function Slide30() {
   const [hoveredMonth, setHoveredMonth] = useState<number | null>(null);
 
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 pt-2 pb-1 overflow-hidden">
-      <div className="max-w-7xl w-full flex flex-col gap-2 flex-1">
+    <div className="flex flex-col items-center justify-center h-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col gap-3">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
@@ -162,7 +162,7 @@ export default function Slide30() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <div className="relative py-2 overflow-x-auto">
+          <div className="relative py-4 overflow-x-auto">
             {/* Horizontal Line */}
             <div className="absolute top-1/2 left-0 right-0 h-px bg-white/10 transform -translate-y-1/2 min-w-[900px]" />
 
@@ -179,7 +179,7 @@ export default function Slide30() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.15 + idx * 0.03 }}
                     className="relative flex items-center justify-center"
-                    style={{ height: '120px' }}
+                    style={{ height: '140px' }}
                     onMouseEnter={() => setHoveredMonth(delivery.month)}
                     onMouseLeave={() => setHoveredMonth(null)}
                   >
@@ -238,7 +238,7 @@ export default function Slide30() {
         </motion.div>
 
         {/* Detail Panel — appears on hover */}
-        <div className="flex-1 min-h-0">
+        <div className="min-h-[180px]">
           <AnimatePresence mode="wait">
             {hoveredMonth !== null ? (
               <motion.div
