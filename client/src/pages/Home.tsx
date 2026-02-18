@@ -158,15 +158,32 @@ export default function Home() {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Ignore keyboard navigation when user is typing in an input, textarea, or contentEditable
+      // Ignore keyboard navigation when user is interacting with any editable/focusable element
       const target = e.target as HTMLElement;
+      const tagName = target.tagName;
+
+      // Skip if target is any form element or editable content
       if (
-        target.tagName === "INPUT" ||
-        target.tagName === "TEXTAREA" ||
-        target.tagName === "SELECT" ||
+        tagName === "INPUT" ||
+        tagName === "TEXTAREA" ||
+        tagName === "SELECT" ||
+        tagName === "OPTION" ||
         target.isContentEditable ||
-        target.closest("[contenteditable=\"true\"]")
+        target.closest("[contenteditable]") ||
+        target.closest("[contenteditable=\"true\"]") ||
+        target.closest("[contenteditable=\"plaintext-only\"]") ||
+        target.getAttribute("role") === "textbox" ||
+        target.getAttribute("role") === "searchbox" ||
+        target.getAttribute("role") === "combobox" ||
+        target.closest("[role=\"dialog\"]") ||
+        target.closest("[role=\"textbox\"]") ||
+        target.closest("form")
       ) {
+        return;
+      }
+
+      // Also skip if inside an iframe overlay or editor panel (Management UI)
+      if (window.self !== window.top) {
         return;
       }
 
