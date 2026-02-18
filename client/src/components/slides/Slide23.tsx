@@ -14,27 +14,22 @@ const pillars = [
   {
     icon: Target,
     title: "Controle e Organização → Resultados Tangíveis",
-    description: "Gestão completa do ciclo comercial com registro estruturado de todas as interações",
   },
   {
     icon: Bot,
     title: "IA e Automação → Produtividade Multiplicada",
-    description: "Tecnologia que libera o consultor para focar em relacionamento de alto valor",
   },
   {
     icon: BarChart3,
     title: "Dados Precisos → Decisões Assertivas",
-    description: "Indicadores acionáveis que direcionam estratégia e execução em tempo real",
   },
   {
     icon: Zap,
     title: "Agilidade → Relacionamento Fortalecido",
-    description: "Alertas e ações preventivas que reduzem inativação e fortalecem parcerias",
   },
   {
     icon: Search,
     title: "Inteligência de Campo → Estratégias Conjuntas",
-    description: "Feedback estruturado do campo que retroalimenta a estratégia comercial",
   },
 ];
 
@@ -133,7 +128,7 @@ export default function Slide23() {
                   </div>
                 </div>
                 <h4 className="text-sm font-bold text-[#EDEDEF] text-center mb-2 leading-tight">{pillar.title}</h4>
-                <p className="text-xs text-[#8A8A8E] text-center leading-snug">{pillar.description}</p>
+
               </div>
             ))}
           </div>
