@@ -30,11 +30,11 @@ export default function Slide32() {
         >
           <div className="flex items-center justify-center gap-2 mb-1">
             <DollarSign className="w-7 h-7 text-[#EDEDEF]" />
-            <h2 className="text-xl sm:text-2xl font-bold text-[#EDEDEF]">
+            <h2 className="font-extrabold tracking-tight sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
               AUTOLINE - Investimento Mensal (12 Meses)
             </h2>
           </div>
-          <p className="text-xs text-[#8A8A8E] max-w-4xl mx-auto leading-snug">
+          <p className="text-[#8A8A8E] max-w-4xl mx-auto leading-snug" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             Projeção do investimento mensal ao longo de um ano, evidenciando o aumento gradual dos recursos alocados.
           </p>
         </motion.div>

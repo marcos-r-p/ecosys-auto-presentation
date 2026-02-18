@@ -116,7 +116,7 @@ export default function Slide6() {
               Proposta Atual
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#EDEDEF] mb-2">
+          <h2 className="font-extrabold tracking-tight sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             Ecossistema{" "}
             <span className="text-[#EDEDEF]">
               Tribo de Veículos

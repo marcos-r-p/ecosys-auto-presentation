@@ -21,11 +21,11 @@ export default function SlideInvestimento2() {
         >
           <div className="flex items-center justify-center gap-2 mb-0.5">
             <Shield className="w-5 h-5 text-[#2B7FFF]" />
-            <h2 className="text-lg sm:text-xl font-bold text-[#EDEDEF]">
+            <h2 className="font-extrabold tracking-tight text-lg sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(18px, 2.8vh, 36px)', marginBottom: 'clamp(4px, 0.6vh, 10px)', lineHeight: '1.1' }}>
               Sustentação e Evolução Contínua
             </h2>
           </div>
-          <p className="text-[10px] text-[#8A8A8E] max-w-5xl mx-auto leading-snug">
+          <p className="text-[#8A8A8E] text-[10px] max-w-5xl mx-auto leading-snug" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             Após a entrega dos roadmaps, entramos num modelo de operação contínua com sustentação mínima de 4 anos 
             e custo por hora para novos desenvolvimentos.
           </p>

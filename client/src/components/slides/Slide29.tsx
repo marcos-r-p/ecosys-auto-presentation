@@ -93,7 +93,7 @@ export default function Slide29() {
         >
           <div className="flex items-center justify-center gap-3 mb-3">
             <Bot className="w-14 h-14 text-[#2B7FFF]" />
-            <h2 className="text-5xl font-bold text-[#EDEDEF]">
+            <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
               Impacto Estratégico do <span className="text-[#2B7FFF]">GIO</span>
             </h2>
           </div>

@@ -14,13 +14,13 @@ export default function Slide18() {
           className="text-center mb-10"
         >
           
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#EDEDEF] mb-4">
+          <h2 className="font-extrabold tracking-tight sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             A Plataforma de Conteúdo:{" "}
             <span className="text-[#EDEDEF]">
               Transparência, Credibilidade e Gestão
             </span>
           </h2>
-          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-[#8A8A8E] text-xl font-medium max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             A Plataforma de Conteúdo Autoline é um pilar estratégico que atua em três frentes para garantir a máxima transparência e informação detalhada no marketplace. Essa sinergia eleva o desempenho orgânico (SEO) e qualifica drasticamente o lead, reduzindo a fricção na compra.
           </p>
         </motion.div>

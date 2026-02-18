@@ -57,7 +57,7 @@ export default function Slide15() {
           className="text-center mb-10"
         >
           
-          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-4">
+          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             <img
               src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png"
               alt="Autoline"

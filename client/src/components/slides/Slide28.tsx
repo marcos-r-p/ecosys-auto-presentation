@@ -48,7 +48,7 @@ export default function Slide28() {
         >
           <div className="flex items-center justify-center gap-3 mb-2">
             <Bot className="w-14 h-14 text-[#2B7FFF]" />
-            <h2 className="text-5xl font-bold text-[#2B7FFF]">
+            <h2 className="font-extrabold tracking-tight text-[#2B7FFF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
               Novo GIO
             </h2>
           </div>

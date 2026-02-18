@@ -152,10 +152,10 @@ export default function Slide31() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-lg sm:text-xl font-bold text-[#EDEDEF] mb-0.5">
+          <h2 className="font-extrabold tracking-tight text-lg sm: text-[#EDEDEF] .5" style={{ fontSize: 'clamp(18px, 2.8vh, 36px)', marginBottom: 'clamp(4px, 0.6vh, 10px)', lineHeight: '1.1' }}>
             Roadmap de Lançamento por Fases
           </h2>
-          <p className="text-[11px] text-[#8A8A8E]">
+          <p className="text-[#8A8A8E] text-[11px]" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             <span className="text-[#2B7FFF] font-semibold">Marketplace Autoline</span> + <span className="font-semibold">Gestor Autoline</span> + <span className="text-[#2B7FFF] font-bold">Novo GIO</span>
           </p>
         </motion.div>

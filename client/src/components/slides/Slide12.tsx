@@ -42,10 +42,10 @@ export default function Slide12() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#EDEDEF] mb-2 md:mb-3">
+          <h2 className="font-extrabold tracking-tight sm: md: text-[#EDEDEF] md:" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             Copiloto <span className="text-[#2B7FFF]">Autoline</span>
           </h2>
-          <p className="text-sm sm:text-base text-[#8A8A8E] max-w-5xl mx-auto leading-relaxed">
+          <p className="text-[#8A8A8E] sm: max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             Uma suíte de agentes de IA que trabalham 24/7, otimizando cada etapa do ciclo de vendas, gestão financeira e pós-venda.
           </p>
         </motion.div>

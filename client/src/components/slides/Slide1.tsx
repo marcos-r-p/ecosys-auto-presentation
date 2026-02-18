@@ -38,10 +38,10 @@ export default function Slide1() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex flex-col gap-3"
         >
-          <h1 className="text-3xl sm:text-2xl sm:text-3xl md:text-5xl font-semibold text-[#EDEDEF] leading-tight">
+          <h1 className="font-extrabold text-[#EDEDEF] tracking-tight" style={{ fontSize: 'clamp(28px, 5vh, 64px)', lineHeight: '1.1' }}>
             Ecossistema <span className="text-brand-blue">Autoline</span>
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl font-normal text-[#8A8A8E] leading-snug">
+          <p className="text-[#8A8A8E] leading-snug" style={{ fontSize: 'clamp(14px, 2.5vh, 32px)' }}>
             Transformando Revendas em Hubs Financeiros
           </p>
         </motion.div>

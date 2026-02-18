@@ -76,7 +76,7 @@ export default function Slide24() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-xl sm:text-2xl font-bold text-[#EDEDEF] mb-1">
+          <h2 className="font-extrabold tracking-tight sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(18px, 2.8vh, 36px)', marginBottom: 'clamp(4px, 0.6vh, 10px)', lineHeight: '1.1' }}>
             <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span>
             <span className="text-[#EDEDEF]">: Funcionalidades e Tecnologia</span>
           </h2>

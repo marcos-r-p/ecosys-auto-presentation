@@ -46,13 +46,13 @@ export default function Slide4() {
           className="text-center"
         >
           
-          <h2 className="text-2xl sm:text-3xl md:text-2xl sm:text-3xl font-bold text-[#EDEDEF] mb-2 md:mb-3">
+          <h2 className="font-extrabold tracking-tight sm: md: sm: text-[#EDEDEF] md:" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             O Desafio do{" "}
             <span className="text-[#EDEDEF]">
               Bradesco
             </span>
           </h2>
-          <p className="text-[#8A8A8E] text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
+          <p className="text-[#8A8A8E] sm: md:text-lg max-w-3xl mx-auto" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             A baixa adoção não é de produto. É de integração operacional.
           </p>
         </motion.div>

@@ -121,11 +121,11 @@ export default function SlideInvestimento1() {
         >
           <div className="flex items-center justify-center gap-2 mb-0.5">
             <Rocket className="w-5 h-5 text-[#2B7FFF]" />
-            <h2 className="text-lg sm:text-xl font-bold text-[#EDEDEF]">
+            <h2 className="font-extrabold tracking-tight text-lg sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(18px, 2.8vh, 36px)', marginBottom: 'clamp(4px, 0.6vh, 10px)', lineHeight: '1.1' }}>
               Investimento de Estruturação — Ano 1
             </h2>
           </div>
-          <p className="text-[10px] text-[#8A8A8E] max-w-4xl mx-auto leading-snug">
+          <p className="text-[#8A8A8E] text-[10px] max-w-4xl mx-auto leading-snug" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             Entregas vinculadas a valores por fase. Antecipação de entregas permite antecipação de faturamento.
           </p>
         </motion.div>

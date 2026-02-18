@@ -40,7 +40,7 @@ export default function Slide3() {
               Momento Ideal
             </span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-2xl sm:text-3xl font-bold text-[#EDEDEF]">
+          <h2 className="font-extrabold tracking-tight sm: md: sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             Por Que Esta Parceria Faz Sentido{" "}
             <span className="text-[#EDEDEF]">
               Agora

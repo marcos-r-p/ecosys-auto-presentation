@@ -40,11 +40,11 @@ export default function SlideEcosysWhy() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-2xl sm:text-3xl font-semibold text-[#EDEDEF] mb-3">
+          <h2 className="font-extrabold tracking-tight sm: md: sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             Por que a{" "}
             <span className="text-[#2B7FFF]">ecosys AUTO</span>?
           </h2>
-          <p className="text-base sm:text-lg text-[#8A8A8E] font-normal max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[#8A8A8E] sm:text-lg font-normal max-w-3xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             Combinamos a agilidade e inovação de uma startup com a maturidade e solidez de grupos corporativos consolidados — o equilíbrio perfeito para uma parceria estratégica com o Bradesco.
           </p>
         </motion.div>

@@ -41,12 +41,12 @@ export default function Slide22() {
           transition={{ duration: 0.6 }}
           className="text-center mb-6"
         >
-          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-4">
+          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             <span className="text-[#EDEDEF]">
               APIs Abertas: Expandindo o Ecossistema
             </span>
           </h2>
-          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-snug">
+          <p className="text-[#8A8A8E] text-xl font-medium max-w-5xl mx-auto leading-snug" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             Posicionando a Autoline como hub central do comércio automotivo.
           </p>
         </motion.div>

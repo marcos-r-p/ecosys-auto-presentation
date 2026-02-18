@@ -49,13 +49,13 @@ export default function Slide20() {
           className="text-center mb-8"
         >
           
-          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-4">
+          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             Integrações e Dados:{" "}
             <span className="text-[#EDEDEF]">
               A Inteligência que Conecta o Ecossistema
             </span>
           </h2>
-          <p className="text-lg text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-[#8A8A8E] text-lg font-medium max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             Este pilar é a infraestrutura tecnológica que coleta, processa e transforma dados brutos em inteligência acionável, criando valor para lojistas, consumidores, força comercial e o Bradesco, garantindo a fluidez de todo o ecossistema Autoline.
           </p>
         </motion.div>

@@ -13,7 +13,7 @@ export default function Slide5() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-3xl sm:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold">
+          <h2 className="font-extrabold tracking-tight sm: sm: md: lg:" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             Proposta{" "}
             <span className="text-[#EDEDEF]">
               Inicial

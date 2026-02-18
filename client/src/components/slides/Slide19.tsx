@@ -49,13 +49,13 @@ export default function Slide19() {
           className="text-center mb-10"
         >
           
-          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-4">
+          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             App do Marketplace:{" "}
             <span className="text-[#EDEDEF]">
               A Loja Aberta 24/7
             </span>
           </h2>
-          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-[#8A8A8E] text-xl font-medium max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             O App do Marketplace Autoline é a experiência nativa desenvolvida para iOS e Android, otimizada para o consumo mobile.
           </p>
         </motion.div>

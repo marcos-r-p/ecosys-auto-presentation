@@ -14,13 +14,13 @@ export default function Slide11() {
           className="text-center mb-10"
         >
           
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#EDEDEF] mb-4">
+          <h2 className="font-extrabold tracking-tight sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             <span className="text-[#EDEDEF]">
               Comunicação Unificada
             </span>{" "}
             para Maximizar a Conversão
           </h2>
-          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-[#8A8A8E] text-xl font-medium max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             O Gestor Autoline integra e otimiza a comunicação do lojista, garantindo que nenhuma oportunidade de venda seja perdida.
           </p>
         </motion.div>

@@ -13,10 +13,10 @@ export default function Slide34() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-lg sm:text-xl font-bold text-[#EDEDEF] mb-1">
+          <h2 className="font-extrabold tracking-tight text-lg sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             Modelo Pós-Lançamento: Sustentação e Evolução Contínua
           </h2>
-          <p className="text-[10px] text-[#8A8A8E] max-w-5xl mx-auto leading-snug">
+          <p className="text-[#8A8A8E] text-[10px] max-w-5xl mx-auto leading-snug" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             Após a entrega dos roadmaps (Autoline 12 meses + GIO 6 meses), entramos num modelo de operação contínua que garante estabilidade, 
             segurança e evolução constante do ecossistema completo.
           </p>

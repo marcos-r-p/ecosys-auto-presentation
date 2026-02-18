@@ -41,13 +41,13 @@ export default function Slide16() {
           className="text-center mb-10"
         >
           
-          <h2 className="text-5xl font-bold text-[#EDEDEF] mb-4">
+          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             Catálogo de Veículos:{" "}
             <span className="text-[#EDEDEF]">
               Encontre o Carro Perfeito
             </span>
           </h2>
-          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-[#8A8A8E] text-xl font-medium max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             O Catálogo de Veículos da Autoline oferece uma experiência de busca intuitiva e poderosa, permitindo que os consumidores encontrem o veículo ideal com facilidade e precisão, através de recursos avançados de filtragem e inteligência artificial.
           </p>
         </motion.div>

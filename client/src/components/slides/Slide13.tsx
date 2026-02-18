@@ -57,13 +57,13 @@ export default function Slide13() {
           className="text-center"
         >
           
-          <h2 className="text-3xl font-bold text-[#EDEDEF] mb-3">
+          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             Originação e Produtos Bradesco{" "}
             <span className="text-[#EDEDEF]">
               no Momento Certo
             </span>
           </h2>
-          <p className="text-base text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             A "mágica" acontece quando os produtos financeiros do Bradesco são oferecidos de forma integrada e contextualizada dentro do processo natural de vendas da revenda.
           </p>
         </motion.div>
