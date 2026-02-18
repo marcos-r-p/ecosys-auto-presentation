@@ -165,12 +165,12 @@ export default function Slide30() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center shrink-0"
-        style={{ paddingTop: 'clamp(8px, 1.5vh, 24px)', paddingBottom: 'clamp(2px, 0.5vh, 8px)' }}
+        style={{ paddingTop: 'clamp(16px, 3vh, 48px)', paddingBottom: 'clamp(6px, 1.5vh, 20px)' }}
       >
-        <h2 className="font-bold text-[#EDEDEF]" style={{ fontSize: 'clamp(16px, 2.5vh, 32px)', marginBottom: 'clamp(2px, 0.3vh, 6px)' }}>
+        <h2 className="font-extrabold text-[#EDEDEF] tracking-tight" style={{ fontSize: 'clamp(24px, 4.5vh, 56px)', marginBottom: 'clamp(4px, 0.8vh, 12px)', lineHeight: '1.1' }}>
           Cronograma de Entregas Integrado
         </h2>
-        <p className="text-[#8A8A8E]" style={{ fontSize: 'clamp(9px, 1.2vh, 15px)' }}>
+        <p className="text-[#8A8A8E]" style={{ fontSize: 'clamp(11px, 1.6vh, 20px)' }}>
           Clique em cada mês para ver as entregas detalhadas
         </p>
       </motion.div>
