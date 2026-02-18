@@ -2,182 +2,267 @@ import { motion } from "motion/react";
 import { Database, Brain, Building2 } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
-const blocks = [
-  {
-    icon: Database,
-    title: "Base Operacional",
-    subtitle: "ECOSYS CORE",
-    color: "#2B7FFF",
-    bg: "rgba(43,127,255,0.06)",
-    borderColor: "rgba(43,127,255,0.18)",
-    items: [
-      "Gestão de estoque e vendas",
-      "CRM e funil comercial",
-      "Controle financeiro e DRE",
-      "Comunicação omnichannel",
-      "App do vendedor mobile",
-    ],
-  },
-  {
-    icon: Brain,
-    title: "Inteligência IA",
-    subtitle: "COPILOTO",
-    color: "#8B5CF6",
-    bg: "rgba(139,92,246,0.06)",
-    borderColor: "rgba(139,92,246,0.18)",
-    items: [
-      "Priorização de oportunidades",
-      "Health Score de lojistas",
-      "Alertas de performance",
-      "Margem e precificação",
-      "Insights para GEFINS",
-    ],
-  },
-  {
-    icon: Building2,
-    title: "Exclusivo Bradesco",
-    subtitle: "DIFERENCIAL",
-    color: "#CC092F",
-    bg: "rgba(204,9,47,0.06)",
-    borderColor: "rgba(204,9,47,0.18)",
-    items: [
-      "Originação de crédito e seguros",
-      "Share-of-wallet em tempo real",
-      "Alertas de cross-sell",
-      "Dashboard executivo",
-      "Integração sistemas Bradesco",
-    ],
-  },
-];
-
 export default function Slide9() {
   return (
-    <div className="flex flex-col h-full px-6 sm:px-10 md:px-14 lg:px-20 pt-4 sm:pt-5 pb-2 overflow-hidden">
-      {/* Header — dominante */}
+    <div className="flex flex-col h-full px-6 sm:px-8 md:px-12 lg:px-16 pt-4 pb-1 overflow-hidden">
+      {/* Header — título dominante */}
       <motion.div
-        initial={{ opacity: 0, y: -16 }}
+        initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45 }}
-        className="text-center mb-4 md:mb-5"
+        transition={{ duration: 0.4 }}
+        className="text-center mb-3"
       >
         <h2
-          className="font-black tracking-tight text-[#EDEDEF] leading-[1.05]"
-          style={{ fontSize: "clamp(26px, 4.2vh, 54px)" }}
+          className="font-black tracking-tight text-[#EDEDEF] leading-none"
+          style={{ fontSize: "clamp(28px, 4.5vh, 56px)" }}
         >
           Gestor Autoline
         </h2>
         <p
-          className="text-[#8A8A8E] font-medium mt-1 max-w-3xl mx-auto"
-          style={{ fontSize: "clamp(13px, 1.6vh, 20px)" }}
+          className="text-[#8A8A8E] font-medium mt-1"
+          style={{ fontSize: "clamp(13px, 1.5vh, 18px)" }}
         >
           Plataforma que conecta revenda, força comercial e originação financeira
         </p>
       </motion.div>
 
-      {/* Three Blocks — preenchidos */}
+      {/* Three Blocks — flex-1 para preencher toda a altura disponível */}
       <div className="flex-1 grid grid-cols-3 gap-3 md:gap-4 min-h-0">
-        {blocks.map((block, i) => (
-          <motion.div
-            key={block.title}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 + i * 0.12 }}
-            className="flex"
+        {/* BLOCO 1 — Base Operacional */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.12 }}
+          className="flex"
+        >
+          <div
+            className="flex flex-col w-full rounded-2xl px-5 md:px-6 py-4 md:py-5"
+            style={{
+              background: "rgba(43,127,255,0.05)",
+              border: "1px solid rgba(43,127,255,0.15)",
+            }}
           >
+            {/* Icon grande + Title */}
+            <div className="flex items-center gap-3 mb-3">
+              <div
+                className="w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{
+                  background: "linear-gradient(135deg, rgba(43,127,255,0.2), rgba(43,127,255,0.08))",
+                  border: "1.5px solid rgba(43,127,255,0.35)",
+                }}
+              >
+                <Database className="w-7 h-7 md:w-8 md:h-8 text-[#2B7FFF]" />
+              </div>
+              <div>
+                <h3
+                  className="font-extrabold text-[#EDEDEF] leading-tight"
+                  style={{ fontSize: "clamp(18px, 2.5vh, 30px)" }}
+                >
+                  Base Operacional
+                </h3>
+                <span
+                  className="font-bold uppercase tracking-[0.15em] text-[#2B7FFF]"
+                  style={{ fontSize: "clamp(9px, 1vh, 12px)" }}
+                >
+                  ECOSYS CORE
+                </span>
+              </div>
+            </div>
+
+            {/* Divider */}
             <div
-              className="flex flex-col w-full rounded-2xl p-5 md:p-6"
+              className="h-px w-full mb-4"
+              style={{ background: "linear-gradient(to right, rgba(43,127,255,0.4), transparent)" }}
+            />
+
+            {/* Items — espaçados para preencher */}
+            <ul className="flex flex-col justify-between flex-1 gap-3 md:gap-4">
+              {[
+                "Gestão de estoque e vendas",
+                "CRM e funil comercial",
+                "Controle financeiro e DRE",
+                "Comunicação omnichannel",
+                "App do vendedor mobile",
+              ].map((item, j) => (
+                <li key={j} className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full flex-shrink-0 bg-[#2B7FFF] opacity-70" />
+                  <span
+                    className="text-[#C8C8CD] font-medium leading-snug"
+                    style={{ fontSize: "clamp(14px, 1.8vh, 22px)" }}
+                  >
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+
+        {/* BLOCO 2 — Inteligência IA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.24 }}
+          className="flex"
+        >
+          <div
+            className="flex flex-col w-full rounded-2xl px-5 md:px-6 py-4 md:py-5"
+            style={{
+              background: "rgba(139,92,246,0.05)",
+              border: "1px solid rgba(139,92,246,0.15)",
+            }}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div
+                className="w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{
+                  background: "linear-gradient(135deg, rgba(139,92,246,0.2), rgba(139,92,246,0.08))",
+                  border: "1.5px solid rgba(139,92,246,0.35)",
+                }}
+              >
+                <Brain className="w-7 h-7 md:w-8 md:h-8 text-[#8B5CF6]" />
+              </div>
+              <div>
+                <h3
+                  className="font-extrabold text-[#EDEDEF] leading-tight"
+                  style={{ fontSize: "clamp(18px, 2.5vh, 30px)" }}
+                >
+                  Inteligência IA
+                </h3>
+                <span
+                  className="font-bold uppercase tracking-[0.15em] text-[#8B5CF6]"
+                  style={{ fontSize: "clamp(9px, 1vh, 12px)" }}
+                >
+                  COPILOTO
+                </span>
+              </div>
+            </div>
+
+            <div
+              className="h-px w-full mb-4"
+              style={{ background: "linear-gradient(to right, rgba(139,92,246,0.4), transparent)" }}
+            />
+
+            <ul className="flex flex-col justify-between flex-1 gap-3 md:gap-4">
+              {[
+                "Priorização de oportunidades",
+                "Health Score de lojistas",
+                "Alertas de performance",
+                "Margem e precificação",
+                "Insights para GEFINS",
+              ].map((item, j) => (
+                <li key={j} className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full flex-shrink-0 bg-[#8B5CF6] opacity-70" />
+                  <span
+                    className="text-[#C8C8CD] font-medium leading-snug"
+                    style={{ fontSize: "clamp(14px, 1.8vh, 22px)" }}
+                  >
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+
+        {/* BLOCO 3 — Exclusivo Bradesco (DESTAQUE) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.36 }}
+          className="flex"
+        >
+          <div
+            className="flex flex-col w-full rounded-2xl px-5 md:px-6 py-4 md:py-5 relative overflow-hidden"
+            style={{
+              background: "rgba(204,9,47,0.08)",
+              border: "2px solid rgba(204,9,47,0.35)",
+              boxShadow: "0 0 40px rgba(204,9,47,0.08), inset 0 1px 0 rgba(204,9,47,0.15)",
+            }}
+          >
+            {/* Badge de destaque */}
+            <div
+              className="absolute top-0 right-0 px-3 py-1 rounded-bl-lg font-bold uppercase tracking-wider text-white"
               style={{
-                background: block.bg,
-                border: `1px solid ${block.borderColor}`,
+                fontSize: "clamp(8px, 0.9vh, 11px)",
+                background: "linear-gradient(135deg, #CC092F, #E01040)",
               }}
             >
-              {/* Icon + Title */}
-              <div className="flex items-center gap-3 mb-1">
-                <div
-                  className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{
-                    background: `linear-gradient(135deg, ${block.color}25, ${block.color}10)`,
-                    border: `1.5px solid ${block.color}40`,
-                  }}
-                >
-                  <block.icon
-                    className="w-6 h-6 md:w-7 md:h-7"
-                    style={{ color: block.color }}
-                  />
-                </div>
-                <div>
-                  <h3
-                    className="font-extrabold text-[#EDEDEF] leading-tight"
-                    style={{ fontSize: "clamp(16px, 2.2vh, 26px)" }}
-                  >
-                    {block.title}
-                  </h3>
-                  <span
-                    className="font-bold uppercase tracking-[0.15em]"
-                    style={{
-                      fontSize: "clamp(9px, 1vh, 12px)",
-                      color: block.color,
-                    }}
-                  >
-                    {block.subtitle}
-                  </span>
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div
-                className="h-px w-full my-3"
-                style={{
-                  background: `linear-gradient(to right, ${block.color}50, ${block.color}10)`,
-                }}
-              />
-
-              {/* Items — texto grande, sem ícones pequenos */}
-              <ul className="flex flex-col gap-2.5 md:gap-3 flex-1">
-                {block.items.map((item, j) => (
-                  <motion.li
-                    key={j}
-                    initial={{ opacity: 0, x: -8 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.35,
-                      delay: 0.3 + i * 0.12 + j * 0.05,
-                    }}
-                    className="flex items-center gap-2.5"
-                  >
-                    <div
-                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: block.color, opacity: 0.7 }}
-                    />
-                    <span
-                      className="text-[#C8C8CD] font-medium leading-snug"
-                      style={{ fontSize: "clamp(13px, 1.6vh, 18px)" }}
-                    >
-                      {item}
-                    </span>
-                  </motion.li>
-                ))}
-              </ul>
+              Diferencial
             </div>
-          </motion.div>
-        ))}
+
+            {/* Glow sutil no fundo */}
+            <div
+              className="absolute -top-20 -right-20 w-48 h-48 rounded-full opacity-20 pointer-events-none"
+              style={{
+                background: "radial-gradient(circle, rgba(204,9,47,0.3), transparent 70%)",
+              }}
+            />
+
+            <div className="flex items-center gap-3 mb-3 relative z-10">
+              <div
+                className="w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{
+                  background: "linear-gradient(135deg, rgba(204,9,47,0.25), rgba(204,9,47,0.1))",
+                  border: "1.5px solid rgba(204,9,47,0.45)",
+                }}
+              >
+                <Building2 className="w-7 h-7 md:w-8 md:h-8 text-[#CC092F]" />
+              </div>
+              <div>
+                <h3
+                  className="font-extrabold text-white leading-tight"
+                  style={{ fontSize: "clamp(18px, 2.5vh, 30px)" }}
+                >
+                  Exclusivo Bradesco
+                </h3>
+                <span
+                  className="font-bold uppercase tracking-[0.15em] text-[#CC092F]"
+                  style={{ fontSize: "clamp(9px, 1vh, 12px)" }}
+                >
+                  DIFERENCIAL COMPETITIVO
+                </span>
+              </div>
+            </div>
+
+            <div
+              className="h-px w-full mb-4 relative z-10"
+              style={{ background: "linear-gradient(to right, rgba(204,9,47,0.5), transparent)" }}
+            />
+
+            <ul className="flex flex-col justify-between flex-1 gap-3 md:gap-4 relative z-10">
+              {[
+                "Originação de crédito e seguros",
+                "Share-of-wallet em tempo real",
+                "Alertas de cross-sell",
+                "Dashboard executivo",
+                "Integração sistemas Bradesco",
+              ].map((item, j) => (
+                <li key={j} className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full flex-shrink-0 bg-[#CC092F]" />
+                  <span
+                    className="text-[#E0E0E4] font-semibold leading-snug"
+                    style={{ fontSize: "clamp(14px, 1.8vh, 22px)" }}
+                  >
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Footer message — compacto */}
-      <motion.div
+      {/* Footer message */}
+      <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.7 }}
-        className="mt-3 md:mt-4"
+        transition={{ duration: 0.4, delay: 0.6 }}
+        className="text-center text-[#6A6A6E] italic mt-2"
+        style={{ fontSize: "clamp(11px, 1.2vh, 15px)" }}
       >
-        <p
-          className="text-center text-[#6A6A6E] italic"
-          style={{ fontSize: "clamp(11px, 1.2vh, 15px)" }}
-        >
-          Infraestrutura digital da distribuição Bradesco no mercado de
-          seminovos
-        </p>
-      </motion.div>
+        Infraestrutura digital da distribuição Bradesco no mercado de seminovos
+      </motion.p>
 
       <SlideFooter />
     </div>
