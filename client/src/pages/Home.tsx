@@ -102,10 +102,10 @@ const slideEntries: SlideEntry[] = [
   // 07 — Novo GIO
   { type: "separator", chapterIndex: 6, separatorData: CHAPTERS[6] },
   { type: "content", component: Slide23, chapterIndex: 6 },
+  { type: "content", component: Slide28, chapterIndex: 6 },
+  { type: "content", component: Slide27, chapterIndex: 6 },
   { type: "content", component: Slide24, chapterIndex: 6 },
   { type: "content", component: Slide26, chapterIndex: 6 },
-  { type: "content", component: Slide27, chapterIndex: 6 },
-  { type: "content", component: Slide28, chapterIndex: 6 },
   { type: "content", component: Slide25, chapterIndex: 6 },
 
   // 08 — Investimento e Roadmap
