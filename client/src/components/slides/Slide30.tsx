@@ -105,104 +105,122 @@ const autolineDeliveries: TimelineMonth[] = [
   },
 ];
 
-export default function Slide30() {
-  const [hoveredMonth, setHoveredMonth] = useState<number | null>(null);
+/* Reusable detail panel */
+function DetailPanel({ data, monthNum }: { data: TimelineMonth; monthNum: number }) {
+  return (
+    <motion.div
+      key={`panel-${monthNum}`}
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 8 }}
+      transition={{ duration: 0.2 }}
+      className="w-full bg-white/[0.04] border border-[#2B7FFF]/20 rounded-lg backdrop-blur-sm"
+      style={{ padding: 'clamp(8px, 1.2vh, 16px)' }}
+    >
+      <div className="flex items-center gap-2 pb-1.5 border-b border-white/[0.08]" style={{ marginBottom: 'clamp(4px, 0.6vh, 10px)' }}>
+        <Rocket style={{ width: 'clamp(12px, 1.4vh, 18px)', height: 'clamp(12px, 1.4vh, 18px)' }} className="text-[#2B7FFF]" />
+        <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: 'clamp(10px, 1.3vh, 16px)' }}>
+          Mês {monthNum} — {data.title}
+        </h3>
+      </div>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4" style={{ gap: 'clamp(4px, 0.6vh, 10px)' }}>
+        {data.details.map((detail, idx) => {
+          const Icon = detail.icon;
+          return (
+            <div key={idx} className="bg-white/[0.03] border border-white/[0.06] rounded-md" style={{ padding: 'clamp(4px, 0.7vh, 10px)' }}>
+              <div className="flex items-center mb-1" style={{ gap: 'clamp(3px, 0.4vh, 8px)' }}>
+                <Icon style={{ width: 'clamp(10px, 1.2vh, 16px)', height: 'clamp(10px, 1.2vh, 16px)' }} className="text-[#2B7FFF] shrink-0" />
+                <span className="font-bold text-[#EDEDEF]" style={{ fontSize: 'clamp(8px, 1vh, 13px)' }}>{detail.product}</span>
+              </div>
+              <ul style={{ gap: 'clamp(1px, 0.3vh, 4px)' }} className="flex flex-col">
+                {detail.items.map((item, i) => (
+                  <li key={i} className="text-[#8A8A8E] flex items-start" style={{ gap: 'clamp(2px, 0.3vh, 6px)', fontSize: 'clamp(7px, 0.9vh, 12px)' }}>
+                    <span className="text-[#2B7FFF] shrink-0" style={{ marginTop: '2px', fontSize: 'clamp(4px, 0.5vh, 8px)' }}>●</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
+    </motion.div>
+  );
+}
 
-  const hoveredData = hoveredMonth !== null
-    ? autolineDeliveries.find(d => d.month === hoveredMonth)
+export default function Slide30() {
+  const [activeMonth, setActiveMonth] = useState<number | null>(null);
+
+  const activeData = activeMonth !== null
+    ? autolineDeliveries.find(d => d.month === activeMonth)
     : null;
 
-  const isHoveredOdd = hoveredMonth !== null ? hoveredMonth % 2 === 1 : true;
+  const isActiveOdd = activeMonth !== null ? activeMonth % 2 === 1 : true;
 
   return (
-    <div className="flex flex-col items-center h-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 overflow-hidden">
-      {/* Título próximo ao header */}
+    <div className="flex flex-col h-full overflow-hidden" style={{ padding: '0 clamp(16px, 3vw, 80px)' }}>
+      {/* Título */}
       <motion.div
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center pt-10 pb-1"
+        className="text-center shrink-0"
+        style={{ paddingTop: 'clamp(8px, 1.5vh, 24px)', paddingBottom: 'clamp(2px, 0.5vh, 8px)' }}
       >
-        <h2 className="text-xl lg:text-2xl font-bold text-[#EDEDEF] mb-0.5">
+        <h2 className="font-bold text-[#EDEDEF]" style={{ fontSize: 'clamp(16px, 2.5vh, 32px)', marginBottom: 'clamp(2px, 0.3vh, 6px)' }}>
           Cronograma de Entregas Integrado
         </h2>
-        <p className="text-xs text-[#8A8A8E]">
+        <p className="text-[#8A8A8E]" style={{ fontSize: 'clamp(9px, 1.2vh, 15px)' }}>
           Clique em cada mês para ver as entregas detalhadas
         </p>
       </motion.div>
 
-      <div className="max-w-6xl w-full flex flex-col flex-1 justify-center">
-        {/* TOP DETAIL PANEL — for odd months (above timeline) */}
-        <div className="h-[280px] flex items-end pb-2">
+      {/* Área principal: flex-1 distribui o espaço proporcionalmente */}
+      <div className="flex-1 flex flex-col justify-center w-full max-w-7xl mx-auto" style={{ gap: 'clamp(4px, 0.5vh, 12px)' }}>
+        
+        {/* TOP DETAIL PANEL — meses ímpares (acima da timeline) */}
+        <div className="flex-1 flex items-end" style={{ paddingBottom: 'clamp(4px, 0.6vh, 12px)', maxHeight: '42%' }}>
           <AnimatePresence mode="wait">
-            {hoveredData && isHoveredOdd ? (
-              <motion.div
-                key={`top-${hoveredMonth}`}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.2 }}
-                className="w-full bg-white/[0.04] border border-[#2B7FFF]/20 rounded-lg p-3 backdrop-blur-sm"
-              >
-                <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-white/[0.08]">
-                  <Rocket className="w-3.5 h-3.5 text-[#2B7FFF]" />
-                  <h3 className="text-xs font-bold text-[#EDEDEF]">
-                    Mês {hoveredMonth} — {hoveredData.title}
-                  </h3>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                  {hoveredData.details.map((detail, idx) => {
-                    const Icon = detail.icon;
-                    return (
-                      <div key={idx} className="bg-white/[0.03] border border-white/[0.06] rounded-md p-2">
-                        <div className="flex items-center gap-1.5 mb-1">
-                          <Icon className="w-3 h-3 text-[#2B7FFF]" />
-                          <span className="text-[10px] font-bold text-[#EDEDEF]">{detail.product}</span>
-                        </div>
-                        <ul className="space-y-0.5">
-                          {detail.items.map((item, i) => (
-                            <li key={i} className="text-[9px] text-[#8A8A8E] flex items-start gap-1">
-                              <span className="text-[#2B7FFF] mt-0.5 text-[6px]">●</span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            ) : !hoveredData ? (
+            {activeData && isActiveOdd ? (
+              <DetailPanel data={activeData} monthNum={activeMonth!} />
+            ) : !activeData ? (
               <motion.div
                 key="placeholder-top"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 0.4 }}
                 exit={{ opacity: 0 }}
-                className="w-full flex items-center justify-center py-4"
+                className="w-full flex items-center justify-center"
               >
-                <div className="text-center">
-                  <div className="text-[11px] text-[#555]">👆 Passe o mouse sobre um mês para ver as entregas</div>
+                <div className="text-center" style={{ fontSize: 'clamp(9px, 1.1vh, 14px)' }}>
+                  <span className="text-[#555]">👆 Passe o mouse sobre um mês para ver as entregas</span>
                 </div>
               </motion.div>
             ) : null}
           </AnimatePresence>
         </div>
 
-        {/* TIMELINE — centered horizontal line with months */}
+        {/* TIMELINE — linha horizontal central com meses */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
+          className="shrink-0"
         >
-          <div className="relative py-1">
-            {/* Horizontal Line */}
+          <div className="relative" style={{ padding: 'clamp(2px, 0.4vh, 8px) 0' }}>
+            {/* Linha horizontal */}
             <div className="absolute top-1/2 left-0 right-0 h-px bg-white/10 transform -translate-y-1/2" />
 
-            {/* Months Grid */}
-            <div className="relative grid grid-cols-12 gap-0.5">
+            {/* Grid de meses */}
+            <div className="relative grid grid-cols-12" style={{ gap: 'clamp(1px, 0.3vw, 6px)' }}>
               {autolineDeliveries.map((delivery, idx) => {
                 const isOdd = delivery.month % 2 === 1;
-                const isHovered = hoveredMonth === delivery.month;
+                const isActive = activeMonth === delivery.month;
+
+                /* Tamanhos responsivos via clamp */
+                const dotSize = 'clamp(6px, 1vh, 14px)';
+                const connectorH = 'clamp(4px, 0.6vh, 10px)';
+                const labelFontSize = 'clamp(7px, 1vh, 14px)';
+                const rowH = 'clamp(36px, 5vh, 80px)';
 
                 return (
                   <motion.div
@@ -211,49 +229,51 @@ export default function Slide30() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.15 + idx * 0.03 }}
                     className="relative flex items-center justify-center cursor-pointer"
-                    style={{ height: '60px' }}
-                    onMouseEnter={() => setHoveredMonth(delivery.month)}
-                    onMouseLeave={() => setHoveredMonth(null)}
-                    onClick={() => setHoveredMonth(hoveredMonth === delivery.month ? null : delivery.month)}
+                    style={{ height: rowH }}
+                    onMouseEnter={() => setActiveMonth(delivery.month)}
+                    onMouseLeave={() => setActiveMonth(null)}
+                    onClick={() => setActiveMonth(activeMonth === delivery.month ? null : delivery.month)}
                   >
                     {isOdd ? (
                       <div className="absolute flex flex-col items-center" style={{ bottom: '50%' }}>
                         <div
-                          className={`rounded-md px-1 py-0.5 w-full flex flex-col items-center justify-center text-center transition-all duration-300 ${
-                            isHovered
+                          className={`rounded-md flex items-center justify-center text-center transition-all duration-300 ${
+                            isActive
                               ? "bg-[#2B7FFF]/20 border-2 border-[#2B7FFF] shadow-lg shadow-[#2B7FFF]/20 scale-110"
                               : delivery.highlight
                                 ? "bg-white/[0.06] border border-[#2B7FFF]/30"
                                 : "bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.06]"
                           }`}
+                          style={{ padding: 'clamp(1px, 0.3vh, 4px) clamp(2px, 0.4vw, 8px)', fontSize: labelFontSize }}
                         >
-                          <div className={`text-[8px] font-bold transition-colors duration-300 ${isHovered ? "text-[#2B7FFF]" : "text-[#8A8A8E]"}`}>
+                          <span className={`font-bold transition-colors duration-300 ${isActive ? "text-[#2B7FFF]" : "text-[#8A8A8E]"}`}>
                             M{delivery.month}
-                          </div>
+                          </span>
                         </div>
-                        <div className={`w-px h-1.5 transition-colors duration-300 ${isHovered ? "bg-[#2B7FFF]" : "bg-white/10"}`} />
-                        <div className={`w-2 h-2 rounded-full relative z-10 transition-all duration-300 ${
-                          isHovered ? "bg-[#2B7FFF] shadow-lg shadow-[#2B7FFF]/60 scale-150" : "bg-white/10 border border-white/20"
-                        }`} />
+                        <div className={`w-px transition-colors duration-300 ${isActive ? "bg-[#2B7FFF]" : "bg-white/10"}`} style={{ height: connectorH }} />
+                        <div className={`rounded-full relative z-10 transition-all duration-300 ${
+                          isActive ? "bg-[#2B7FFF] shadow-lg shadow-[#2B7FFF]/60 scale-150" : "bg-white/10 border border-white/20"
+                        }`} style={{ width: dotSize, height: dotSize }} />
                       </div>
                     ) : (
                       <div className="absolute flex flex-col items-center" style={{ top: '50%' }}>
-                        <div className={`w-2 h-2 rounded-full relative z-10 transition-all duration-300 ${
-                          isHovered ? "bg-[#2B7FFF] shadow-lg shadow-[#2B7FFF]/60 scale-150" : "bg-[#2B7FFF]/60 border border-[#2B7FFF]/40"
-                        }`} />
-                        <div className={`w-px h-1.5 transition-colors duration-300 ${isHovered ? "bg-[#2B7FFF]" : "bg-[#2B7FFF]/30"}`} />
+                        <div className={`rounded-full relative z-10 transition-all duration-300 ${
+                          isActive ? "bg-[#2B7FFF] shadow-lg shadow-[#2B7FFF]/60 scale-150" : "bg-[#2B7FFF]/60 border border-[#2B7FFF]/40"
+                        }`} style={{ width: dotSize, height: dotSize }} />
+                        <div className={`w-px transition-colors duration-300 ${isActive ? "bg-[#2B7FFF]" : "bg-[#2B7FFF]/30"}`} style={{ height: connectorH }} />
                         <div
-                          className={`rounded-md px-1 py-0.5 w-full flex flex-col items-center justify-center text-center transition-all duration-300 ${
-                            isHovered
+                          className={`rounded-md flex items-center justify-center text-center transition-all duration-300 ${
+                            isActive
                               ? "bg-[#2B7FFF]/20 border-2 border-[#2B7FFF] shadow-lg shadow-[#2B7FFF]/20 scale-110"
                               : delivery.highlight
                                 ? "bg-white/[0.06] border border-[#2B7FFF]/30"
                                 : "bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.06]"
                           }`}
+                          style={{ padding: 'clamp(1px, 0.3vh, 4px) clamp(2px, 0.4vw, 8px)', fontSize: labelFontSize }}
                         >
-                          <div className={`text-[8px] font-bold transition-colors duration-300 ${isHovered ? "text-white" : "text-[#2B7FFF]"}`}>
+                          <span className={`font-bold transition-colors duration-300 ${isActive ? "text-white" : "text-[#2B7FFF]"}`}>
                             M{delivery.month}
-                          </div>
+                          </span>
                         </div>
                       </div>
                     )}
@@ -264,46 +284,11 @@ export default function Slide30() {
           </div>
         </motion.div>
 
-        {/* BOTTOM DETAIL PANEL — for even months (below timeline) */}
-        <div className="h-[280px] flex items-start pt-2">
+        {/* BOTTOM DETAIL PANEL — meses pares (abaixo da timeline) */}
+        <div className="flex-1 flex items-start" style={{ paddingTop: 'clamp(4px, 0.6vh, 12px)', maxHeight: '42%' }}>
           <AnimatePresence mode="wait">
-            {hoveredData && !isHoveredOdd ? (
-              <motion.div
-                key={`bottom-${hoveredMonth}`}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.2 }}
-                className="w-full bg-white/[0.04] border border-[#2B7FFF]/20 rounded-lg p-3 backdrop-blur-sm"
-              >
-                <div className="flex items-center gap-2 mb-2 pb-1.5 border-b border-white/[0.08]">
-                  <Rocket className="w-3.5 h-3.5 text-[#2B7FFF]" />
-                  <h3 className="text-xs font-bold text-[#EDEDEF]">
-                    Mês {hoveredMonth} — {hoveredData.title}
-                  </h3>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                  {hoveredData.details.map((detail, idx) => {
-                    const Icon = detail.icon;
-                    return (
-                      <div key={idx} className="bg-white/[0.03] border border-white/[0.06] rounded-md p-2">
-                        <div className="flex items-center gap-1.5 mb-1">
-                          <Icon className="w-3 h-3 text-[#2B7FFF]" />
-                          <span className="text-[10px] font-bold text-[#EDEDEF]">{detail.product}</span>
-                        </div>
-                        <ul className="space-y-0.5">
-                          {detail.items.map((item, i) => (
-                            <li key={i} className="text-[9px] text-[#8A8A8E] flex items-start gap-1">
-                              <span className="text-[#2B7FFF] mt-0.5 text-[6px]">●</span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    );
-                  })}
-                </div>
-              </motion.div>
+            {activeData && !isActiveOdd ? (
+              <DetailPanel data={activeData} monthNum={activeMonth!} />
             ) : null}
           </AnimatePresence>
         </div>
