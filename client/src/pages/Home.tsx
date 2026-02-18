@@ -11,7 +11,6 @@ const Slide3 = lazy(() => import("@/components/slides/Slide3"));
 const Slide4 = lazy(() => import("@/components/slides/Slide4"));
 const Slide5 = lazy(() => import("@/components/slides/Slide5"));
 const Slide6 = lazy(() => import("@/components/slides/Slide6"));
-const Slide7 = lazy(() => import("@/components/slides/Slide7"));
 const SlideEcosysWhy = lazy(() => import("@/components/slides/SlideEcosysWhy"));
 const Slide9 = lazy(() => import("@/components/slides/Slide9"));
 const Slide10 = lazy(() => import("@/components/slides/Slide10"));
@@ -76,7 +75,6 @@ const slideEntries: SlideEntry[] = [
   { type: "separator", chapterIndex: 1, separatorData: CHAPTERS[1] },
   { type: "content", component: Slide5, chapterIndex: 1 },
   { type: "content", component: Slide6, chapterIndex: 1 },
-  { type: "content", component: Slide7, chapterIndex: 1 },
 
   // 03 — Por que a ecosys AUTO
   { type: "separator", chapterIndex: 2, separatorData: CHAPTERS[2] },
