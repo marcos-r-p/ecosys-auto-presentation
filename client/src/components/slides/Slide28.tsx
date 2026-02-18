@@ -47,9 +47,9 @@ export default function Slide28() {
           className="text-center mb-4"
         >
           <div className="flex items-center justify-center gap-3 mb-2">
-            <Bot className="w-14 h-14 text-[#2B7FFF]" />
-            <h2 className="font-extrabold tracking-tight text-[#2B7FFF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
-              Novo GIO
+            <Bot className="w-14 h-14 text-[#CC092F]" />
+            <h2 className="font-extrabold tracking-tight text-[#CC092F]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
+              Copiloto Comercial
             </h2>
           </div>
           <h3 className="text-3xl font-bold text-[#EDEDEF] mb-2">
@@ -129,7 +129,7 @@ export default function Slide28() {
                 Gestão de Times e Gamificação
               </h4>
               
-              <h5 className="text-lg font-bold text-[#EDEDEF] mb-3">🎯 Execução + Motivação:</h5>
+              <h5 className="text-lg font-bold text-[#EDEDEF] mb-3">Execução + Motivação:</h5>
               <div className="space-y-2 mb-4">
                 <p className="text-base text-[#8A8A8E]">• Kanban de ações (time + individual) + SLAs</p>
                 <p className="text-base text-[#8A8A8E]">• Metas por squad em tempo real</p>
@@ -161,7 +161,7 @@ export default function Slide28() {
                 Gestão de Projetos
               </h4>
               
-              <h5 className="text-lg font-bold text-[#EDEDEF] mb-3">📋 Projetos Estruturados (Estilo Trello):</h5>
+              <h5 className="text-lg font-bold text-[#EDEDEF] mb-3">Projetos Estruturados (Estilo Trello):</h5>
               <ul className="space-y-2">
                 {projectTypes.map((type, idx) => (
                   <li key={idx} className="text-base text-[#8A8A8E] flex items-start gap-2">
