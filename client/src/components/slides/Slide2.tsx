@@ -41,13 +41,13 @@ export default function Slide2() {
           className="text-center"
         >
           
-          <h2 className="text-2xl sm:text-3xl md:text-2xl sm:text-3xl font-bold text-[#EDEDEF] mb-3 md:mb-4 drop-shadow-2xl">
+          <h2 className="font-extrabold text-[#EDEDEF] tracking-tight drop-shadow-2xl" style={{ fontSize: 'clamp(28px, 4.5vh, 56px)', lineHeight: '1.1', marginBottom: 'clamp(8px, 1.5vh, 20px)' }}>
             Nossa Visão Compartilhada
           </h2>
-          <p className="text-base sm:text-lg font-medium text-[#EDEDEF] max-w-5xl mx-auto leading-relaxed mb-2 md:mb-3">
+          <p className="font-medium text-[#8A8A8E] max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(13px, 1.8vh, 22px)', marginBottom: 'clamp(4px, 0.8vh, 12px)' }}>
             Nossa visão é a <span className="text-[#2B7FFF] font-bold">ecosys</span> ser o principal motor da Tribo de Veículos do Bradesco, transformando a Autoline no ecossistema automotivo <span className="text-[#EDEDEF] font-bold">líder do Brasil</span>.
           </p>
-          <p className="text-sm sm:text-base text-[#EDEDEF] max-w-5xl mx-auto leading-relaxed">
+          <p className="text-[#555] max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(11px, 1.4vh, 18px)' }}>
             Conectar consumidores, lojistas e Gefins por meio de plataformas integradas que potencializam os serviços financeiros de forma inteligente, eficiente e confiável.
           </p>
         </motion.div>
