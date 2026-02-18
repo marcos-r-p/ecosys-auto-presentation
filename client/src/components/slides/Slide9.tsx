@@ -1,177 +1,148 @@
 import { motion } from "motion/react";
-import { Heart, BarChart3, MessageSquare, Bot, CreditCard, Smartphone } from "lucide-react";
+import { Database, Brain, Building2, Package, Users, BarChart3, MessageSquare, Smartphone, Target, HeartPulse, BellRing, TrendingUp, Lightbulb, CreditCard, PieChart, Bell, LayoutDashboard, Link } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
-const features = [
+const blocks = [
   {
-    id: "gestao",
-    number: "1.1",
-    title: "Gestão Autoline e ecosys AUTO",
-    description: "Escolha a Versão Ideal para Sua Revenda",
-    icon: BarChart3,
-    color: "",
+    icon: Database,
+    title: "Base Operacional Validada",
+    subtitle: "Ecosys Core",
+    color: "#2B7FFF",
+    items: [
+      { icon: Package, text: "Gestão completa de estoque e vendas" },
+      { icon: Users, text: "CRM estruturado e funil comercial" },
+      { icon: BarChart3, text: "Controle financeiro e DRE simplificada" },
+      { icon: MessageSquare, text: "Comunicação omnichannel integrada" },
+      { icon: Smartphone, text: "App do vendedor conectado ao sistema" },
+    ],
   },
   {
-    id: "comunicacao",
-    number: "1.2",
-    title: "Comunicação Unificada",
-    description: "Otimize a comunicação do lojista, garantindo que nenhuma oportunidade de venda seja perdida",
-    icon: MessageSquare,
-    color: "",
+    icon: Brain,
+    title: "Camada de Inteligência",
+    subtitle: "IA",
+    color: "#8B5CF6",
+    items: [
+      { icon: Target, text: "Priorização automática de oportunidades" },
+      { icon: HeartPulse, text: "Health Score da carteira de lojistas" },
+      { icon: BellRing, text: "Alertas preditivos de performance" },
+      { icon: TrendingUp, text: "Recomendações de margem e precificação" },
+      { icon: Lightbulb, text: "Insights acionáveis para GEFINS" },
+    ],
   },
   {
-    id: "copiloto",
-    number: "1.3",
-    title: "Copiloto Autoline",
-    description: "Uma suíte de agentes de Inteligência Artificial que trabalham 24/7, incluindo o Novo GIO, para transformar a revenda em um hub de alta performance e rentabilidade para o lojista.",
-    icon: Bot,
-    color: "",
-    highlight: true,
-  },
-  {
-    id: "originacao",
-    number: "1.4",
-    title: "Originação e Produtos Bradesco",
-    description: "Produtos financeiros do Bradesco são oferecidos de forma integrada e contextualizada dentro do processo natural de vendas da revenda",
-    icon: CreditCard,
-    color: "",
-  },
-  {
-    id: "app-vendedor",
-    number: "1.5",
-    title: "App do Vendedor",
-    description: "Ferramenta móvel para vendas e atendimento em qualquer lugar.",
-    icon: Smartphone,
-    color: "",
+    icon: Building2,
+    title: "Evoluções Exclusivas",
+    subtitle: "Bradesco",
+    color: "#CC092F",
+    items: [
+      { icon: CreditCard, text: "Originação nativa de crédito e seguros" },
+      { icon: PieChart, text: "Monitoramento de share-of-wallet" },
+      { icon: Bell, text: "Alertas automáticos de cross-sell" },
+      { icon: LayoutDashboard, text: "Dashboard executivo consolidado" },
+      { icon: Link, text: "Integração com sistemas internos Bradesco" },
+    ],
   },
 ];
 
 export default function Slide9() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
-      <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-3 sm:pt-4 md:pt-5 pb-3 sm:pb-4 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col h-full">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -30 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-3 md:mb-4"
         >
-          
-          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
-            Gestor{" "}
-            <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
-              alt="Autoline"
-              className="h-12 inline-block align-middle"
-            />
-            :{" "}
-            <span className="text-[#EDEDEF]">
-              O Coração da Estratégia
-            </span>
+          <h2 className="font-extrabold tracking-tight text-[#EDEDEF] leading-[1.1]" style={{ fontSize: 'clamp(20px, 3.2vh, 40px)' }}>
+            Gestor Autoline:{" "}
+            <span className="text-[#2B7FFF]">Plataforma Estratégica</span>
+            {" "}de Integração Comercial
           </h2>
-          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
-            O Gestor Autoline é o sistema central que digitaliza e organiza o dia a dia da revenda, tornando-se indispensável. Ele integra a originação de produtos Bradesco de forma natural e sem fricção no fluxo de trabalho do lojista.
+          <p className="text-[#8A8A8E] font-medium max-w-5xl mx-auto mt-1" style={{ fontSize: 'clamp(11px, 1.4vh, 17px)' }}>
+            Sistema central que conecta operação da revenda, força comercial Bradesco e originação financeira em um único fluxo inteligente.
           </p>
         </motion.div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-3">
-          {features.slice(0, 2).map((feature, index) => (
+        {/* Three Blocks */}
+        <div className="flex-1 grid grid-cols-3 gap-3 md:gap-4 lg:gap-5 min-h-0">
+          {blocks.map((block, blockIndex) => (
             <motion.div
-              key={feature.id}
-              initial={{ opacity: 0, y: 30, rotateX: -10 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              className="relative group"
+              key={block.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 + blockIndex * 0.15 }}
+              className="flex flex-col"
             >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
-                <div className="flex items-start gap-4 mb-4">
+              <div
+                className="relative bg-white/[0.03] border border-white/[0.08] rounded-2xl p-4 md:p-5 h-full flex flex-col hover:border-white/[0.12] transition-all duration-300"
+              >
+                {/* Block Header */}
+                <div className="flex items-center gap-3 mb-3 md:mb-4">
                   <div
-                    className={`w-12 h-12 rounded-lg bg-white/[0.06] p-0.5 flex-shrink-0`}
+                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: `${block.color}15`, border: `1px solid ${block.color}30` }}
                   >
-                    <div className="w-full h-full bg-[#0A0A0B] rounded-[9px] flex items-center justify-center">
-                      <feature.icon className="w-6 h-6 text-[#EDEDEF]" />
-                    </div>
+                    <block.icon className="w-5 h-5" style={{ color: block.color }} />
                   </div>
                   <div>
-                    
-                    <h3 className="text-xl font-bold text-[#EDEDEF]">
-                      {feature.title}
+                    <h3 className="font-bold text-[#EDEDEF] leading-tight" style={{ fontSize: 'clamp(13px, 1.6vh, 19px)' }}>
+                      {block.title}
                     </h3>
+                    <span
+                      className="font-semibold uppercase tracking-wider"
+                      style={{ fontSize: 'clamp(9px, 1vh, 12px)', color: block.color }}
+                    >
+                      {block.subtitle}
+                    </span>
                   </div>
                 </div>
-                <p className="text-[#8A8A8E] text-sm leading-relaxed">
-                  {feature.description}
-                </p>
+
+                {/* Divider */}
+                <div className="h-px w-full mb-3" style={{ background: `linear-gradient(to right, ${block.color}40, transparent)` }} />
+
+                {/* Items */}
+                <div className="flex flex-col gap-2 md:gap-2.5 flex-1">
+                  {block.items.map((item, itemIndex) => (
+                    <motion.div
+                      key={itemIndex}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 0.4 + blockIndex * 0.15 + itemIndex * 0.06 }}
+                      className="flex items-start gap-2.5"
+                    >
+                      <div
+                        className="w-6 h-6 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5"
+                        style={{ backgroundColor: `${block.color}10` }}
+                      >
+                        <item.icon className="w-3.5 h-3.5" style={{ color: block.color, opacity: 0.8 }} />
+                      </div>
+                      <span className="text-[#B0B0B5] leading-snug" style={{ fontSize: 'clamp(11px, 1.3vh, 15px)' }}>
+                        {item.text}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Copiloto Highlight - Full Width */}
+        {/* Strategic Footer Message */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-6"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="mt-3 md:mt-4"
         >
-          <div className="relative group">
-            <div className="absolute inset-0 bg-white/[0.04] opacity-20 group-hover:opacity-40 transition-opacity duration-300 rounded-xl" />
-            <div className="relative bg-white/[0.04] border-2 border-white/[0.08] rounded-xl p-6 hover:border-white/[0.08] transition-all">
-              <div className="flex items-start gap-6">
-                <div className="w-16 h-16 rounded-xl bg-white p-1 flex-shrink-0">
-                  <div className="w-full h-full bg-[#0A0A0B] rounded-[11px] flex items-center justify-center">
-                    <Bot className="w-8 h-8 text-[#EDEDEF]" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  
-                  <h3 className="text-2xl font-bold text-[#EDEDEF] mb-3">
-                    Copiloto Autoline
-                  </h3>
-                  <p className="text-[#8A8A8E] leading-relaxed">
-                    {features[2].description}
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="relative overflow-hidden rounded-xl bg-white/[0.03] border border-white/[0.08] px-5 py-3">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2B7FFF]/[0.04] via-[#8B5CF6]/[0.04] to-[#CC092F]/[0.04]" />
+            <p className="text-center text-[#8A8A8E] relative z-10" style={{ fontSize: 'clamp(11px, 1.2vh, 15px)' }}>
+              O Gestor Autoline torna-se a <span className="text-[#EDEDEF] font-semibold">infraestrutura digital da distribuição Bradesco</span> no mercado de seminovos.
+            </p>
           </div>
         </motion.div>
-
-        {/* Bottom Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {features.slice(3).map((feature, index) => (
-            <motion.div
-              key={feature.id}
-              initial={{ opacity: 0, y: 30, rotateX: -10 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 + index * 0.1 }}
-              className="relative group"
-            >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
-                <div className="flex items-start gap-4 mb-4">
-                  <div
-                    className={`w-12 h-12 rounded-lg bg-white/[0.06] p-0.5 flex-shrink-0`}
-                  >
-                    <div className="w-full h-full bg-[#0A0A0B] rounded-[9px] flex items-center justify-center">
-                      <feature.icon className="w-6 h-6 text-[#EDEDEF]" />
-                    </div>
-                  </div>
-                  <div>
-                    
-                    <h3 className="text-xl font-bold text-[#EDEDEF]">
-                      {feature.title}
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-[#8A8A8E] text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
 
       <SlideFooter />
