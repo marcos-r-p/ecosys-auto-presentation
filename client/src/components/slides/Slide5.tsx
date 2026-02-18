@@ -41,8 +41,8 @@ export default function Slide5() {
                 <div className="bg-white/[0.04] rounded-2xl p-8 border border-white/[0.08]">
                   <div className="flex items-center gap-3 mb-3">
                     <Package className="w-8 h-8 text-[#2B7FFF]" />
-                    <h3 className="text-2xl font-bold text-[#EDEDEF]">
-                      Novo Marketplace Autoline
+                    <h3 className="text-2xl font-bold text-[#EDEDEF] flex items-center gap-2">
+                      Novo Marketplace <img src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png" alt="Autoline" className="h-6 inline-block" />
                     </h3>
                   </div>
                   <div className="h-1 w-full bg-white/[0.04] rounded-full mb-5" />
