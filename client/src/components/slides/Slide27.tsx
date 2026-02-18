@@ -33,7 +33,7 @@ const automationRules = [
     icon: TrendingUp,
     trigger: "Alto potencial não convertido",
     action: "escalar squad especializado",
-    color: "text-[#2B7FFF]",
+    color: "text-[#CC092F]",
   },
   {
     icon: Zap,
@@ -55,9 +55,9 @@ export default function Slide27() {
           className="text-center mb-4"
         >
           <div className="flex items-center justify-center gap-3 mb-2">
-            <Bot className="w-12 h-12 text-[#2B7FFF]" />
-            <h2 className="font-extrabold tracking-tight sm: text-[#2B7FFF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
-              Novo GIO
+            <Bot className="w-12 h-12 text-[#CC092F]" />
+            <h2 className="font-extrabold tracking-tight text-[#CC092F]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
+              Copiloto Comercial
             </h2>
           </div>
           <h3 className="text-2xl font-bold text-[#EDEDEF] mb-2">
@@ -79,7 +79,7 @@ export default function Slide27() {
               
               {/* Composition */}
               <div className="mb-4">
-                <h5 className="text-base font-bold text-[#2B7FFF] mb-3">Composição do Score:</h5>
+                <h5 className="text-base font-bold text-[#CC092F] mb-3">Composição do Score:</h5>
                 <div className="space-y-2">
                   {scoreComponents.map((component, idx) => (
                     <div key={idx} className="flex items-start gap-2">
@@ -87,7 +87,7 @@ export default function Slide27() {
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-bold text-[#EDEDEF]">{component.label}</span>
-                          <span className="text-xs text-[#2B7FFF]">({component.percentage}%)</span>
+                          <span className="text-xs text-[#CC092F]">({component.percentage}%)</span>
                         </div>
                         <p className="text-xs text-[#8A8A8E]">{component.description}</p>
                       </div>
@@ -120,8 +120,8 @@ export default function Slide27() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className="bg-white/[0.04] from-[#2B7FFF]/20 to-blue-600/20 border border-white/[0.12] rounded-xl p-5 h-full shadow-[#2B7FFF]/20">
-              <h4 className="text-xl font-bold text-[#2B7FFF] mb-4 flex items-center gap-2">
+            <div className="bg-white/[0.04] from-[#CC092F]/20 to-red-600/20 border border-white/[0.12] rounded-xl p-5 h-full shadow-[#CC092F]/20">
+              <h4 className="text-xl font-bold text-[#CC092F] mb-4 flex items-center gap-2">
                 <Zap className="w-6 h-6" />
                 Automação Baseada em Indicadores
               </h4>

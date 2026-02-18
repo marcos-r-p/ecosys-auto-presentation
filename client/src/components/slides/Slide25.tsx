@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { TrendingUp, UserX, DollarSign, Brain, Calendar } from "lucide-react";
+import { TrendingUp, UserX, DollarSign, Brain, Calendar, ArrowRight } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
 const impacts = [
@@ -43,7 +43,8 @@ const impacts = [
 
 const roadmap = [
   {
-    phase: "Mês 1-2: MVP Essencial",
+    phase: "Mês 1-2",
+    label: "MVP Essencial",
     items: [
       "Gestão de visitas (GPS + registro)",
       "Carteira 360° (cadastro + histórico)",
@@ -53,7 +54,8 @@ const roadmap = [
     deliverable: "MVP funcional + Piloto (20-30 usuários)",
   },
   {
-    phase: "Mês 3-4: Inteligência + Integrações",
+    phase: "Mês 3-4",
+    label: "Inteligência + Integrações",
     items: [
       "Direcionamento e priorização (IA)",
       "Alertas automáticos (performance + risco)",
@@ -65,7 +67,8 @@ const roadmap = [
     highlight: true,
   },
   {
-    phase: "Mês 5-6: IA Avançada + Gamificação",
+    phase: "Mês 5-6",
+    label: "IA Avançada + Gamificação",
     items: [
       "Roteirização inteligente (mapa calor)",
       "First IA - Assistente (resumo + sugestões)",
@@ -80,8 +83,8 @@ const roadmap = [
 
 export default function Slide25() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 pt-2 pb-1 overflow-hidden">
-      <div className="max-w-7xl w-full flex flex-col gap-2">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 pt-3 pb-2 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col h-full gap-3">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -15 }}
@@ -89,101 +92,113 @@ export default function Slide25() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="font-extrabold tracking-tight text-[#EDEDEF] .5" style={{ fontSize: 'clamp(18px, 2.8vh, 36px)', marginBottom: 'clamp(4px, 0.6vh, 10px)', lineHeight: '1.1' }}>
-            <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span>
-            <span className="text-[#EDEDEF]">: Impacto, Roadmap e Integração</span>
+          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(18px, 2.8vh, 36px)', lineHeight: '1.1' }}>
+            <span className="font-bold" style={{ color: '#CC092F' }}>Copiloto Comercial</span>
+            <span className="text-[#EDEDEF]">: Impacto e Roadmap</span>
           </h2>
-          <p className="text-[#8A8A8E] font-medium" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
+          <p className="text-[#8A8A8E] font-medium mt-1" style={{ fontSize: 'clamp(11px, 1.4vh, 18px)' }}>
             Transformação mensurável em 6 meses
           </p>
         </motion.div>
 
-        {/* Impacto Esperado */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <h3 className="text-sm font-bold text-[#EDEDEF] text-center mb-2">
-            Impacto Esperado nos Resultados
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            {impacts.map((impact, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.15 + index * 0.04 }}
-                className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-3 hover:border-white/[0.12] transition-all"
-              >
-                <div className="flex justify-center mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-white p-0.5 shadow-lg">
-                    <div className="w-full h-full bg-[#0A0A0B] rounded-[6px] flex items-center justify-center">
-                      <impact.icon className="w-4 h-4 text-[#EDEDEF]" />
-                    </div>
-                  </div>
-                </div>
-                <h4 className="text-[11px] font-bold text-[#EDEDEF] text-center mb-1.5 leading-tight">{impact.title}</h4>
-                <ul className="space-y-0.5">
-                  {impact.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-1">
-                      <span className="text-[#8A8A8E] flex-shrink-0 mt-0.5 text-[8px]">✓</span>
-                      <span className="text-[#8A8A8E] text-[9px] leading-tight">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Roadmap */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-        >
-          <h3 className="text-sm font-bold text-[#EDEDEF] text-center mb-2">
-            Roadmap de Entrega (6 Meses)
-          </h3>
-          <div className="grid grid-cols-3 gap-2">
-            {roadmap.map((phase, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 + index * 0.05 }}
-              >
-                <div
-                  className={`bg-white/[0.04] border ${
-                    phase.highlight ? "border-[#2B7FFF]/50" : "border-white/[0.08]"
-                  } rounded-lg p-3 h-full hover:border-white/[0.12] transition-all`}
+        {/* Two-column layout: Impacto + Roadmap side by side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 flex-1">
+          {/* Left: Impacto Esperado */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex flex-col"
+          >
+            <h3 className="text-sm font-bold text-[#EDEDEF] mb-2 flex items-center gap-2">
+              <TrendingUp className="w-4 h-4 text-[#CC092F]" />
+              Impacto Esperado nos Resultados
+            </h3>
+            <div className="grid grid-cols-2 gap-2 flex-1">
+              {impacts.map((impact, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.15 + index * 0.04 }}
+                  className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-3 hover:border-white/[0.12] transition-all flex flex-col"
                 >
-                  <div className="flex items-center gap-1.5 mb-2">
-                    <Calendar className={`w-3.5 h-3.5 ${phase.highlight ? "text-[#2B7FFF]" : "text-[#2B7FFF]"}`} />
-                    <h4 className={`text-[11px] font-bold leading-tight ${phase.highlight ? "text-[#2B7FFF]" : "text-[#EDEDEF]"}`}>
-                      {phase.phase}
-                    </h4>
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-7 h-7 rounded-md bg-white/[0.06] flex items-center justify-center flex-shrink-0">
+                      <impact.icon className="w-4 h-4 text-[#CC092F]" />
+                    </div>
+                    <h4 className="text-[11px] font-bold text-[#EDEDEF] leading-tight">{impact.title}</h4>
                   </div>
-                  <ul className="space-y-0.5 mb-2">
-                    {phase.items.map((item, itemIndex) => (
+                  <ul className="space-y-0.5 flex-1">
+                    {impact.items.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-start gap-1">
-                        <span className="text-[#8A8A8E] flex-shrink-0 mt-0.5 text-[8px]">✓</span>
+                        <span className="text-[#CC092F] flex-shrink-0 mt-0.5 text-[7px]">●</span>
                         <span className="text-[#8A8A8E] text-[9px] leading-tight">{item}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className={`pt-2 border-t ${phase.highlight ? "border-[#2B7FFF]/30" : "border-white/[0.08]"}`}>
-                    <p className="text-[8px] font-bold text-[#8A8A8E] mb-0.5">Entregável:</p>
-                    <p className={`text-[10px] font-bold leading-tight ${phase.highlight ? "text-[#2B7FFF]" : "text-[#EDEDEF]"}`}>
-                      {phase.deliverable}
-                    </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right: Roadmap */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="flex flex-col"
+          >
+            <h3 className="text-sm font-bold text-[#EDEDEF] mb-2 flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-[#CC092F]" />
+              Roadmap de Entrega (6 Meses)
+            </h3>
+            <div className="flex flex-col gap-2 flex-1">
+              {roadmap.map((phase, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 + index * 0.05 }}
+                  className="flex-1"
+                >
+                  <div
+                    className={`bg-white/[0.04] border ${
+                      phase.highlight ? "border-[#CC092F]/40" : "border-white/[0.08]"
+                    } rounded-lg p-3 h-full hover:border-white/[0.12] transition-all flex flex-col`}
+                  >
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                        phase.highlight 
+                          ? "bg-[#CC092F]/20 text-[#CC092F]" 
+                          : "bg-white/[0.06] text-[#8A8A8E]"
+                      }`}>
+                        {phase.phase}
+                      </span>
+                      <h4 className={`text-[11px] font-bold leading-tight ${phase.highlight ? "text-[#CC092F]" : "text-[#EDEDEF]"}`}>
+                        {phase.label}
+                      </h4>
+                    </div>
+                    <div className="flex flex-wrap gap-x-3 gap-y-0.5 flex-1">
+                      {phase.items.map((item, itemIndex) => (
+                        <span key={itemIndex} className="text-[9px] text-[#8A8A8E] leading-tight flex items-center gap-1">
+                          <span className="text-[#CC092F] text-[6px]">●</span>
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                    <div className={`pt-1.5 mt-1.5 border-t ${phase.highlight ? "border-[#CC092F]/20" : "border-white/[0.06]"} flex items-center gap-1.5`}>
+                      <ArrowRight className="w-3 h-3 text-[#8A8A8E]" />
+                      <p className={`text-[10px] font-bold leading-tight ${phase.highlight ? "text-[#CC092F]" : "text-[#EDEDEF]"}`}>
+                        {phase.deliverable}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       <SlideFooter />

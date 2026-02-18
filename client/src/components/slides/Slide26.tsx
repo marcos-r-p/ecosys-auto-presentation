@@ -4,7 +4,7 @@ import SlideFooter from "../SlideFooter";
 
 const dataFlows = [
   {
-    title: "Gestor Autoline → GIO Copiloto",
+    title: "Gestor Autoline → Copiloto Comercial",
     items: [
       { icon: TrendingUp, text: "Performance real do lojista (vendas, conversão, ticket médio)" },
       { icon: DollarSign, text: "Volume de financiamentos e produtos Bradesco" },
@@ -14,14 +14,14 @@ const dataFlows = [
     color: "",
   },
   {
-    title: "GIO Copiloto → Gestor Autoline",
+    title: "Copiloto Comercial → Gestor Autoline",
     items: [
       { icon: Target, text: "Prioridades comerciais e campanhas ativas" },
       { icon: MessageSquare, text: "Feedback de campo (objeções, concorrência, práticas de mercado)" },
       { icon: GraduationCap, text: "Treinamentos e suporte direcionado" },
       { icon: Bell, text: "Novidades e atualizações de produtos" },
     ],
-    color: "from-[#2B7FFF] to-blue-600",
+    color: "from-[#CC092F] to-red-600",
     highlight: true,
   },
   {
@@ -49,7 +49,7 @@ export default function Slide26() {
         >
           <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             <span className="text-[#EDEDEF]">
-              Integração <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span> com Autoline
+              <span className="font-bold" style={{ color: '#CC092F' }}>Copiloto Comercial</span> integrado com todo ecossistema
             </span>
           </h2>
           <p className="text-[#8A8A8E] text-xl font-medium max-w-5xl mx-auto leading-snug" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
@@ -84,12 +84,12 @@ export default function Slide26() {
 
             {/* GIO Copiloto */}
             <div className="relative group w-full sm:w-56">
-              <div className="absolute inset-0 bg-white/[0.04] from-[#2B7FFF] to-blue-600 opacity-40 group-hover:opacity-60 transition-opacity duration-300 rounded-2xl" />
-              <div className="relative bg-white/[0.06] border border-[#2B7FFF]/50 rounded-2xl p-6 transition-all">
-                <h3 className="text-xl font-bold text-center" style={{ color: '#2B7FFF' }}>
-                  GIO COPILOTO<br />GEFIN
+              <div className="absolute inset-0 bg-white/[0.04] from-[#CC092F] to-red-600 opacity-40 group-hover:opacity-60 transition-opacity duration-300 rounded-2xl" />
+              <div className="relative bg-white/[0.06] border border-[#CC092F]/50 rounded-2xl p-6 transition-all">
+                <h3 className="text-xl font-bold text-center" style={{ color: '#CC092F' }}>
+                  COPILOTO<br />COMERCIAL
                 </h3>
-                <span className="block text-center mt-2 text-xs px-2 py-1 rounded-full font-bold" style={{ backgroundColor: '#2B7FFF', color: 'white' }}>
+                <span className="block text-center mt-2 text-xs px-2 py-1 rounded-full font-bold" style={{ backgroundColor: '#CC092F', color: 'white' }}>
                   NOVO
                 </span>
               </div>
@@ -126,11 +126,11 @@ export default function Slide26() {
             >
               <div
                 className={`relative bg-white/[0.04] border ${
-                  flow.highlight ? "border-[#2B7FFF]/50" : "border-white/[0.08]"
+                  flow.highlight ? "border-[#CC092F]/50" : "border-white/[0.08]"
                 } rounded-2xl p-5 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all`}
               >
                 {/* Title */}
-                <h3 className={`text-xl mb-4 text-center leading-tight ${flow.highlight ? "font-bold" : "font-bold text-[#EDEDEF]"}`} style={flow.highlight ? { color: '#2B7FFF' } : {}}>
+                <h3 className={`text-xl mb-4 text-center leading-tight ${flow.highlight ? "font-bold" : "font-bold text-[#EDEDEF]"}`} style={flow.highlight ? { color: '#CC092F' } : {}}>
                   {flow.title}
                 </h3>
 
