@@ -78,7 +78,7 @@ export default function Slide5() {
                   </div>
                   <div className="h-1 w-full bg-white/[0.04] rounded-full mb-5" />
                   <p className="text-[#8A8A8E] text-lg">
-                    Sistema de gestão simplificado
+                    Sistema de gestão de revenda de veículos
                   </p>
                 </div>
               </motion.div>
