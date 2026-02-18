@@ -37,7 +37,7 @@ const sections = [
         />
         <span>- Gestor Autoline Lite</span>
       </div>,
-      "ecosys AUTO - Gestor Autoline",
+      "Gestor Autoline Pro",
       "App Vendedor",
       "Copiloto Autoline (IA)",
       "Originação Bradesco",
@@ -68,7 +68,7 @@ const sections = [
   },
   {
     id: "novo-gio",
-    title: "Novo GIO",
+    title: "Copiloto do GEFIN (Novo GIO)",
     icon: Bot,
     color: "highlight",
     items: [
