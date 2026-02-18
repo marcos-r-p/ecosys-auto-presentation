@@ -43,13 +43,13 @@ export default function Slide10() {
         >
           
           <h2 className="font-extrabold tracking-tight sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
-            Gestor{" "}
+            Gestão{" "}
             <img
               src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png"
               alt="Autoline"
               className="h-10 inline-block align-middle"
             />
-            {" "}-{" "}
+            {" "}e ecosys AUTO:{" "}
             <span className="text-[#EDEDEF]">
               Escolha a Versão Ideal para Sua Revenda
             </span>
@@ -70,7 +70,7 @@ export default function Slide10() {
               <div className="mb-3">
                 
                 <h3 className="text-3xl font-bold text-[#EDEDEF] mb-3">
-                  Gestor Autoline Lite{" "}
+                  Gestor{" "}
                   <img
                     src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png"
                     alt="Autoline"
@@ -121,7 +121,7 @@ export default function Slide10() {
                   </span>
                 </div>
                 <h3 className="text-3xl font-bold text-[#EDEDEF] mb-3">
-                  Gestor Autoline Pro
+                  ecosys AUTO
                 </h3>
                 <p className="text-[#8A8A8E] text-sm leading-relaxed">
                   A gestão completa para máxima eficiência, adicionando ferramentas avançadas para revendas estruturadas.

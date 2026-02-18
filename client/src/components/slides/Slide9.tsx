@@ -6,7 +6,7 @@ const features = [
   {
     id: "gestao",
     number: "1.1",
-    title: "Gestor Autoline",
+    title: "Gestão Autoline e ecosys AUTO",
     description: "Escolha a Versão Ideal para Sua Revenda",
     icon: BarChart3,
     color: "",
