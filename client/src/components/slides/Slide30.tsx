@@ -162,12 +162,12 @@ export default function Slide30() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <div className="relative py-4 overflow-x-auto">
+          <div className="relative py-4">
             {/* Horizontal Line */}
-            <div className="absolute top-1/2 left-0 right-0 h-px bg-white/10 transform -translate-y-1/2 min-w-[900px]" />
+            <div className="absolute top-1/2 left-0 right-0 h-px bg-white/10 transform -translate-y-1/2" />
 
             {/* Months Grid */}
-            <div className="relative grid grid-cols-12 gap-1 min-w-[900px]">
+            <div className="relative grid grid-cols-12 gap-0.5">
               {autolineDeliveries.map((delivery, idx) => {
                 const isOdd = delivery.month % 2 === 1;
                 const isHovered = hoveredMonth === delivery.month;
@@ -179,14 +179,14 @@ export default function Slide30() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.15 + idx * 0.03 }}
                     className="relative flex items-center justify-center"
-                    style={{ height: '140px' }}
+                    style={{ height: '110px' }}
                     onMouseEnter={() => setHoveredMonth(delivery.month)}
                     onMouseLeave={() => setHoveredMonth(null)}
                   >
                     {isOdd ? (
                       <div className="absolute flex flex-col items-center" style={{ bottom: '50%' }}>
                         <div
-                          className={`rounded-md p-1.5 w-full min-h-[40px] flex flex-col items-center justify-center text-center transition-all duration-300 cursor-pointer mb-1 ${
+                          className={`rounded-md p-1 w-full min-h-[32px] flex flex-col items-center justify-center text-center transition-all duration-300 cursor-pointer mb-0.5 ${
                             isHovered
                               ? "bg-[#2B7FFF]/20 border-2 border-[#2B7FFF] shadow-lg shadow-[#2B7FFF]/20 scale-110"
                               : delivery.highlight
@@ -194,14 +194,14 @@ export default function Slide30() {
                                 : "bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.06]"
                           }`}
                         >
-                          <div className={`text-[10px] font-bold mb-0.5 transition-colors duration-300 ${isHovered ? "text-[#2B7FFF]" : "text-[#8A8A8E]"}`}>
-                            Mês {delivery.month}
+                          <div className={`text-[9px] font-bold mb-0.5 transition-colors duration-300 ${isHovered ? "text-[#2B7FFF]" : "text-[#8A8A8E]"}`}>
+                            M{delivery.month}
                           </div>
-                          <div className={`text-[8px] leading-tight font-medium transition-colors duration-300 ${isHovered ? "text-white" : "text-[#EDEDEF]"}`}>
+                          <div className={`text-[7px] leading-tight font-medium transition-colors duration-300 ${isHovered ? "text-white" : "text-[#EDEDEF]"}`}>
                             {delivery.short}
                           </div>
                         </div>
-                        <div className={`w-px h-3 transition-colors duration-300 ${isHovered ? "bg-[#2B7FFF]" : "bg-white/10"}`} />
+                        <div className={`w-px h-2 transition-colors duration-300 ${isHovered ? "bg-[#2B7FFF]" : "bg-white/10"}`} />
                         <div className={`w-2.5 h-2.5 rounded-full relative z-10 transition-all duration-300 ${
                           isHovered ? "bg-[#2B7FFF] shadow-lg shadow-[#2B7FFF]/60 scale-150" : "bg-white/10 border border-white/20"
                         }`} />
@@ -211,9 +211,9 @@ export default function Slide30() {
                         <div className={`w-2.5 h-2.5 rounded-full relative z-10 transition-all duration-300 ${
                           isHovered ? "bg-[#2B7FFF] shadow-lg shadow-[#2B7FFF]/60 scale-150" : "bg-[#2B7FFF]/60 border border-[#2B7FFF]/40"
                         }`} />
-                        <div className={`w-px h-3 transition-colors duration-300 ${isHovered ? "bg-[#2B7FFF]" : "bg-[#2B7FFF]/30"}`} />
+                        <div className={`w-px h-2 transition-colors duration-300 ${isHovered ? "bg-[#2B7FFF]" : "bg-[#2B7FFF]/30"}`} />
                         <div
-                          className={`rounded-md p-1.5 w-full min-h-[40px] flex flex-col items-center justify-center text-center transition-all duration-300 cursor-pointer mt-1 ${
+                          className={`rounded-md p-1 w-full min-h-[32px] flex flex-col items-center justify-center text-center transition-all duration-300 cursor-pointer mt-0.5 ${
                             isHovered
                               ? "bg-[#2B7FFF]/20 border-2 border-[#2B7FFF] shadow-lg shadow-[#2B7FFF]/20 scale-110"
                               : delivery.highlight
@@ -221,10 +221,10 @@ export default function Slide30() {
                                 : "bg-white/[0.04] border border-white/[0.08] hover:bg-white/[0.06]"
                           }`}
                         >
-                          <div className={`text-[10px] font-bold mb-0.5 transition-colors duration-300 ${isHovered ? "text-white" : "text-[#2B7FFF]"}`}>
-                            Mês {delivery.month}
+                          <div className={`text-[9px] font-bold mb-0.5 transition-colors duration-300 ${isHovered ? "text-white" : "text-[#2B7FFF]"}`}>
+                            M{delivery.month}
                           </div>
-                          <div className={`text-[8px] leading-tight font-medium transition-colors duration-300 ${isHovered ? "text-white" : "text-[#EDEDEF]"}`}>
+                          <div className={`text-[7px] leading-tight font-medium transition-colors duration-300 ${isHovered ? "text-white" : "text-[#EDEDEF]"}`}>
                             {delivery.short}
                           </div>
                         </div>
