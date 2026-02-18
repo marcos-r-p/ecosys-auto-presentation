@@ -38,12 +38,6 @@ const pillars = [
   },
 ];
 
-const valueProps = [
-  "Saber exatamente onde focar",
-  "Antecipar problemas antes que aconteçam",
-  "Agir no momento certo com a abordagem certa",
-  "Multiplicar resultados com menos esforço",
-];
 
 export default function Slide23() {
   return (
@@ -145,29 +139,7 @@ export default function Slide23() {
           </div>
         </motion.div>
 
-        {/* Value Proposition */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative group"
-        >
-          <div className="absolute inset-0 bg-white/[0.04] opacity-40 group-hover:opacity-60 transition-opacity duration-300 rounded-2xl" />
-          <div className="relative bg-white/[0.04] border border-[#2B7FFF]/40 rounded-2xl p-5">
-            <h3 className="text-2xl font-bold text-center mb-3" style={{ color: '#2B7FFF' }}>Proposta de Valor</h3>
-            <p className="text-[#EDEDEF] text-base text-center leading-relaxed mb-4">
-              O <span className="font-bold" style={{ color: '#2B7FFF' }}>GIO</span> transforma a força comercial do Bradesco em uma máquina de relacionamento inteligente, onde cada consultor tem superpoderes para:
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-              {valueProps.map((prop, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <Check className="w-5 h-5 text-[#EDEDEF] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#EDEDEF] text-base font-medium leading-tight">{prop}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+
       </div>
 
       <SlideFooter />
