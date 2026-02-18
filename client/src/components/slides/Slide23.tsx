@@ -47,10 +47,10 @@ export default function Slide23() {
         >
           <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span>
-            <span className="text-[#EDEDEF]">: Transformando a Gestão Comercial</span>
+            <span className="text-[#EDEDEF]">: Copiloto Comercial</span>
           </h2>
           <p className="text-[#8A8A8E] text-lg font-medium" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
-            O elo estratégico entre Bradesco e sua rede de lojistas
+            O elo estratégico entre Bradesco e sua rede de lojistas transformando a Gestão Comercial
           </p>
         </motion.div>
 
