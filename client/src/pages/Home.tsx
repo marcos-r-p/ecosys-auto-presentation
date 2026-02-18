@@ -93,12 +93,7 @@ const slideEntries: SlideEntry[] = [
   { type: "content", component: Slide18, chapterIndex: 4 },
   { type: "content", component: Slide19, chapterIndex: 4 },
 
-  // 06 — Motor Comercial
-  { type: "separator", chapterIndex: 5, separatorData: CHAPTERS[5] },
-  { type: "content", component: Slide20, chapterIndex: 5 },
-  { type: "content", component: Slide21, chapterIndex: 5 },
-
-  // 07 — Novo GIO
+  // 06 — Novo GIO (movido antes do Motor Comercial)
   { type: "separator", chapterIndex: 6, separatorData: CHAPTERS[6] },
   { type: "content", component: Slide23, chapterIndex: 6 },
   { type: "content", component: Slide28, chapterIndex: 6 },
@@ -106,6 +101,11 @@ const slideEntries: SlideEntry[] = [
   { type: "content", component: Slide24, chapterIndex: 6 },
   { type: "content", component: Slide26, chapterIndex: 6 },
   { type: "content", component: Slide25, chapterIndex: 6 },
+
+  // 07 — Motor Comercial
+  { type: "separator", chapterIndex: 5, separatorData: CHAPTERS[5] },
+  { type: "content", component: Slide20, chapterIndex: 5 },
+  { type: "content", component: Slide21, chapterIndex: 5 },
 
   // 08 — Investimento e Roadmap
   { type: "separator", chapterIndex: 7, separatorData: CHAPTERS[7] },
