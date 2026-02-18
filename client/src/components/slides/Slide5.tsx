@@ -42,7 +42,7 @@ export default function Slide5() {
                   <div className="flex items-center gap-3 mb-3">
                     <Package className="w-8 h-8 text-[#2B7FFF]" />
                     <h3 className="text-2xl font-bold text-[#EDEDEF]">
-                      Marketplace Whitelabel
+                      Novo Marketplace Autoline
                     </h3>
                   </div>
                   <div className="h-1 w-full bg-white/[0.04] rounded-full mb-5" />
