@@ -45,7 +45,7 @@ export default function Slide10() {
           <h2 className="font-extrabold tracking-tight sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
             Gestão{" "}
             <img
-              src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png"
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
               alt="Autoline"
               className="h-10 inline-block align-middle"
             />
@@ -72,7 +72,7 @@ export default function Slide10() {
                 <h3 className="text-3xl font-bold text-[#EDEDEF] mb-3">
                   Gestor{" "}
                   <img
-                    src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png"
+                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
                     alt="Autoline"
                     className="h-7 inline-block align-middle"
                   />

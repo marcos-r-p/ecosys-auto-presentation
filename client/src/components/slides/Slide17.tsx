@@ -95,7 +95,7 @@ export default function Slide17() {
               <div className="w-12 h-12 rounded-lg bg-white p-0.5 flex-shrink-0">
                 <div className="w-full h-full bg-[#0A0A0B] rounded-[7px] flex items-center justify-center">
                   <img
-                    src="https://financiamentos.bradesco/content/dam/banco-bradesco/financiamentos/static-files/bradesco-financiamentos-red.svg"
+                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/bXyzDtBgMgQFeFGe.svg"
                     alt="Bradesco"
                     className="w-6 h-6"
                   />

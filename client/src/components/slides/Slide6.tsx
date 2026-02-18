@@ -19,7 +19,7 @@ const sections = [
       <div className="flex items-center gap-2">
         <span>Gestor</span>
         <img
-          src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png"
+          src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
           alt="Autoline"
           className="h-5"
         />
@@ -31,7 +31,7 @@ const sections = [
       <div key="gestor-autoline-dms" className="flex items-center gap-2">
         <span>Gestor</span>
         <img
-          src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png"
+          src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
           alt="Autoline"
           className="h-3 inline-block"
         />
@@ -49,7 +49,7 @@ const sections = [
       <div className="flex items-center gap-2">
         <span>Marketplace</span>
         <img
-          src="https://autoline.com.br/assets/resources/logo_autoline_white_165_50.png"
+          src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
           alt="Autoline"
           className="h-5"
         />

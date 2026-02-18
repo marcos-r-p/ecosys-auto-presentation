@@ -24,7 +24,7 @@ export default function Slide1() {
 
           <div className="flex items-center">
             <img
-              src="https://financiamentos.bradesco/content/dam/banco-bradesco/financiamentos/static-files/bradesco-financiamentos.svg"
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/niLdqFSxPjAEfTYo.svg"
               alt="Bradesco Financiamentos"
               className="h-10 w-auto opacity-60"
             />
