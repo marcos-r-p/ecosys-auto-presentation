@@ -17,8 +17,6 @@ const Slide9 = lazy(() => import("@/components/slides/Slide9"));
 const Slide10 = lazy(() => import("@/components/slides/Slide10"));
 const Slide11 = lazy(() => import("@/components/slides/Slide11"));
 const Slide12 = lazy(() => import("@/components/slides/Slide12"));
-const Slide13 = lazy(() => import("@/components/slides/Slide13"));
-const Slide14 = lazy(() => import("@/components/slides/Slide14"));
 const Slide15 = lazy(() => import("@/components/slides/Slide15"));
 const Slide16 = lazy(() => import("@/components/slides/Slide16"));
 const Slide17 = lazy(() => import("@/components/slides/Slide17"));
@@ -26,7 +24,6 @@ const Slide18 = lazy(() => import("@/components/slides/Slide18"));
 const Slide19 = lazy(() => import("@/components/slides/Slide19"));
 const Slide20 = lazy(() => import("@/components/slides/Slide20"));
 const Slide21 = lazy(() => import("@/components/slides/Slide21"));
-const Slide22 = lazy(() => import("@/components/slides/Slide22"));
 const Slide23 = lazy(() => import("@/components/slides/Slide23"));
 const Slide24 = lazy(() => import("@/components/slides/Slide24"));
 const Slide25 = lazy(() => import("@/components/slides/Slide25"));
@@ -94,8 +91,6 @@ const slideEntries: SlideEntry[] = [
 
   // 05 — Marketplace Autoline
   { type: "separator", chapterIndex: 4, separatorData: CHAPTERS[4] },
-  { type: "content", component: Slide13, chapterIndex: 4 },
-  { type: "content", component: Slide14, chapterIndex: 4 },
   { type: "content", component: Slide15, chapterIndex: 4 },
   { type: "content", component: Slide16, chapterIndex: 4 },
   { type: "content", component: Slide17, chapterIndex: 4 },
@@ -106,7 +101,6 @@ const slideEntries: SlideEntry[] = [
   { type: "separator", chapterIndex: 5, separatorData: CHAPTERS[5] },
   { type: "content", component: Slide20, chapterIndex: 5 },
   { type: "content", component: Slide21, chapterIndex: 5 },
-  { type: "content", component: Slide22, chapterIndex: 5 },
 
   // 07 — Novo GIO
   { type: "separator", chapterIndex: 6, separatorData: CHAPTERS[6] },
