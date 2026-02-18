@@ -139,23 +139,23 @@ export default function Slide30() {
   const [hoveredMonth, setHoveredMonth] = useState<number | null>(null);
 
   return (
-    <div className="flex flex-col items-center justify-center h-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 overflow-hidden">
-      <div className="max-w-7xl w-full flex flex-col gap-3">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <h2 className="text-xl lg:text-2xl font-bold text-[#EDEDEF] mb-0.5">
-            Cronograma de Entregas Integrado
-          </h2>
-          <p className="text-xs text-[#8A8A8E]">
-            Passe o mouse sobre cada mês para ver as entregas detalhadas
-          </p>
-        </motion.div>
+    <div className="flex flex-col items-center h-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 overflow-hidden">
+      {/* Título próximo ao header */}
+      <motion.div
+        initial={{ opacity: 0, y: -15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center pt-10 pb-2"
+      >
+        <h2 className="text-xl lg:text-2xl font-bold text-[#EDEDEF] mb-0.5">
+          Cronograma de Entregas Integrado
+        </h2>
+        <p className="text-xs text-[#8A8A8E]">
+          Passe o mouse sobre cada mês para ver as entregas detalhadas
+        </p>
+      </motion.div>
 
+      <div className="max-w-7xl w-full flex flex-col gap-3 flex-1 justify-center">
         {/* Timeline */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
