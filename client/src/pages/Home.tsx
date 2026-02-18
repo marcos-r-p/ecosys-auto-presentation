@@ -49,8 +49,8 @@ const CHAPTERS = [
   { number: "03", title: "Por que a ecosys AUTO", subtitle: "Inovação, tecnologia e maturidade corporativa" },
   { number: "04", title: "Gestor Autoline", subtitle: "Gestão inteligente para lojistas, dados estratégicos para o Bradesco" },
   { number: "05", title: "Marketplace Autoline", subtitle: "Vitrine digital que conecta lojistas, consumidores e financiamento Bradesco" },
-  { number: "06", title: "Motor Comercial", subtitle: "Inteligência que antecipa demanda e amplifica resultados" },
-  { number: "07", title: "Novo GIO", subtitle: "O copiloto inteligente que transforma estratégia em execução para o GEFIN" },
+  { number: "06", title: "Novo GIO", subtitle: "O copiloto inteligente que transforma estratégia em execução para o GEFIN" },
+  { number: "07", title: "Motor Comercial", subtitle: "Inteligência que antecipa demanda e amplifica resultados" },
   { number: "08", title: "Investimento e Roadmap", subtitle: "Cronograma, valores e modelo de sustentação" },
 ];
 
@@ -93,19 +93,19 @@ const slideEntries: SlideEntry[] = [
   { type: "content", component: Slide18, chapterIndex: 4 },
   { type: "content", component: Slide19, chapterIndex: 4 },
 
-  // 06 — Motor Comercial
+  // 06 — Novo GIO
   { type: "separator", chapterIndex: 5, separatorData: CHAPTERS[5] },
-  { type: "content", component: Slide20, chapterIndex: 5 },
-  { type: "content", component: Slide21, chapterIndex: 5 },
+  { type: "content", component: Slide23, chapterIndex: 5 },
+  { type: "content", component: Slide28, chapterIndex: 5 },
+  { type: "content", component: Slide27, chapterIndex: 5 },
+  { type: "content", component: Slide24, chapterIndex: 5 },
+  { type: "content", component: Slide26, chapterIndex: 5 },
+  { type: "content", component: Slide25, chapterIndex: 5 },
 
-  // 07 — Novo GIO
+  // 07 — Motor Comercial
   { type: "separator", chapterIndex: 6, separatorData: CHAPTERS[6] },
-  { type: "content", component: Slide23, chapterIndex: 6 },
-  { type: "content", component: Slide28, chapterIndex: 6 },
-  { type: "content", component: Slide27, chapterIndex: 6 },
-  { type: "content", component: Slide24, chapterIndex: 6 },
-  { type: "content", component: Slide26, chapterIndex: 6 },
-  { type: "content", component: Slide25, chapterIndex: 6 },
+  { type: "content", component: Slide20, chapterIndex: 6 },
+  { type: "content", component: Slide21, chapterIndex: 6 },
 
   // 08 — Investimento e Roadmap
   { type: "separator", chapterIndex: 7, separatorData: CHAPTERS[7] },
