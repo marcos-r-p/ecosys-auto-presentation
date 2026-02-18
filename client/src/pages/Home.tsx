@@ -7,7 +7,6 @@ import SlideBreadcrumb from "@/components/SlideBreadcrumb";
 // Lazy-loaded slides for better performance
 const Slide1 = lazy(() => import("@/components/slides/Slide1"));
 const Slide2 = lazy(() => import("@/components/slides/Slide2"));
-const Slide3 = lazy(() => import("@/components/slides/Slide3"));
 const Slide4 = lazy(() => import("@/components/slides/Slide4"));
 const Slide5 = lazy(() => import("@/components/slides/Slide5"));
 const Slide6 = lazy(() => import("@/components/slides/Slide6"));
@@ -68,7 +67,6 @@ const slideEntries: SlideEntry[] = [
   { type: "separator", chapterIndex: 0, separatorData: CHAPTERS[0] },
   { type: "content", component: Slide1, chapterIndex: 0 },
   { type: "content", component: Slide2, chapterIndex: 0 },
-  { type: "content", component: Slide3, chapterIndex: 0 },
   { type: "content", component: Slide4, chapterIndex: 0 },
 
   // 02 — A Proposta
