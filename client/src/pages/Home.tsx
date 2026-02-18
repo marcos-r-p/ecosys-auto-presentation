@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import FixedBackground from "@/components/BackgroundElements";
 import ChapterSeparator from "@/components/ChapterSeparator";
 import ProgressDots from "@/components/ProgressDots";
@@ -59,7 +59,7 @@ const CHAPTERS = [
   { number: "08", title: "Investimento e Roadmap", subtitle: "Cronograma, valores e modelo de sustentação" },
 ];
 
-// Slide structure: each entry is either a chapter separator or a content slide
+// Slide structure
 interface SlideEntry {
   type: "separator" | "content";
   component?: React.LazyExoticComponent<React.ComponentType>;
@@ -126,47 +126,34 @@ const slideEntries: SlideEntry[] = [
 ];
 
 const TOTAL_SLIDES = slideEntries.length;
+const RENDER_WINDOW = 2; // Render current slide + 2 before and after
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const isNavigating = useRef(false);
 
-  // Track current slide via IntersectionObserver
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = slideRefs.current.indexOf(entry.target as HTMLDivElement);
-            if (index !== -1) {
-              setCurrentSlide(index);
-            }
-          }
-        });
-      },
-      {
-        root: containerRef.current,
-        threshold: 0.5,
-      }
-    );
+  // Determine which slides to render (virtualization window)
+  const visibleRange = useMemo(() => {
+    const start = Math.max(0, currentSlide - RENDER_WINDOW);
+    const end = Math.min(TOTAL_SLIDES - 1, currentSlide + RENDER_WINDOW);
+    return { start, end };
+  }, [currentSlide]);
 
-    slideRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
+  // Navigate to a specific slide
+  const navigateToSlide = useCallback((index: number) => {
+    const clamped = Math.max(0, Math.min(index, TOTAL_SLIDES - 1));
+    setCurrentSlide(clamped);
   }, []);
 
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowDown" || e.key === "PageDown") {
+      if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") {
         e.preventDefault();
-        navigateToSlide(Math.min(currentSlide + 1, TOTAL_SLIDES - 1));
+        navigateToSlide(currentSlide + 1);
       } else if (e.key === "ArrowUp" || e.key === "PageUp") {
         e.preventDefault();
-        navigateToSlide(Math.max(currentSlide - 1, 0));
+        navigateToSlide(currentSlide - 1);
       } else if (e.key === "Home") {
         e.preventDefault();
         navigateToSlide(0);
@@ -178,20 +165,65 @@ export default function Home() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentSlide]);
+  }, [currentSlide, navigateToSlide]);
 
-  const navigateToSlide = useCallback((index: number) => {
-    const target = slideRefs.current[index];
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  }, []);
+  // Mouse wheel / touch navigation with debounce
+  useEffect(() => {
+    let lastWheelTime = 0;
+    const WHEEL_DEBOUNCE = 600; // ms between slide transitions
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const now = Date.now();
+      if (now - lastWheelTime < WHEEL_DEBOUNCE) return;
+      lastWheelTime = now;
+
+      if (e.deltaY > 0) {
+        navigateToSlide(currentSlide + 1);
+      } else if (e.deltaY < 0) {
+        navigateToSlide(currentSlide - 1);
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, [currentSlide, navigateToSlide]);
+
+  // Touch navigation
+  useEffect(() => {
+    let touchStartY = 0;
+    const SWIPE_THRESHOLD = 50;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      const deltaY = touchStartY - e.changedTouches[0].clientY;
+      if (Math.abs(deltaY) > SWIPE_THRESHOLD) {
+        if (deltaY > 0) {
+          navigateToSlide(currentSlide + 1);
+        } else {
+          navigateToSlide(currentSlide - 1);
+        }
+      }
+    };
+
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
+    return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [currentSlide, navigateToSlide]);
+
+  // Current slide entry
+  const entry = slideEntries[currentSlide];
+  const chapter = CHAPTERS[entry.chapterIndex];
+  const chapterLabel = `${chapter.number} — ${chapter.title}`;
 
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full h-screen overflow-y-scroll snap-y snap-mandatory hide-scrollbar"
-    >
+    <div className="relative w-full h-screen overflow-hidden">
       {/* Fixed Background */}
       <FixedBackground />
 
@@ -202,42 +234,34 @@ export default function Home() {
         onDotClick={navigateToSlide}
       />
 
-      {/* Slides */}
-      <div className="relative z-10">
-        {slideEntries.map((entry, index) => {
-          const chapter = CHAPTERS[entry.chapterIndex];
-          const chapterLabel = `${chapter.number} — ${chapter.title}`;
+      {/* Single slide viewport - only renders current slide */}
+      <div className="relative z-10 w-full h-screen">
+        {/* Breadcrumb - only on content slides */}
+        {entry.type === "content" && (
+          <SlideBreadcrumb
+            chapter={chapterLabel}
+            slideNumber={currentSlide + 1}
+            totalSlides={TOTAL_SLIDES}
+          />
+        )}
 
-          return (
-            <div
-              key={index}
-              ref={(el) => { slideRefs.current[index] = el; }}
-              className="w-full h-screen snap-start snap-always relative"
-            >
-              {/* Breadcrumb - only on content slides, not separators */}
-              {entry.type === "content" && (
-                <SlideBreadcrumb
-                  chapter={chapterLabel}
-                  slideNumber={index + 1}
-                  totalSlides={TOTAL_SLIDES}
-                />
-              )}
-
-              {/* Slide content */}
-              {entry.type === "separator" && entry.separatorData ? (
-                <ChapterSeparator
-                  number={entry.separatorData.number}
-                  title={entry.separatorData.title}
-                  subtitle={entry.separatorData.subtitle}
-                />
-              ) : entry.component ? (
-                <Suspense fallback={<SlideFallback />}>
-                  <entry.component />
-                </Suspense>
-              ) : null}
-            </div>
-          );
-        })}
+        {/* Slide content with transition */}
+        <div
+          key={currentSlide}
+          className="w-full h-full animate-in fade-in duration-300"
+        >
+          {entry.type === "separator" && entry.separatorData ? (
+            <ChapterSeparator
+              number={entry.separatorData.number}
+              title={entry.separatorData.title}
+              subtitle={entry.separatorData.subtitle}
+            />
+          ) : entry.component ? (
+            <Suspense fallback={<SlideFallback />}>
+              <entry.component />
+            </Suspense>
+          ) : null}
+        </div>
       </div>
     </div>
   );
