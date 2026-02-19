@@ -10,6 +10,7 @@ const timelineItems = [
   { year: "Mai 2025", label: "ecosys na estrada", desc: "Expansão com G30", highlight: false },
   { year: "Jun 2025", label: "Correio Motors", desc: "Migração de base + MoU BWA", highlight: false },
   { year: "Jul 2025", label: "POC Bradesco", desc: "Início da parceria estratégica", highlight: true },
+  { year: "Dez 2025", label: "FENAUTO 2025", desc: "Participação na FENAUTO 2025", highlight: false },
 ];
 
 const goal = { year: "2027", label: "Startup mais valiosa", desc: "SaaS Automotivo do Brasil" };
