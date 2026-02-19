@@ -92,7 +92,7 @@ function FeatureCard({ item, delay }: CardProps) {
       <div
         className="relative rounded-xl h-full transition-all duration-300"
         style={{
-          padding: "clamp(14px, 2vh, 28px) clamp(16px, 1.8vw, 28px)",
+          padding: "clamp(16px, 2.2vh, 30px) clamp(18px, 2vw, 30px)",
           background: isHighlight
             ? "linear-gradient(135deg, rgba(43,127,255,0.1) 0%, rgba(43,127,255,0.04) 100%)"
             : "rgba(255,255,255,0.03)",
@@ -127,7 +127,7 @@ function FeatureCard({ item, delay }: CardProps) {
           </div>
           <h3
             className="font-bold text-[#EDEDEF]"
-            style={{ fontSize: "clamp(15px, 2vh, 24px)", lineHeight: "1.2" }}
+            style={{ fontSize: "clamp(16px, 2.2vh, 26px)", lineHeight: "1.2" }}
           >
             {item.title}
           </h3>
@@ -148,7 +148,7 @@ function FeatureCard({ item, delay }: CardProps) {
               />
               <span
                 className="text-[#B0B0B4]"
-                style={{ fontSize: "clamp(12px, 1.5vh, 18px)", lineHeight: "1.4" }}
+                style={{ fontSize: "clamp(13px, 1.6vh, 19px)", lineHeight: "1.4" }}
               >
                 {bullet}
               </span>
@@ -169,7 +169,7 @@ function hexToRgb(hex: string): string {
 
 export default function Slide15() {
   return (
-    <div className="flex flex-col h-full overflow-hidden" style={{ padding: "clamp(8px, 1vh, 14px) clamp(14px, 2vw, 50px)" }}>
+    <div className="flex flex-col h-full overflow-hidden justify-center" style={{ padding: "clamp(8px, 1vh, 14px) clamp(14px, 2vw, 40px)" }}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -186,7 +186,7 @@ export default function Slide15() {
         </p>
         <h2
           className="font-extrabold tracking-tight text-[#EDEDEF]"
-          style={{ fontSize: "clamp(26px, 4.2vh, 50px)", lineHeight: "1.1", marginBottom: "clamp(4px, 0.8vh, 10px)" }}
+          style={{ fontSize: "clamp(28px, 4.5vh, 54px)", lineHeight: "1.1", marginBottom: "clamp(4px, 0.8vh, 10px)" }}
         >
           Autoline: Canal B2C de{" "}
           <span className="text-[#2B7FFF]">Aquisição e Geração de Demanda</span>

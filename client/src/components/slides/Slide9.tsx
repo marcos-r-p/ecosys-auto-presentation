@@ -55,7 +55,7 @@ export default function Slide9() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
-        className="text-center mb-4"
+        className="text-center mb-8"
       >
         <h2
           className="font-black tracking-tight text-[#EDEDEF] leading-none"
@@ -65,7 +65,7 @@ export default function Slide9() {
           <span className="text-[#2B7FFF]">Plataforma Estratégica</span>
         </h2>
         <p
-          className="text-[#8A8A8E] font-medium mt-2"
+          className="text-[#8A8A8E] font-medium mt-3"
           style={{ fontSize: "clamp(13px, 1.6vh, 20px)" }}
         >
           Sistema central que conecta operação da revenda, força comercial Bradesco e originação financeira

@@ -97,7 +97,7 @@ export default function Slide19() {
   return (
     <div
       className="flex flex-col h-full overflow-hidden"
-      style={{ padding: "clamp(10px, 1.5vh, 20px) clamp(14px, 1.8vw, 36px) clamp(6px, 0.8vh, 10px) clamp(14px, 1.8vw, 36px)" }}
+      style={{ padding: "clamp(10px, 1.5vh, 20px) clamp(14px, 1.8vw, 32px) clamp(6px, 0.8vh, 10px) clamp(14px, 1.8vw, 32px)" }}
     >
       {/* Header */}
       <motion.div
@@ -115,7 +115,7 @@ export default function Slide19() {
         </p>
         <h2
           className="font-extrabold tracking-tight text-[#EDEDEF]"
-          style={{ fontSize: "clamp(26px, 4.5vh, 52px)", lineHeight: "1.1" }}
+          style={{ fontSize: "clamp(28px, 4.8vh, 56px)", lineHeight: "1.1" }}
         >
           Canal Mobile de Aquisição e{" "}
           <span className="text-[#2B7FFF]">Conversão 24/7</span>
@@ -172,7 +172,7 @@ export default function Slide19() {
                   <div
                     className="relative rounded-xl overflow-hidden"
                     style={{
-                      padding: "clamp(10px, 1.5vh, 18px) clamp(8px, 0.8vw, 14px)",
+                      padding: "clamp(12px, 1.7vh, 20px) clamp(10px, 1vw, 16px)",
                       background: isRed
                         ? `linear-gradient(160deg, rgba(${rgb},0.12) 0%, rgba(${rgb},0.03) 100%)`
                         : isHighlight
@@ -284,7 +284,7 @@ export default function Slide19() {
                     <h3
                       className="font-bold text-[#EDEDEF] relative"
                       style={{
-                        fontSize: "clamp(13px, 1.8vh, 21px)",
+                        fontSize: "clamp(14px, 1.9vh, 22px)",
                         lineHeight: "1.2",
                         marginBottom: "clamp(6px, 0.8vh, 10px)",
                       }}
@@ -309,7 +309,7 @@ export default function Slide19() {
                           <span
                             className="text-[#9A9A9E]"
                             style={{
-                              fontSize: "clamp(10px, 1.3vh, 16px)",
+                              fontSize: "clamp(11px, 1.4vh, 17px)",
                               lineHeight: "1.35",
                             }}
                           >
