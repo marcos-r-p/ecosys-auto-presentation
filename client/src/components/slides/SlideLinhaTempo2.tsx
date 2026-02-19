@@ -14,6 +14,8 @@ const timelineItems = [
 
 const goal = { year: "2027", label: "Startup mais valiosa", desc: "SaaS Automotivo do Brasil" };
 
+const ITEM_COUNT = timelineItems.length + 1; // +1 for goal
+
 export default function SlideLinhaTempo2() {
   return (
     <div className="h-full w-full flex flex-col px-6 md:px-10 pt-4 pb-1 overflow-hidden">
@@ -22,7 +24,7 @@ export default function SlideLinhaTempo2() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
-        className="text-center mb-2"
+        className="text-center mb-1"
       >
         <h2
           className="font-black tracking-tight text-[#EDEDEF] leading-none"
@@ -36,147 +38,196 @@ export default function SlideLinhaTempo2() {
       </motion.div>
 
       {/* Timeline content — centered */}
-      <div className="flex-1 flex items-center justify-center">
-        <div className="w-full max-w-[95%] relative">
-          {/* Main horizontal line */}
-          <div className="absolute left-0 right-0 h-[3px] bg-gradient-to-r from-[#2B7FFF]/20 via-[#2B7FFF]/60 to-[#CC092F]/80" style={{ top: "50%" }} />
+      <div className="flex-1 flex items-center justify-center pr-12">
+        <div className="w-full max-w-[92%] relative">
 
-          {/* Timeline items */}
-          <div className="relative flex items-center justify-between">
+          {/* === ROW: TOP TEXT BLOCKS (for even-index items) === */}
+          <div className="flex items-end justify-between" style={{ marginBottom: 0 }}>
             {timelineItems.map((item, index) => {
               const isTop = index % 2 === 0;
               const isBradesco = item.highlight;
-
               return (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: isTop ? -15 : 15 }}
+                  key={`top-${index}`}
+                  initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
-                  className="flex flex-col items-center relative"
-                  style={{ width: `${100 / (timelineItems.length + 1)}%` }}
+                  transition={{ duration: 0.4, delay: 0.1 + index * 0.08 }}
+                  className="text-center px-1"
+                  style={{ width: `${100 / ITEM_COUNT}%`, visibility: isTop ? "visible" : "hidden" }}
                 >
-                  {/* Top content */}
-                  {isTop && (
-                    <div className="text-center mb-3 px-1">
-                      <p
-                        className={`font-black leading-none ${isBradesco ? "text-[#CC092F]" : "text-[#2B7FFF]"}`}
-                        style={{ fontSize: "clamp(11px, 1.5vh, 18px)" }}
-                      >
-                        {item.year}
-                      </p>
-                      <p
-                        className="font-bold text-[#EDEDEF] mt-1 leading-tight"
-                        style={{ fontSize: "clamp(11px, 1.4vh, 17px)" }}
-                      >
-                        {item.label}
-                      </p>
-                      <p
-                        className="text-[#8A8A8E] mt-0.5 leading-tight"
-                        style={{ fontSize: "clamp(9px, 1.1vh, 14px)" }}
-                      >
-                        {item.desc}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Connector + Node */}
-                  <div className="flex flex-col items-center">
-                    {isTop && <div className={`w-[2px] h-5 ${isBradesco ? "bg-[#CC092F]" : "bg-[#2B7FFF]/40"}`} />}
-                    {!isTop && <div className="h-5" />}
-
-                    {/* Node */}
-                    <div
-                      className={`rounded-full relative z-10 ${isBradesco ? "ring-2 ring-[#CC092F]/50" : ""}`}
-                      style={{
-                        width: isBradesco ? "16px" : "12px",
-                        height: isBradesco ? "16px" : "12px",
-                        background: isBradesco
-                          ? "#CC092F"
-                          : "#2B7FFF",
-                        boxShadow: isBradesco
-                          ? "0 0 16px rgba(204,9,47,0.5)"
-                          : "0 0 8px rgba(43,127,255,0.3)",
-                      }}
-                    />
-
-                    {!isTop && <div className={`w-[2px] h-5 ${isBradesco ? "bg-[#CC092F]" : "bg-[#2B7FFF]/40"}`} />}
-                    {isTop && <div className="h-5" />}
-                  </div>
-
-                  {/* Bottom content */}
-                  {!isTop && (
-                    <div className="text-center mt-3 px-1">
-                      <p
-                        className={`font-black leading-none ${isBradesco ? "text-[#CC092F]" : "text-[#2B7FFF]"}`}
-                        style={{ fontSize: "clamp(11px, 1.5vh, 18px)" }}
-                      >
-                        {item.year}
-                      </p>
-                      <p
-                        className="font-bold text-[#EDEDEF] mt-1 leading-tight"
-                        style={{ fontSize: "clamp(11px, 1.4vh, 17px)" }}
-                      >
-                        {item.label}
-                      </p>
-                      <p
-                        className="text-[#8A8A8E] mt-0.5 leading-tight"
-                        style={{ fontSize: "clamp(9px, 1.1vh, 14px)" }}
-                      >
-                        {item.desc}
-                      </p>
-                    </div>
-                  )}
+                  <p
+                    className={`font-black leading-none ${isBradesco ? "text-[#CC092F]" : "text-[#2B7FFF]"}`}
+                    style={{ fontSize: "clamp(12px, 1.6vh, 20px)" }}
+                  >
+                    {item.year}
+                  </p>
+                  <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(11px, 1.4vh, 17px)" }}>
+                    {item.label}
+                  </p>
+                  <p className="text-[#8A8A8E] mt-0.5 leading-tight" style={{ fontSize: "clamp(9px, 1.1vh, 14px)" }}>
+                    {item.desc}
+                  </p>
                 </motion.div>
               );
             })}
-
-            {/* Goal — 2027 */}
+            {/* Goal top text */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 1.0 }}
-              className="flex flex-col items-center relative"
-              style={{ width: `${100 / (timelineItems.length + 1)}%` }}
+              className="text-center px-1"
+              style={{ width: `${100 / ITEM_COUNT}%` }}
             >
-              {/* Top content for goal */}
-              <div className="text-center mb-3 px-1">
-                <p
-                  className="font-black text-[#CC092F] leading-none"
-                  style={{ fontSize: "clamp(16px, 2.2vh, 26px)" }}
-                >
-                  {goal.year}
-                </p>
-                <p
-                  className="font-bold text-[#EDEDEF] mt-1 leading-tight"
-                  style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}
-                >
-                  {goal.label}
-                </p>
-                <p
-                  className="text-[#CC092F] font-semibold mt-0.5 leading-tight"
-                  style={{ fontSize: "clamp(10px, 1.2vh, 15px)" }}
-                >
-                  {goal.desc}
-                </p>
-              </div>
-
-              {/* Connector + Star node */}
-              <div className="flex flex-col items-center">
-                <div className="w-[2px] h-5 bg-[#CC092F]" />
-                <div
-                  className="rounded-full relative z-10 ring-2 ring-[#CC092F]/40"
-                  style={{
-                    width: "20px",
-                    height: "20px",
-                    background: "linear-gradient(135deg, #CC092F, #FF2D55)",
-                    boxShadow: "0 0 24px rgba(204,9,47,0.6)",
-                  }}
-                />
-                <div className="h-5" />
-              </div>
+              <p className="font-black text-[#CC092F] leading-none" style={{ fontSize: "clamp(16px, 2.2vh, 26px)" }}>
+                {goal.year}
+              </p>
+              <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}>
+                {goal.label}
+              </p>
+              <p className="text-[#CC092F] font-semibold mt-0.5 leading-tight" style={{ fontSize: "clamp(10px, 1.2vh, 15px)" }}>
+                {goal.desc}
+              </p>
             </motion.div>
           </div>
+
+          {/* === ROW: TOP CONNECTORS (lines from text to node) === */}
+          <div className="flex items-stretch justify-between" style={{ height: "24px" }}>
+            {timelineItems.map((item, index) => {
+              const isTop = index % 2 === 0;
+              const isBradesco = item.highlight;
+              return (
+                <div key={`conn-top-${index}`} className="flex justify-center" style={{ width: `${100 / ITEM_COUNT}%` }}>
+                  <div
+                    className="h-full"
+                    style={{
+                      width: "2px",
+                      background: isTop ? (isBradesco ? "#CC092F" : "rgba(43,127,255,0.5)") : "transparent",
+                    }}
+                  />
+                </div>
+              );
+            })}
+            {/* Goal top connector */}
+            <div className="flex justify-center" style={{ width: `${100 / ITEM_COUNT}%` }}>
+              <div className="h-full" style={{ width: "2px", background: "#CC092F" }} />
+            </div>
+          </div>
+
+          {/* === ROW: NODES + HORIZONTAL LINE === */}
+          <div className="relative flex items-center justify-between" style={{ height: "20px" }}>
+            {/* Horizontal line behind nodes */}
+            <div
+              className="absolute left-0 right-0"
+              style={{
+                top: "50%",
+                transform: "translateY(-50%)",
+                height: "3px",
+                background: "linear-gradient(to right, rgba(43,127,255,0.2), rgba(43,127,255,0.6), rgba(204,9,47,0.8))",
+              }}
+            />
+
+            {timelineItems.map((item, index) => {
+              const isBradesco = item.highlight;
+              return (
+                <motion.div
+                  key={`node-${index}`}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.15 + index * 0.08 }}
+                  className="flex justify-center relative z-10"
+                  style={{ width: `${100 / ITEM_COUNT}%` }}
+                >
+                  <div
+                    className={`rounded-full ${isBradesco ? "ring-2 ring-[#CC092F]/50" : ""}`}
+                    style={{
+                      width: isBradesco ? "16px" : "12px",
+                      height: isBradesco ? "16px" : "12px",
+                      background: isBradesco ? "#CC092F" : "#2B7FFF",
+                      boxShadow: isBradesco
+                        ? "0 0 16px rgba(204,9,47,0.5)"
+                        : "0 0 8px rgba(43,127,255,0.3)",
+                    }}
+                  />
+                </motion.div>
+              );
+            })}
+
+            {/* Goal node */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 1.0 }}
+              className="flex justify-center relative z-10"
+              style={{ width: `${100 / ITEM_COUNT}%` }}
+            >
+              <div
+                className="rounded-full ring-2 ring-[#CC092F]/40"
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  background: "linear-gradient(135deg, #CC092F, #FF2D55)",
+                  boxShadow: "0 0 24px rgba(204,9,47,0.6)",
+                }}
+              />
+            </motion.div>
+          </div>
+
+          {/* === ROW: BOTTOM CONNECTORS (lines from node to text) === */}
+          <div className="flex items-stretch justify-between" style={{ height: "24px" }}>
+            {timelineItems.map((item, index) => {
+              const isTop = index % 2 === 0;
+              const isBradesco = item.highlight;
+              return (
+                <div key={`conn-bot-${index}`} className="flex justify-center" style={{ width: `${100 / ITEM_COUNT}%` }}>
+                  <div
+                    className="h-full"
+                    style={{
+                      width: "2px",
+                      background: !isTop ? (isBradesco ? "#CC092F" : "rgba(43,127,255,0.5)") : "transparent",
+                    }}
+                  />
+                </div>
+              );
+            })}
+            {/* Goal has no bottom connector */}
+            <div className="flex justify-center" style={{ width: `${100 / ITEM_COUNT}%` }}>
+              <div className="h-full" style={{ width: "2px", background: "transparent" }} />
+            </div>
+          </div>
+
+          {/* === ROW: BOTTOM TEXT BLOCKS (for odd-index items) === */}
+          <div className="flex items-start justify-between" style={{ marginTop: 0 }}>
+            {timelineItems.map((item, index) => {
+              const isTop = index % 2 === 0;
+              const isBradesco = item.highlight;
+              return (
+                <motion.div
+                  key={`bot-${index}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 + index * 0.08 }}
+                  className="text-center px-1"
+                  style={{ width: `${100 / ITEM_COUNT}%`, visibility: !isTop ? "visible" : "hidden" }}
+                >
+                  <p
+                    className={`font-black leading-none ${isBradesco ? "text-[#CC092F]" : "text-[#2B7FFF]"}`}
+                    style={{ fontSize: "clamp(12px, 1.6vh, 20px)" }}
+                  >
+                    {item.year}
+                  </p>
+                  <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(11px, 1.4vh, 17px)" }}>
+                    {item.label}
+                  </p>
+                  <p className="text-[#8A8A8E] mt-0.5 leading-tight" style={{ fontSize: "clamp(9px, 1.1vh, 14px)" }}>
+                    {item.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
+            {/* Goal has no bottom text */}
+            <div style={{ width: `${100 / ITEM_COUNT}%` }} />
+          </div>
+
         </div>
       </div>
 
