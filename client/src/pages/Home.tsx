@@ -52,10 +52,10 @@ function SlideFallback() {
 
 // Chapter definitions
 const CHAPTERS = [
-  { number: "01", title: "Contexto e Visão", subtitle: "Por que estamos aqui e qual é a oportunidade" },
-  { number: "02", title: "Quem somos", subtitle: "Conheça a ecosys AUTO e os fundadores por trás da plataforma" },
-  { number: "03", title: "Linha do tempo", subtitle: "A trajetória da ecosys AUTO até aqui" },
-  { number: "04", title: "Equipe e Governança", subtitle: "Os executivos por trás da ecosys AUTO" },
+  { number: "01", title: "Quem somos", subtitle: "Conheça a ecosys AUTO e os fundadores por trás da plataforma" },
+  { number: "02", title: "Linha do tempo", subtitle: "A trajetória da ecosys AUTO até aqui" },
+  { number: "03", title: "Equipe e Governança", subtitle: "Os executivos por trás da ecosys AUTO" },
+  { number: "04", title: "Contexto e Visão", subtitle: "Por que estamos aqui e qual é a oportunidade" },
   { number: "05", title: "A Proposta", subtitle: "O que estamos propondo, para quem e como evoluiu" },
   { number: "06", title: "Por que a ecosys AUTO", subtitle: "Inovação, tecnologia e maturidade corporativa" },
   { number: "07", title: "Gestor Autoline", subtitle: "Gestão inteligente para lojistas, dados estratégicos para o Bradesco" },
@@ -74,25 +74,25 @@ interface SlideEntry {
 }
 
 const slideEntries: SlideEntry[] = [
-  // 01 — Contexto e Visão
-  { type: "separator", chapterIndex: 0, separatorData: CHAPTERS[0] },
-  { type: "content", component: Slide1, chapterIndex: 0 },
-  { type: "content", component: Slide2, chapterIndex: 0 },
-  { type: "content", component: Slide4, chapterIndex: 0 },
+  // 01 — Quem somos
+  { type: "content", component: SlideQuemSomos1, chapterIndex: 0 },
+  { type: "content", component: SlideQuemSomos2, chapterIndex: 0 },
+  { type: "content", component: SlideGoldenCircle, chapterIndex: 0 },
 
-  // 02 — Quem somos
-  { type: "content", component: SlideQuemSomos1, chapterIndex: 1 },
-  { type: "content", component: SlideQuemSomos2, chapterIndex: 1 },
-  { type: "content", component: SlideGoldenCircle, chapterIndex: 1 },
+  // 02 — Linha do tempo
+  { type: "content", component: SlideLinhaTempo1, chapterIndex: 1 },
+  { type: "content", component: SlideLinhaTempo2, chapterIndex: 1 },
 
-  // 03 — Linha do tempo
-  { type: "content", component: SlideLinhaTempo1, chapterIndex: 2 },
-  { type: "content", component: SlideLinhaTempo2, chapterIndex: 2 },
+  // 03 — Equipe e Governança
+  { type: "content", component: SlideEquipe1, chapterIndex: 2 },
+  { type: "content", component: SlideBioMiguel, chapterIndex: 2 },
+  { type: "content", component: SlideBioMarcos, chapterIndex: 2 },
 
-  // 04 — Equipe e Governança
-  { type: "content", component: SlideEquipe1, chapterIndex: 3 },
-  { type: "content", component: SlideBioMiguel, chapterIndex: 3 },
-  { type: "content", component: SlideBioMarcos, chapterIndex: 3 },
+  // 04 — Contexto e Visão
+  { type: "separator", chapterIndex: 3, separatorData: CHAPTERS[3] },
+  { type: "content", component: Slide1, chapterIndex: 3 },
+  { type: "content", component: Slide2, chapterIndex: 3 },
+  { type: "content", component: Slide4, chapterIndex: 3 },
 
   // 05 — A Proposta
   { type: "separator", chapterIndex: 4, separatorData: CHAPTERS[4] },
