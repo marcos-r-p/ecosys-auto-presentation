@@ -1,160 +1,283 @@
 import { motion } from "motion/react";
-import { ShoppingBag, Package, Bot, UserCircle, FileText, Smartphone } from "lucide-react";
+import { Car, Bot, User, FileText, Smartphone, RefreshCw } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
-const features = [
+const topRow = [
   {
     id: "catalogo",
-    number: "2.1",
     title: "Catálogo de Veículos",
-    description: "Estoque das revendas integrado em tempo real com o Gestor Autoline, garantindo disponibilidade e precisão.",
-    icon: Package,
-    color: "",
+    icon: Car,
+    color: "#2B7FFF",
+    bullets: [
+      "Estoque integrado em tempo real",
+      "Alta disponibilidade e confiabilidade",
+      "Descoberta facilitada",
+    ],
   },
   {
     id: "ia",
-    number: "2.2",
     title: "IA no Marketplace",
-    description: "IA que gera leads qualificados com crédito pré-aprovado e recomendações personalizadas.",
     icon: Bot,
-    color: "",
+    color: "#8B5CF6",
+    bullets: [
+      "Recomendações personalizadas",
+      "Leads qualificados com crédito pré-aprovado",
+      "Jornada orientada por dados",
+    ],
   },
   {
     id: "area-logada",
-    number: "2.3",
     title: "Área Logada",
-    description: "Área personalizada com favoritos, listas de desejo e alertas customizados.",
-    icon: UserCircle,
-    color: "",
-  },
-  {
-    id: "conteudo",
-    number: "2.4",
-    title: "Plataforma de Conteúdo",
-    description: "Conteúdo curado pelo Bradesco com selos de confiança e estratégia SEO/GEO.",
-    icon: FileText,
-    color: "",
-  },
-  {
-    id: "app",
-    number: "2.5",
-    title: "App do Marketplace",
-    description: "Aplicativo nativo iOS/Android otimizado para consumo mobile, oferecendo jornada de compra completa, notificações personalizadas e experiência fluida na palma da mão.",
-    icon: Smartphone,
-    color: "",
+    icon: User,
+    color: "#06B6D4",
+    bullets: [
+      "Favoritos e listas de interesse",
+      "Alertas e notificações customizadas",
+      "Engajamento contínuo",
+    ],
   },
 ];
 
+const bottomRow = [
+  {
+    id: "conteudo",
+    title: "Plataforma de Conteúdo",
+    icon: FileText,
+    color: "#22C55E",
+    bullets: [
+      "Conteúdo curado e informativo",
+      "Transparência e confiança",
+      "Estratégia SEO para aquisição orgânica",
+    ],
+  },
+  {
+    id: "app",
+    title: "App Mobile",
+    icon: Smartphone,
+    color: "#F59E0B",
+    bullets: [
+      "Experiência nativa iOS e Android",
+      "Acesso permanente ao marketplace",
+      "Jornada completa na palma da mão",
+    ],
+  },
+  {
+    id: "ciclo",
+    title: "Ciclo Virtuoso de Demanda",
+    icon: RefreshCw,
+    color: "#2B7FFF",
+    highlight: true,
+    bullets: [
+      "Consumidores atraídos continuamente",
+      "Leads distribuídos às revendas",
+      "Conversão ampliada para produtos financeiros",
+    ],
+  },
+];
+
+interface CardProps {
+  item: typeof topRow[0] & { highlight?: boolean };
+  delay: number;
+}
+
+function FeatureCard({ item, delay }: CardProps) {
+  const isHighlight = (item as any).highlight;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      className="relative"
+    >
+      <div
+        className="relative rounded-xl h-full transition-all duration-300"
+        style={{
+          padding: "clamp(12px, 1.8vh, 24px) clamp(14px, 1.5vw, 24px)",
+          background: isHighlight
+            ? "linear-gradient(135deg, rgba(43,127,255,0.1) 0%, rgba(43,127,255,0.04) 100%)"
+            : "rgba(255,255,255,0.03)",
+          border: isHighlight
+            ? "1.5px solid rgba(43,127,255,0.35)"
+            : "1px solid rgba(255,255,255,0.07)",
+          backdropFilter: "blur(12px)",
+          boxShadow: isHighlight
+            ? "0 0 30px rgba(43,127,255,0.08), inset 0 1px 0 rgba(255,255,255,0.05)"
+            : "inset 0 1px 0 rgba(255,255,255,0.04)",
+        }}
+      >
+        {/* Icon + Title */}
+        <div className="flex items-center gap-3 mb-3">
+          <div
+            className="rounded-lg flex items-center justify-center flex-shrink-0"
+            style={{
+              width: "clamp(36px, 4.5vh, 52px)",
+              height: "clamp(36px, 4.5vh, 52px)",
+              background: `rgba(${hexToRgb(item.color)}, 0.12)`,
+              border: `1px solid rgba(${hexToRgb(item.color)}, 0.25)`,
+            }}
+          >
+            <item.icon
+              style={{
+                width: "clamp(18px, 2.2vh, 28px)",
+                height: "clamp(18px, 2.2vh, 28px)",
+              }}
+              className="flex-shrink-0"
+              color={item.color}
+            />
+          </div>
+          <h3
+            className="font-bold text-[#EDEDEF]"
+            style={{ fontSize: "clamp(13px, 1.7vh, 20px)", lineHeight: "1.2" }}
+          >
+            {item.title}
+          </h3>
+        </div>
+
+        {/* Bullets */}
+        <div className="flex flex-col" style={{ gap: "clamp(4px, 0.6vh, 8px)" }}>
+          {item.bullets.map((bullet, i) => (
+            <div key={i} className="flex items-start gap-2">
+              <div
+                className="rounded-full flex-shrink-0 mt-1"
+                style={{
+                  width: "clamp(5px, 0.6vh, 7px)",
+                  height: "clamp(5px, 0.6vh, 7px)",
+                  background: item.color,
+                  opacity: 0.6,
+                }}
+              />
+              <span
+                className="text-[#B0B0B4]"
+                style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.4" }}
+              >
+                {bullet}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function hexToRgb(hex: string): string {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `${r},${g},${b}`;
+}
+
 export default function Slide15() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
-      <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+    <div className="flex flex-col h-full overflow-hidden" style={{ padding: "clamp(10px, 1.5vh, 20px) clamp(20px, 3vw, 80px)" }}>
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center flex-shrink-0"
+        style={{ marginBottom: "clamp(10px, 1.8vh, 24px)" }}
+      >
+        <p
+          className="uppercase tracking-[0.2em] text-[#2B7FFF] font-semibold"
+          style={{ fontSize: "clamp(8px, 1vh, 12px)", marginBottom: "clamp(4px, 0.6vh, 10px)" }}
         >
-          
-          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
-            <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
-              alt="Autoline"
-              className="h-12 inline-block align-middle"
-            />
-            :{" "}
-            <span className="text-[#EDEDEF]">
-              A Melhor Experiência
-            </span>
-          </h2>
-          <p className="text-xl text-[#8A8A8E] font-medium max-w-5xl mx-auto leading-relaxed">
-            O Marketplace Autoline serve como a vitrine B2C do ecossistema, oferecendo uma jornada intuitiva e segura para o consumidor final na descoberta, compra e financiamento de veículos.
-          </p>
-        </motion.div>
-
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-3">
-          {features.slice(0, 3).map((feature, index) => (
-            <motion.div
-              key={feature.id}
-              initial={{ opacity: 0, y: 30, rotateX: -10 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              className="relative group"
-            >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
-                <div className="flex justify-center mb-5">
-                  <div
-                    className={`w-14 h-14 rounded-xl bg-white/[0.06] p-1 shadow-lg`}
-                  >
-                    <div className="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center">
-                      <feature.icon className="w-7 h-7 text-[#EDEDEF]" />
-                    </div>
-                  </div>
-                </div>
-                
-                <h3 className="text-xl font-bold text-[#EDEDEF] text-center mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-[#8A8A8E] text-sm text-center leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Bottom Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {features.slice(3).map((feature, index) => (
-            <motion.div
-              key={feature.id}
-              initial={{ opacity: 0, y: 30, rotateX: -10 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 + index * 0.1 }}
-              className="relative group"
-            >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
-                <div className="flex items-start gap-4 mb-4">
-                  <div
-                    className={`w-14 h-14 rounded-xl bg-white/[0.06] p-1 flex-shrink-0`}
-                  >
-                    <div className="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center">
-                      <feature.icon className="w-7 h-7 text-[#EDEDEF]" />
-                    </div>
-                  </div>
-                  <div>
-                    
-                    <h3 className="text-xl font-bold text-[#EDEDEF]">
-                      {feature.title}
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-[#8A8A8E] text-sm leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Bottom Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-6"
+          Canal B2C de Distribuição Digital
+        </p>
+        <h2
+          className="font-extrabold tracking-tight text-[#EDEDEF]"
+          style={{ fontSize: "clamp(22px, 3.5vh, 44px)", lineHeight: "1.1", marginBottom: "clamp(6px, 1vh, 14px)" }}
         >
-          <div className="relative overflow-hidden rounded-xl bg-white/[0.04] border border-white/[0.12] p-5">
-            <div className="text-center">
-              <p className="text-[#EDEDEF] font-semibold text-lg leading-relaxed">
-                O Marketplace cria um ciclo virtuoso, atraindo consumidores e gerando leads qualificados que são direcionados aos lojistas, incentivando o uso do Gestor Autoline e, consequentemente, a conversão de vendas com os produtos Bradesco.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+          Autoline: Canal B2C de{" "}
+          <span className="text-[#2B7FFF]">Aquisição e Geração de Demanda</span>
+        </h2>
+        <p
+          className="text-[#8A8A8E] max-w-4xl mx-auto"
+          style={{ fontSize: "clamp(11px, 1.4vh, 17px)", lineHeight: "1.5" }}
+        >
+          O marketplace conecta milhões de consumidores às revendas, iniciando a jornada de compra e financiamento.
+        </p>
+      </motion.div>
+
+      {/* Section Label - Top Row */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+        className="flex-shrink-0"
+        style={{ marginBottom: "clamp(6px, 0.8vh, 12px)" }}
+      >
+        <p
+          className="uppercase tracking-[0.15em] text-[#6B6B70] font-semibold"
+          style={{ fontSize: "clamp(8px, 0.9vh, 11px)" }}
+        >
+          Experiência do Consumidor
+        </p>
+      </motion.div>
+
+      {/* Top Row - 3 cards */}
+      <div
+        className="grid grid-cols-3 flex-shrink-0"
+        style={{ gap: "clamp(8px, 1vw, 16px)", marginBottom: "clamp(8px, 1.2vh, 16px)" }}
+      >
+        {topRow.map((item, index) => (
+          <FeatureCard key={item.id} item={item} delay={0.3 + index * 0.1} />
+        ))}
       </div>
+
+      {/* Section Label - Bottom Row */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.6 }}
+        className="flex-shrink-0"
+        style={{ marginBottom: "clamp(6px, 0.8vh, 12px)" }}
+      >
+        <p
+          className="uppercase tracking-[0.15em] text-[#6B6B70] font-semibold"
+          style={{ fontSize: "clamp(8px, 0.9vh, 11px)" }}
+        >
+          Infraestrutura e Distribuição
+        </p>
+      </motion.div>
+
+      {/* Bottom Row - 3 cards */}
+      <div
+        className="grid grid-cols-3 flex-shrink-0"
+        style={{ gap: "clamp(8px, 1vw, 16px)", marginBottom: "clamp(8px, 1.2vh, 16px)" }}
+      >
+        {bottomRow.map((item, index) => (
+          <FeatureCard key={item.id} item={item} delay={0.7 + index * 0.1} />
+        ))}
+      </div>
+
+      {/* Callout Final */}
+      <motion.div
+        initial={{ opacity: 0, y: 15, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.5, delay: 1.0 }}
+        className="flex-shrink-0"
+      >
+        <div
+          className="relative rounded-xl overflow-hidden"
+          style={{
+            padding: "clamp(10px, 1.5vh, 20px) clamp(16px, 2vw, 32px)",
+            background: "linear-gradient(135deg, rgba(43,127,255,0.08) 0%, rgba(139,92,246,0.06) 100%)",
+            border: "1.5px solid rgba(43,127,255,0.25)",
+            boxShadow: "0 0 30px rgba(43,127,255,0.06)",
+          }}
+        >
+          <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-10 blur-3xl" style={{ background: "radial-gradient(circle, #2B7FFF, transparent)" }} />
+          <p
+            className="text-center text-[#C5C5C7] relative"
+            style={{ fontSize: "clamp(12px, 1.5vh, 18px)", lineHeight: "1.5" }}
+          >
+            O marketplace cria um fluxo contínuo de consumidores e{" "}
+            <strong className="text-[#2B7FFF]">leads qualificados</strong>, alimentando a{" "}
+            <strong className="text-[#8B5CF6]">originação de crédito</strong>.
+          </p>
+        </div>
+      </motion.div>
 
       <SlideFooter />
     </div>
