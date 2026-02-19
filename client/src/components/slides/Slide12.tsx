@@ -5,27 +5,27 @@ import SlideFooter from "../SlideFooter";
 const copilotos = [
   {
     id: "sdr",
-    title: "Copiloto Pré-Venda (SDR)",
+    title: "Assistente Pré-Venda (SDR)",
     description: "Qualifica leads automaticamente, agenda visitas e realiza simulações iniciais. Acelera o funil de vendas, garantindo que a equipe foque apenas nas oportunidades mais quentes e com maior potencial de conversão.",
     icon: UserPlus,
   },
   {
     id: "estoque",
-    title: "Copiloto de Gestão de Estoque",
+    title: "Assistente de Gestão de Estoque",
     description: "Analisa o estoque em tempo real, sugerindo ações para maximizar a margem, como ajuste de preço e melhoria de fotos. Recomenda a compra de veículos de alta demanda na região, criando um estoque inteligente e mais lucrativo.",
     icon: Package,
   },
   {
     id: "financeiro",
-    title: "Copiloto Financeiro",
+    title: "Assistente Financeiro",
     description: "Monitora a saúde financeira da revenda 24/7, identificando gargalos de fluxo de caixa, inadimplências e oportunidades de otimização. Envia alertas proativos sobre vencimentos, sugere estratégias de cobrança e oferece insights sobre rentabilidade por veículo.",
     icon: DollarSign,
     highlight: true,
-    badge: "NOVO",
+
   },
   {
     id: "pos-venda",
-    title: "Copiloto Pós-Venda",
+    title: "Assistente Pós-Venda",
     description: "Mantém um relacionamento de longo prazo com o cliente, oferecendo produtos e serviços de forma automatizada e personalizada. Fideliza o cliente e reduz o custo de aquisição (CAC) para futuras vendas, impulsionando o LTV.",
     icon: Heart,
   },
@@ -43,7 +43,7 @@ export default function Slide12() {
           className="text-center"
         >
           <h2 className="font-extrabold tracking-tight sm: md: text-[#EDEDEF] md:" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
-            Copiloto <span className="text-[#2B7FFF]">Autoline</span>
+            Assistente IA <span className="text-[#2B7FFF]">do Lojista</span>
           </h2>
           <p className="text-[#8A8A8E] sm: max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             Uma suíte de agentes de IA que trabalham 24/7, otimizando cada etapa do ciclo de vendas, gestão financeira e pós-venda.
@@ -72,9 +72,6 @@ export default function Slide12() {
                     <copiloto.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#8A8A8E]" />
                   </div>
                   <div>
-                    {copiloto.badge && (
-                      <span className="text-[10px] font-medium text-[#CC092F] tracking-wider">{copiloto.badge}</span>
-                    )}
                     <h3 className={`text-sm sm:text-base font-medium ${copiloto.highlight ? "text-[#2B7FFF]" : "text-[#EDEDEF]"}`}>
                       {copiloto.title}
                     </h3>
@@ -125,7 +122,7 @@ export default function Slide12() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
               <Sparkles className="w-5 h-5 text-[#8A8A8E] flex-shrink-0" />
               <span className="text-[#8A8A8E] text-sm text-center sm:text-left leading-relaxed">
-                A Inteligência Artificial do Copiloto Autoline atua como um parceiro estratégico, fornecendo insights acionáveis que capacitam o lojista a tomar decisões mais inteligentes.
+                A Inteligência Artificial do Assistente do lojista atua como um parceiro estratégico, fornecendo insights acionáveis que capacitam o lojista a tomar decisões mais inteligentes.
               </span>
             </div>
           </div>

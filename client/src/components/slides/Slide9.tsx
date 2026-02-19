@@ -107,7 +107,7 @@ export default function Slide9() {
                 className="font-bold uppercase tracking-[0.15em] text-[#2B7FFF]"
                 style={{ fontSize: "clamp(9px, 1.1vh, 13px)" }}
               >
-                ECOSYS CORE
+                ecosys AUTO
               </span>
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function Slide9() {
                 className="font-bold uppercase tracking-[0.15em] text-[#8B5CF6]"
                 style={{ fontSize: "clamp(9px, 1.1vh, 13px)" }}
               >
-                COPILOTO
+                Assistente IA
               </span>
             </div>
           </div>
