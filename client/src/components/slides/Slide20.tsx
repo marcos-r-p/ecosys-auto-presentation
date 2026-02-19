@@ -2,6 +2,12 @@ import { motion } from "motion/react";
 import { BarChart3, Briefcase, User, Building2, Database } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
+/*
+ * Slide 20 — Integrações e Dados: A Inteligência que Conecta
+ * EXPANDED: margens reduzidas, grid ampliado, cards e hub central maiores,
+ * fontes aumentadas para leitura a distância. Layout e design inalterados.
+ */
+
 const stakeholders = [
   {
     id: "lojistas",
@@ -49,7 +55,7 @@ export default function Slide20() {
   return (
     <div
       className="flex flex-col h-full overflow-hidden"
-      style={{ padding: "clamp(8px, 1.2vh, 16px) clamp(16px, 2vw, 60px)" }}
+      style={{ padding: "clamp(6px, 0.8vh, 12px) clamp(10px, 1.2vw, 30px)" }}
     >
       {/* Header */}
       <motion.div
@@ -57,18 +63,18 @@ export default function Slide20() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center flex-shrink-0"
-        style={{ marginBottom: "clamp(6px, 1vh, 14px)" }}
+        style={{ marginBottom: "clamp(4px, 0.6vh, 10px)" }}
       >
         <h2
           className="font-extrabold tracking-tight text-[#EDEDEF]"
-          style={{ fontSize: "clamp(22px, 3.2vh, 42px)", lineHeight: "1.1", marginBottom: "clamp(4px, 0.6vh, 10px)" }}
+          style={{ fontSize: "clamp(26px, 3.8vh, 50px)", lineHeight: "1.1", marginBottom: "clamp(3px, 0.5vh, 8px)" }}
         >
           Integrações e Dados:{" "}
           <span className="text-[#2B7FFF]">A Inteligência que Conecta</span>
         </h2>
         <p
-          className="text-[#8A8A8E] max-w-4xl mx-auto"
-          style={{ fontSize: "clamp(10px, 1.2vh, 16px)", lineHeight: "1.4" }}
+          className="text-[#8A8A8E] max-w-5xl mx-auto"
+          style={{ fontSize: "clamp(12px, 1.4vh, 18px)", lineHeight: "1.4" }}
         >
           Infraestrutura que transforma dados brutos em inteligência acionável para todo o ecossistema.
         </p>
@@ -95,7 +101,7 @@ export default function Slide20() {
           </defs>
           {/* Horizontal line */}
           <motion.line
-            x1="15%" y1="50%" x2="85%" y2="50%"
+            x1="10%" y1="50%" x2="90%" y2="50%"
             stroke="url(#lineGradH)"
             strokeWidth="1.5"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -104,7 +110,7 @@ export default function Slide20() {
           />
           {/* Vertical line */}
           <motion.line
-            x1="50%" y1="10%" x2="50%" y2="90%"
+            x1="50%" y1="5%" x2="50%" y2="95%"
             stroke="url(#lineGradV)"
             strokeWidth="1.5"
             initial={{ pathLength: 0, opacity: 0 }}
@@ -119,9 +125,9 @@ export default function Slide20() {
           style={{
             gridTemplateColumns: "1fr auto 1fr",
             gridTemplateRows: "1fr auto 1fr",
-            gap: "clamp(8px, 1vh, 16px)",
-            maxWidth: "900px",
-            maxHeight: "clamp(340px, 52vh, 500px)",
+            gap: "clamp(6px, 0.8vh, 14px)",
+            maxWidth: "1200px",
+            maxHeight: "clamp(420px, 68vh, 640px)",
           }}
         >
           {/* Top Card - GEFINS (row 1, col 2) */}
@@ -135,40 +141,40 @@ export default function Slide20() {
             <div
               className="rounded-xl text-center"
               style={{
-                padding: "clamp(10px, 1.5vh, 20px) clamp(16px, 2vw, 32px)",
+                padding: "clamp(14px, 2vh, 26px) clamp(20px, 2.5vw, 40px)",
                 background: "rgba(255,255,255,0.025)",
                 border: "1px solid rgba(43,127,255,0.15)",
                 backdropFilter: "blur(12px)",
-                minWidth: "clamp(160px, 18vw, 240px)",
+                minWidth: "clamp(200px, 22vw, 300px)",
               }}
             >
               <div
                 className="rounded-lg flex items-center justify-center mx-auto"
                 style={{
-                  width: "clamp(32px, 4vh, 48px)",
-                  height: "clamp(32px, 4vh, 48px)",
+                  width: "clamp(40px, 5.5vh, 60px)",
+                  height: "clamp(40px, 5.5vh, 60px)",
                   background: "rgba(43,127,255,0.1)",
                   border: "1px solid rgba(43,127,255,0.25)",
-                  marginBottom: "clamp(4px, 0.6vh, 10px)",
+                  marginBottom: "clamp(6px, 0.8vh, 12px)",
                 }}
               >
-                <Briefcase style={{ width: "clamp(16px, 2vh, 24px)", height: "clamp(16px, 2vh, 24px)" }} color="#2B7FFF" />
+                <Briefcase style={{ width: "clamp(20px, 2.8vh, 32px)", height: "clamp(20px, 2.8vh, 32px)" }} color="#2B7FFF" />
               </div>
               <h4
                 className="font-bold text-[#EDEDEF]"
-                style={{ fontSize: "clamp(12px, 1.6vh, 20px)", lineHeight: "1.2" }}
+                style={{ fontSize: "clamp(15px, 2vh, 24px)", lineHeight: "1.2" }}
               >
                 Força Comercial
               </h4>
               <p
                 className="text-[#6B6B70] font-medium"
-                style={{ fontSize: "clamp(7px, 0.7vh, 9px)" }}
+                style={{ fontSize: "clamp(9px, 1vh, 12px)" }}
               >
                 (GEFINS)
               </p>
               <p
                 className="text-[#9A9A9E] mt-1"
-                style={{ fontSize: "clamp(9px, 1vh, 13px)", lineHeight: "1.3" }}
+                style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.3" }}
               >
                 Visibilidade 360° e priorização de visitas
               </p>
@@ -186,34 +192,34 @@ export default function Slide20() {
             <div
               className="rounded-xl text-center"
               style={{
-                padding: "clamp(10px, 1.5vh, 20px) clamp(12px, 1.5vw, 24px)",
+                padding: "clamp(14px, 2vh, 26px) clamp(16px, 2vw, 32px)",
                 background: "rgba(255,255,255,0.025)",
                 border: "1px solid rgba(43,127,255,0.15)",
                 backdropFilter: "blur(12px)",
-                minWidth: "clamp(150px, 16vw, 220px)",
+                minWidth: "clamp(190px, 20vw, 280px)",
               }}
             >
               <div
                 className="rounded-lg flex items-center justify-center mx-auto"
                 style={{
-                  width: "clamp(32px, 4vh, 48px)",
-                  height: "clamp(32px, 4vh, 48px)",
+                  width: "clamp(40px, 5.5vh, 60px)",
+                  height: "clamp(40px, 5.5vh, 60px)",
                   background: "rgba(43,127,255,0.1)",
                   border: "1px solid rgba(43,127,255,0.25)",
-                  marginBottom: "clamp(4px, 0.6vh, 10px)",
+                  marginBottom: "clamp(6px, 0.8vh, 12px)",
                 }}
               >
-                <BarChart3 style={{ width: "clamp(16px, 2vh, 24px)", height: "clamp(16px, 2vh, 24px)" }} color="#2B7FFF" />
+                <BarChart3 style={{ width: "clamp(20px, 2.8vh, 32px)", height: "clamp(20px, 2.8vh, 32px)" }} color="#2B7FFF" />
               </div>
               <h4
                 className="font-bold text-[#EDEDEF]"
-                style={{ fontSize: "clamp(12px, 1.6vh, 20px)", lineHeight: "1.2" }}
+                style={{ fontSize: "clamp(15px, 2vh, 24px)", lineHeight: "1.2" }}
               >
                 Lojistas
               </h4>
               <p
                 className="text-[#9A9A9E] mt-1"
-                style={{ fontSize: "clamp(9px, 1vh, 13px)", lineHeight: "1.3" }}
+                style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.3" }}
               >
                 Performance operacional e precificação inteligente
               </p>
@@ -231,8 +237,8 @@ export default function Slide20() {
             <div
               className="relative rounded-2xl flex flex-col items-center justify-center"
               style={{
-                width: "clamp(140px, 18vw, 220px)",
-                height: "clamp(140px, 18vw, 220px)",
+                width: "clamp(180px, 22vw, 280px)",
+                height: "clamp(180px, 22vw, 280px)",
                 background: "linear-gradient(135deg, rgba(43,127,255,0.12) 0%, rgba(43,127,255,0.04) 100%)",
                 border: "1.5px solid rgba(43,127,255,0.35)",
                 backdropFilter: "blur(16px)",
@@ -254,30 +260,30 @@ export default function Slide20() {
               <div
                 className="rounded-xl flex items-center justify-center"
                 style={{
-                  width: "clamp(40px, 5vh, 56px)",
-                  height: "clamp(40px, 5vh, 56px)",
+                  width: "clamp(48px, 6.5vh, 72px)",
+                  height: "clamp(48px, 6.5vh, 72px)",
                   background: "rgba(43,127,255,0.15)",
                   border: "1px solid rgba(43,127,255,0.4)",
-                  marginBottom: "clamp(6px, 0.8vh, 12px)",
+                  marginBottom: "clamp(8px, 1vh, 14px)",
                 }}
               >
-                <Database style={{ width: "clamp(20px, 2.5vh, 30px)", height: "clamp(20px, 2.5vh, 30px)" }} color="#2B7FFF" />
+                <Database style={{ width: "clamp(24px, 3.2vh, 38px)", height: "clamp(24px, 3.2vh, 38px)" }} color="#2B7FFF" />
               </div>
               <h3
                 className="font-extrabold text-[#EDEDEF] text-center"
-                style={{ fontSize: "clamp(11px, 1.4vh, 17px)", lineHeight: "1.2" }}
+                style={{ fontSize: "clamp(14px, 1.8vh, 22px)", lineHeight: "1.2" }}
               >
                 Plataforma de
               </h3>
               <h3
                 className="font-extrabold text-[#2B7FFF] text-center"
-                style={{ fontSize: "clamp(11px, 1.4vh, 17px)", lineHeight: "1.2" }}
+                style={{ fontSize: "clamp(14px, 1.8vh, 22px)", lineHeight: "1.2" }}
               >
                 Dados Autoline
               </h3>
               <p
                 className="text-[#6B6B70] text-center mt-1"
-                style={{ fontSize: "clamp(7px, 0.8vh, 10px)" }}
+                style={{ fontSize: "clamp(9px, 1vh, 13px)" }}
               >
                 Centro de Inteligência
               </p>
@@ -295,34 +301,34 @@ export default function Slide20() {
             <div
               className="rounded-xl text-center"
               style={{
-                padding: "clamp(10px, 1.5vh, 20px) clamp(12px, 1.5vw, 24px)",
+                padding: "clamp(14px, 2vh, 26px) clamp(16px, 2vw, 32px)",
                 background: "rgba(255,255,255,0.025)",
                 border: "1px solid rgba(204,30,58,0.2)",
                 backdropFilter: "blur(12px)",
-                minWidth: "clamp(150px, 16vw, 220px)",
+                minWidth: "clamp(190px, 20vw, 280px)",
               }}
             >
               <div
                 className="rounded-lg flex items-center justify-center mx-auto"
                 style={{
-                  width: "clamp(32px, 4vh, 48px)",
-                  height: "clamp(32px, 4vh, 48px)",
+                  width: "clamp(40px, 5.5vh, 60px)",
+                  height: "clamp(40px, 5.5vh, 60px)",
                   background: "rgba(204,30,58,0.1)",
                   border: "1px solid rgba(204,30,58,0.25)",
-                  marginBottom: "clamp(4px, 0.6vh, 10px)",
+                  marginBottom: "clamp(6px, 0.8vh, 12px)",
                 }}
               >
-                <Building2 style={{ width: "clamp(16px, 2vh, 24px)", height: "clamp(16px, 2vh, 24px)" }} color="#CC1E3A" />
+                <Building2 style={{ width: "clamp(20px, 2.8vh, 32px)", height: "clamp(20px, 2.8vh, 32px)" }} color="#CC1E3A" />
               </div>
               <h4
                 className="font-bold text-[#EDEDEF]"
-                style={{ fontSize: "clamp(12px, 1.6vh, 20px)", lineHeight: "1.2" }}
+                style={{ fontSize: "clamp(15px, 2vh, 24px)", lineHeight: "1.2" }}
               >
                 Bradesco
               </h4>
               <p
                 className="text-[#9A9A9E] mt-1"
-                style={{ fontSize: "clamp(9px, 1vh, 13px)", lineHeight: "1.3" }}
+                style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.3" }}
               >
                 Inteligência competitiva e decisões baseadas em dados
               </p>
@@ -340,34 +346,34 @@ export default function Slide20() {
             <div
               className="rounded-xl text-center"
               style={{
-                padding: "clamp(10px, 1.5vh, 20px) clamp(16px, 2vw, 32px)",
+                padding: "clamp(14px, 2vh, 26px) clamp(20px, 2.5vw, 40px)",
                 background: "rgba(255,255,255,0.025)",
                 border: "1px solid rgba(43,127,255,0.15)",
                 backdropFilter: "blur(12px)",
-                minWidth: "clamp(160px, 18vw, 240px)",
+                minWidth: "clamp(200px, 22vw, 300px)",
               }}
             >
               <div
                 className="rounded-lg flex items-center justify-center mx-auto"
                 style={{
-                  width: "clamp(32px, 4vh, 48px)",
-                  height: "clamp(32px, 4vh, 48px)",
+                  width: "clamp(40px, 5.5vh, 60px)",
+                  height: "clamp(40px, 5.5vh, 60px)",
                   background: "rgba(43,127,255,0.1)",
                   border: "1px solid rgba(43,127,255,0.25)",
-                  marginBottom: "clamp(4px, 0.6vh, 10px)",
+                  marginBottom: "clamp(6px, 0.8vh, 12px)",
                 }}
               >
-                <User style={{ width: "clamp(16px, 2vh, 24px)", height: "clamp(16px, 2vh, 24px)" }} color="#2B7FFF" />
+                <User style={{ width: "clamp(20px, 2.8vh, 32px)", height: "clamp(20px, 2.8vh, 32px)" }} color="#2B7FFF" />
               </div>
               <h4
                 className="font-bold text-[#EDEDEF]"
-                style={{ fontSize: "clamp(12px, 1.6vh, 20px)", lineHeight: "1.2" }}
+                style={{ fontSize: "clamp(15px, 2vh, 24px)", lineHeight: "1.2" }}
               >
                 Consumidores
               </h4>
               <p
                 className="text-[#9A9A9E] mt-1"
-                style={{ fontSize: "clamp(9px, 1vh, 13px)", lineHeight: "1.3" }}
+                style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.3" }}
               >
                 Recomendações personalizadas e jornada otimizada
               </p>
@@ -382,12 +388,12 @@ export default function Slide20() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.9 }}
         className="flex-shrink-0"
-        style={{ marginTop: "clamp(6px, 1vh, 14px)" }}
+        style={{ marginTop: "clamp(4px, 0.6vh, 10px)" }}
       >
         <div
           className="relative rounded-xl overflow-hidden"
           style={{
-            padding: "clamp(8px, 1.2vh, 16px) clamp(12px, 1.5vw, 28px)",
+            padding: "clamp(10px, 1.4vh, 18px) clamp(14px, 1.8vw, 32px)",
             background: "rgba(255,255,255,0.03)",
             border: "1px solid rgba(43,127,255,0.15)",
             boxShadow: "0 0 20px rgba(43,127,255,0.04)",
@@ -395,7 +401,7 @@ export default function Slide20() {
         >
           <p
             className="text-center text-[#C5C5C7] font-medium"
-            style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.4" }}
+            style={{ fontSize: "clamp(13px, 1.6vh, 20px)", lineHeight: "1.4" }}
           >
             <strong className="text-[#2B7FFF]">Visão 360°</strong> do mercado automotivo
             — dados fluindo entre todos os stakeholders, alimentando decisões inteligentes.
