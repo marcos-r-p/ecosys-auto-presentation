@@ -54,16 +54,16 @@ function ExecutiveCard({ exec, index }: { exec: Executive; index: number }) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Glow ring for lead */}
-        {exec.isLead && (
-          <div
-            className="absolute -inset-1 rounded-2xl opacity-60"
-            style={{
-              background: "linear-gradient(135deg, #2B7FFF, #CC092F)",
-              filter: "blur(8px)",
-            }}
-          />
-        )}
+        {/* Glow ring */}
+        <div
+          className="absolute -inset-1 rounded-2xl opacity-60"
+          style={{
+            background: exec.isLead
+              ? "linear-gradient(135deg, #2B7FFF, #CC092F)"
+              : "linear-gradient(135deg, #CC092F, #2B7FFF)",
+            filter: "blur(8px)",
+          }}
+        />
 
         {/* Photo */}
         <div
@@ -73,7 +73,7 @@ function ExecutiveCard({ exec, index }: { exec: Executive; index: number }) {
           style={{
             width: "min(300px, 36vw)",
             height: "min(380px, 46vw)",
-            border: exec.isLead ? "2px solid rgba(43,127,255,0.4)" : "2px solid rgba(255,255,255,0.08)",
+            border: exec.isLead ? "2px solid rgba(43,127,255,0.4)" : "2px solid rgba(204,9,47,0.4)",
           }}
         >
           <img
@@ -92,24 +92,6 @@ function ExecutiveCard({ exec, index }: { exec: Executive; index: number }) {
             }}
           />
         </div>
-
-        {/* Lead badge */}
-        {exec.isLead && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.8 }}
-            className="absolute -top-2 -right-2 px-2.5 py-1 rounded-md text-white font-bold z-20"
-            style={{
-              fontSize: "clamp(8px, 1vh, 11px)",
-              background: "linear-gradient(135deg, #2B7FFF, #1a5fd4)",
-              boxShadow: "0 2px 12px rgba(43,127,255,0.4)",
-              letterSpacing: "0.05em",
-            }}
-          >
-            LÍDER
-          </motion.div>
-        )}
 
         {/* Hover bio overlay */}
         <AnimatePresence>
