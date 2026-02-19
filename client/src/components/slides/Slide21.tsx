@@ -6,103 +6,353 @@ const benefits = [
   {
     icon: DollarSign,
     title: "Monetização da Base",
-    description: "Transforma o app em plataforma transacional para veículos",
-    color: "",
+    description: "App como plataforma transacional para veículos",
+    position: "top-left" as const,
+    color: "#2B7FFF",
   },
   {
     icon: Target,
     title: "Leads Ultra Qualificados",
-    description: "Acesso direto a clientes com perfil de crédito conhecido, permitindo ofertas personalizadas com maior conversão",
-    color: "",
+    description: "Acesso a clientes com perfil de crédito conhecido",
+    position: "top-right" as const,
+    color: "#2B7FFF",
   },
   {
     icon: Smartphone,
     title: "Engajamento e Retenção",
-    description: "Enriquece o app com funcionalidade de alto valor, aumentando frequência de uso e lealdade",
-    color: "",
+    description: "Funcionalidade de alto valor e frequência de uso",
+    position: "bottom-left" as const,
+    color: "#2B7FFF",
   },
   {
     icon: RefreshCw,
     title: "Ofertas Personalizadas",
-    description: "Baseadas em perfil de crédito, histórico e comportamento do cliente",
-    color: "",
+    description: "Baseadas em perfil de crédito e comportamento",
+    position: "bottom-right" as const,
+    color: "#CC1E3A",
   },
 ];
 
 export default function Slide21() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
-      <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-6"
+    <div
+      className="flex flex-col h-full overflow-hidden"
+      style={{ padding: "clamp(8px, 1.2vh, 16px) clamp(16px, 2vw, 60px)" }}
+    >
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center flex-shrink-0"
+        style={{ marginBottom: "clamp(4px, 0.8vh, 12px)" }}
+      >
+        <h2
+          className="font-extrabold tracking-tight text-[#EDEDEF]"
+          style={{ fontSize: "clamp(22px, 3.2vh, 42px)", lineHeight: "1.1", marginBottom: "clamp(2px, 0.4vh, 6px)" }}
         >
-          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
-            <span className="text-[#EDEDEF]">
-              Integração com App Bradesco
-            </span>
-          </h2>
-          <h3 className="text-3xl font-bold text-[#EDEDEF] mb-4">
-            O Ecossistema na Mão de Milhões
-          </h3>
-          <p className="text-[#8A8A8E] text-xl font-medium max-w-5xl mx-auto leading-snug" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
-            A integração embedded do Marketplace Autoline ao aplicativo do Bradesco conecta o ecossistema automotivo diretamente à vasta base de clientes do banco.
-          </p>
-        </motion.div>
-
-        {/* Section Title */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-5"
+          Integração com App Bradesco
+        </h2>
+        <h3
+          className="font-bold text-[#2B7FFF]"
+          style={{ fontSize: "clamp(14px, 2vh, 26px)", lineHeight: "1.2", marginBottom: "clamp(4px, 0.6vh, 10px)" }}
         >
-          <h4 className="text-2xl font-bold text-[#EDEDEF] text-center">
-            Benefícios Estratégicos para o Bradesco
-          </h4>
-        </motion.div>
+          O Ecossistema na Mão de Milhões
+        </h3>
+        <p
+          className="text-[#8A8A8E] max-w-4xl mx-auto"
+          style={{ fontSize: "clamp(10px, 1.2vh, 15px)", lineHeight: "1.4" }}
+        >
+          Embedded Marketplace dentro do App Bradesco — conectando o ecossistema automotivo à vasta base de clientes do banco.
+        </p>
+      </motion.div>
 
-        {/* Benefits Grid - 2x2 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              className="relative group"
-            >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
-                {/* Icon */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-white p-1 flex-shrink-0">
-                    <div className="w-full h-full bg-[#0A0A0B] rounded-[10px] flex items-center justify-center">
-                      <benefit.icon className="w-7 h-7 text-[#EDEDEF]" />
-                    </div>
+      {/* Main Content - Phone + Benefits */}
+      <div className="flex-1 flex items-center justify-center min-h-0 relative">
+        {/* SVG Connection Lines */}
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          style={{ zIndex: 0 }}
+        >
+          <defs>
+            <linearGradient id="lineTL" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="rgba(43,127,255,0.3)" />
+              <stop offset="100%" stopColor="rgba(43,127,255,0.05)" />
+            </linearGradient>
+            <linearGradient id="lineTR" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="rgba(43,127,255,0.3)" />
+              <stop offset="100%" stopColor="rgba(43,127,255,0.05)" />
+            </linearGradient>
+            <linearGradient id="lineBL" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="rgba(43,127,255,0.3)" />
+              <stop offset="100%" stopColor="rgba(43,127,255,0.05)" />
+            </linearGradient>
+            <linearGradient id="lineBR" x1="100%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stopColor="rgba(204,30,58,0.3)" />
+              <stop offset="100%" stopColor="rgba(204,30,58,0.05)" />
+            </linearGradient>
+          </defs>
+          {/* Top-left to center */}
+          <motion.line
+            x1="22%" y1="25%" x2="44%" y2="42%"
+            stroke="url(#lineTL)" strokeWidth="1"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          />
+          {/* Top-right to center */}
+          <motion.line
+            x1="78%" y1="25%" x2="56%" y2="42%"
+            stroke="url(#lineTR)" strokeWidth="1"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+          />
+          {/* Bottom-left to center */}
+          <motion.line
+            x1="22%" y1="75%" x2="44%" y2="58%"
+            stroke="url(#lineBL)" strokeWidth="1"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+          />
+          {/* Bottom-right to center */}
+          <motion.line
+            x1="78%" y1="75%" x2="56%" y2="58%"
+            stroke="url(#lineBR)" strokeWidth="1"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
+          />
+        </svg>
+
+        {/* Layout Grid */}
+        <div
+          className="relative grid w-full h-full"
+          style={{
+            gridTemplateColumns: "1fr auto 1fr",
+            gridTemplateRows: "1fr 1fr",
+            gap: "clamp(8px, 1.2vh, 16px)",
+            maxWidth: "1000px",
+            maxHeight: "clamp(300px, 48vh, 450px)",
+          }}
+        >
+          {/* Top-Left: Monetização */}
+          <motion.div
+            initial={{ opacity: 0, x: -20, y: -20 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex items-end justify-end"
+            style={{ gridColumn: "1", gridRow: "1" }}
+          >
+            <BenefitCard benefit={benefits[0]} />
+          </motion.div>
+
+          {/* Top-Right: Leads */}
+          <motion.div
+            initial={{ opacity: 0, x: 20, y: -20 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex items-end justify-start"
+            style={{ gridColumn: "3", gridRow: "1" }}
+          >
+            <BenefitCard benefit={benefits[1]} />
+          </motion.div>
+
+          {/* Center Phone Mockup (spans 2 rows) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center justify-center"
+            style={{ gridColumn: "2", gridRow: "1 / 3" }}
+          >
+            <div className="relative flex flex-col items-center">
+              {/* Phone Frame */}
+              <div
+                className="relative rounded-3xl flex flex-col items-center justify-center"
+                style={{
+                  width: "clamp(120px, 14vw, 180px)",
+                  height: "clamp(200px, 30vh, 320px)",
+                  background: "linear-gradient(180deg, rgba(43,127,255,0.08) 0%, rgba(15,15,18,0.95) 30%, rgba(15,15,18,0.95) 70%, rgba(43,127,255,0.05) 100%)",
+                  border: "2px solid rgba(43,127,255,0.25)",
+                  boxShadow: "0 0 40px rgba(43,127,255,0.08), 0 0 80px rgba(43,127,255,0.04), inset 0 0 20px rgba(43,127,255,0.02)",
+                }}
+              >
+                {/* Animated pulse */}
+                <motion.div
+                  className="absolute inset-0 rounded-3xl pointer-events-none"
+                  animate={{
+                    boxShadow: [
+                      "0 0 15px rgba(43,127,255,0.06)",
+                      "0 0 35px rgba(43,127,255,0.12)",
+                      "0 0 15px rgba(43,127,255,0.06)",
+                    ],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+
+                {/* Notch */}
+                <div
+                  className="absolute top-2 rounded-full"
+                  style={{
+                    width: "clamp(30px, 4vw, 50px)",
+                    height: "clamp(4px, 0.5vh, 6px)",
+                    background: "rgba(255,255,255,0.08)",
+                  }}
+                />
+
+                {/* Screen Content */}
+                <div className="flex flex-col items-center gap-1">
+                  <div
+                    className="rounded-lg flex items-center justify-center"
+                    style={{
+                      width: "clamp(36px, 4.5vh, 52px)",
+                      height: "clamp(36px, 4.5vh, 52px)",
+                      background: "rgba(43,127,255,0.12)",
+                      border: "1px solid rgba(43,127,255,0.3)",
+                    }}
+                  >
+                    <Smartphone style={{ width: "clamp(18px, 2.2vh, 28px)", height: "clamp(18px, 2.2vh, 28px)" }} color="#2B7FFF" />
                   </div>
-                  
-                  {/* Title */}
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-[#EDEDEF] leading-tight">
-                      {benefit.title}
-                    </h3>
-                  </div>
+                  <p
+                    className="font-bold text-[#EDEDEF] text-center"
+                    style={{ fontSize: "clamp(8px, 1vh, 12px)" }}
+                  >
+                    Marketplace
+                  </p>
+                  <p
+                    className="text-[#2B7FFF] text-center font-semibold"
+                    style={{ fontSize: "clamp(7px, 0.8vh, 10px)" }}
+                  >
+                    Autoline
+                  </p>
                 </div>
 
-                {/* Description */}
-                <p className="text-[#8A8A8E] text-base leading-relaxed">
-                  {benefit.description}
-                </p>
+                {/* Home indicator */}
+                <div
+                  className="absolute bottom-2 rounded-full"
+                  style={{
+                    width: "clamp(24px, 3vw, 40px)",
+                    height: "clamp(3px, 0.4vh, 5px)",
+                    background: "rgba(255,255,255,0.12)",
+                  }}
+                />
               </div>
-            </motion.div>
-          ))}
+
+              {/* Badge below phone */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.7 }}
+                className="mt-2"
+              >
+                <span
+                  className="px-3 py-1 rounded-full text-[#2B7FFF] font-bold uppercase tracking-wider"
+                  style={{
+                    fontSize: "clamp(6px, 0.7vh, 9px)",
+                    background: "rgba(43,127,255,0.1)",
+                    border: "1px solid rgba(43,127,255,0.25)",
+                  }}
+                >
+                  Milhões de usuários ativos
+                </span>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* Bottom-Left: Engajamento */}
+          <motion.div
+            initial={{ opacity: 0, x: -20, y: 20 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex items-start justify-end"
+            style={{ gridColumn: "1", gridRow: "2" }}
+          >
+            <BenefitCard benefit={benefits[2]} />
+          </motion.div>
+
+          {/* Bottom-Right: Ofertas */}
+          <motion.div
+            initial={{ opacity: 0, x: 20, y: 20 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="flex items-start justify-start"
+            style={{ gridColumn: "3", gridRow: "2" }}
+          >
+            <BenefitCard benefit={benefits[3]} />
+          </motion.div>
         </div>
       </div>
 
+      {/* Callout Bottom */}
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.2 }}
+        className="flex-shrink-0"
+        style={{ marginTop: "clamp(6px, 1vh, 14px)" }}
+      >
+        <div
+          className="relative rounded-xl overflow-hidden"
+          style={{
+            padding: "clamp(8px, 1.2vh, 16px) clamp(12px, 1.5vw, 28px)",
+            background: "linear-gradient(135deg, rgba(43,127,255,0.06) 0%, rgba(204,30,58,0.04) 100%)",
+            border: "1px solid rgba(43,127,255,0.15)",
+            boxShadow: "0 0 20px rgba(43,127,255,0.04)",
+          }}
+        >
+          <p
+            className="text-center text-[#C5C5C7] font-medium"
+            style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.4" }}
+          >
+            <strong className="text-[#2B7FFF]">Embedded Marketplace</strong>{" "}
+            — escala do Bradesco + inteligência Autoline = originação contínua de crédito automotivo.
+          </p>
+        </div>
+      </motion.div>
+
       <SlideFooter />
+    </div>
+  );
+}
+
+function BenefitCard({ benefit }: { benefit: typeof benefits[number] }) {
+  const isRed = benefit.color === "#CC1E3A";
+  return (
+    <div
+      className="rounded-xl"
+      style={{
+        padding: "clamp(10px, 1.4vh, 18px) clamp(10px, 1.2vw, 20px)",
+        background: "rgba(255,255,255,0.025)",
+        border: `1px solid rgba(${isRed ? "204,30,58" : "43,127,255"}, 0.15)`,
+        backdropFilter: "blur(12px)",
+        maxWidth: "clamp(180px, 22vw, 280px)",
+      }}
+    >
+      <div
+        className="rounded-lg flex items-center justify-center"
+        style={{
+          width: "clamp(28px, 3.5vh, 42px)",
+          height: "clamp(28px, 3.5vh, 42px)",
+          background: `rgba(${isRed ? "204,30,58" : "43,127,255"}, 0.1)`,
+          border: `1px solid rgba(${isRed ? "204,30,58" : "43,127,255"}, 0.25)`,
+          marginBottom: "clamp(4px, 0.6vh, 10px)",
+        }}
+      >
+        <benefit.icon
+          style={{ width: "clamp(14px, 1.8vh, 22px)", height: "clamp(14px, 1.8vh, 22px)" }}
+          color={benefit.color}
+        />
+      </div>
+      <h4
+        className="font-bold text-[#EDEDEF]"
+        style={{ fontSize: "clamp(11px, 1.4vh, 17px)", lineHeight: "1.2", marginBottom: "clamp(2px, 0.3vh, 5px)" }}
+      >
+        {benefit.title}
+      </h4>
+      <p
+        className="text-[#9A9A9E]"
+        style={{ fontSize: "clamp(9px, 1vh, 13px)", lineHeight: "1.3" }}
+      >
+        {benefit.description}
+      </p>
     </div>
   );
 }
