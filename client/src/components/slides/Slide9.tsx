@@ -48,6 +48,8 @@ const block3Items = [
 export default function Slide9() {
   return (
     <div className="flex flex-col h-full px-6 sm:px-10 md:px-14 lg:px-20 pt-4 pb-1 overflow-hidden">
+      {/* Content wrapper — centralizado verticalmente */}
+      <div className="flex-1 flex flex-col justify-center">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
@@ -286,6 +288,7 @@ export default function Slide9() {
           no mercado de seminovos.
         </p>
       </motion.div>
+      </div>
 
       <SlideFooter />
     </div>
