@@ -70,7 +70,7 @@ export default function Slide10() {
               <div className="mb-3">
                 
                 <h3 className="text-3xl font-bold text-[#EDEDEF] mb-3">
-                  Gestor{" "}
+                  Gestor  Lite{" "}
                   <img
                     src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
                     alt="Autoline"
@@ -121,7 +121,7 @@ export default function Slide10() {
                   </span>
                 </div>
                 <h3 className="text-3xl font-bold text-[#EDEDEF] mb-3">
-                  ecosys AUTO
+                  Gestor Pro
                 </h3>
                 <p className="text-[#8A8A8E] text-sm leading-relaxed">
                   A gestão completa para máxima eficiência, adicionando ferramentas avançadas para revendas estruturadas.
