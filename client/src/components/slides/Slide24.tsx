@@ -2,199 +2,223 @@ import { motion } from "motion/react";
 import { MapPin, Users, Target, Settings, MessageCircle, Bot, Activity, Zap, Cloud } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
-const features = [
+const mainModules = [
   {
     icon: MapPin,
-    title: "Gestão de Visitas Inteligente",
-    items: [
-      "Planejamento com frequência definida",
-      "Check-in/out GPS com validação por raio",
-      "Histórico completo com evidências",
-      "Roteirização inteligente (proximidade + prioridade)",
-    ],
+    title: "Gestão de Visitas",
+    items: ["Planejamento inteligente", "Check-in GPS validado", "Roteirização automática"],
+    color: "#2B7FFF",
   },
   {
     icon: Users,
-    title: "Carteira de Parceiros 360°",
-    items: [
-      "Cadastro completo centralizado",
-      "Memória institucional do relacionamento",
-      "Performance e indicadores em tempo real",
-      "Health Score visual (verde/amarelo/vermelho)",
-    ],
+    title: "Carteira 360°",
+    items: ["Cadastro centralizado", "Indicadores em tempo real", "Health Score visual"],
+    color: "#2B7FFF",
   },
   {
     icon: Target,
-    title: "Direcionamento e Priorização com IA",
-    items: [
-      "HQ define prioridades para campo",
-      "Alertas preditivos de queda de performance",
-      "Risco de inativação identificado 30-60 dias antes",
-      "Sugestão automática de próximas ações",
-    ],
+    title: "Priorização com IA",
+    items: ["Alertas preditivos", "Risco de inativação antecipado", "Próximas ações sugeridas"],
+    color: "#CC092F",
     highlight: true,
   },
   {
     icon: Settings,
-    title: "Operação Comercial Automatizada",
-    items: [
-      "Kanban de tarefas por lojista",
-      "Checklist pós-visita estruturado",
-      "Gatilhos comerciais automáticos",
-      "Gestão de comissões e ganhos transparente",
-    ],
+    title: "Operação Automatizada",
+    items: ["Kanban por lojista", "Checklist pós-visita", "Gatilhos comerciais"],
+    color: "#2B7FFF",
   },
   {
     icon: MessageCircle,
     title: "Comunicação Rápida",
-    items: [
-      "\"Buzina\" - Pedido de apoio com escalação",
-      "Integração nativa com Microsoft Teams",
-      "Chat com histórico e evidências",
-    ],
+    items: ["Buzina com escalação", "Integração Teams", "Chat com histórico"],
+    color: "#2B7FFF",
   },
   {
     icon: Bot,
-    title: "First IA - Assistente Inteligente",
-    items: [
-      "Resumo automático de visitas por voz",
-      "Sugestões do que registrar",
-      "\"O que fazer com essa loja?\" / \"Qual minha prioridade?\"",
-    ],
+    title: "First IA — Assistente",
+    items: ["Resumo de visitas por voz", "Sugestões automáticas", "Copiloto de decisão"],
+    color: "#CC092F",
     highlight: true,
   },
 ];
 
-const bottomCards = [
+const bottomModules = [
   {
     icon: Activity,
-    title: "Health Score (0-100)",
-    content: (
-      <div className="space-y-1">
-        <div className="grid grid-cols-2 gap-x-3 gap-y-0.5">
-          <div className="text-[10px] text-[#8A8A8E]"><span className="font-bold text-[#EDEDEF]">30%</span> Performance Financeira</div>
-          <div className="text-[10px] text-[#8A8A8E]"><span className="font-bold text-[#EDEDEF]">20%</span> Qualidade</div>
-          <div className="text-[10px] text-[#8A8A8E]"><span className="font-bold text-[#EDEDEF]">20%</span> Engajamento</div>
-          <div className="text-[10px] text-[#8A8A8E]"><span className="font-bold text-[#EDEDEF]">15%</span> Produtos</div>
-          <div className="text-[10px] text-[#8A8A8E]"><span className="font-bold text-[#EDEDEF]">15%</span> Relacionamento</div>
-        </div>
-        <div className="flex gap-2 mt-1.5 pt-1.5 border-t border-white/[0.06]">
-          <span className="text-[9px] text-green-400 font-medium">80-100: Upsell</span>
-          <span className="text-[9px] text-yellow-400 font-medium">50-79: Atenção</span>
-          <span className="text-[9px] text-red-400 font-medium">&lt;50: Ação imediata</span>
-        </div>
-      </div>
-    ),
+    title: "Health Score",
+    subtitle: "0-100",
+    items: ["Performance · Engajamento · Qualidade"],
+    badges: [
+      { label: "80+: Upsell", color: "#22C55E" },
+      { label: "50-79: Atenção", color: "#EAB308" },
+      { label: "<50: Ação", color: "#CC092F" },
+    ],
   },
   {
     icon: Zap,
-    title: "Automação Inteligente",
-    content: (
-      <div className="space-y-1">
-        <div className="flex items-start gap-1.5">
-          <span className="text-[#CC092F] flex-shrink-0 mt-0.5 text-[7px]">●</span>
-          <span className="text-[10px] text-[#8A8A8E] leading-tight">Performance -20% → Tarefa urgente + Gestor notificado</span>
-        </div>
-        <div className="flex items-start gap-1.5">
-          <span className="text-[#CC092F] flex-shrink-0 mt-0.5 text-[7px]">●</span>
-          <span className="text-[10px] text-[#8A8A8E] leading-tight">Sem visita &gt;30 dias → Roteiro prioritário + Checklist</span>
-        </div>
-        <div className="flex items-start gap-1.5">
-          <span className="text-[#CC092F] flex-shrink-0 mt-0.5 text-[7px]">●</span>
-          <span className="text-[10px] text-[#8A8A8E] leading-tight">Health Score &lt;40 → Plano de recuperação automático</span>
-        </div>
-      </div>
-    ),
+    title: "Automação",
+    subtitle: "Inteligente",
+    items: ["Performance -20% → Tarefa urgente", "Sem visita 30d → Roteiro prioritário", "Score <40 → Plano de recuperação"],
   },
   {
     icon: Cloud,
-    title: "Ecossistema Microsoft",
-    content: (
-      <div className="grid grid-cols-2 gap-1">
-        <div className="text-[10px] text-[#8A8A8E]"><span className="font-bold text-[#EDEDEF]">Teams:</span> Comunicação + alertas</div>
-        <div className="text-[10px] text-[#8A8A8E]"><span className="font-bold text-[#EDEDEF]">Outlook:</span> Sincronização de agenda</div>
-        <div className="text-[10px] text-[#8A8A8E]"><span className="font-bold text-[#EDEDEF]">Power BI:</span> Dashboards executivos</div>
-        <div className="text-[10px] text-[#8A8A8E]"><span className="font-bold text-[#EDEDEF]">Azure AD:</span> SSO + governança</div>
-      </div>
-    ),
+    title: "Ecossistema",
+    subtitle: "Microsoft",
+    items: ["Teams · Outlook · Power BI · Azure AD"],
   },
 ];
 
 export default function Slide24() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 pt-3 pb-2 overflow-hidden">
-      <div className="max-w-7xl w-full flex flex-col h-full">
+    <div className="flex flex-col h-full px-6 sm:px-10 md:px-14 lg:px-20 pt-4 pb-1 overflow-hidden">
+      {/* Content wrapper — centralizado verticalmente */}
+      <div className="flex-1 flex flex-col justify-center">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -15 }}
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-3"
+          transition={{ duration: 0.35 }}
+          className="text-center mb-5"
         >
-          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(18px, 2.8vh, 36px)', lineHeight: '1.1' }}>
-            <span className="font-bold" style={{ color: '#CC092F' }}>Copiloto Comercial</span>
-            <span className="text-[#EDEDEF]">: Funcionalidades e Tecnologia</span>
+          <h2
+            className="font-black tracking-tight leading-none"
+            style={{ fontSize: "clamp(26px, 4.5vh, 52px)" }}
+          >
+            <span className="text-[#CC092F]">Copiloto Comercial</span>
+            <span className="text-[#EDEDEF]">: Funcionalidades</span>
           </h2>
         </motion.div>
 
-        {/* Funcionalidades Core - 3x2 grid */}
-        <div className="grid grid-cols-3 gap-2.5 mb-2.5 flex-1">
-          {features.map((feature, index) => (
+        {/* Main 3x2 Grid — módulos principais */}
+        <div className="grid grid-cols-3 gap-3 md:gap-4 mb-4">
+          {mainModules.map((mod, i) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 15 }}
+              key={i}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 + index * 0.04 }}
-              className="flex"
+              transition={{ duration: 0.35, delay: 0.08 + i * 0.04 }}
+              className="rounded-xl px-4 py-3 relative overflow-hidden"
+              style={{
+                background: mod.highlight
+                  ? "linear-gradient(160deg, rgba(204,9,47,0.12), rgba(204,9,47,0.04))"
+                  : "rgba(255,255,255,0.03)",
+                border: mod.highlight
+                  ? "2px solid rgba(204,9,47,0.5)"
+                  : "1px solid rgba(255,255,255,0.08)",
+                boxShadow: mod.highlight
+                  ? "0 0 30px rgba(204,9,47,0.08)"
+                  : "none",
+              }}
             >
-              <div
-                className={`bg-white/[0.04] border ${
-                  feature.highlight ? "border-[#CC092F]/50" : "border-white/[0.08]"
-                } rounded-lg p-3 w-full hover:border-white/[0.12] transition-all flex flex-col`}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-7 h-7 rounded-md bg-white/[0.06] flex items-center justify-center flex-shrink-0">
-                    <feature.icon className={`w-4 h-4 ${feature.highlight ? "text-[#CC092F]" : "text-[#EDEDEF]"}`} />
-                  </div>
-                  <h4 className={`text-[11px] font-bold leading-tight ${feature.highlight ? "text-[#CC092F]" : "text-[#EDEDEF]"}`}>
-                    {feature.title}
-                    {feature.highlight && (
-                      <span className="ml-1 text-[8px] px-1.5 py-0.5 rounded-full font-bold" style={{ backgroundColor: '#CC092F', color: 'white' }}>
-                        NOVO
-                      </span>
-                    )}
-                  </h4>
+              {/* Badge NOVO */}
+              {mod.highlight && (
+                <div
+                  className="absolute top-0 right-0 px-3 py-1 rounded-bl-lg font-black uppercase tracking-wider text-white"
+                  style={{
+                    fontSize: "clamp(8px, 0.9vh, 11px)",
+                    background: "linear-gradient(135deg, #CC092F, #E01040)",
+                  }}
+                >
+                  NOVO
                 </div>
-                <ul className="space-y-0.5 flex-1">
-                  {feature.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-1">
-                      <span className="text-[#CC092F] flex-shrink-0 mt-0.5 text-[7px]">●</span>
-                      <span className="text-[#8A8A8E] text-[9px] leading-tight">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              )}
+
+              {/* Header do módulo */}
+              <div className="flex items-center gap-3 mb-2.5">
+                <div
+                  className="w-10 h-10 md:w-11 md:h-11 rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{
+                    background: `linear-gradient(135deg, ${mod.color}22, ${mod.color}0D)`,
+                    border: `1.5px solid ${mod.color}55`,
+                  }}
+                >
+                  <mod.icon
+                    className="w-5 h-5 md:w-6 md:h-6"
+                    style={{ color: mod.color }}
+                  />
+                </div>
+                <h3
+                  className="font-extrabold leading-tight"
+                  style={{
+                    fontSize: "clamp(15px, 2.2vh, 24px)",
+                    color: mod.highlight ? "#FFFFFF" : "#EDEDEF",
+                  }}
+                >
+                  {mod.title}
+                </h3>
               </div>
+
+              {/* Items — max 3, texto conciso */}
+              <ul className="flex flex-col gap-1.5">
+                {mod.items.map((item, j) => (
+                  <li key={j} className="flex items-center gap-2">
+                    <div
+                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                      style={{ backgroundColor: mod.color, opacity: mod.highlight ? 1 : 0.6 }}
+                    />
+                    <span
+                      className="font-medium leading-snug"
+                      style={{
+                        fontSize: "clamp(12px, 1.5vh, 17px)",
+                        color: mod.highlight ? "#E0E0E4" : "#9A9AA0",
+                      }}
+                    >
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom row - Health Score + Automação + Ecossistema */}
-        <div className="grid grid-cols-3 gap-2.5">
-          {bottomCards.map((card, index) => (
+        {/* Bottom row — módulos secundários (menores) */}
+        <div className="grid grid-cols-3 gap-3 md:gap-4">
+          {bottomModules.map((mod, i) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 15 }}
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
-              className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-3 hover:border-white/[0.12] transition-all"
+              transition={{ duration: 0.3, delay: 0.35 + i * 0.04 }}
+              className="rounded-lg px-4 py-2.5"
+              style={{
+                background: "rgba(255,255,255,0.025)",
+                border: "1px solid rgba(255,255,255,0.06)",
+              }}
             >
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-7 h-7 rounded-md bg-white/[0.06] flex items-center justify-center flex-shrink-0">
-                  <card.icon className="w-4 h-4 text-[#EDEDEF]" />
-                </div>
-                <h4 className="text-[11px] font-bold text-[#EDEDEF]">{card.title}</h4>
+              <div className="flex items-center gap-2.5 mb-1.5">
+                <mod.icon className="w-4 h-4 md:w-5 md:h-5 text-[#6A6A6E]" />
+                <h4
+                  className="font-bold text-[#ABABAF] leading-tight"
+                  style={{ fontSize: "clamp(12px, 1.5vh, 17px)" }}
+                >
+                  {mod.title}{" "}
+                  <span className="font-normal text-[#6A6A6E]">{mod.subtitle}</span>
+                </h4>
               </div>
-              {card.content}
+              {mod.items.map((item, j) => (
+                <p
+                  key={j}
+                  className="text-[#7A7A7E] leading-snug"
+                  style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}
+                >
+                  {item}
+                </p>
+              ))}
+              {mod.badges && (
+                <div className="flex gap-2 mt-1.5">
+                  {mod.badges.map((b, k) => (
+                    <span
+                      key={k}
+                      className="font-semibold"
+                      style={{ fontSize: "clamp(9px, 1vh, 12px)", color: b.color }}
+                    >
+                      {b.label}
+                    </span>
+                  ))}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
