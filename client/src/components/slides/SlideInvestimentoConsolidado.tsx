@@ -23,8 +23,8 @@ const products = [
     borderColor: "rgba(43,127,255,0.3)",
     development: "R$ 7.340.000",
     developmentValue: 7340000,
-    sustaining: "R$ 768.597/mês",
-    sustainingValue: 768597,
+    sustaining: "R$ 274.465/mês",
+    sustainingValue: 274465,
     period: "Mês 0 → 12",
   },
   {
@@ -35,8 +35,8 @@ const products = [
     borderColor: "rgba(6,182,212,0.3)",
     development: "R$ 13.214.551",
     developmentValue: 13214551,
-    sustaining: "Incluso no DMS",
-    sustainingValue: null,
+    sustaining: "R$ 494.132/mês",
+    sustainingValue: 494132,
     period: "Mês 0 → 12",
   },
   {

@@ -70,7 +70,7 @@ export default function Slide10() {
               <div className="mb-3">
                 
                 <h3 className="text-3xl font-bold text-[#EDEDEF] mb-3">
-                  Gestor  Lite{" "}
+                  Gestor Lite{" "}
                   <img
                     src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
                     alt="Autoline"
