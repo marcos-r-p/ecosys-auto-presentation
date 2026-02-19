@@ -28,10 +28,10 @@ export default function ChapterSeparator({ number, title, subtitle }: ChapterSep
           transition={{ duration: 0.5, delay: 0.15 }}
           className="text-3xl md:text-4xl font-semibold text-[#EDEDEF] -mt-20 md:-mt-24"
         >
-          {title.includes("\u2014") ? (
+          {title.includes(":") ? (
             <>
-              {title.split("\u2014")[0]}
-              <span className="text-[#CC092F]">\u2014 {title.split("\u2014")[1]}</span>
+              {title.split(":")[0]}:{" "}
+              <span className="text-[#CC092F]">{title.split(":").slice(1).join(":").trim()}</span>
             </>
           ) : (
             title

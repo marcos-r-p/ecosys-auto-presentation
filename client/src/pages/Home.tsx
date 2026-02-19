@@ -55,7 +55,7 @@ const CHAPTERS = [
   { number: "05", title: "A Proposta", subtitle: "O que estamos propondo, para quem e como evoluiu" },
   { number: "06", title: "Gestor Autoline", subtitle: "Gestão inteligente para lojistas, dados estratégicos para o Bradesco" },
   { number: "07", title: "Marketplace Autoline", subtitle: "Vitrine digital que conecta lojistas, consumidores e financiamento Bradesco" },
-  { number: "08", title: "Novo GIO — Copiloto Comercial", subtitle: "O copiloto inteligente que transforma estratégia em execução para o GEFIN" },
+  { number: "08", title: "Novo GIO: Copiloto Comercial", subtitle: "O copiloto inteligente que transforma estratégia em execução para o GEFIN" },
   { number: "09", title: "Motor Comercial", subtitle: "Inteligência que antecipa demanda e amplifica resultados" },
   { number: "10", title: "Investimento e Roadmap", subtitle: "Cronograma, valores e modelo de sustentação" },
 ];
