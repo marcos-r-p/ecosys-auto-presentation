@@ -1,237 +1,383 @@
-import { useState } from "react";
-import { motion } from "motion/react";
-import { Share2, MessageCircle, TrendingUp, CheckCircle2, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  MessageCircle,
+  TrendingUp,
+  ArrowRight,
+  Zap,
+  Target,
+  DollarSign,
+} from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
 /*
- * Design: Comunicação Unificada para Maximizar a Conversão
- * - Dois blocos com bullets curtos e canais visuais em badges
- * - CRM Omnichannel com maior destaque (borda azul + glow)
- * - Resultado central com glow pulsante
- * - Animação sequencial: Redes Sociais → CRM → Resultado
+ * Design: Comunicação Unificada — Fluxo de Geração e Conversão de Leads
+ * Layout horizontal: Canais de Origem → eConversa CRM (protagonista) → Impacto em Vendas
+ * Animação sequencial: canais → convergência → CRM → impacto → resultado
+ * Foco em resultados de negócio, não funcionalidades
+ * Estilo executivo para apresentação presencial em tela grande
  */
 
-const socialChannels = [
-  { name: "Facebook", color: "#1877F2" },
-  { name: "Instagram", color: "#E4405F" },
-  { name: "Meta Marketplace", color: "#0084FF" },
+const channels = [
+  { name: "WhatsApp", color: "#25D366", emoji: "💬" },
+  { name: "OLX", color: "#6E0AD6", emoji: "🏷️" },
+  { name: "Instagram", color: "#E4405F", emoji: "📸" },
+  { name: "Facebook", color: "#1877F2", emoji: "👥" },
+  { name: "Marketplace", color: "#2B7FFF", emoji: "🛒" },
 ];
 
-const crmChannels = [
-  { name: "WhatsApp", color: "#25D366" },
-  { name: "OLX", color: "#6E0AD6" },
-  { name: "Instagram", color: "#E4405F" },
-  { name: "Facebook", color: "#1877F2" },
-  { name: "Marketplace", color: "#2B7FFF" },
-];
-
-const socialBullets = [
-  "Publicação automática do estoque nas redes",
-  "Leads qualificados direto das redes sociais",
-  "Visibilidade massiva sem esforço manual",
-];
-
-const crmBullets = [
-  "Todas as conversas em uma única plataforma",
-  "Nenhuma proposta fica sem resposta",
-  "Tempo de resposta reduzido drasticamente",
-  "Taxa de conversão de leads ampliada",
+const impactMetrics = [
+  {
+    icon: Zap,
+    label: "Resposta instantânea",
+    value: "Zero leads sem resposta",
+    color: "#2B7FFF",
+  },
+  {
+    icon: Target,
+    label: "Conversão ampliada",
+    value: "+40% taxa de fechamento",
+    color: "#10B981",
+  },
+  {
+    icon: DollarSign,
+    label: "Receita acelerada",
+    value: "Mais vendas por vendedor",
+    color: "#F59E0B",
+  },
 ];
 
 export default function Slide11() {
-  const [hoveredBlock, setHoveredBlock] = useState<string | null>(null);
+  const [phase, setPhase] = useState(0);
+  const [hoveredChannel, setHoveredChannel] = useState<number | null>(null);
+
+  useEffect(() => {
+    const timers = [
+      setTimeout(() => setPhase(1), 300),   // Header
+      setTimeout(() => setPhase(2), 700),   // Canais
+      setTimeout(() => setPhase(3), 1300),  // Setas convergência
+      setTimeout(() => setPhase(4), 1700),  // CRM central
+      setTimeout(() => setPhase(5), 2400),  // Seta saída + Impacto
+      setTimeout(() => setPhase(6), 3000),  // Resultado final
+    ];
+    return () => timers.forEach(clearTimeout);
+  }, []);
 
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 overflow-hidden">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pr-16 pt-2 sm:pt-3 md:pt-3 lg:pt-4 pb-2 overflow-hidden">
       <div className="max-w-7xl w-full flex flex-col h-full">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={phase >= 1 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-6"
+          className="text-center"
         >
           <h2
             className="font-extrabold tracking-tight text-[#EDEDEF]"
-            style={{ fontSize: "clamp(24px, 3.8vh, 44px)", lineHeight: "1.1", marginBottom: "clamp(4px, 0.8vh, 12px)" }}
+            style={{
+              fontSize: "clamp(24px, 3.8vh, 44px)",
+              lineHeight: "1.1",
+              marginBottom: "clamp(4px, 0.6vh, 10px)",
+            }}
           >
             Comunicação Unificada para{" "}
             <span className="text-[#2B7FFF]">Maximizar a Conversão</span>
           </h2>
-          <p className="text-[#8A8A8E] max-w-3xl mx-auto" style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}>
-            Integrar e centralizar a comunicação do lojista para que nenhuma oportunidade de venda seja perdida
+          <p
+            className="text-[#8A8A8E] max-w-3xl mx-auto"
+            style={{ fontSize: "clamp(11px, 1.3vh, 16px)" }}
+          >
+            De 5 canais dispersos para 1 plataforma inteligente — nenhum lead se perde
           </p>
         </motion.div>
 
-        {/* Two blocks side by side */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-5 flex-1 min-h-0">
-          {/* Block 1: Integração Redes Sociais — 2/5 width */}
+        {/* Main Flow: Canais → CRM → Impacto */}
+        <div className="flex-1 flex flex-col justify-center min-h-0">
+          {/* Resultado Final - acima do fluxo */}
+          <div className="flex items-center gap-0">
+          {/* ── COLUNA 1: Canais de Origem ── */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:col-span-2 relative group"
-            onMouseEnter={() => setHoveredBlock("social")}
-            onMouseLeave={() => setHoveredBlock(null)}
+            initial={{ opacity: 0, x: -40 }}
+            animate={phase >= 2 ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col gap-2 flex-shrink-0"
+            style={{ width: "clamp(150px, 18vw, 210px)" }}
           >
-            <div
-              className={`relative h-full rounded-2xl border transition-all duration-300 p-5 flex flex-col ${
-                hoveredBlock === "social"
-                  ? "bg-white/[0.06] border-white/[0.15]"
-                  : "bg-white/[0.03] border-white/[0.08]"
-              }`}
+            <p
+              className="text-[#8A8A8E] font-semibold uppercase tracking-wider mb-1 text-center"
+              style={{ fontSize: "clamp(8px, 0.9vh, 11px)" }}
             >
-              {/* Icon + Title */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-white/[0.06] flex items-center justify-center flex-shrink-0">
-                  <Share2 className="w-5 h-5 text-[#8A8A8E]" />
-                </div>
-                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(16px, 2vh, 22px)" }}>
-                  Redes Sociais
-                </h3>
-              </div>
-
-              {/* Channel badges */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {socialChannels.map((ch) => (
-                  <span
-                    key={ch.name}
-                    className="px-3 py-1 rounded-full text-xs font-semibold text-white"
-                    style={{ backgroundColor: ch.color + "22", border: `1px solid ${ch.color}55`, color: ch.color }}
-                  >
-                    {ch.name}
-                  </span>
-                ))}
-              </div>
-
-              {/* Bullets */}
-              <div className="space-y-2.5 flex-1">
-                {socialBullets.map((bullet, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 + i * 0.1 }}
-                    className="flex items-start gap-2.5"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-[#8A8A8E] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#C0C0C4] leading-snug" style={{ fontSize: "clamp(12px, 1.4vh, 16px)" }}>
-                      {bullet}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Block 2: eConversa CRM Omnichannel — 3/5 width, maior destaque */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="md:col-span-3 relative group"
-            onMouseEnter={() => setHoveredBlock("crm")}
-            onMouseLeave={() => setHoveredBlock(null)}
-          >
-            {/* Glow background for CRM */}
-            <div
-              className="absolute -inset-[1px] rounded-2xl opacity-40 blur-sm transition-opacity duration-300"
-              style={{
-                background: "linear-gradient(135deg, #2B7FFF33, #8B5CF633)",
-                opacity: hoveredBlock === "crm" ? 0.6 : 0.25,
-              }}
-            />
-            <div
-              className={`relative h-full rounded-2xl border transition-all duration-300 p-5 flex flex-col ${
-                hoveredBlock === "crm"
-                  ? "bg-white/[0.06] border-[#2B7FFF]/40"
-                  : "bg-white/[0.03] border-[#2B7FFF]/20"
-              }`}
-            >
-              {/* Icon + Title + Badge */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-[#2B7FFF]/10 flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="w-5 h-5 text-[#2B7FFF]" />
-                </div>
-                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(16px, 2vh, 22px)" }}>
-                  eConversa — CRM Omnichannel
-                </h3>
-                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#2B7FFF]/15 text-[#2B7FFF] border border-[#2B7FFF]/30">
-                  Principal
-                </span>
-              </div>
-
-              {/* Channel badges */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {crmChannels.map((ch) => (
-                  <span
-                    key={ch.name}
-                    className="px-3 py-1 rounded-full text-xs font-semibold"
-                    style={{ backgroundColor: ch.color + "18", border: `1px solid ${ch.color}44`, color: ch.color }}
-                  >
-                    {ch.name}
-                  </span>
-                ))}
-              </div>
-
-              {/* Bullets in 2 columns */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 flex-1">
-                {crmBullets.map((bullet, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.6 + i * 0.1 }}
-                    className="flex items-start gap-2.5"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-[#2B7FFF] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#C0C0C4] leading-snug" style={{ fontSize: "clamp(12px, 1.4vh, 16px)" }}>
-                      {bullet}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Visual flow: channels → single platform */}
+              Canais de Origem
+            </p>
+            {channels.map((ch, i) => (
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 1 }}
-                className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-center gap-3"
+                key={ch.name}
+                initial={{ opacity: 0, x: -20 }}
+                animate={phase >= 2 ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.3, delay: i * 0.08 }}
+                onMouseEnter={() => setHoveredChannel(i)}
+                onMouseLeave={() => setHoveredChannel(null)}
               >
-                <span className="text-[#8A8A8E] text-xs">5 canais</span>
-                <ArrowRight className="w-4 h-4 text-[#2B7FFF]" />
-                <span className="text-[#EDEDEF] text-xs font-semibold">1 plataforma</span>
-                <ArrowRight className="w-4 h-4 text-[#2B7FFF]" />
-                <span className="text-[#2B7FFF] text-xs font-bold">0 leads perdidos</span>
+                <div
+                  className={`flex items-center gap-2.5 px-3 py-2 rounded-xl border transition-all duration-200 cursor-default ${
+                    hoveredChannel === i
+                      ? "bg-white/[0.08] border-white/[0.2] scale-[1.03]"
+                      : "bg-white/[0.03] border-white/[0.08]"
+                  }`}
+                >
+                  <span style={{ fontSize: "clamp(14px, 1.6vh, 18px)" }}>{ch.emoji}</span>
+                  <span
+                    className="font-semibold"
+                    style={{
+                      fontSize: "clamp(12px, 1.4vh, 16px)",
+                      color: ch.color,
+                    }}
+                  >
+                    {ch.name}
+                  </span>
+                </div>
               </motion.div>
+            ))}
+          </motion.div>
+
+          {/* ── SETAS DE CONVERGÊNCIA ── */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={phase >= 3 ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center justify-center px-1 flex-shrink-0"
+            style={{ width: "clamp(30px, 4vw, 60px)" }}
+          >
+            <svg
+              viewBox="0 0 40 200"
+              className="w-full"
+              style={{ height: "clamp(140px, 20vh, 260px)" }}
+            >
+              {/* 5 lines converging from left to center-right */}
+              {[0, 1, 2, 3, 4].map((i) => {
+                const yStart = 20 + i * 40;
+                const yEnd = 100;
+                return (
+                  <motion.path
+                    key={i}
+                    d={`M 0 ${yStart} C 20 ${yStart}, 20 ${yEnd}, 38 ${yEnd}`}
+                    fill="none"
+                    stroke="#2B7FFF"
+                    strokeWidth="1.5"
+                    strokeOpacity="0.4"
+                    initial={{ pathLength: 0 }}
+                    animate={phase >= 3 ? { pathLength: 1 } : {}}
+                    transition={{ duration: 0.4, delay: i * 0.06 }}
+                  />
+                );
+              })}
+              {/* Arrow tip */}
+              <motion.polygon
+                points="34,95 40,100 34,105"
+                fill="#2B7FFF"
+                fillOpacity="0.6"
+                initial={{ opacity: 0 }}
+                animate={phase >= 3 ? { opacity: 1 } : {}}
+                transition={{ duration: 0.2, delay: 0.4 }}
+              />
+            </svg>
+          </motion.div>
+
+          {/* ── COLUNA 2: eConversa CRM (Protagonista) ── */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={phase >= 4 ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, type: "spring", stiffness: 200 }}
+            className="flex-1 min-w-0"
+            style={{ maxWidth: "clamp(280px, 32vw, 400px)" }}
+          >
+            <div className="relative">
+              {/* Glow */}
+              <div className="absolute -inset-2 rounded-2xl bg-[#2B7FFF]/10 blur-xl" />
+              <div className="relative rounded-2xl border-2 border-[#2B7FFF]/30 bg-gradient-to-br from-[#2B7FFF]/[0.08] to-[#2B7FFF]/[0.02] p-4">
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-xl bg-[#2B7FFF]/15 flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="w-5 h-5 text-[#2B7FFF]" />
+                  </div>
+                  <div className="min-w-0">
+                    <span
+                      className="text-[#2B7FFF] font-bold uppercase tracking-wider block"
+                      style={{ fontSize: "clamp(7px, 0.8vh, 10px)" }}
+                    >
+                      Plataforma Central
+                    </span>
+                    <h3
+                      className="font-bold text-[#EDEDEF]"
+                      style={{ fontSize: "clamp(18px, 2.5vh, 28px)", lineHeight: "1.2" }}
+                    >
+                      eConversa
+                    </h3>
+                  </div>
+                  <span className="ml-auto px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-[#2B7FFF]/15 text-[#2B7FFF] border border-[#2B7FFF]/30 whitespace-nowrap flex-shrink-0">
+                    CRM Omnichannel
+                  </span>
+                </div>
+
+                {/* Key capabilities */}
+                <div className="space-y-1.5 mb-2">
+                  {[
+                    "1 inbox para todos os canais",
+                    "Atribuição automática de leads",
+                    "Histórico completo do cliente",
+                    "Nenhuma conversa sem resposta",
+                  ].map((text, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={phase >= 4 ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.25, delay: 0.15 + i * 0.08 }}
+                      className="flex items-center gap-2"
+                    >
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#2B7FFF] flex-shrink-0" />
+                      <span
+                        className="text-[#C0C0C4]"
+                        style={{ fontSize: "clamp(11px, 1.3vh, 15px)" }}
+                      >
+                        {text}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Flow summary */}
+                <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/[0.06]">
+                  <span className="text-[#8A8A8E] font-medium" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+                    5 canais
+                  </span>
+                  <ArrowRight className="w-3 h-3 text-[#2B7FFF]" />
+                  <span className="text-[#EDEDEF] font-bold" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+                    1 plataforma
+                  </span>
+                  <ArrowRight className="w-3 h-3 text-[#2B7FFF]" />
+                  <span className="text-[#2B7FFF] font-bold" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+                    0 leads perdidos
+                  </span>
+                </div>
+              </div>
             </div>
           </motion.div>
-        </div>
 
-        {/* Result Banner — central conclusion */}
-        <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="mt-5 relative"
-        >
-          {/* Glow behind */}
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#2B7FFF]/20 via-[#2B7FFF]/10 to-[#2B7FFF]/20 blur-lg animate-pulse" />
-          <div className="relative rounded-xl border border-[#2B7FFF]/30 bg-[#2B7FFF]/[0.06] px-6 py-4 flex items-center justify-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#2B7FFF]/15 flex items-center justify-center flex-shrink-0">
-              <TrendingUp className="w-5 h-5 text-[#2B7FFF]" />
-            </div>
-            <div className="text-center">
-              <p className="text-[#EDEDEF] font-bold" style={{ fontSize: "clamp(14px, 1.8vh, 20px)" }}>
-                Nenhuma oportunidade de venda será perdida
-              </p>
-              <p className="text-[#2B7FFF] text-sm font-medium mt-0.5">
-                Comunicação centralizada = mais conversão = mais receita
-              </p>
-            </div>
-          </div>
-        </motion.div>
+          {/* ── SETA DE SAÍDA ── */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={phase >= 5 ? { opacity: 1 } : {}}
+            transition={{ duration: 0.4 }}
+            className="flex items-center px-1 flex-shrink-0"
+            style={{ width: "clamp(30px, 4vw, 60px)" }}
+          >
+            <svg viewBox="0 0 50 40" className="w-full h-10">
+              <motion.line
+                x1="0" y1="20" x2="38" y2="20"
+                stroke="url(#exitGrad)"
+                strokeWidth="2.5"
+                initial={{ pathLength: 0 }}
+                animate={phase >= 5 ? { pathLength: 1 } : {}}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.polygon
+                points="35,13 46,20 35,27"
+                fill="#10B981"
+                fillOpacity="0.7"
+                initial={{ opacity: 0 }}
+                animate={phase >= 5 ? { opacity: 1 } : {}}
+                transition={{ duration: 0.2, delay: 0.3 }}
+              />
+              <defs>
+                <linearGradient id="exitGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#2B7FFF" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#10B981" stopOpacity="0.6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </motion.div>
+
+          {/* ── COLUNA 3: Impacto em Vendas ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={phase >= 5 ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col gap-2 flex-shrink-0"
+            style={{ width: "clamp(170px, 20vw, 230px)" }}
+          >
+            <p
+              className="text-[#8A8A8E] font-semibold uppercase tracking-wider mb-1 text-center"
+              style={{ fontSize: "clamp(8px, 0.9vh, 11px)" }}
+            >
+              Impacto em Vendas
+            </p>
+            {impactMetrics.map((metric, i) => (
+              <motion.div
+                key={metric.label}
+                initial={{ opacity: 0, x: 20 }}
+                animate={phase >= 5 ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.3, delay: i * 0.12 }}
+                className="group"
+              >
+                <div className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-3 hover:bg-white/[0.06] hover:border-white/[0.15] transition-all">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div
+                      className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: metric.color + "15" }}
+                    >
+                      <metric.icon
+                        className="w-3.5 h-3.5"
+                        style={{ color: metric.color }}
+                      />
+                    </div>
+                    <span
+                      className="font-semibold text-[#EDEDEF]"
+                      style={{ fontSize: "clamp(10px, 1.1vh, 13px)" }}
+                    >
+                      {metric.label}
+                    </span>
+                  </div>
+                  <p
+                    className="font-bold ml-9"
+                    style={{
+                      fontSize: "clamp(11px, 1.3vh, 15px)",
+                      color: metric.color,
+                    }}
+                  >
+                    {metric.value}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+           </div>
+
+          {/* ── Resultado Final ── */}
+          <AnimatePresence>
+            {phase >= 6 && (
+              <motion.div
+                initial={{ opacity: 0, y: 10, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="relative mt-3"
+              >
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#2B7FFF]/12 via-[#10B981]/8 to-[#F59E0B]/8 blur-lg animate-pulse" />
+                <div className="relative rounded-xl border border-[#2B7FFF]/20 bg-white/[0.03] px-5 py-2.5 flex items-center justify-center gap-3">
+                  <TrendingUp className="w-5 h-5 text-[#2B7FFF] flex-shrink-0" />
+                  <p
+                    className="text-[#EDEDEF] font-bold text-center"
+                    style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}
+                  >
+                    Comunicação centralizada ={" "}
+                    <span className="text-[#10B981]">mais conversão</span> ={" "}
+                    <span className="text-[#F59E0B]">mais receita</span> para o Bradesco
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
 
       <SlideFooter />
