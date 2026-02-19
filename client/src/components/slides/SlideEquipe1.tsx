@@ -32,7 +32,7 @@ export default function SlideEquipe1() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Equipe e Governança
+          Quem está por trás
         </motion.h1>
         <motion.div
           className="w-24 h-1 bg-[#2B7FFF] my-6"

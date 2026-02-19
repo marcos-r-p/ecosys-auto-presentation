@@ -10,7 +10,6 @@ const Slide2 = lazy(() => import("@/components/slides/Slide2"));
 const Slide4 = lazy(() => import("@/components/slides/Slide4"));
 const Slide5 = lazy(() => import("@/components/slides/Slide5"));
 const Slide6 = lazy(() => import("@/components/slides/Slide6"));
-const SlideEcosysWhy = lazy(() => import("@/components/slides/SlideEcosysWhy"));
 const Slide9 = lazy(() => import("@/components/slides/Slide9"));
 const Slide10 = lazy(() => import("@/components/slides/Slide10"));
 const Slide11 = lazy(() => import("@/components/slides/Slide11"));
@@ -57,12 +56,11 @@ const CHAPTERS = [
   { number: "03", title: "Equipe e Governança", subtitle: "Os executivos por trás da ecosys AUTO" },
   { number: "04", title: "Contexto e Visão", subtitle: "Por que estamos aqui e qual é a oportunidade" },
   { number: "05", title: "A Proposta", subtitle: "O que estamos propondo, para quem e como evoluiu" },
-  { number: "06", title: "Por que a ecosys AUTO", subtitle: "Inovação, tecnologia e maturidade corporativa" },
-  { number: "07", title: "Gestor Autoline", subtitle: "Gestão inteligente para lojistas, dados estratégicos para o Bradesco" },
-  { number: "08", title: "Marketplace Autoline", subtitle: "Vitrine digital que conecta lojistas, consumidores e financiamento Bradesco" },
-  { number: "09", title: "Novo GIO", subtitle: "O copiloto inteligente que transforma estratégia em execução para o GEFIN" },
-  { number: "10", title: "Motor Comercial", subtitle: "Inteligência que antecipa demanda e amplifica resultados" },
-  { number: "11", title: "Investimento e Roadmap", subtitle: "Cronograma, valores e modelo de sustentação" },
+  { number: "06", title: "Gestor Autoline", subtitle: "Gestão inteligente para lojistas, dados estratégicos para o Bradesco" },
+  { number: "07", title: "Marketplace Autoline", subtitle: "Vitrine digital que conecta lojistas, consumidores e financiamento Bradesco" },
+  { number: "08", title: "Novo GIO", subtitle: "O copiloto inteligente que transforma estratégia em execução para o GEFIN" },
+  { number: "09", title: "Motor Comercial", subtitle: "Inteligência que antecipa demanda e amplifica resultados" },
+  { number: "10", title: "Investimento e Roadmap", subtitle: "Cronograma, valores e modelo de sustentação" },
 ];
 
 // Slide structure
@@ -99,45 +97,41 @@ const slideEntries: SlideEntry[] = [
   { type: "content", component: Slide5, chapterIndex: 4 },
   { type: "content", component: Slide6, chapterIndex: 4 },
 
-  // 06 — Por que a ecosys AUTO
+  // 06 — Gestor Autoline
   { type: "separator", chapterIndex: 5, separatorData: CHAPTERS[5] },
-  { type: "content", component: SlideEcosysWhy, chapterIndex: 5 },
+  { type: "content", component: Slide9, chapterIndex: 5 },
+  { type: "content", component: Slide10, chapterIndex: 5 },
+  { type: "content", component: Slide11, chapterIndex: 5 },
+  { type: "content", component: Slide12, chapterIndex: 5 },
 
-  // 07 — Gestor Autoline
+  // 07 — Marketplace Autoline
   { type: "separator", chapterIndex: 6, separatorData: CHAPTERS[6] },
-  { type: "content", component: Slide9, chapterIndex: 6 },
-  { type: "content", component: Slide10, chapterIndex: 6 },
-  { type: "content", component: Slide11, chapterIndex: 6 },
-  { type: "content", component: Slide12, chapterIndex: 6 },
+  { type: "content", component: Slide15, chapterIndex: 6 },
+  { type: "content", component: Slide16, chapterIndex: 6 },
+  { type: "content", component: Slide17, chapterIndex: 6 },
+  { type: "content", component: Slide18, chapterIndex: 6 },
+  { type: "content", component: Slide19, chapterIndex: 6 },
 
-  // 08 — Marketplace Autoline
+  // 08 — Novo GIO
   { type: "separator", chapterIndex: 7, separatorData: CHAPTERS[7] },
-  { type: "content", component: Slide15, chapterIndex: 7 },
-  { type: "content", component: Slide16, chapterIndex: 7 },
-  { type: "content", component: Slide17, chapterIndex: 7 },
-  { type: "content", component: Slide18, chapterIndex: 7 },
-  { type: "content", component: Slide19, chapterIndex: 7 },
+  { type: "content", component: Slide23, chapterIndex: 7 },
+  { type: "content", component: Slide28, chapterIndex: 7 },
+  { type: "content", component: Slide27, chapterIndex: 7 },
+  { type: "content", component: Slide24, chapterIndex: 7 },
+  { type: "content", component: Slide26, chapterIndex: 7 },
+  { type: "content", component: Slide25, chapterIndex: 7 },
 
-  // 09 — Novo GIO
+  // 09 — Motor Comercial
   { type: "separator", chapterIndex: 8, separatorData: CHAPTERS[8] },
-  { type: "content", component: Slide23, chapterIndex: 8 },
-  { type: "content", component: Slide28, chapterIndex: 8 },
-  { type: "content", component: Slide27, chapterIndex: 8 },
-  { type: "content", component: Slide24, chapterIndex: 8 },
-  { type: "content", component: Slide26, chapterIndex: 8 },
-  { type: "content", component: Slide25, chapterIndex: 8 },
+  { type: "content", component: Slide20, chapterIndex: 8 },
+  { type: "content", component: Slide21, chapterIndex: 8 },
 
-  // 10 — Motor Comercial
+  // 10 — Investimento e Roadmap
   { type: "separator", chapterIndex: 9, separatorData: CHAPTERS[9] },
-  { type: "content", component: Slide20, chapterIndex: 9 },
-  { type: "content", component: Slide21, chapterIndex: 9 },
-
-  // 11 — Investimento e Roadmap
-  { type: "separator", chapterIndex: 10, separatorData: CHAPTERS[10] },
-  { type: "content", component: Slide30, chapterIndex: 10 },
-  { type: "content", component: Slide31, chapterIndex: 10 },
-  { type: "content", component: SlideInvestimento1, chapterIndex: 10 },
-  { type: "content", component: SlideInvestimento2, chapterIndex: 10 },
+  { type: "content", component: Slide30, chapterIndex: 9 },
+  { type: "content", component: Slide31, chapterIndex: 9 },
+  { type: "content", component: SlideInvestimento1, chapterIndex: 9 },
+  { type: "content", component: SlideInvestimento2, chapterIndex: 9 },
 ];
 
 const TOTAL_SLIDES = slideEntries.length;
