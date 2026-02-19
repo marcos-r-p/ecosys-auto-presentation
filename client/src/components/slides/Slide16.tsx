@@ -47,7 +47,7 @@ export default function Slide16() {
           <h2
             className="font-extrabold tracking-tight text-[#EDEDEF]"
             style={{
-              fontSize: "clamp(22px, 3.6vh, 42px)",
+              fontSize: "clamp(26px, 4vh, 48px)",
               lineHeight: "1.1",
               marginBottom: "clamp(4px, 0.5vh, 8px)",
             }}
@@ -57,7 +57,7 @@ export default function Slide16() {
           </h2>
           <p
             className="text-[#8A8A8E] max-w-3xl mx-auto"
-            style={{ fontSize: "clamp(11px, 1.3vh, 16px)" }}
+            style={{ fontSize: "clamp(13px, 1.5vh, 18px)" }}
           >
             Experiência de busca que converte visitantes em oportunidades reais de venda
           </p>
@@ -71,27 +71,27 @@ export default function Slide16() {
             initial={{ opacity: 0, y: 20, scale: 0.98 }}
             animate={phase >= 2 ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.6 }}
-            className="relative mb-3"
+            className="relative mb-4"
           >
             <div className="absolute -inset-1 rounded-2xl bg-[#2B7FFF]/8 blur-xl" />
-            <div className="relative bg-gradient-to-br from-[#2B7FFF]/[0.08] to-[#2B7FFF]/[0.02] border-2 border-[#2B7FFF]/30 rounded-2xl p-4">
+            <div className="relative bg-gradient-to-br from-[#2B7FFF]/[0.08] to-[#2B7FFF]/[0.02] border-2 border-[#2B7FFF]/30 rounded-2xl p-5">
               <div className="flex items-start gap-4">
                 {/* Left: Info */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-11 h-11 rounded-xl bg-[#2B7FFF]/20 flex items-center justify-center flex-shrink-0">
-                      <Sparkles className="w-6 h-6 text-[#2B7FFF]" />
+                    <div className="w-13 h-13 rounded-xl bg-[#2B7FFF]/20 flex items-center justify-center flex-shrink-0">
+                      <Sparkles className="w-7 h-7 text-[#2B7FFF]" />
                     </div>
                     <div>
                       <span
                         className="text-[#2B7FFF] font-bold uppercase tracking-wider"
-                        style={{ fontSize: "clamp(8px, 0.9vh, 11px)" }}
+                        style={{ fontSize: "clamp(10px, 1.1vh, 13px)" }}
                       >
                         Diferencial Principal
                       </span>
                       <h3
                         className="font-bold text-[#EDEDEF]"
-                        style={{ fontSize: "clamp(17px, 2.4vh, 28px)", lineHeight: "1.2" }}
+                        style={{ fontSize: "clamp(20px, 2.8vh, 32px)", lineHeight: "1.2" }}
                       >
                         Busca Inteligente com IA
                       </h3>
@@ -99,9 +99,9 @@ export default function Slide16() {
                   </div>
 
                   {/* Search bar mockup */}
-                  <div className="bg-white/[0.05] border border-white/10 rounded-xl px-4 py-2.5 flex items-center gap-3 mb-3">
-                    <Search className="w-4 h-4 text-[#8A8A8E] flex-shrink-0" />
-                    <span className="text-[#8A8A8E] italic" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
+                  <div className="bg-white/[0.05] border border-white/10 rounded-xl px-4 py-3 flex items-center gap-3 mb-4">
+                    <Search className="w-5 h-5 text-[#8A8A8E] flex-shrink-0" />
+                    <span className="text-[#8A8A8E] italic" style={{ fontSize: "clamp(12px, 1.4vh, 16px)" }}>
                       "Quero um SUV econômico até 80 mil..."
                     </span>
                     <div className="ml-auto bg-[#2B7FFF] rounded-lg px-2.5 py-1 flex-shrink-0">
@@ -110,7 +110,7 @@ export default function Slide16() {
                   </div>
 
                   {/* Bullets — benefícios de negócio */}
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+                  <div className="grid grid-cols-2 gap-x-5 gap-y-2">
                     {[
                       { icon: Sparkles, text: "Entende linguagem natural", color: "#2B7FFF" },
                       { icon: Target, text: "Leads pré-qualificados por intenção", color: "#10B981" },
@@ -119,12 +119,12 @@ export default function Slide16() {
                     ].map((item, i) => (
                       <div key={i} className="flex items-center gap-2">
                         <item.icon
-                          className="w-3.5 h-3.5 flex-shrink-0"
+                          className="w-4 h-4 flex-shrink-0"
                           style={{ color: item.color }}
                         />
                         <span
                           className="text-[#C0C0C4]"
-                          style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}
+                          style={{ fontSize: "clamp(12px, 1.4vh, 16px)" }}
                         >
                           {item.text}
                         </span>
@@ -173,15 +173,15 @@ export default function Slide16() {
             initial={{ opacity: 0, y: 15 }}
             animate={phase >= 3 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-2 gap-3 mb-3"
+            className="grid grid-cols-2 gap-4 mb-4"
           >
             {/* Filtros Avançados */}
-            <div className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-3.5 hover:border-white/[0.15] transition-all">
+            <div className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.15] transition-all">
               <div className="flex items-center gap-2.5 mb-2">
-                <div className="w-9 h-9 rounded-lg bg-white/[0.06] flex items-center justify-center flex-shrink-0">
-                  <Filter className="w-5 h-5 text-[#EDEDEF]" />
+                <div className="w-10 h-10 rounded-lg bg-white/[0.06] flex items-center justify-center flex-shrink-0">
+                  <Filter className="w-6 h-6 text-[#EDEDEF]" />
                 </div>
-                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 1.8vh, 20px)" }}>
+                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(16px, 2vh, 22px)" }}>
                   Filtros Avançados
                 </h3>
               </div>
@@ -193,7 +193,7 @@ export default function Slide16() {
                 ].map((text, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div className="w-1 h-1 rounded-full bg-[#8A8A8E] flex-shrink-0" />
-                    <span className="text-[#C0C0C4]" style={{ fontSize: "clamp(10px, 1.1vh, 13px)" }}>
+                    <span className="text-[#C0C0C4]" style={{ fontSize: "clamp(12px, 1.3vh, 15px)" }}>
                       {text}
                     </span>
                   </div>
@@ -202,12 +202,12 @@ export default function Slide16() {
             </div>
 
             {/* Filtro por Localidade */}
-            <div className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-3.5 hover:border-white/[0.15] transition-all">
+            <div className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.15] transition-all">
               <div className="flex items-center gap-2.5 mb-2">
-                <div className="w-9 h-9 rounded-lg bg-white/[0.06] flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-[#EDEDEF]" />
+                <div className="w-10 h-10 rounded-lg bg-white/[0.06] flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-[#EDEDEF]" />
                 </div>
-                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 1.8vh, 20px)" }}>
+                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(16px, 2vh, 22px)" }}>
                   Filtro por Localidade
                 </h3>
               </div>
@@ -219,7 +219,7 @@ export default function Slide16() {
                 ].map((text, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <div className="w-1 h-1 rounded-full bg-[#8A8A8E] flex-shrink-0" />
-                    <span className="text-[#C0C0C4]" style={{ fontSize: "clamp(10px, 1.1vh, 13px)" }}>
+                    <span className="text-[#C0C0C4]" style={{ fontSize: "clamp(12px, 1.3vh, 15px)" }}>
                       {text}
                     </span>
                   </div>
@@ -239,10 +239,10 @@ export default function Slide16() {
               >
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#2B7FFF]/10 via-[#10B981]/6 to-[#F59E0B]/6 blur-lg animate-pulse" />
                 <div className="relative rounded-xl border border-[#2B7FFF]/20 bg-white/[0.03] px-5 py-3 flex items-center justify-center gap-3">
-                  <TrendingUp className="w-5 h-5 text-[#2B7FFF] flex-shrink-0" />
+                  <TrendingUp className="w-6 h-6 text-[#2B7FFF] flex-shrink-0" />
                   <p
                     className="text-[#EDEDEF] font-bold text-center"
-                    style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}
+                    style={{ fontSize: "clamp(14px, 1.7vh, 20px)" }}
                   >
                     Cada busca é uma oportunidade —{" "}
                     <span className="text-[#10B981]">leads qualificados</span> ={" "}

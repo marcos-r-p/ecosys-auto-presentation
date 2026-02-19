@@ -76,7 +76,7 @@ export default function Slide11() {
           <h2
             className="font-extrabold tracking-tight text-[#EDEDEF]"
             style={{
-              fontSize: "clamp(24px, 3.8vh, 44px)",
+              fontSize: "clamp(28px, 4.2vh, 50px)",
               lineHeight: "1.1",
               marginBottom: "clamp(4px, 0.6vh, 10px)",
             }}
@@ -86,7 +86,7 @@ export default function Slide11() {
           </h2>
           <p
             className="text-[#8A8A8E] max-w-3xl mx-auto"
-            style={{ fontSize: "clamp(11px, 1.3vh, 16px)" }}
+            style={{ fontSize: "clamp(13px, 1.5vh, 18px)" }}
           >
             De 5 canais dispersos para 1 plataforma inteligente — nenhum lead se perde
           </p>
@@ -102,11 +102,11 @@ export default function Slide11() {
             animate={phase >= 2 ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-2 flex-shrink-0"
-            style={{ width: "clamp(150px, 18vw, 210px)" }}
+            style={{ width: "clamp(165px, 20vw, 230px)" }}
           >
             <p
               className="text-[#8A8A8E] font-semibold uppercase tracking-wider mb-1 text-center"
-              style={{ fontSize: "clamp(8px, 0.9vh, 11px)" }}
+              style={{ fontSize: "clamp(12px, 1.3vh, 15px)" }}
             >
               Canais de Origem
             </p>
@@ -126,11 +126,11 @@ export default function Slide11() {
                       : "bg-white/[0.03] border-white/[0.08]"
                   }`}
                 >
-                  <span style={{ fontSize: "clamp(14px, 1.6vh, 18px)" }}>{ch.emoji}</span>
+                  <span style={{ fontSize: "clamp(16px, 1.8vh, 20px)" }}>{ch.emoji}</span>
                   <span
                     className="font-semibold"
                     style={{
-                      fontSize: "clamp(12px, 1.4vh, 16px)",
+                      fontSize: "clamp(14px, 1.6vh, 18px)",
                       color: ch.color,
                     }}
                   >
@@ -198,19 +198,19 @@ export default function Slide11() {
               <div className="relative rounded-2xl border-2 border-[#2B7FFF]/30 bg-gradient-to-br from-[#2B7FFF]/[0.08] to-[#2B7FFF]/[0.02] p-4">
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-xl bg-[#2B7FFF]/15 flex items-center justify-center flex-shrink-0">
-                    <MessageCircle className="w-5 h-5 text-[#2B7FFF]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#2B7FFF]/15 flex items-center justify-center flex-shrink-0">
+                    <MessageCircle className="w-6 h-6 text-[#2B7FFF]" />
                   </div>
                   <div className="min-w-0">
                     <span
                       className="text-[#2B7FFF] font-bold uppercase tracking-wider block"
-                      style={{ fontSize: "clamp(7px, 0.8vh, 10px)" }}
+                      style={{ fontSize: "clamp(11px, 1.2vh, 14px)" }}
                     >
                       Plataforma Central
                     </span>
                     <h3
                       className="font-bold text-[#EDEDEF]"
-                      style={{ fontSize: "clamp(18px, 2.5vh, 28px)", lineHeight: "1.2" }}
+                      style={{ fontSize: "clamp(22px, 2.8vh, 32px)", lineHeight: "1.2" }}
                     >
                       eConversa
                     </h3>
@@ -238,7 +238,7 @@ export default function Slide11() {
                       <div className="w-1.5 h-1.5 rounded-full bg-[#2B7FFF] flex-shrink-0" />
                       <span
                         className="text-[#C0C0C4]"
-                        style={{ fontSize: "clamp(11px, 1.3vh, 15px)" }}
+                        style={{ fontSize: "clamp(13px, 1.5vh, 17px)" }}
                       >
                         {text}
                       </span>
@@ -248,15 +248,15 @@ export default function Slide11() {
 
                 {/* Flow summary */}
                 <div className="flex items-center justify-center gap-2 pt-2.5 border-t border-white/[0.06]">
-                  <span className="text-[#8A8A8E] font-medium" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+                  <span className="text-[#8A8A8E] font-medium" style={{ fontSize: "clamp(11px, 1.2vh, 14px)" }}>
                     5 canais
                   </span>
                   <ArrowRight className="w-3 h-3 text-[#2B7FFF]" />
-                  <span className="text-[#EDEDEF] font-bold" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+                  <span className="text-[#EDEDEF] font-bold" style={{ fontSize: "clamp(11px, 1.2vh, 14px)" }}>
                     1 plataforma
                   </span>
                   <ArrowRight className="w-3 h-3 text-[#2B7FFF]" />
-                  <span className="text-[#2B7FFF] font-bold" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+                  <span className="text-[#2B7FFF] font-bold" style={{ fontSize: "clamp(11px, 1.2vh, 14px)" }}>
                     0 leads perdidos
                   </span>
                 </div>
@@ -304,11 +304,11 @@ export default function Slide11() {
             animate={phase >= 5 ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-2 flex-shrink-0"
-            style={{ width: "clamp(170px, 20vw, 230px)" }}
+            style={{ width: "clamp(185px, 22vw, 250px)" }}
           >
             <p
               className="text-[#8A8A8E] font-semibold uppercase tracking-wider mb-1 text-center"
-              style={{ fontSize: "clamp(8px, 0.9vh, 11px)" }}
+              style={{ fontSize: "clamp(12px, 1.3vh, 15px)" }}
             >
               Impacto em Vendas
             </p>
@@ -323,17 +323,17 @@ export default function Slide11() {
                 <div className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-3 hover:bg-white/[0.06] hover:border-white/[0.15] transition-all">
                   <div className="flex items-center gap-2 mb-1">
                     <div
-                      className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
+                      className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
                       style={{ backgroundColor: metric.color + "15" }}
                     >
                       <metric.icon
-                        className="w-3.5 h-3.5"
+                        className="w-4 h-4"
                         style={{ color: metric.color }}
                       />
                     </div>
                     <span
                       className="font-semibold text-[#EDEDEF]"
-                      style={{ fontSize: "clamp(10px, 1.1vh, 13px)" }}
+                      style={{ fontSize: "clamp(12px, 1.3vh, 15px)" }}
                     >
                       {metric.label}
                     </span>
@@ -341,7 +341,7 @@ export default function Slide11() {
                   <p
                     className="font-bold ml-9"
                     style={{
-                      fontSize: "clamp(11px, 1.3vh, 15px)",
+                      fontSize: "clamp(13px, 1.5vh, 17px)",
                       color: metric.color,
                     }}
                   >
@@ -367,7 +367,7 @@ export default function Slide11() {
                   <TrendingUp className="w-5 h-5 text-[#2B7FFF] flex-shrink-0" />
                   <p
                     className="text-[#EDEDEF] font-bold text-center"
-                    style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}
+                    style={{ fontSize: "clamp(14px, 1.7vh, 20px)" }}
                   >
                     Comunicação centralizada ={" "}
                     <span className="text-[#10B981]">mais conversão</span> ={" "}
