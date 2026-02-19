@@ -27,10 +27,9 @@ const Slide25 = lazy(() => import("@/components/slides/Slide25"));
 const Slide26 = lazy(() => import("@/components/slides/Slide26"));
 const Slide27 = lazy(() => import("@/components/slides/Slide27"));
 const Slide28 = lazy(() => import("@/components/slides/Slide28"));
-const Slide30 = lazy(() => import("@/components/slides/Slide30"));
-const Slide31 = lazy(() => import("@/components/slides/Slide31"));
-const SlideInvestimento1 = lazy(() => import("@/components/slides/SlideInvestimento1"));
-const SlideInvestimento2 = lazy(() => import("@/components/slides/SlideInvestimento2"));
+const SlideRoadmapEntregas = lazy(() => import("@/components/slides/SlideRoadmapEntregas"));
+const SlideInvestimentoConsolidado = lazy(() => import("@/components/slides/SlideInvestimentoConsolidado"));
+const SlideAquisicaoCodigo = lazy(() => import("@/components/slides/SlideAquisicaoCodigo"));
 const SlideQuemSomos1 = lazy(() => import("@/components/slides/SlideQuemSomos1"));
 const SlideQuemSomos2 = lazy(() => import("@/components/slides/SlideQuemSomos2"));
 const SlideGoldenCircle = lazy(() => import("@/components/slides/SlideGoldenCircle"));
@@ -124,10 +123,9 @@ const slideEntries: SlideEntry[] = [
 
   // 10 — Investimento e Roadmap
   { type: "separator", chapterIndex: 9, separatorData: CHAPTERS[9] },
-  { type: "content", component: Slide30, chapterIndex: 9 },
-  { type: "content", component: Slide31, chapterIndex: 9 },
-  { type: "content", component: SlideInvestimento1, chapterIndex: 9 },
-  { type: "content", component: SlideInvestimento2, chapterIndex: 9 },
+  { type: "content", component: SlideRoadmapEntregas, chapterIndex: 9 },
+  { type: "content", component: SlideInvestimentoConsolidado, chapterIndex: 9 },
+  { type: "content", component: SlideAquisicaoCodigo, chapterIndex: 9 },
 ];
 
 const TOTAL_SLIDES = slideEntries.length;
