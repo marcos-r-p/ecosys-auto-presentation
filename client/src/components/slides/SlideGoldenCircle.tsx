@@ -75,26 +75,26 @@ export default function SlideGoldenCircle() {
   const innerR = 72;
 
   return (
-    <div className="h-full w-full flex flex-col px-6 md:px-12 pt-4 pb-1 overflow-hidden">
+    <div className="h-full w-full flex flex-col px-3 md:px-6 pt-2 pb-1 overflow-hidden">
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
-        className="text-center mb-1"
+        className="text-center mb-0"
       >
         <h2
           className="font-black tracking-tight text-[#EDEDEF] leading-none"
-          style={{ fontSize: "clamp(24px, 3.5vh, 44px)" }}
+          style={{ fontSize: "clamp(28px, 4.5vh, 52px)" }}
         >
           Nosso <span className="text-[#2B7FFF]">Golden Circle</span>
         </h2>
       </motion.div>
 
       {/* Main layout: cards left — circle center — cards right */}
-      <div className="flex-1 flex items-center justify-center gap-0 relative">
+      <div className="flex-1 flex items-center justify-center gap-0 relative" style={{ marginTop: "-0.5vh" }}>
         {/* Left card: O QUÊ */}
-        <div className="flex-1 flex justify-end pr-4 md:pr-6 max-w-[320px]">
+        <div className="flex-1 flex justify-end pr-3 md:pr-4 max-w-[380px]">
           <AnimatePresence>
             {isRevealed(2) && (
               <motion.div
@@ -106,7 +106,7 @@ export default function SlideGoldenCircle() {
                 onMouseLeave={() => setHoveredLayer(null)}
               >
                 <div
-                  className="rounded-xl px-5 py-4 cursor-pointer transition-all duration-300"
+                  className="rounded-xl px-6 py-5 cursor-pointer transition-all duration-300"
                   style={{
                     background: isHighlighted("what")
                       ? "rgba(43,127,255,0.08)"
@@ -129,20 +129,20 @@ export default function SlideGoldenCircle() {
                     />
                     <span
                       className="text-[#8A8A8E] font-semibold uppercase tracking-widest"
-                      style={{ fontSize: "clamp(9px, 1vh, 12px)" }}
+                      style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}
                     >
                       Produto
                     </span>
                   </div>
                   <h3
                     className="font-black text-[#2B7FFF] mb-2"
-                    style={{ fontSize: "clamp(20px, 2.8vh, 34px)" }}
+                    style={{ fontSize: "clamp(24px, 3.5vh, 40px)" }}
                   >
                     O que?
                   </h3>
                   <p
                     className="text-[#CDCDCF] font-medium leading-snug"
-                    style={{ fontSize: "clamp(13px, 1.5vh, 18px)" }}
+                    style={{ fontSize: "clamp(14px, 1.8vh, 21px)" }}
                   >
                     Ecossistema automotivo em uma plataforma robusta e acessível
                   </p>
@@ -155,7 +155,7 @@ export default function SlideGoldenCircle() {
         {/* Central SVG diagram */}
         <div
           className="relative flex-shrink-0"
-          style={{ width: "min(48vh, 400px)", height: "min(48vh, 400px)" }}
+          style={{ width: "min(56vh, 480px)", height: "min(56vh, 480px)" }}
         >
           <svg viewBox="0 0 420 420" className="w-full h-full">
             <defs>
@@ -392,7 +392,7 @@ export default function SlideGoldenCircle() {
         </div>
 
         {/* Right card: COMO */}
-        <div className="flex-1 flex justify-start pl-4 md:pl-6 max-w-[320px]">
+        <div className="flex-1 flex justify-start pl-3 md:pl-4 max-w-[380px]">
           <AnimatePresence>
             {isRevealed(1) && (
               <motion.div
@@ -404,7 +404,7 @@ export default function SlideGoldenCircle() {
                 onMouseLeave={() => setHoveredLayer(null)}
               >
                 <div
-                  className="rounded-xl px-5 py-4 cursor-pointer transition-all duration-300"
+                  className="rounded-xl px-6 py-5 cursor-pointer transition-all duration-300"
                   style={{
                     background: isHighlighted("how")
                       ? "rgba(43,127,255,0.08)"
@@ -427,20 +427,20 @@ export default function SlideGoldenCircle() {
                     />
                     <span
                       className="text-[#8A8A8E] font-semibold uppercase tracking-widest"
-                      style={{ fontSize: "clamp(9px, 1vh, 12px)" }}
+                      style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}
                     >
                       Processo
                     </span>
                   </div>
                   <h3
                     className="font-black text-[#2B7FFF] mb-2"
-                    style={{ fontSize: "clamp(20px, 2.8vh, 34px)" }}
+                    style={{ fontSize: "clamp(24px, 3.5vh, 40px)" }}
                   >
                     Como?
                   </h3>
                   <p
                     className="text-[#CDCDCF] font-medium leading-snug"
-                    style={{ fontSize: "clamp(13px, 1.5vh, 18px)" }}
+                    style={{ fontSize: "clamp(14px, 1.8vh, 21px)" }}
                   >
                     Transformamos complexidade em simplicidade e oportunidades em
                     lucro
@@ -454,7 +454,7 @@ export default function SlideGoldenCircle() {
         {/* Bottom card: POR QUÊ (destaque máximo) */}
         <div
           className="absolute"
-          style={{ bottom: "2%", left: "50%", transform: "translateX(-50%)" }}
+          style={{ bottom: "0%", left: "50%", transform: "translateX(-50%)" }}
         >
           <AnimatePresence>
             {isRevealed(0) && (
@@ -466,9 +466,9 @@ export default function SlideGoldenCircle() {
                 onMouseLeave={() => setHoveredLayer(null)}
               >
                 <div
-                  className="rounded-xl px-6 py-4 text-center cursor-pointer transition-all duration-300"
+                  className="rounded-xl px-8 py-5 text-center cursor-pointer transition-all duration-300"
                   style={{
-                    maxWidth: "440px",
+                    maxWidth: "520px",
                     background: isHighlighted("why")
                       ? "linear-gradient(160deg, rgba(43,127,255,0.15), rgba(43,127,255,0.06))"
                       : "linear-gradient(160deg, rgba(43,127,255,0.1), rgba(43,127,255,0.03))",
@@ -493,20 +493,20 @@ export default function SlideGoldenCircle() {
                     />
                     <span
                       className="text-[#8A8A8E] font-semibold uppercase tracking-widest"
-                      style={{ fontSize: "clamp(9px, 1vh, 12px)" }}
+                      style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}
                     >
                       Propósito
                     </span>
                   </div>
                   <h3
                     className="font-black text-[#2B7FFF] mb-2"
-                    style={{ fontSize: "clamp(22px, 3vh, 38px)" }}
+                    style={{ fontSize: "clamp(26px, 3.8vh, 44px)" }}
                   >
                     Por que existimos?
                   </h3>
                   <p
                     className="text-[#EDEDEF] font-semibold leading-snug"
-                    style={{ fontSize: "clamp(14px, 1.7vh, 21px)" }}
+                    style={{ fontSize: "clamp(15px, 2vh, 24px)" }}
                   >
                     Promover igualdade de oportunidades e criar um ecossistema
                     onde revendas prosperam

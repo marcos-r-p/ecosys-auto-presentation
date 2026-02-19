@@ -92,7 +92,7 @@ function FeatureCard({ item, delay }: CardProps) {
       <div
         className="relative rounded-xl h-full transition-all duration-300"
         style={{
-          padding: "clamp(12px, 1.8vh, 24px) clamp(14px, 1.5vw, 24px)",
+          padding: "clamp(14px, 2vh, 28px) clamp(16px, 1.8vw, 28px)",
           background: isHighlight
             ? "linear-gradient(135deg, rgba(43,127,255,0.1) 0%, rgba(43,127,255,0.04) 100%)"
             : "rgba(255,255,255,0.03)",
@@ -110,16 +110,16 @@ function FeatureCard({ item, delay }: CardProps) {
           <div
             className="rounded-lg flex items-center justify-center flex-shrink-0"
             style={{
-              width: "clamp(36px, 4.5vh, 52px)",
-              height: "clamp(36px, 4.5vh, 52px)",
+              width: "clamp(40px, 5vh, 56px)",
+              height: "clamp(40px, 5vh, 56px)",
               background: `rgba(${hexToRgb(item.color)}, 0.12)`,
               border: `1px solid rgba(${hexToRgb(item.color)}, 0.25)`,
             }}
           >
             <item.icon
               style={{
-                width: "clamp(18px, 2.2vh, 28px)",
-                height: "clamp(18px, 2.2vh, 28px)",
+                width: "clamp(20px, 2.6vh, 32px)",
+                height: "clamp(20px, 2.6vh, 32px)",
               }}
               className="flex-shrink-0"
               color={item.color}
@@ -127,7 +127,7 @@ function FeatureCard({ item, delay }: CardProps) {
           </div>
           <h3
             className="font-bold text-[#EDEDEF]"
-            style={{ fontSize: "clamp(13px, 1.7vh, 20px)", lineHeight: "1.2" }}
+            style={{ fontSize: "clamp(15px, 2vh, 24px)", lineHeight: "1.2" }}
           >
             {item.title}
           </h3>
@@ -140,15 +140,15 @@ function FeatureCard({ item, delay }: CardProps) {
               <div
                 className="rounded-full flex-shrink-0 mt-1"
                 style={{
-                  width: "clamp(5px, 0.6vh, 7px)",
-                  height: "clamp(5px, 0.6vh, 7px)",
+                  width: "clamp(5px, 0.7vh, 8px)",
+                  height: "clamp(5px, 0.7vh, 8px)",
                   background: item.color,
                   opacity: 0.6,
                 }}
               />
               <span
                 className="text-[#B0B0B4]"
-                style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.4" }}
+                style={{ fontSize: "clamp(12px, 1.5vh, 18px)", lineHeight: "1.4" }}
               >
                 {bullet}
               </span>
@@ -169,31 +169,31 @@ function hexToRgb(hex: string): string {
 
 export default function Slide15() {
   return (
-    <div className="flex flex-col h-full overflow-hidden" style={{ padding: "clamp(10px, 1.5vh, 20px) clamp(20px, 3vw, 80px)" }}>
+    <div className="flex flex-col h-full overflow-hidden" style={{ padding: "clamp(8px, 1vh, 14px) clamp(14px, 2vw, 50px)" }}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center flex-shrink-0"
-        style={{ marginBottom: "clamp(10px, 1.8vh, 24px)" }}
+        style={{ marginBottom: "clamp(8px, 1.2vh, 16px)" }}
       >
         <p
           className="uppercase tracking-[0.2em] text-[#2B7FFF] font-semibold"
-          style={{ fontSize: "clamp(8px, 1vh, 12px)", marginBottom: "clamp(4px, 0.6vh, 10px)" }}
+          style={{ fontSize: "clamp(9px, 1.1vh, 13px)", marginBottom: "clamp(3px, 0.5vh, 8px)" }}
         >
           Canal B2C de Distribuição Digital
         </p>
         <h2
           className="font-extrabold tracking-tight text-[#EDEDEF]"
-          style={{ fontSize: "clamp(22px, 3.5vh, 44px)", lineHeight: "1.1", marginBottom: "clamp(6px, 1vh, 14px)" }}
+          style={{ fontSize: "clamp(26px, 4.2vh, 50px)", lineHeight: "1.1", marginBottom: "clamp(4px, 0.8vh, 10px)" }}
         >
           Autoline: Canal B2C de{" "}
           <span className="text-[#2B7FFF]">Aquisição e Geração de Demanda</span>
         </h2>
         <p
           className="text-[#8A8A8E] max-w-4xl mx-auto"
-          style={{ fontSize: "clamp(11px, 1.4vh, 17px)", lineHeight: "1.5" }}
+          style={{ fontSize: "clamp(12px, 1.5vh, 18px)", lineHeight: "1.5" }}
         >
           O marketplace conecta milhões de consumidores às revendas, iniciando a jornada de compra e financiamento.
         </p>
@@ -270,7 +270,7 @@ export default function Slide15() {
           <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-10 blur-3xl" style={{ background: "radial-gradient(circle, #2B7FFF, transparent)" }} />
           <p
             className="text-center text-[#C5C5C7] relative"
-            style={{ fontSize: "clamp(12px, 1.5vh, 18px)", lineHeight: "1.5" }}
+            style={{ fontSize: "clamp(13px, 1.7vh, 20px)", lineHeight: "1.5" }}
           >
             O marketplace cria um fluxo contínuo de consumidores e{" "}
             <strong className="text-[#2B7FFF]">leads qualificados</strong>, alimentando a{" "}

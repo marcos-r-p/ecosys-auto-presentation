@@ -97,7 +97,7 @@ export default function Slide19() {
   return (
     <div
       className="flex flex-col h-full overflow-hidden"
-      style={{ padding: "clamp(14px, 2vh, 28px) clamp(20px, 2.5vw, 50px) clamp(8px, 1vh, 14px) clamp(20px, 2.5vw, 50px)" }}
+      style={{ padding: "clamp(10px, 1.5vh, 20px) clamp(14px, 1.8vw, 36px) clamp(6px, 0.8vh, 10px) clamp(14px, 1.8vw, 36px)" }}
     >
       {/* Header */}
       <motion.div
@@ -109,13 +109,13 @@ export default function Slide19() {
       >
         <p
           className="uppercase tracking-[0.25em] text-[#2B7FFF] font-semibold"
-          style={{ fontSize: "clamp(9px, 1.1vh, 13px)", marginBottom: "clamp(3px, 0.4vh, 6px)" }}
+          style={{ fontSize: "clamp(10px, 1.2vh, 14px)", marginBottom: "clamp(2px, 0.3vh, 5px)" }}
         >
           App Marketplace Autoline
         </p>
         <h2
           className="font-extrabold tracking-tight text-[#EDEDEF]"
-          style={{ fontSize: "clamp(22px, 3.5vh, 44px)", lineHeight: "1.1" }}
+          style={{ fontSize: "clamp(26px, 4.5vh, 52px)", lineHeight: "1.1" }}
         >
           Canal Mobile de Aquisição e{" "}
           <span className="text-[#2B7FFF]">Conversão 24/7</span>
@@ -133,7 +133,7 @@ export default function Slide19() {
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#2B7FFF]/20 to-transparent" />
         <p
           className="uppercase tracking-[0.25em] text-[#6B6B70] font-semibold flex-shrink-0"
-          style={{ fontSize: "clamp(7px, 0.85vh, 10px)" }}
+          style={{ fontSize: "clamp(8px, 1vh, 12px)" }}
         >
           Jornada do Consumidor no App
         </p>
@@ -214,7 +214,7 @@ export default function Slide19() {
                       <span
                         className="font-mono font-bold"
                         style={{
-                          fontSize: "clamp(8px, 0.9vh, 12px)",
+                          fontSize: "clamp(9px, 1.1vh, 13px)",
                           color: step.color,
                           opacity: 0.5 + step.intensity * 0.5,
                         }}
@@ -224,7 +224,7 @@ export default function Slide19() {
                       <span
                         className="uppercase tracking-[0.12em] font-bold truncate"
                         style={{
-                          fontSize: "clamp(7px, 0.8vh, 10px)",
+                          fontSize: "clamp(8px, 1vh, 12px)",
                           color: step.color,
                           opacity: 0.5 + step.intensity * 0.5,
                         }}
@@ -263,8 +263,8 @@ export default function Slide19() {
                     <div
                       className="rounded-lg flex items-center justify-center flex-shrink-0"
                       style={{
-                        width: "clamp(30px, 4vh, 46px)",
-                        height: "clamp(30px, 4vh, 46px)",
+                        width: "clamp(34px, 4.5vh, 52px)",
+                        height: "clamp(34px, 4.5vh, 52px)",
                         background: `rgba(${rgb}, ${0.06 + step.intensity * 0.1})`,
                         border: `1px solid rgba(${rgb}, ${0.15 + step.intensity * 0.25})`,
                         marginBottom: "clamp(6px, 0.8vh, 12px)",
@@ -272,8 +272,8 @@ export default function Slide19() {
                     >
                       <step.icon
                         style={{
-                          width: "clamp(16px, 2vh, 24px)",
-                          height: "clamp(16px, 2vh, 24px)",
+                          width: "clamp(18px, 2.4vh, 28px)",
+                          height: "clamp(18px, 2.4vh, 28px)",
                         }}
                         color={step.color}
                         strokeWidth={isRed || isHighlight ? 2.5 : 2}
@@ -284,7 +284,7 @@ export default function Slide19() {
                     <h3
                       className="font-bold text-[#EDEDEF] relative"
                       style={{
-                        fontSize: "clamp(11px, 1.5vh, 18px)",
+                        fontSize: "clamp(13px, 1.8vh, 21px)",
                         lineHeight: "1.2",
                         marginBottom: "clamp(6px, 0.8vh, 10px)",
                       }}
@@ -309,7 +309,7 @@ export default function Slide19() {
                           <span
                             className="text-[#9A9A9E]"
                             style={{
-                              fontSize: "clamp(9px, 1.1vh, 14px)",
+                              fontSize: "clamp(10px, 1.3vh, 16px)",
                               lineHeight: "1.35",
                             }}
                           >
@@ -424,7 +424,7 @@ export default function Slide19() {
           />
           <p
             className="text-center text-[#C5C5C7] relative font-medium"
-            style={{ fontSize: "clamp(12px, 1.5vh, 18px)", lineHeight: "1.4" }}
+            style={{ fontSize: "clamp(14px, 1.8vh, 21px)", lineHeight: "1.4" }}
           >
             <strong className="text-[#2B7FFF]">Originação digital contínua</strong>{" "}
             — independente da loja física

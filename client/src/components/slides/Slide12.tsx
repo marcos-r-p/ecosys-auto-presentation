@@ -13,34 +13,34 @@ import SlideFooter from "../SlideFooter";
 
 export default function Slide12() {
   return (
-    <div className="flex flex-col h-full overflow-hidden" style={{ padding: "0 clamp(16px, 3vw, 60px)" }}>
+    <div className="flex flex-col h-full overflow-hidden" style={{ padding: "0 clamp(12px, 2vw, 40px)" }}>
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center shrink-0"
-        style={{ paddingTop: "clamp(10px, 2vh, 28px)", paddingBottom: "clamp(4px, 0.8vh, 12px)" }}
+        style={{ paddingTop: "clamp(8px, 1.5vh, 20px)", paddingBottom: "clamp(4px, 0.8vh, 10px)" }}
       >
-        <p className="text-[#8A8A8E] uppercase tracking-[0.2em] mb-1" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+        <p className="text-[#8A8A8E] uppercase tracking-[0.2em] mb-1" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
           Ciclo completo de negócio com IA
         </p>
         <h2
           className="font-extrabold tracking-tight text-[#EDEDEF]"
-          style={{ fontSize: "clamp(22px, 3.8vh, 46px)", lineHeight: "1.1", marginBottom: "clamp(2px, 0.5vh, 8px)" }}
+          style={{ fontSize: "clamp(26px, 4.5vh, 52px)", lineHeight: "1.1", marginBottom: "clamp(2px, 0.5vh, 8px)" }}
         >
           Assistente IA <span className="text-[#2B7FFF]">do Lojista</span>
         </h2>
-        <p className="text-[#8A8A8E] max-w-4xl mx-auto" style={{ fontSize: "clamp(11px, 1.3vh, 16px)" }}>
+        <p className="text-[#8A8A8E] max-w-4xl mx-auto" style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}>
           4 agentes especializados que operam 24/7 em cada etapa do ciclo da revenda
         </p>
       </motion.div>
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col justify-start w-full max-w-7xl mx-auto" style={{ gap: "clamp(6px, 1vh, 14px)", marginTop: "clamp(4px, 0.8vh, 12px)" }}>
+      <div className="flex-1 flex flex-col justify-center w-full max-w-[1400px] mx-auto" style={{ gap: "clamp(6px, 1.2vh, 16px)", marginTop: "clamp(2px, 0.4vh, 6px)" }}>
 
         {/* Flow: 4 agents in sequence with arrows */}
-        <div className="grid grid-cols-4 items-start" style={{ gap: "clamp(6px, 0.8vw, 16px)" }}>
+        <div className="grid grid-cols-4 items-start" style={{ gap: "clamp(8px, 1vw, 20px)" }}>
 
           {/* Agent 1 — Pré-Venda */}
           <motion.div
@@ -51,7 +51,7 @@ export default function Slide12() {
             <div
               className="rounded-xl h-full relative"
               style={{
-                padding: "clamp(10px, 1.4vh, 20px) clamp(10px, 1.2vw, 18px)",
+                padding: "clamp(14px, 2vh, 26px) clamp(12px, 1.4vw, 22px)",
                 background: "rgba(255,255,255,0.03)",
                 border: "1.5px solid rgba(139,92,246,0.25)",
                 borderTopWidth: "2.5px",
@@ -62,7 +62,7 @@ export default function Slide12() {
               <div className="flex items-center gap-2 mb-2">
                 <span
                   className="px-2 py-0.5 rounded-full font-bold text-[#8B5CF6] border border-[#8B5CF6]/30"
-                  style={{ fontSize: "clamp(7px, 0.8vh, 10px)", background: "rgba(139,92,246,0.1)" }}
+                  style={{ fontSize: "clamp(8px, 1vh, 12px)", background: "rgba(139,92,246,0.1)" }}
                 >
                   ETAPA 01
                 </span>
@@ -72,32 +72,32 @@ export default function Slide12() {
               <div className="flex items-center gap-2 mb-2">
                 <div
                   className="rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ width: "clamp(28px, 3.5vh, 40px)", height: "clamp(28px, 3.5vh, 40px)", background: "rgba(139,92,246,0.12)" }}
+                  style={{ width: "clamp(32px, 4.5vh, 48px)", height: "clamp(32px, 4.5vh, 48px)", background: "rgba(139,92,246,0.12)" }}
                 >
-                  <UserPlus style={{ width: "clamp(14px, 1.8vh, 22px)", height: "clamp(14px, 1.8vh, 22px)" }} className="text-[#8B5CF6]" />
+                  <UserPlus style={{ width: "clamp(16px, 2.2vh, 26px)", height: "clamp(16px, 2.2vh, 26px)" }} className="text-[#8B5CF6]" />
                 </div>
-                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(12px, 1.6vh, 20px)", lineHeight: "1.2" }}>
+                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 2vh, 24px)", lineHeight: "1.2" }}>
                   Pré-Venda
                 </h3>
               </div>
 
-              <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+              <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
                 SDR inteligente
               </p>
 
               {/* Bullets */}
               <div style={{ display: "flex", flexDirection: "column", gap: "clamp(3px, 0.5vh, 8px)" }}>
                 <div className="flex items-start gap-1.5">
-                  <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#8B5CF6] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Qualifica leads automaticamente</span>
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#8B5CF6] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Qualifica leads automaticamente</span>
                 </div>
                 <div className="flex items-start gap-1.5">
-                  <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#8B5CF6] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Agenda visitas e simulações</span>
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#8B5CF6] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Agenda visitas e simulações</span>
                 </div>
                 <div className="flex items-start gap-1.5">
-                  <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#8B5CF6] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Foco nas oportunidades quentes</span>
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#8B5CF6] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Foco nas oportunidades quentes</span>
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function Slide12() {
             <div
               className="rounded-xl h-full relative"
               style={{
-                padding: "clamp(10px, 1.4vh, 20px) clamp(10px, 1.2vw, 18px)",
+                padding: "clamp(14px, 2vh, 26px) clamp(12px, 1.4vw, 22px)",
                 background: "rgba(255,255,255,0.03)",
                 border: "1.5px solid rgba(6,182,212,0.25)",
                 borderTopWidth: "2.5px",
@@ -122,7 +122,7 @@ export default function Slide12() {
               <div className="flex items-center gap-2 mb-2">
                 <span
                   className="px-2 py-0.5 rounded-full font-bold text-[#06B6D4] border border-[#06B6D4]/30"
-                  style={{ fontSize: "clamp(7px, 0.8vh, 10px)", background: "rgba(6,182,212,0.1)" }}
+                  style={{ fontSize: "clamp(8px, 1vh, 12px)", background: "rgba(6,182,212,0.1)" }}
                 >
                   ETAPA 02
                 </span>
@@ -131,31 +131,31 @@ export default function Slide12() {
               <div className="flex items-center gap-2 mb-2">
                 <div
                   className="rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ width: "clamp(28px, 3.5vh, 40px)", height: "clamp(28px, 3.5vh, 40px)", background: "rgba(6,182,212,0.12)" }}
+                  style={{ width: "clamp(32px, 4.5vh, 48px)", height: "clamp(32px, 4.5vh, 48px)", background: "rgba(6,182,212,0.12)" }}
                 >
-                  <Package style={{ width: "clamp(14px, 1.8vh, 22px)", height: "clamp(14px, 1.8vh, 22px)" }} className="text-[#06B6D4]" />
+                  <Package style={{ width: "clamp(16px, 2.2vh, 26px)", height: "clamp(16px, 2.2vh, 26px)" }} className="text-[#06B6D4]" />
                 </div>
-                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(12px, 1.6vh, 20px)", lineHeight: "1.2" }}>
+                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 2vh, 24px)", lineHeight: "1.2" }}>
                   Estoque
                 </h3>
               </div>
 
-              <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+              <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
                 Gestão inteligente em tempo real
               </p>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "clamp(3px, 0.5vh, 8px)" }}>
                 <div className="flex items-start gap-1.5">
-                  <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#06B6D4] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Ajuste de preço e margem</span>
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#06B6D4] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Ajuste de preço e margem</span>
                 </div>
                 <div className="flex items-start gap-1.5">
-                  <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#06B6D4] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Recomenda compra por demanda</span>
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#06B6D4] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Recomenda compra por demanda</span>
                 </div>
                 <div className="flex items-start gap-1.5">
-                  <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#06B6D4] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Estoque lucrativo e otimizado</span>
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#06B6D4] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Estoque lucrativo e otimizado</span>
                 </div>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function Slide12() {
             <div
               className="rounded-xl h-full relative overflow-hidden"
               style={{
-                padding: "clamp(10px, 1.4vh, 20px) clamp(10px, 1.2vw, 18px)",
+                padding: "clamp(14px, 2vh, 26px) clamp(12px, 1.4vw, 22px)",
                 background: "linear-gradient(160deg, rgba(34,197,94,0.08), rgba(34,197,94,0.03))",
                 border: "2px solid rgba(34,197,94,0.4)",
                 borderTopWidth: "3px",
@@ -185,13 +185,13 @@ export default function Slide12() {
                 <div className="flex items-center gap-2 mb-2">
                   <span
                     className="px-2 py-0.5 rounded-full font-bold text-[#22C55E] border border-[#22C55E]/40"
-                    style={{ fontSize: "clamp(7px, 0.8vh, 10px)", background: "rgba(34,197,94,0.15)" }}
+                    style={{ fontSize: "clamp(8px, 1vh, 12px)", background: "rgba(34,197,94,0.15)" }}
                   >
                     ETAPA 03
                   </span>
                   <span
                     className="px-2 py-0.5 rounded-full font-bold text-[#EDEDEF] border border-[#22C55E]/40"
-                    style={{ fontSize: "clamp(7px, 0.8vh, 10px)", background: "rgba(34,197,94,0.25)" }}
+                    style={{ fontSize: "clamp(8px, 1vh, 12px)", background: "rgba(34,197,94,0.25)" }}
                   >
                     PROTAGONISTA
                   </span>
@@ -200,35 +200,35 @@ export default function Slide12() {
                 <div className="flex items-center gap-2 mb-2">
                   <div
                     className="rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ width: "clamp(30px, 4vh, 44px)", height: "clamp(30px, 4vh, 44px)", background: "rgba(34,197,94,0.15)", border: "1px solid rgba(34,197,94,0.3)" }}
+                    style={{ width: "clamp(34px, 4.5vh, 50px)", height: "clamp(34px, 4.5vh, 50px)", background: "rgba(34,197,94,0.15)", border: "1px solid rgba(34,197,94,0.3)" }}
                   >
-                    <DollarSign style={{ width: "clamp(16px, 2vh, 24px)", height: "clamp(16px, 2vh, 24px)" }} className="text-[#22C55E]" />
+                    <DollarSign style={{ width: "clamp(18px, 2.4vh, 28px)", height: "clamp(18px, 2.4vh, 28px)" }} className="text-[#22C55E]" />
                   </div>
-                  <h3 className="font-extrabold text-[#22C55E]" style={{ fontSize: "clamp(13px, 1.8vh, 22px)", lineHeight: "1.2" }}>
+                  <h3 className="font-extrabold text-[#22C55E]" style={{ fontSize: "clamp(15px, 2.2vh, 26px)", lineHeight: "1.2" }}>
                     Financeiro
                   </h3>
                 </div>
 
-                <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+                <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
                   Saúde financeira 24/7
                 </p>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "clamp(3px, 0.5vh, 8px)" }}>
                   <div className="flex items-start gap-1.5">
-                    <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Gargalos de fluxo de caixa</span>
+                    <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Gargalos de fluxo de caixa</span>
                   </div>
                   <div className="flex items-start gap-1.5">
-                    <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Alertas de inadimplência</span>
+                    <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Alertas de inadimplência</span>
                   </div>
                   <div className="flex items-start gap-1.5">
-                    <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Rentabilidade por veículo</span>
+                    <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Rentabilidade por veículo</span>
                   </div>
                   <div className="flex items-start gap-1.5">
-                    <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Estratégias de cobrança</span>
+                    <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Estratégias de cobrança</span>
                   </div>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function Slide12() {
             <div
               className="rounded-xl h-full relative"
               style={{
-                padding: "clamp(10px, 1.4vh, 20px) clamp(10px, 1.2vw, 18px)",
+                padding: "clamp(14px, 2vh, 26px) clamp(12px, 1.4vw, 22px)",
                 background: "rgba(255,255,255,0.03)",
                 border: "1.5px solid rgba(244,63,94,0.25)",
                 borderTopWidth: "2.5px",
@@ -254,7 +254,7 @@ export default function Slide12() {
               <div className="flex items-center gap-2 mb-2">
                 <span
                   className="px-2 py-0.5 rounded-full font-bold text-[#F43F5E] border border-[#F43F5E]/30"
-                  style={{ fontSize: "clamp(7px, 0.8vh, 10px)", background: "rgba(244,63,94,0.1)" }}
+                  style={{ fontSize: "clamp(8px, 1vh, 12px)", background: "rgba(244,63,94,0.1)" }}
                 >
                   ETAPA 04
                 </span>
@@ -263,31 +263,31 @@ export default function Slide12() {
               <div className="flex items-center gap-2 mb-2">
                 <div
                   className="rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ width: "clamp(28px, 3.5vh, 40px)", height: "clamp(28px, 3.5vh, 40px)", background: "rgba(244,63,94,0.12)" }}
+                  style={{ width: "clamp(32px, 4.5vh, 48px)", height: "clamp(32px, 4.5vh, 48px)", background: "rgba(244,63,94,0.12)" }}
                 >
-                  <Heart style={{ width: "clamp(14px, 1.8vh, 22px)", height: "clamp(14px, 1.8vh, 22px)" }} className="text-[#F43F5E]" />
+                  <Heart style={{ width: "clamp(16px, 2.2vh, 26px)", height: "clamp(16px, 2.2vh, 26px)" }} className="text-[#F43F5E]" />
                 </div>
-                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(12px, 1.6vh, 20px)", lineHeight: "1.2" }}>
+                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 2vh, 24px)", lineHeight: "1.2" }}>
                   Pós-Venda
                 </h3>
               </div>
 
-              <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(9px, 1vh, 12px)" }}>
+              <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
                 Fidelização e LTV
               </p>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "clamp(3px, 0.5vh, 8px)" }}>
                 <div className="flex items-start gap-1.5">
-                  <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#F43F5E] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Relacionamento automatizado</span>
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#F43F5E] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Relacionamento automatizado</span>
                 </div>
                 <div className="flex items-start gap-1.5">
-                  <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#F43F5E] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Ofertas personalizadas</span>
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#F43F5E] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Ofertas personalizadas</span>
                 </div>
                 <div className="flex items-start gap-1.5">
-                  <Zap style={{ width: "clamp(10px, 1.2vh, 14px)", height: "clamp(10px, 1.2vh, 14px)" }} className="text-[#F43F5E] flex-shrink-0 mt-0.5" />
-                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>Reduz CAC, impulsiona LTV</span>
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#F43F5E] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Reduz CAC, impulsiona LTV</span>
                 </div>
               </div>
             </div>
@@ -303,13 +303,13 @@ export default function Slide12() {
           style={{ gap: "clamp(8px, 1.5vw, 24px)", marginTop: "clamp(-2px, -0.3vh, -4px)" }}
         >
           <div className="flex items-center" style={{ gap: "clamp(4px, 0.6vw, 12px)" }}>
-            <span className="text-[#8B5CF6] font-bold" style={{ fontSize: "clamp(9px, 1.1vh, 13px)" }}>Pré-Venda</span>
+            <span className="text-[#8B5CF6] font-bold" style={{ fontSize: "clamp(10px, 1.3vh, 15px)" }}>Pré-Venda</span>
             <ArrowRight style={{ width: "clamp(12px, 1.4vh, 18px)", height: "clamp(12px, 1.4vh, 18px)" }} className="text-[#8A8A8E]" />
-            <span className="text-[#06B6D4] font-bold" style={{ fontSize: "clamp(9px, 1.1vh, 13px)" }}>Estoque</span>
+            <span className="text-[#06B6D4] font-bold" style={{ fontSize: "clamp(10px, 1.3vh, 15px)" }}>Estoque</span>
             <ArrowRight style={{ width: "clamp(12px, 1.4vh, 18px)", height: "clamp(12px, 1.4vh, 18px)" }} className="text-[#8A8A8E]" />
-            <span className="text-[#22C55E] font-extrabold" style={{ fontSize: "clamp(10px, 1.3vh, 15px)" }}>Financeiro</span>
+            <span className="text-[#22C55E] font-extrabold" style={{ fontSize: "clamp(11px, 1.5vh, 17px)" }}>Financeiro</span>
             <ArrowRight style={{ width: "clamp(12px, 1.4vh, 18px)", height: "clamp(12px, 1.4vh, 18px)" }} className="text-[#8A8A8E]" />
-            <span className="text-[#F43F5E] font-bold" style={{ fontSize: "clamp(9px, 1.1vh, 13px)" }}>Pós-Venda</span>
+            <span className="text-[#F43F5E] font-bold" style={{ fontSize: "clamp(10px, 1.3vh, 15px)" }}>Pós-Venda</span>
           </div>
         </motion.div>
 
@@ -322,7 +322,7 @@ export default function Slide12() {
           <div
             className="rounded-xl relative overflow-hidden"
             style={{
-              padding: "clamp(10px, 1.5vh, 22px) clamp(16px, 2vw, 32px)",
+              padding: "clamp(14px, 2vh, 26px) clamp(20px, 2.5vw, 36px)",
               background: "linear-gradient(135deg, rgba(43,127,255,0.08) 0%, rgba(34,197,94,0.06) 100%)",
               border: "1.5px solid rgba(43,127,255,0.2)",
               boxShadow: "0 0 25px rgba(43,127,255,0.05)",
@@ -334,14 +334,14 @@ export default function Slide12() {
               <div className="flex-shrink-0">
                 <div
                   className="rounded-lg flex items-center justify-center"
-                  style={{ width: "clamp(32px, 4vh, 48px)", height: "clamp(32px, 4vh, 48px)", background: "linear-gradient(135deg, rgba(43,127,255,0.2), rgba(34,197,94,0.2))", border: "1px solid rgba(43,127,255,0.3)" }}
+                  style={{ width: "clamp(36px, 4.5vh, 52px)", height: "clamp(36px, 4.5vh, 52px)", background: "linear-gradient(135deg, rgba(43,127,255,0.2), rgba(34,197,94,0.2))", border: "1px solid rgba(43,127,255,0.3)" }}
                 >
                   <TrendingUp style={{ width: "clamp(16px, 2vh, 24px)", height: "clamp(16px, 2vh, 24px)" }} className="text-[#EDEDEF]" />
                 </div>
               </div>
 
               <div className="flex-1">
-                <p className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 17px)" }}>
+                <p className="text-[#C5C5C7]" style={{ fontSize: "clamp(13px, 1.6vh, 19px)" }}>
                   4 agentes operando <strong className="text-[#2B7FFF]">cada etapa do ciclo</strong> — mais eficiência, menos custo operacional e <strong className="text-[#22C55E]">maior rentabilidade</strong> para a revenda
                 </p>
               </div>
@@ -349,12 +349,12 @@ export default function Slide12() {
               {/* Metrics */}
               <div className="flex items-center flex-shrink-0" style={{ gap: "clamp(8px, 1.2vw, 20px)" }}>
                 <div className="text-center">
-                  <p className="font-extrabold text-[#2B7FFF]" style={{ fontSize: "clamp(12px, 1.6vh, 20px)" }}>+Eficiência</p>
-                  <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(7px, 0.8vh, 10px)" }}>operacional</p>
+                  <p className="font-extrabold text-[#2B7FFF]" style={{ fontSize: "clamp(14px, 1.8vh, 22px)" }}>+Eficiência</p>
+                  <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(8px, 1vh, 12px)" }}>operacional</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-extrabold text-[#22C55E]" style={{ fontSize: "clamp(12px, 1.6vh, 20px)" }}>+Rentab.</p>
-                  <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(7px, 0.8vh, 10px)" }}>por veículo</p>
+                  <p className="font-extrabold text-[#22C55E]" style={{ fontSize: "clamp(14px, 1.8vh, 22px)" }}>+Rentab.</p>
+                  <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(8px, 1vh, 12px)" }}>por veículo</p>
                 </div>
               </div>
             </div>
@@ -376,8 +376,8 @@ export default function Slide12() {
               border: "1px solid rgba(43,127,255,0.15)",
             }}
           >
-            <span className="text-[#2B7FFF]" style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}>&#9889;</span>
-            <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.3vh, 16px)" }}>
+            <span className="text-[#2B7FFF]" style={{ fontSize: "clamp(14px, 1.8vh, 20px)" }}>&#9889;</span>
+            <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(13px, 1.6vh, 19px)" }}>
               IA que opera o ciclo completo — <span className="text-[#2B7FFF] font-semibold">decisões inteligentes</span> = <span className="text-[#22C55E] font-semibold">mais resultado</span> para a revenda e o Bradesco
             </span>
           </div>
