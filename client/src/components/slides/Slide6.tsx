@@ -68,7 +68,7 @@ const sections = [
   },
   {
     id: "novo-gio",
-    title: "Copiloto do GEFIN (Novo GIO)",
+    title: "Copiloto Comercial (Novo GIO)",
     icon: Bot,
     color: "highlight",
     items: [

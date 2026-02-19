@@ -55,7 +55,7 @@ export default function Slide9() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
-        className="text-center mb-8"
+        className="text-center mb-12"
       >
         <h2
           className="font-black tracking-tight text-[#EDEDEF] leading-none"

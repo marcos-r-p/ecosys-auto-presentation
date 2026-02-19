@@ -176,7 +176,7 @@ export default function Slide15() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center flex-shrink-0"
-        style={{ marginBottom: "clamp(8px, 1.2vh, 16px)" }}
+        style={{ marginBottom: "clamp(14px, 2vh, 28px)" }}
       >
         <p
           className="uppercase tracking-[0.2em] text-[#2B7FFF] font-semibold"
