@@ -16,7 +16,7 @@ import SlideFooter from "../SlideFooter";
 
 const products = [
   {
-    name: "DMS (Gestor)",
+    name: "DMS (Gestor Autoline)",
     icon: Database,
     color: "#2B7FFF",
     bgGradient: "linear-gradient(160deg, rgba(43,127,255,0.12), rgba(43,127,255,0.04))",
@@ -28,7 +28,7 @@ const products = [
     period: "Mês 0 → 12",
   },
   {
-    name: "Marketplace",
+    name: "Marketplace Autoline",
     icon: ShoppingCart,
     color: "#06B6D4",
     bgGradient: "linear-gradient(160deg, rgba(6,182,212,0.12), rgba(6,182,212,0.04))",
