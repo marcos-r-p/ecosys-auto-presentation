@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Database, ShoppingCart, Brain, Bot, DollarSign, TrendingUp, Clock } from "lucide-react";
+import { Database, ShoppingCart, Brain, Bot, DollarSign, TrendingUp, Clock, CalendarClock } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
 /*
@@ -7,6 +7,11 @@ import SlideFooter from "../SlideFooter";
  * + 2 blocos de subtotal (Plataforma Autoline | Motor + Copiloto)
  * + barra total inferior
  * Estilo executivo, números grandes, sem detalhes de features.
+ * 
+ * Alterações:
+ * - "Estruturação" renomeado para "Desenvolvimento"
+ * - DMS = R$ 7.340.000 / Marketplace = R$ 13.214.551 (total = R$ 20.554.551)
+ * - Sustentação só a partir do Ano 2 (não cobra no Ano 1)
  */
 
 const products = [
@@ -16,12 +21,11 @@ const products = [
     color: "#2B7FFF",
     bgGradient: "linear-gradient(160deg, rgba(43,127,255,0.12), rgba(43,127,255,0.04))",
     borderColor: "rgba(43,127,255,0.3)",
-    structuring: "Incluso na Plataforma",
-    structuringValue: null,
-    sustaining: "Incluso",
-    sustainingValue: null,
+    development: "R$ 7.340.000",
+    developmentValue: 7340000,
+    sustaining: "R$ 768.597/mês",
+    sustainingValue: 768597,
     period: "Mês 0 → 12",
-    group: "plataforma",
   },
   {
     name: "Marketplace",
@@ -29,12 +33,11 @@ const products = [
     color: "#06B6D4",
     bgGradient: "linear-gradient(160deg, rgba(6,182,212,0.12), rgba(6,182,212,0.04))",
     borderColor: "rgba(6,182,212,0.3)",
-    structuring: "Incluso na Plataforma",
-    structuringValue: null,
-    sustaining: "Incluso",
+    development: "R$ 13.214.551",
+    developmentValue: 13214551,
+    sustaining: "Incluso no DMS",
     sustainingValue: null,
     period: "Mês 0 → 12",
-    group: "plataforma",
   },
   {
     name: "Motor Comercial",
@@ -42,12 +45,11 @@ const products = [
     color: "#22C55E",
     bgGradient: "linear-gradient(160deg, rgba(34,197,94,0.12), rgba(34,197,94,0.04))",
     borderColor: "rgba(34,197,94,0.3)",
-    structuring: "R$ 3.000.000",
-    structuringValue: 3000000,
+    development: "R$ 3.000.000",
+    developmentValue: 3000000,
     sustaining: "R$ 250.000/mês",
     sustainingValue: 250000,
     period: "Mês 0 → 12",
-    group: "motor_copiloto",
   },
   {
     name: "Copiloto Comercial",
@@ -55,18 +57,13 @@ const products = [
     color: "#CC092F",
     bgGradient: "linear-gradient(160deg, rgba(204,9,47,0.12), rgba(204,9,47,0.04))",
     borderColor: "rgba(204,9,47,0.3)",
-    structuring: "R$ 3.000.000",
-    structuringValue: 3000000,
+    development: "R$ 3.000.000",
+    developmentValue: 3000000,
     sustaining: "R$ 250.000/mês",
     sustainingValue: 250000,
     period: "Mês 0 → 12",
-    group: "motor_copiloto",
   },
 ];
-
-function formatCurrency(value: number): string {
-  return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 0, maximumFractionDigits: 0 });
-}
 
 export default function SlideInvestimentoConsolidado() {
   return (
@@ -86,7 +83,7 @@ export default function SlideInvestimentoConsolidado() {
           Investimento — Visão Consolidada
         </h2>
         <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(10px, 1.3vh, 16px)" }}>
-          Estruturação Ano 1 + Sustentação Contínua
+          Desenvolvimento Ano 1 + Sustentação a partir do Ano 2
         </p>
       </motion.div>
 
@@ -129,22 +126,21 @@ export default function SlideInvestimentoConsolidado() {
                 {/* Divider */}
                 <div className="h-px w-full mb-3" style={{ background: `linear-gradient(to right, ${product.color}40, transparent)` }} />
 
-                {/* Estruturação */}
+                {/* Desenvolvimento */}
                 <div className="mb-3">
                   <div className="flex items-center gap-1.5 mb-1">
                     <DollarSign style={{ width: "clamp(10px, 1.2vh, 16px)", height: "clamp(10px, 1.2vh, 16px)" }} className="text-[#8A8A8E]" />
                     <span className="text-[#8A8A8E] font-medium uppercase tracking-wider" style={{ fontSize: "clamp(7px, 0.85vh, 11px)" }}>
-                      Estruturação
+                      Desenvolvimento
                     </span>
                   </div>
                   <p
-                    className="font-extrabold leading-tight"
+                    className="font-extrabold leading-tight text-[#EDEDEF]"
                     style={{
-                      fontSize: product.structuringValue ? "clamp(14px, 2vh, 28px)" : "clamp(10px, 1.2vh, 16px)",
-                      color: product.structuringValue ? "#EDEDEF" : "#8A8A8E",
+                      fontSize: "clamp(14px, 2vh, 28px)",
                     }}
                   >
-                    {product.structuring}
+                    {product.development}
                   </p>
                 </div>
 
@@ -153,7 +149,7 @@ export default function SlideInvestimentoConsolidado() {
                   <div className="flex items-center gap-1.5 mb-1">
                     <TrendingUp style={{ width: "clamp(10px, 1.2vh, 16px)", height: "clamp(10px, 1.2vh, 16px)" }} className="text-[#8A8A8E]" />
                     <span className="text-[#8A8A8E] font-medium uppercase tracking-wider" style={{ fontSize: "clamp(7px, 0.85vh, 11px)" }}>
-                      Sustentação
+                      Sustentação (a partir do Ano 2)
                     </span>
                   </div>
                   <p
@@ -207,7 +203,7 @@ export default function SlideInvestimentoConsolidado() {
               </div>
             </div>
             <div className="text-right">
-              <span className="text-[#8A8A8E] block" style={{ fontSize: "clamp(7px, 0.85vh, 11px)" }}>Sustentação</span>
+              <span className="text-[#8A8A8E] block" style={{ fontSize: "clamp(7px, 0.85vh, 11px)" }}>Sustentação (Ano 2+)</span>
               <span className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(11px, 1.4vh, 18px)" }}>
                 R$ 768.597<span className="text-[#8A8A8E] font-normal">/mês</span>
               </span>
@@ -234,7 +230,7 @@ export default function SlideInvestimentoConsolidado() {
               </div>
             </div>
             <div className="text-right">
-              <span className="text-[#8A8A8E] block" style={{ fontSize: "clamp(7px, 0.85vh, 11px)" }}>Sustentação</span>
+              <span className="text-[#8A8A8E] block" style={{ fontSize: "clamp(7px, 0.85vh, 11px)" }}>Sustentação (Ano 2+)</span>
               <span className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(11px, 1.4vh, 18px)" }}>
                 R$ 500.000<span className="text-[#8A8A8E] font-normal">/mês</span>
               </span>
@@ -257,7 +253,7 @@ export default function SlideInvestimentoConsolidado() {
           <div className="flex items-center justify-between flex-wrap" style={{ gap: "clamp(8px, 1vw, 20px)" }}>
             <div>
               <span className="font-bold text-[#8A8A8E] uppercase tracking-wider" style={{ fontSize: "clamp(8px, 1vh, 13px)" }}>
-                Total Estruturação Ano 1
+                Total Desenvolvimento Ano 1
               </span>
               <p className="font-black text-[#EDEDEF]" style={{ fontSize: "clamp(20px, 3vh, 40px)", lineHeight: "1.1" }}>
                 R$ 26.554.551
@@ -268,7 +264,7 @@ export default function SlideInvestimentoConsolidado() {
 
             <div>
               <span className="font-bold text-[#8A8A8E] uppercase tracking-wider" style={{ fontSize: "clamp(8px, 1vh, 13px)" }}>
-                Sustentação Mensal
+                Sustentação Mensal (Ano 2+)
               </span>
               <p className="font-black text-[#EDEDEF]" style={{ fontSize: "clamp(18px, 2.5vh, 34px)", lineHeight: "1.1" }}>
                 R$ 1.268.597<span className="text-[#8A8A8E] font-normal" style={{ fontSize: "clamp(11px, 1.4vh, 18px)" }}>/mês</span>
@@ -287,11 +283,20 @@ export default function SlideInvestimentoConsolidado() {
             </div>
           </div>
 
-          {/* Nota de correção */}
-          <div className="mt-2 pt-2 border-t border-white/[0.06]">
-            <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(7px, 0.85vh, 11px)" }}>
-              Valores de sustentação corrigidos anualmente por <span className="text-[#EDEDEF] font-semibold">IGPM + 0,5% a.m.</span>
-            </p>
+          {/* Notas */}
+          <div className="mt-2 pt-2 border-t border-white/[0.06] flex flex-col" style={{ gap: "clamp(2px, 0.3vh, 6px)" }}>
+            <div className="flex items-center gap-2">
+              <CalendarClock style={{ width: "clamp(10px, 1.2vh, 16px)", height: "clamp(10px, 1.2vh, 16px)" }} className="text-[#8A8A8E] shrink-0" />
+              <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(7px, 0.85vh, 11px)" }}>
+                <span className="text-[#EDEDEF] font-semibold">Ano 1:</span> somente desenvolvimento, sem cobrança de sustentação
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <TrendingUp style={{ width: "clamp(10px, 1.2vh, 16px)", height: "clamp(10px, 1.2vh, 16px)" }} className="text-[#8A8A8E] shrink-0" />
+              <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(7px, 0.85vh, 11px)" }}>
+                Valores de sustentação corrigidos anualmente por <span className="text-[#EDEDEF] font-semibold">IGPM + 0,5% a.m.</span>
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>
