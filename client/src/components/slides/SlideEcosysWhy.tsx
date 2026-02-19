@@ -69,7 +69,7 @@ export default function SlideEcosysWhy() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 + index * 0.1 }}
-              className="relative bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 sm:p-6 md:p-7 hover:border-white/[0.10] hover:bg-white/[0.05] transition-all"
+              className="relative bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 sm:p-6 md:p-7 hover:border-white/[0.10] hover:bg-white/[0.05] transition-all interactive-card"
             >
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-white/[0.04]">

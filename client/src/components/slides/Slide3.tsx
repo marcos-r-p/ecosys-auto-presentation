@@ -58,7 +58,7 @@ export default function Slide3() {
               transition={{ duration: 0.7, delay: 0.2 + index * 0.2 }}
               className="relative group"
             >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 hover:border-white/[0.12] transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-5 hover:border-white/[0.12] transition-all interactive-card">
                 <div className="flex items-start gap-4">
                   <div
                     className={`flex-shrink-0 w-14 h-14 rounded-xl bg-white/[0.06] p-0.5`}

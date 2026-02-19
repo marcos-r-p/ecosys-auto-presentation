@@ -106,7 +106,7 @@ export default function SlideGoldenCircle() {
                 onMouseLeave={() => setHoveredLayer(null)}
               >
                 <div
-                  className="rounded-xl px-6 py-5 cursor-pointer transition-all duration-300"
+                  className="rounded-xl px-6 py-5 cursor-pointer transition-all duration-300 interactive-card clickable-hint"
                   style={{
                     background: isHighlighted("what")
                       ? "rgba(43,127,255,0.08)"
@@ -404,7 +404,7 @@ export default function SlideGoldenCircle() {
                 onMouseLeave={() => setHoveredLayer(null)}
               >
                 <div
-                  className="rounded-xl px-6 py-5 cursor-pointer transition-all duration-300"
+                  className="rounded-xl px-6 py-5 cursor-pointer transition-all duration-300 interactive-card clickable-hint"
                   style={{
                     background: isHighlighted("how")
                       ? "rgba(43,127,255,0.08)"
@@ -466,9 +466,8 @@ export default function SlideGoldenCircle() {
                 onMouseLeave={() => setHoveredLayer(null)}
               >
                 <div
-                  className="rounded-xl px-8 py-5 text-center cursor-pointer transition-all duration-300"
+       className="rounded-xl px-8 py-5 text-center cursor-pointer transition-all duration-300 interactive-card clickable-hint"
                   style={{
-                    maxWidth: "520px",
                     background: isHighlighted("why")
                       ? "linear-gradient(160deg, rgba(43,127,255,0.15), rgba(43,127,255,0.06))"
                       : "linear-gradient(160deg, rgba(43,127,255,0.1), rgba(43,127,255,0.03))",

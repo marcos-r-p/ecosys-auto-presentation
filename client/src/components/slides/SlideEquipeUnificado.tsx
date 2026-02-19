@@ -50,7 +50,7 @@ function ExecutiveCard({ exec, index }: { exec: Executive; index: number }) {
     >
       {/* Photo container */}
       <div
-        className="relative cursor-pointer"
+        className="relative cursor-pointer interactive-card"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

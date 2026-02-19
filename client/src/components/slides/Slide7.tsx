@@ -74,7 +74,7 @@ export default function Slide7() {
               transition={{ duration: 0.7, delay: 0.2 + index * 0.15 }}
               className="relative group"
             >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-4 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-4 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all interactive-card">
                 {/* Icon */}
                 <div className="flex justify-center mb-3">
                   <div

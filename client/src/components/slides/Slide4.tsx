@@ -113,7 +113,7 @@ export default function Slide4() {
                 className={isHighlight ? "md:col-span-2" : ""}
               >
                 <div
-                  className="relative rounded-xl p-4 transition-all duration-300 group hover:scale-[1.01]"
+                  className="relative rounded-xl p-4 transition-all duration-300 group hover:scale-[1.01] interactive-card"
                   style={{
                     background: isHighlight
                       ? "linear-gradient(135deg, rgba(204,9,47,0.08), rgba(204,9,47,0.02))"

@@ -60,7 +60,7 @@ export default function Slide10() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative group"
+            className="relative group interactive-card"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl" style={{ background: "rgba(43,127,255,0.04)" }} />
             <div className="relative rounded-2xl p-4 h-full transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(43,127,255,0.12)", boxShadow: "0 2px 16px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.03)", backdropFilter: "blur(8px)" }}>
@@ -106,7 +106,7 @@ export default function Slide10() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative group"
+            className="relative group interactive-card"
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl" style={{ background: "rgba(255,255,255,0.04)" }} />
             <div className="relative rounded-2xl p-4 h-full transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "2px solid rgba(255,255,255,0.1)", boxShadow: "0 2px 16px rgba(0,0,0,0.12), 0 0 20px rgba(255,255,255,0.02), inset 0 1px 0 rgba(255,255,255,0.04)", backdropFilter: "blur(8px)" }}>

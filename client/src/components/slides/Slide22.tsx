@@ -76,7 +76,7 @@ export default function Slide22() {
 <div
                 className={`relative bg-white/[0.04] border ${
                   integration.highlight ? "border-[#2B7FFF]/50" : "border-white/[0.08]"
-                } rounded-2xl p-7 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all`}
+                } rounded-2xl p-7 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all interactive-card`}
               >
                 {/* Icon */}
                 <div className="flex justify-center mb-5">

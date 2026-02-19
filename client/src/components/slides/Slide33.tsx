@@ -71,7 +71,7 @@ export default function Slide33() {
                   <div className="absolute flex flex-col items-center" style={{ top: '50%' }}>
                     <div className="w-3 h-3 rounded-full bg-violet-500 border border-white/20 relative z-10" />
                     <div className="w-px h-3 bg-violet-500/40" />
-                    <div className="bg-white/[0.04] border border-violet-500/30 rounded-md p-2 w-full flex flex-col items-center justify-center text-center mt-1 hover:bg-violet-500/10 transition-all">
+                    <div className="bg-white/[0.04] border border-violet-500/30 rounded-md p-2 w-full flex flex-col items-center justify-center text-center mt-1 hover:bg-violet-500/10 transition-all interactive-card">
                       <div className="text-[10px] font-bold text-violet-400 mb-0.5">
                         Mês {item.month}
                       </div>

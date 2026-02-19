@@ -68,7 +68,7 @@ export default function Slide26() {
             {/* Gestor Autoline */}
             <div className="relative group w-full sm:w-56">
               <div className="absolute inset-0 bg-white/[0.04] opacity-30 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl" />
-              <div className="relative bg-white/[0.06] border border-white/[0.12] rounded-2xl p-6 hover:border-white/40 transition-all">
+              <div className="relative bg-white/[0.06] border border-white/[0.12] rounded-2xl p-6 hover:border-white/40 transition-all interactive-card">
                 <h3 className="text-xl font-bold text-[#EDEDEF] text-center">
                   GESTOR<br />AUTOLINE
                 </h3>
@@ -105,7 +105,7 @@ export default function Slide26() {
           <div className="flex justify-center">
             <div className="relative group w-full sm:w-64">
               <div className="absolute inset-0 bg-white/[0.04] opacity-30 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl" />
-              <div className="relative bg-white/[0.06] border border-white/[0.12] rounded-2xl p-6 hover:border-white/40 transition-all">
+              <div className="relative bg-white/[0.06] border border-white/[0.12] rounded-2xl p-6 hover:border-white/40 transition-all interactive-card">
                 <h3 className="text-xl font-bold text-[#EDEDEF] text-center">
                   PLATAFORMA<br />DE DADOS
                 </h3>
@@ -127,7 +127,7 @@ export default function Slide26() {
               <div
                 className={`relative bg-white/[0.04] border ${
                   flow.highlight ? "border-[#CC092F]/50" : "border-white/[0.08]"
-                } rounded-2xl p-5 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all`}
+                } rounded-2xl p-5 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all interactive-card`}
               >
                 {/* Title */}
                 <h3 className={`text-xl mb-4 text-center leading-tight ${flow.highlight ? "font-bold" : "font-bold text-[#EDEDEF]"}`} style={flow.highlight ? { color: '#CC092F' } : {}}>

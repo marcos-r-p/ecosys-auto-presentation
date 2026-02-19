@@ -50,7 +50,7 @@ export default function ProgressDots({ currentSlide, totalSlides, onDotClick }: 
 
             {/* Dot */}
             <div
-              className={`rounded-full transition-all duration-300 ${
+              className={`rounded-full transition-all duration-300 nav-dot-interactive ${
                 isActive
                   ? "w-2.5 h-2.5 bg-[#2B7FFF]"
                   : "w-1.5 h-1.5 bg-white/20 group-hover:bg-white/40"

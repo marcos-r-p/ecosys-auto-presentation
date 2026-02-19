@@ -78,7 +78,7 @@ export default function Slide13() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="relative group"
             >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 h-full hover:border-white/[0.12] transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 h-full hover:border-white/[0.12] transition-all interactive-card">
                 <div className="flex flex-col items-center text-center gap-3">
                   <div
                     className={`w-14 h-14 rounded-xl bg-white/[0.06] p-0.5 shadow-lg`}
@@ -125,7 +125,7 @@ export default function Slide13() {
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
               className="relative group"
             >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 h-full hover:border-white/[0.12] transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 h-full hover:border-white/[0.12] transition-all interactive-card">
                 <div className="flex flex-col items-center text-center gap-3">
                   <div
                     className={`w-14 h-14 rounded-xl bg-white/[0.06] p-0.5 shadow-lg`}

@@ -228,7 +228,7 @@ export default function Slide30() {
                     initial={{ opacity: 0, y: isOdd ? -10 : 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.15 + idx * 0.03 }}
-                    className="relative flex items-center justify-center cursor-pointer"
+                    className="relative flex items-center justify-center cursor-pointer interactive-card"
                     style={{ height: rowH }}
                     onMouseEnter={() => setActiveMonth(delivery.month)}
                     onMouseLeave={() => setActiveMonth(null)}

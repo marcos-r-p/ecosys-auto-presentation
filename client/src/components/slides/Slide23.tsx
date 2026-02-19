@@ -117,7 +117,7 @@ export default function Slide23() {
             {pillars.map((pillar, index) => (
               <div
                 key={index}
-                className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.06] transition-all group"
+                className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.12] hover:bg-white/[0.06] transition-all group interactive-card"
               >
                 <div className="flex justify-center mb-3">
                   <div className="w-12 h-12 rounded-xl bg-white p-1 shadow-lg">

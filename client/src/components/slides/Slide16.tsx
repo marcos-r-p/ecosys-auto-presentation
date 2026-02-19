@@ -176,7 +176,7 @@ export default function Slide16() {
             className="grid grid-cols-2 gap-4 mb-4"
           >
             {/* Filtros Avançados */}
-            <div className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.15] transition-all">
+            <div className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.15] transition-all interactive-card">
               <div className="flex items-center gap-2.5 mb-2">
                 <div className="w-10 h-10 rounded-lg bg-white/[0.06] flex items-center justify-center flex-shrink-0">
                   <Filter className="w-6 h-6 text-[#EDEDEF]" />
@@ -202,7 +202,7 @@ export default function Slide16() {
             </div>
 
             {/* Filtro por Localidade */}
-            <div className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.15] transition-all">
+            <div className="bg-white/[0.03] border border-white/[0.08] rounded-xl p-4 hover:border-white/[0.15] transition-all interactive-card">
               <div className="flex items-center gap-2.5 mb-2">
                 <div className="w-10 h-10 rounded-lg bg-white/[0.06] flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-[#EDEDEF]" />

@@ -78,7 +78,7 @@ export default function Slide14() {
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
               className="relative group"
             >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all interactive-card">
                 <div className="flex items-start gap-4 mb-4">
                   <div
                     className={`w-12 h-12 rounded-lg bg-white/[0.06] p-0.5 flex-shrink-0`}
@@ -112,7 +112,7 @@ export default function Slide14() {
               transition={{ duration: 0.6, delay: 0.15 + index * 0.1 }}
               className="relative group"
             >
-<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-xl p-5 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all interactive-card">
                 <div className="flex items-start gap-4 mb-3">
                   <div
                     className={`w-12 h-12 rounded-lg bg-white/[0.06] p-0.5 flex-shrink-0`}

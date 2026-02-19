@@ -87,7 +87,7 @@ export default function Slide2() {
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.12 }}
                 className="relative group"
               >
-                <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-4 sm:p-5 h-full hover:border-white/[0.15] hover:bg-white/[0.06] transition-all duration-300">
+                <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-4 sm:p-5 h-full hover:border-white/[0.15] hover:bg-white/[0.06] transition-all duration-300 interactive-card">
                   {/* Icon */}
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/[0.06] p-0.5 flex-shrink-0">

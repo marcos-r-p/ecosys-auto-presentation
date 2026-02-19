@@ -115,7 +115,7 @@ export default function Slide29() {
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {productivityMetrics.map((metric, idx) => (
-              <div key={idx} className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 text-center hover:border-white/[0.12] transition-all">
+              <div key={idx} className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 text-center hover:border-white/[0.12] transition-all interactive-card">
                 <div className="w-12 h-12 rounded-lg bg-white p-1 mx-auto mb-3">
                   <div className="w-full h-full bg-[#0A0A0B] rounded-[8px] flex items-center justify-center">
                     <metric.icon className="w-6 h-6 text-[#EDEDEF]" />

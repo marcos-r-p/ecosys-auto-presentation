@@ -193,7 +193,7 @@ export default function SlideRoadmapEntregas() {
                       initial={{ scaleX: 0, opacity: 0 }}
                       animate={{ scaleX: 1, opacity: 1 }}
                       transition={{ duration: 0.4, delay: 0.3 + trackIdx * 0.1 + phaseIdx * 0.05 }}
-                      className="absolute flex items-center justify-center cursor-pointer transition-all duration-200"
+                      className="absolute flex items-center justify-center cursor-pointer transition-all duration-200 interactive-card"
                       style={{
                         left: `${leftPct}%`,
                         width: `${widthPct}%`,

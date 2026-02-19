@@ -120,7 +120,7 @@ export default function Slide11() {
                 onMouseLeave={() => setHoveredChannel(null)}
               >
                 <div
-                  className={`flex items-center gap-2.5 px-3 py-2 rounded-xl border transition-all duration-200 cursor-default ${
+                  className={`flex items-center gap-2.5 px-3 py-2 rounded-xl border transition-all duration-200 cursor-pointer interactive-card ${
                     hoveredChannel === i
                       ? "bg-white/[0.08] border-white/[0.2] scale-[1.03]"
                       : "bg-white/[0.03] border-white/[0.08]"
