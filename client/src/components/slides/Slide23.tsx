@@ -95,8 +95,7 @@ export default function Slide23() {
                   <Check className="w-6 h-6 text-[#EDEDEF]" />
                 </div>
                 <h3 className="text-2xl font-bold" style={{ color: '#2B7FFF' }}>
-                  GIO: A Solução Completa
-                  <span className="ml-2 text-xs px-2 py-1 rounded-full font-bold" style={{ backgroundColor: '#2B7FFF', color: 'white' }}>NOVO</span>
+                  Copiloto Comercial: A Solução Completa
                 </h3>
               </div>
               <p className="text-[#EDEDEF] text-base leading-relaxed mb-4">
