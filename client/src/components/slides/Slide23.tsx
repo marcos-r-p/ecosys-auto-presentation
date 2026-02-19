@@ -46,8 +46,8 @@ export default function Slide23() {
           className="text-center mb-6"
         >
           <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
-            <span className="font-bold" style={{ color: '#2B7FFF' }}>Novo GIO</span>
-            <span className="text-[#EDEDEF]">: Copiloto Comercial</span>
+            <span className="font-bold" style={{ color: '#FFFFFF' }}>Novo GIO</span>
+            <span style={{ color: '#CC092F' }}>: Copiloto Comercial</span>
           </h2>
           <p className="text-[#8A8A8E] text-lg font-medium" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
             O elo estratégico entre Bradesco e sua rede de lojistas transformando a Gestão Comercial
@@ -95,8 +95,7 @@ export default function Slide23() {
                   <Check className="w-6 h-6 text-[#EDEDEF]" />
                 </div>
                 <h3 className="text-2xl font-bold" style={{ color: '#2B7FFF' }}>
-                  GIO: A Solução Completa
-                  <span className="ml-2 text-xs px-2 py-1 rounded-full font-bold" style={{ backgroundColor: '#2B7FFF', color: 'white' }}>NOVO</span>
+                  Copiloto Comercial: A Solução Completa
                 </h3>
               </div>
               <p className="text-[#EDEDEF] text-base leading-relaxed mb-4">

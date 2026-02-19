@@ -137,7 +137,7 @@ export default function Slide28() {
               </div>
 
               <div className="bg-[#0A0A0B]/60 border border-white/[0.08] rounded-lg p-3">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   {gamificationPoints.map((point, idx) => (
                     <div key={idx} className="flex items-center justify-between bg-white/[0.04] rounded px-2 py-1">
                       <span className="text-sm text-[#8A8A8E]">{point.action}</span>

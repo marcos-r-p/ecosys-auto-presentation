@@ -5,9 +5,9 @@ import SlideFooter from "../SlideFooter";
 
 export default function SlideBioMarcos() {
   return (
-    <div className="h-full w-full bg-[#0A0A0B] text-[#EDEDEF] flex flex-col justify-center items-center p-4 md:p-16">
+    <div className="h-full w-full bg-[#0A0A0B] text-[#EDEDEF] flex flex-col justify-center items-center p-16">
       <div className="w-full flex-grow flex flex-col items-center justify-center">
-        <div className="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div className="w-full max-w-4xl mx-auto grid grid-cols-2 gap-8 mb-8">
           <div className="flex flex-col items-center">
             <div className="relative w-40 h-40 rounded-full flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-900 p-1">
                 <User className="w-24 h-24 text-gray-500" />

@@ -44,7 +44,7 @@ export default function Slide33() {
           <div className="absolute top-1/2 left-0 right-0 h-px bg-white/10 transform -translate-y-1/2 min-w-[500px]" />
 
           {/* Grid Container */}
-          <div className="relative grid grid-cols-2 md:grid-cols-6 gap-3 md:min-w-[500px] overflow-hidden">
+          <div className="relative grid grid-cols-6 gap-3 min-w-[500px] overflow-hidden">
             {monthlyInvestments.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -91,7 +91,7 @@ export default function Slide33() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-3"
+          className="grid grid-cols-2 gap-3"
         >
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-3 text-center">
             <div className="flex items-center justify-center gap-1.5 mb-1">

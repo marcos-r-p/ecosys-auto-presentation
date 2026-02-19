@@ -71,24 +71,12 @@ export default function SlideLinhaTempo2() {
                 </motion.div>
               );
             })}
-            {/* Goal top text */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 1.0 }}
-              className="text-center px-1"
-              style={{ width: `${100 / ITEM_COUNT}%` }}
-            >
-              <p className="font-black text-[#CC092F] leading-none" style={{ fontSize: "clamp(16px, 2.2vh, 26px)" }}>
-                {goal.year}
-              </p>
-              <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}>
-                {goal.label}
-              </p>
-              <p className="text-[#CC092F] font-semibold mt-0.5 leading-tight" style={{ fontSize: "clamp(10px, 1.2vh, 15px)" }}>
-                {goal.desc}
-              </p>
-            </motion.div>
+            {/* Goal - no top text (moved to bottom) */}
+            <div className="text-center px-1" style={{ width: `${100 / ITEM_COUNT}%`, visibility: "hidden" }}>
+              <p className="font-black leading-none" style={{ fontSize: "clamp(16px, 2.2vh, 26px)" }}>&nbsp;</p>
+              <p className="font-bold mt-1 leading-tight" style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}>&nbsp;</p>
+              <p className="font-semibold mt-0.5 leading-tight" style={{ fontSize: "clamp(10px, 1.2vh, 15px)" }}>&nbsp;</p>
+            </div>
           </div>
 
           {/* === ROW: TOP CONNECTORS (lines from text to node) === */}
@@ -108,9 +96,9 @@ export default function SlideLinhaTempo2() {
                 </div>
               );
             })}
-            {/* Goal top connector */}
+            {/* Goal - no top connector (moved to bottom) */}
             <div className="flex justify-center" style={{ width: `${100 / ITEM_COUNT}%` }}>
-              <div className="h-full" style={{ width: "2px", background: "#CC092F" }} />
+              <div className="h-full" style={{ width: "2px", background: "transparent" }} />
             </div>
           </div>
 
@@ -190,9 +178,9 @@ export default function SlideLinhaTempo2() {
                 </div>
               );
             })}
-            {/* Goal has no bottom connector */}
+            {/* Goal bottom connector */}
             <div className="flex justify-center" style={{ width: `${100 / ITEM_COUNT}%` }}>
-              <div className="h-full" style={{ width: "2px", background: "transparent" }} />
+              <div className="h-full" style={{ width: "2px", background: "#CC092F" }} />
             </div>
           </div>
 
@@ -225,8 +213,24 @@ export default function SlideLinhaTempo2() {
                 </motion.div>
               );
             })}
-            {/* Goal has no bottom text */}
-            <div style={{ width: `${100 / ITEM_COUNT}%` }} />
+            {/* Goal bottom text */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+              className="text-center px-1"
+              style={{ width: `${100 / ITEM_COUNT}%` }}
+            >
+              <p className="font-black text-[#CC092F] leading-none" style={{ fontSize: "clamp(16px, 2.2vh, 26px)" }}>
+                {goal.year}
+              </p>
+              <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}>
+                {goal.label}
+              </p>
+              <p className="text-[#CC092F] font-semibold mt-0.5 leading-tight" style={{ fontSize: "clamp(10px, 1.2vh, 15px)" }}>
+                {goal.desc}
+              </p>
+            </motion.div>
           </div>
 
         </div>

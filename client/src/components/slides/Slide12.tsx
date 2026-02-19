@@ -1,133 +1,385 @@
 import { motion } from "motion/react";
-import { Bot, UserPlus, Package, DollarSign, Heart, Sparkles } from "lucide-react";
+import { UserPlus, Package, DollarSign, Heart, ArrowRight, TrendingUp, Zap } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
-const copilotos = [
-  {
-    id: "sdr",
-    title: "Copiloto Pré-Venda (SDR)",
-    description: "Qualifica leads automaticamente, agenda visitas e realiza simulações iniciais. Acelera o funil de vendas, garantindo que a equipe foque apenas nas oportunidades mais quentes e com maior potencial de conversão.",
-    icon: UserPlus,
-  },
-  {
-    id: "estoque",
-    title: "Copiloto de Gestão de Estoque",
-    description: "Analisa o estoque em tempo real, sugerindo ações para maximizar a margem, como ajuste de preço e melhoria de fotos. Recomenda a compra de veículos de alta demanda na região, criando um estoque inteligente e mais lucrativo.",
-    icon: Package,
-  },
-  {
-    id: "financeiro",
-    title: "Copiloto Financeiro",
-    description: "Monitora a saúde financeira da revenda 24/7, identificando gargalos de fluxo de caixa, inadimplências e oportunidades de otimização. Envia alertas proativos sobre vencimentos, sugere estratégias de cobrança e oferece insights sobre rentabilidade por veículo.",
-    icon: DollarSign,
-    highlight: true,
-    badge: "NOVO",
-  },
-  {
-    id: "pos-venda",
-    title: "Copiloto Pós-Venda",
-    description: "Mantém um relacionamento de longo prazo com o cliente, oferecendo produtos e serviços de forma automatizada e personalizada. Fideliza o cliente e reduz o custo de aquisição (CAC) para futuras vendas, impulsionando o LTV.",
-    icon: Heart,
-  },
-];
+/*
+ * Slide 12 — Assistente IA do Lojista
+ * Design: 4 agentes em sequência lógica (pré-venda → estoque → financeiro → pós-venda)
+ * Financeiro como protagonista (card maior, glow, badge)
+ * Bullets curtos, escaneável à distância
+ * Frase de impacto sobre eficiência e rentabilidade
+ * Animação: revelação sequencial dos agentes → impacto final
+ */
 
 export default function Slide12() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
-      <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
+    <div className="flex flex-col h-full overflow-hidden" style={{ padding: "0 clamp(12px, 2vw, 40px)" }}>
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: -15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center shrink-0"
+        style={{ paddingTop: "clamp(8px, 1.5vh, 20px)", paddingBottom: "clamp(4px, 0.8vh, 10px)" }}
+      >
+        <p className="text-[#8A8A8E] uppercase tracking-[0.2em] mb-1" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
+          Ciclo completo de negócio com IA
+        </p>
+        <h2
+          className="font-extrabold tracking-tight text-[#EDEDEF]"
+          style={{ fontSize: "clamp(26px, 4.5vh, 52px)", lineHeight: "1.1", marginBottom: "clamp(2px, 0.5vh, 8px)" }}
         >
-          <h2 className="font-extrabold tracking-tight sm: md: text-[#EDEDEF] md:" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
-            Copiloto <span className="text-[#2B7FFF]">Autoline</span>
-          </h2>
-          <p className="text-[#8A8A8E] sm: max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
-            Uma suíte de agentes de IA que trabalham 24/7, otimizando cada etapa do ciclo de vendas, gestão financeira e pós-venda.
-          </p>
-        </motion.div>
+          Assistente IA <span className="text-[#2B7FFF]">do Lojista</span>
+        </h2>
+        <p className="text-[#8A8A8E] max-w-4xl mx-auto" style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}>
+          4 agentes especializados que operam 24/7 em cada etapa do ciclo da revenda
+        </p>
+      </motion.div>
 
-        {/* Grid - Top 3 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {copilotos.slice(0, 3).map((copiloto, index) => (
-            <motion.div
-              key={copiloto.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              className="relative"
+      {/* Main content */}
+      <div className="flex-1 flex flex-col justify-center w-full max-w-[1400px] mx-auto" style={{ gap: "clamp(6px, 1.2vh, 16px)", marginTop: "clamp(2px, 0.4vh, 6px)" }}>
+
+        {/* Flow: 4 agents in sequence with arrows */}
+        <div className="grid grid-cols-4 items-start" style={{ gap: "clamp(8px, 1vw, 20px)" }}>
+
+          {/* Agent 1 — Pré-Venda */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
+          >
+            <div
+              className="rounded-xl h-full relative"
+              style={{
+                padding: "clamp(14px, 2vh, 26px) clamp(12px, 1.4vw, 22px)",
+                background: "rgba(255,255,255,0.03)",
+                border: "1.5px solid rgba(139,92,246,0.25)",
+                borderTopWidth: "2.5px",
+                borderTopColor: "#8B5CF6",
+              }}
             >
-              <div
-                className={`bg-white/[0.04] border ${
-                  copiloto.highlight
-                    ? "border-white/[0.12]"
-                    : "border-white/[0.08]"
-                } rounded-xl p-4 sm:p-5 h-full`}
-              >
-                <div className="flex flex-col items-center text-center gap-2 md:gap-3 mb-2 md:mb-3">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/[0.06] flex items-center justify-center">
-                    <copiloto.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#8A8A8E]" />
-                  </div>
-                  <div>
-                    {copiloto.badge && (
-                      <span className="text-[10px] font-medium text-[#CC092F] tracking-wider">{copiloto.badge}</span>
-                    )}
-                    <h3 className={`text-sm sm:text-base font-medium ${copiloto.highlight ? "text-[#2B7FFF]" : "text-[#EDEDEF]"}`}>
-                      {copiloto.title}
-                    </h3>
-                  </div>
-                </div>
-                <p className="text-[#8A8A8E] text-xs sm:text-sm leading-relaxed text-center">
-                  {copiloto.description}
-                </p>
+              {/* Step badge */}
+              <div className="flex items-center gap-2 mb-2">
+                <span
+                  className="px-2 py-0.5 rounded-full font-bold text-[#8B5CF6] border border-[#8B5CF6]/30"
+                  style={{ fontSize: "clamp(8px, 1vh, 12px)", background: "rgba(139,92,246,0.1)" }}
+                >
+                  ETAPA 01
+                </span>
               </div>
-            </motion.div>
-          ))}
-        </div>
 
-        {/* Grid - Pós-Venda Centralizado */}
-        <div className="flex justify-center">
-          {copilotos.slice(3).map((copiloto) => (
-            <motion.div
-              key={copiloto.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="max-w-md w-full"
+              {/* Icon + Title */}
+              <div className="flex items-center gap-2 mb-2">
+                <div
+                  className="rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ width: "clamp(32px, 4.5vh, 48px)", height: "clamp(32px, 4.5vh, 48px)", background: "rgba(139,92,246,0.12)" }}
+                >
+                  <UserPlus style={{ width: "clamp(16px, 2.2vh, 26px)", height: "clamp(16px, 2.2vh, 26px)" }} className="text-[#8B5CF6]" />
+                </div>
+                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 2vh, 24px)", lineHeight: "1.2" }}>
+                  Pré-Venda
+                </h3>
+              </div>
+
+              <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
+                SDR inteligente
+              </p>
+
+              {/* Bullets */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "clamp(3px, 0.5vh, 8px)" }}>
+                <div className="flex items-start gap-1.5">
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#8B5CF6] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Qualifica leads automaticamente</span>
+                </div>
+                <div className="flex items-start gap-1.5">
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#8B5CF6] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Agenda visitas e simulações</span>
+                </div>
+                <div className="flex items-start gap-1.5">
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#8B5CF6] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Foco nas oportunidades quentes</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Agent 2 — Gestão de Estoque */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          >
+            <div
+              className="rounded-xl h-full relative"
+              style={{
+                padding: "clamp(14px, 2vh, 26px) clamp(12px, 1.4vw, 22px)",
+                background: "rgba(255,255,255,0.03)",
+                border: "1.5px solid rgba(6,182,212,0.25)",
+                borderTopWidth: "2.5px",
+                borderTopColor: "#06B6D4",
+              }}
             >
-              <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 sm:p-5 h-full">
-                <div className="flex flex-col items-center text-center gap-2 md:gap-3 mb-2 md:mb-3">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/[0.06] flex items-center justify-center">
-                    <copiloto.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#8A8A8E]" />
+              <div className="flex items-center gap-2 mb-2">
+                <span
+                  className="px-2 py-0.5 rounded-full font-bold text-[#06B6D4] border border-[#06B6D4]/30"
+                  style={{ fontSize: "clamp(8px, 1vh, 12px)", background: "rgba(6,182,212,0.1)" }}
+                >
+                  ETAPA 02
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2 mb-2">
+                <div
+                  className="rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ width: "clamp(32px, 4.5vh, 48px)", height: "clamp(32px, 4.5vh, 48px)", background: "rgba(6,182,212,0.12)" }}
+                >
+                  <Package style={{ width: "clamp(16px, 2.2vh, 26px)", height: "clamp(16px, 2.2vh, 26px)" }} className="text-[#06B6D4]" />
+                </div>
+                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 2vh, 24px)", lineHeight: "1.2" }}>
+                  Estoque
+                </h3>
+              </div>
+
+              <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
+                Gestão inteligente em tempo real
+              </p>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "clamp(3px, 0.5vh, 8px)" }}>
+                <div className="flex items-start gap-1.5">
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#06B6D4] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Ajuste de preço e margem</span>
+                </div>
+                <div className="flex items-start gap-1.5">
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#06B6D4] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Recomenda compra por demanda</span>
+                </div>
+                <div className="flex items-start gap-1.5">
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#06B6D4] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Estoque lucrativo e otimizado</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Agent 3 — FINANCEIRO (Protagonista) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.45 }}
+          >
+            <div
+              className="rounded-xl h-full relative overflow-hidden"
+              style={{
+                padding: "clamp(14px, 2vh, 26px) clamp(12px, 1.4vw, 22px)",
+                background: "linear-gradient(160deg, rgba(34,197,94,0.08), rgba(34,197,94,0.03))",
+                border: "2px solid rgba(34,197,94,0.4)",
+                borderTopWidth: "3px",
+                borderTopColor: "#22C55E",
+                boxShadow: "0 0 25px rgba(34,197,94,0.08), inset 0 1px 0 rgba(34,197,94,0.1)",
+              }}
+            >
+              {/* Glow */}
+              <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-15 blur-3xl" style={{ background: "radial-gradient(circle, #22C55E, transparent)" }} />
+
+              <div className="relative">
+                <div className="flex items-center gap-2 mb-2">
+                  <span
+                    className="px-2 py-0.5 rounded-full font-bold text-[#22C55E] border border-[#22C55E]/40"
+                    style={{ fontSize: "clamp(8px, 1vh, 12px)", background: "rgba(34,197,94,0.15)" }}
+                  >
+                    ETAPA 03
+                  </span>
+                  <span
+                    className="px-2 py-0.5 rounded-full font-bold text-[#EDEDEF] border border-[#22C55E]/40"
+                    style={{ fontSize: "clamp(8px, 1vh, 12px)", background: "rgba(34,197,94,0.25)" }}
+                  >
+                    PROTAGONISTA
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 mb-2">
+                  <div
+                    className="rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ width: "clamp(34px, 4.5vh, 50px)", height: "clamp(34px, 4.5vh, 50px)", background: "rgba(34,197,94,0.15)", border: "1px solid rgba(34,197,94,0.3)" }}
+                  >
+                    <DollarSign style={{ width: "clamp(18px, 2.4vh, 28px)", height: "clamp(18px, 2.4vh, 28px)" }} className="text-[#22C55E]" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-medium text-[#EDEDEF]">
-                    {copiloto.title}
+                  <h3 className="font-extrabold text-[#22C55E]" style={{ fontSize: "clamp(15px, 2.2vh, 26px)", lineHeight: "1.2" }}>
+                    Financeiro
                   </h3>
                 </div>
-                <p className="text-[#8A8A8E] text-xs sm:text-sm leading-relaxed text-center">
-                  {copiloto.description}
+
+                <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
+                  Saúde financeira 24/7
                 </p>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "clamp(3px, 0.5vh, 8px)" }}>
+                  <div className="flex items-start gap-1.5">
+                    <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Gargalos de fluxo de caixa</span>
+                  </div>
+                  <div className="flex items-start gap-1.5">
+                    <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Alertas de inadimplência</span>
+                  </div>
+                  <div className="flex items-start gap-1.5">
+                    <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Rentabilidade por veículo</span>
+                  </div>
+                  <div className="flex items-start gap-1.5">
+                    <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#22C55E] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Estratégias de cobrança</span>
+                  </div>
+                </div>
               </div>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
+
+          {/* Agent 4 — Pós-Venda */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
+          >
+            <div
+              className="rounded-xl h-full relative"
+              style={{
+                padding: "clamp(14px, 2vh, 26px) clamp(12px, 1.4vw, 22px)",
+                background: "rgba(255,255,255,0.03)",
+                border: "1.5px solid rgba(244,63,94,0.25)",
+                borderTopWidth: "2.5px",
+                borderTopColor: "#F43F5E",
+              }}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span
+                  className="px-2 py-0.5 rounded-full font-bold text-[#F43F5E] border border-[#F43F5E]/30"
+                  style={{ fontSize: "clamp(8px, 1vh, 12px)", background: "rgba(244,63,94,0.1)" }}
+                >
+                  ETAPA 04
+                </span>
+              </div>
+
+              <div className="flex items-center gap-2 mb-2">
+                <div
+                  className="rounded-lg flex items-center justify-center flex-shrink-0"
+                  style={{ width: "clamp(32px, 4.5vh, 48px)", height: "clamp(32px, 4.5vh, 48px)", background: "rgba(244,63,94,0.12)" }}
+                >
+                  <Heart style={{ width: "clamp(16px, 2.2vh, 26px)", height: "clamp(16px, 2.2vh, 26px)" }} className="text-[#F43F5E]" />
+                </div>
+                <h3 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 2vh, 24px)", lineHeight: "1.2" }}>
+                  Pós-Venda
+                </h3>
+              </div>
+
+              <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
+                Fidelização e LTV
+              </p>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "clamp(3px, 0.5vh, 8px)" }}>
+                <div className="flex items-start gap-1.5">
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#F43F5E] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Relacionamento automatizado</span>
+                </div>
+                <div className="flex items-start gap-1.5">
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#F43F5E] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Ofertas personalizadas</span>
+                </div>
+                <div className="flex items-start gap-1.5">
+                  <Zap style={{ width: "clamp(12px, 1.4vh, 16px)", height: "clamp(12px, 1.4vh, 16px)" }} className="text-[#F43F5E] flex-shrink-0 mt-0.5" />
+                  <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>Reduz CAC, impulsiona LTV</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Bottom Highlight */}
+        {/* Flow arrows connecting the 4 agents */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
+          transition={{ duration: 0.4, delay: 0.7 }}
+          className="flex items-center justify-center"
+          style={{ gap: "clamp(8px, 1.5vw, 24px)", marginTop: "clamp(-2px, -0.3vh, -4px)" }}
         >
-          <div className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 sm:p-5">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
-              <Sparkles className="w-5 h-5 text-[#8A8A8E] flex-shrink-0" />
-              <span className="text-[#8A8A8E] text-sm text-center sm:text-left leading-relaxed">
-                A Inteligência Artificial do Copiloto Autoline atua como um parceiro estratégico, fornecendo insights acionáveis que capacitam o lojista a tomar decisões mais inteligentes.
-              </span>
+          <div className="flex items-center" style={{ gap: "clamp(4px, 0.6vw, 12px)" }}>
+            <span className="text-[#8B5CF6] font-bold" style={{ fontSize: "clamp(10px, 1.3vh, 15px)" }}>Pré-Venda</span>
+            <ArrowRight style={{ width: "clamp(12px, 1.4vh, 18px)", height: "clamp(12px, 1.4vh, 18px)" }} className="text-[#8A8A8E]" />
+            <span className="text-[#06B6D4] font-bold" style={{ fontSize: "clamp(10px, 1.3vh, 15px)" }}>Estoque</span>
+            <ArrowRight style={{ width: "clamp(12px, 1.4vh, 18px)", height: "clamp(12px, 1.4vh, 18px)" }} className="text-[#8A8A8E]" />
+            <span className="text-[#22C55E] font-extrabold" style={{ fontSize: "clamp(11px, 1.5vh, 17px)" }}>Financeiro</span>
+            <ArrowRight style={{ width: "clamp(12px, 1.4vh, 18px)", height: "clamp(12px, 1.4vh, 18px)" }} className="text-[#8A8A8E]" />
+            <span className="text-[#F43F5E] font-bold" style={{ fontSize: "clamp(10px, 1.3vh, 15px)" }}>Pós-Venda</span>
+          </div>
+        </motion.div>
+
+        {/* Impact Result */}
+        <motion.div
+          initial={{ opacity: 0, y: 15, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.85 }}
+        >
+          <div
+            className="rounded-xl relative overflow-hidden"
+            style={{
+              padding: "clamp(14px, 2vh, 26px) clamp(20px, 2.5vw, 36px)",
+              background: "linear-gradient(135deg, rgba(43,127,255,0.08) 0%, rgba(34,197,94,0.06) 100%)",
+              border: "1.5px solid rgba(43,127,255,0.2)",
+              boxShadow: "0 0 25px rgba(43,127,255,0.05)",
+            }}
+          >
+            <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full opacity-10 blur-3xl" style={{ background: "radial-gradient(circle, #2B7FFF, transparent)" }} />
+
+            <div className="relative flex items-center gap-4">
+              <div className="flex-shrink-0">
+                <div
+                  className="rounded-lg flex items-center justify-center"
+                  style={{ width: "clamp(36px, 4.5vh, 52px)", height: "clamp(36px, 4.5vh, 52px)", background: "linear-gradient(135deg, rgba(43,127,255,0.2), rgba(34,197,94,0.2))", border: "1px solid rgba(43,127,255,0.3)" }}
+                >
+                  <TrendingUp style={{ width: "clamp(16px, 2vh, 24px)", height: "clamp(16px, 2vh, 24px)" }} className="text-[#EDEDEF]" />
+                </div>
+              </div>
+
+              <div className="flex-1">
+                <p className="text-[#C5C5C7]" style={{ fontSize: "clamp(13px, 1.6vh, 19px)" }}>
+                  4 agentes operando <strong className="text-[#2B7FFF]">cada etapa do ciclo</strong> — mais eficiência, menos custo operacional e <strong className="text-[#22C55E]">maior rentabilidade</strong> para a revenda
+                </p>
+              </div>
+
+              {/* Metrics */}
+              <div className="flex items-center flex-shrink-0" style={{ gap: "clamp(8px, 1.2vw, 20px)" }}>
+                <div className="text-center">
+                  <p className="font-extrabold text-[#2B7FFF]" style={{ fontSize: "clamp(14px, 1.8vh, 22px)" }}>+Eficiência</p>
+                  <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(8px, 1vh, 12px)" }}>operacional</p>
+                </div>
+                <div className="text-center">
+                  <p className="font-extrabold text-[#22C55E]" style={{ fontSize: "clamp(14px, 1.8vh, 22px)" }}>+Rentab.</p>
+                  <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(8px, 1vh, 12px)" }}>por veículo</p>
+                </div>
+              </div>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Final tagline */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 1.0 }}
+          className="text-center"
+        >
+          <div
+            className="rounded-lg inline-flex items-center gap-2 mx-auto"
+            style={{
+              padding: "clamp(6px, 1vh, 14px) clamp(16px, 2.5vw, 36px)",
+              background: "rgba(43,127,255,0.06)",
+              border: "1px solid rgba(43,127,255,0.15)",
+            }}
+          >
+            <span className="text-[#2B7FFF]" style={{ fontSize: "clamp(14px, 1.8vh, 20px)" }}>&#9889;</span>
+            <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(13px, 1.6vh, 19px)" }}>
+              IA que opera o ciclo completo — <span className="text-[#2B7FFF] font-semibold">decisões inteligentes</span> = <span className="text-[#22C55E] font-semibold">mais resultado</span> para a revenda e o Bradesco
+            </span>
           </div>
         </motion.div>
       </div>

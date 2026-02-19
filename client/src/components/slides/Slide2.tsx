@@ -78,7 +78,7 @@ export default function Slide2() {
           </motion.div>
 
           {/* Right Side - Stakeholders Grid (60%) */}
-          <div className="lg:w-[62%] grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 content-center">
+          <div className="lg:w-[62%] grid grid-cols-2 gap-3 md:gap-4 content-center">
             {stakeholders.map((stakeholder, index) => (
               <motion.div
                 key={stakeholder.title}
