@@ -36,9 +36,7 @@ const SlideQuemSomos2 = lazy(() => import("@/components/slides/SlideQuemSomos2")
 const SlideGoldenCircle = lazy(() => import("@/components/slides/SlideGoldenCircle"));
 const SlideLinhaTempo1 = lazy(() => import("@/components/slides/SlideLinhaTempo1"));
 const SlideLinhaTempo2 = lazy(() => import("@/components/slides/SlideLinhaTempo2"));
-const SlideEquipe1 = lazy(() => import("@/components/slides/SlideEquipe1"));
-const SlideBioMiguel = lazy(() => import("@/components/slides/SlideBioMiguel"));
-const SlideBioMarcos = lazy(() => import("@/components/slides/SlideBioMarcos"));
+const SlideEquipeUnificado = lazy(() => import("@/components/slides/SlideEquipeUnificado"));
 
 // Minimal loading fallback that matches the dark theme
 function SlideFallback() {
@@ -82,9 +80,7 @@ const slideEntries: SlideEntry[] = [
   { type: "content", component: SlideLinhaTempo2, chapterIndex: 1 },
 
   // 03 — Equipe e Governança
-  { type: "content", component: SlideEquipe1, chapterIndex: 2 },
-  { type: "content", component: SlideBioMiguel, chapterIndex: 2 },
-  { type: "content", component: SlideBioMarcos, chapterIndex: 2 },
+  { type: "content", component: SlideEquipeUnificado, chapterIndex: 2 },
 
   // 04 — Contexto e Visão
   { type: "separator", chapterIndex: 3, separatorData: CHAPTERS[3] },
