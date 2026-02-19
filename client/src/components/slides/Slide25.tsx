@@ -44,7 +44,7 @@ export default function Slide25() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
-          className="text-center mb-12"
+          className="text-center mb-5"
         >
           <h2
             className="font-black tracking-tight leading-none"
@@ -54,7 +54,7 @@ export default function Slide25() {
             <span className="text-[#EDEDEF]">: Impacto e Roadmap</span>
           </h2>
           <p
-            className="text-[#8A8A8E] font-medium mt-3"
+            className="text-[#8A8A8E] font-medium mt-2"
             style={{ fontSize: "clamp(13px, 1.6vh, 20px)" }}
           >
             Transformação mensurável em 6 meses

@@ -39,7 +39,7 @@ export default function Slide1() {
           className="flex flex-col gap-3"
         >
           <h1 className="font-extrabold text-[#EDEDEF] tracking-tight" style={{ fontSize: 'clamp(28px, 5vh, 64px)', lineHeight: '1.1' }}>
-            Ecossistema <span className="text-brand-blue">Tribo de Veículos</span>
+            Ecossistema <span className="text-brand-blue">Autoline</span>
           </h1>
           <p className="text-[#8A8A8E] leading-snug" style={{ fontSize: 'clamp(14px, 2.5vh, 32px)' }}>
             Transformando Revendas em Hubs Financeiros

@@ -55,7 +55,7 @@ export default function Slide9() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35 }}
-        className="text-center mb-12"
+        className="text-center mb-4"
       >
         <h2
           className="font-black tracking-tight text-[#EDEDEF] leading-none"
@@ -65,7 +65,7 @@ export default function Slide9() {
           <span className="text-[#2B7FFF]">Plataforma Estratégica</span>
         </h2>
         <p
-          className="text-[#8A8A8E] font-medium mt-3"
+          className="text-[#8A8A8E] font-medium mt-2"
           style={{ fontSize: "clamp(13px, 1.6vh, 20px)" }}
         >
           Sistema central que conecta operação da revenda, força comercial Bradesco e originação financeira
@@ -73,7 +73,7 @@ export default function Slide9() {
       </motion.div>
 
       {/* Three Blocks */}
-      <div className="grid grid-cols-3 gap-4 md:gap-5" style={{ flex: "0 1 auto" }}>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5" style={{ flex: "0 1 auto" }}>
         {/* BLOCO 1 — Base Operacional */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -107,7 +107,7 @@ export default function Slide9() {
                 className="font-bold uppercase tracking-[0.15em] text-[#2B7FFF]"
                 style={{ fontSize: "clamp(9px, 1.1vh, 13px)" }}
               >
-                ecosys AUTO
+                ECOSYS CORE
               </span>
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function Slide9() {
                 className="font-bold uppercase tracking-[0.15em] text-[#8B5CF6]"
                 style={{ fontSize: "clamp(9px, 1.1vh, 13px)" }}
               >
-                Assistente IA
+                COPILOTO
               </span>
             </div>
           </div>

@@ -68,7 +68,7 @@ const sections = [
   },
   {
     id: "novo-gio",
-    title: "Copiloto Comercial (Novo GIO)",
+    title: "Copiloto do GEFIN (Novo GIO)",
     icon: Bot,
     color: "highlight",
     items: [
@@ -106,9 +106,7 @@ const sections = [
 
 export default function Slide6() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden relative">
-      {/* Ambient glow */}
-      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full opacity-[0.03] pointer-events-none" style={{ background: "radial-gradient(circle, #2B7FFF, transparent 70%)" }} />
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
       <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-5 h-full">
         {/* Header */}
         <motion.div
@@ -117,7 +115,7 @@ export default function Slide6() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-3 mb-2 px-6 py-2 rounded-full" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(43,127,255,0.12)", boxShadow: "0 0 12px rgba(43,127,255,0.04)" }}>
+          <div className="inline-flex items-center gap-3 mb-2 px-6 py-2 bg-white/[0.04] rounded-full border border-white/[0.08]">
             <TrendingUp className="w-6 h-6 text-[#EDEDEF]" />
             <span className="text-[#2B7FFF] text-base font-semibold">
               Proposta Atual
@@ -146,13 +144,11 @@ export default function Slide6() {
                 className="relative group"
               >
                 <div
-                  className={`relative h-full rounded-xl p-3 sm:p-4 transition-all`}
-                  style={{
-                    background: isGio ? "rgba(43,127,255,0.08)" : "rgba(255,255,255,0.03)",
-                    border: isGio ? "2px solid rgba(43,127,255,0.3)" : "1px solid rgba(255,255,255,0.07)",
-                    boxShadow: isGio ? "0 0 25px rgba(43,127,255,0.06), inset 0 1px 0 rgba(43,127,255,0.05)" : "0 2px 12px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.03)",
-                    backdropFilter: "blur(8px)",
-                  }}
+                  className={`relative h-full rounded-xl p-3 sm:p-4 transition-all ${
+                    isGio
+                      ? "bg-[#2B7FFF]/[0.08] border-2 border-[#2B7FFF]/30 hover:border-[#2B7FFF]/50 hover:bg-[#2B7FFF]/[0.12]"
+                      : "bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.12] hover:bg-white/[0.06]"
+                  }`}
                 >
                   <div className="flex items-center gap-2 mb-2 sm:mb-3">
                     <div
@@ -215,7 +211,7 @@ export default function Slide6() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.35 }}
         >
-          <div className="relative overflow-hidden rounded-xl p-3 sm:p-4" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(43,127,255,0.12)", boxShadow: "0 0 20px rgba(43,127,255,0.03), inset 0 1px 0 rgba(255,255,255,0.03)" }}>
+          <div className="relative overflow-hidden rounded-xl bg-white/[0.04] border border-white/[0.12] p-3 sm:p-4">
             <div className="flex items-center justify-center gap-3">
               <Building2 className="w-5 h-5 text-[#EDEDEF]" />
               <span className="text-[#EDEDEF] font-semibold text-sm sm:text-base">

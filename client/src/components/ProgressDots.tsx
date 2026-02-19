@@ -1,13 +1,14 @@
 import { useState } from "react";
 
 const chapters = [
-  { id: 1, label: "Contexto", startSlide: 0, endSlide: 9 },
-  { id: 2, label: "Proposta", startSlide: 10, endSlide: 12 },
-  { id: 3, label: "Gestor Autoline", startSlide: 13, endSlide: 17 },
-  { id: 4, label: "Marketplace", startSlide: 18, endSlide: 23 },
-  { id: 5, label: "Novo GIO", startSlide: 24, endSlide: 30 },
-  { id: 6, label: "Motor Comercial", startSlide: 31, endSlide: 33 },
-  { id: 7, label: "Investimento", startSlide: 34, endSlide: 37 },
+  { id: 1, label: "Contexto", startSlide: 0, endSlide: 4 },
+  { id: 2, label: "Proposta", startSlide: 5, endSlide: 8 },
+  { id: 3, label: "ecosys AUTO", startSlide: 9, endSlide: 10 },
+  { id: 4, label: "Gestor Autoline", startSlide: 11, endSlide: 15 },
+  { id: 5, label: "Marketplace", startSlide: 16, endSlide: 23 },
+  { id: 6, label: "Motor Comercial", startSlide: 24, endSlide: 27 },
+  { id: 7, label: "Novo GIO", startSlide: 28, endSlide: 34 },
+  { id: 8, label: "Investimento", startSlide: 35, endSlide: 40 },
 ];
 
 interface ProgressDotsProps {

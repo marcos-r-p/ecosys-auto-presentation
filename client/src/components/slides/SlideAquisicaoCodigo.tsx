@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Brain, Bot, Database, ShoppingCart, Calculator, Calendar, Shield, TrendingUp, AlertTriangle } from "lucide-react";
+import { Code2, Brain, Bot, Database, ShoppingCart, Calculator, Calendar, Shield, TrendingUp, AlertTriangle } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
 /*
@@ -22,6 +22,7 @@ export default function SlideAquisicaoCodigo() {
         style={{ paddingTop: "clamp(12px, 2.5vh, 36px)", paddingBottom: "clamp(6px, 1.2vh, 18px)" }}
       >
         <div className="flex items-center justify-center gap-2 mb-1">
+          <Code2 style={{ width: "clamp(20px, 3vh, 36px)", height: "clamp(20px, 3vh, 36px)" }} className="text-[#EDEDEF]" />
           <h2
             className="font-extrabold text-[#EDEDEF] tracking-tight"
             style={{ fontSize: "clamp(22px, 3.8vh, 48px)", lineHeight: "1.1" }}

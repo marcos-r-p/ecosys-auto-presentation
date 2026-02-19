@@ -154,3 +154,36 @@
     color: #8A8A8E;
   }
 }
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 767px) {
+  /* Enable vertical scrolling on slides for mobile */
+  .slide-container {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Reduce oversized paddings on mobile */
+  .slide-content {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Ensure text doesn't overflow on small screens */
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Make SVG diagrams scrollable horizontally on mobile */
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Improve touch targets on mobile */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

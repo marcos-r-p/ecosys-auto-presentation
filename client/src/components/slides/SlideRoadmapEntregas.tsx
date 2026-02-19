@@ -1,140 +1,170 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Database, ShoppingCart, Brain, Bot } from "lucide-react";
+import { Database, ShoppingCart, Brain, Bot, ChevronDown } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
 /*
- * Design: Gantt-style roadmap para apresentação presencial.
- * Layout limpo com barras de fase + hover detalhado por fase.
- * V1/V2/V3 são marcos destacados. Hover mostra entregas concretas.
+ * Design: Timeline horizontal com 4 trilhas (DMS, Marketplace, Motor, Copiloto).
+ * Cada mês tem entregas concretas. V1/V2/V3 são marcos destacados.
+ * Hover em cada célula mostra as entregas daquele mês.
  */
 
-interface Phase {
-  startMonth: number;
-  endMonth: number;
-  label: string;
-  isVersion?: boolean;
-  highlight?: string;
-  deliverables: string[];
+interface MonthDelivery {
+  items: string[];
+  isVersion?: string; // "V1", "V2", "V3"
+  isDiscovery?: boolean;
 }
 
 interface ProductTrack {
   name: string;
+  shortName: string;
   icon: React.ElementType;
   color: string;
-  phases: Phase[];
+  bgColor: string;
+  borderColor: string;
+  months: Record<number, MonthDelivery>;
 }
 
 const tracks: ProductTrack[] = [
   {
-    name: "DMS Gestor",
+    name: "DMS (Gestor Autoline)",
+    shortName: "DMS",
     icon: Database,
     color: "#2B7FFF",
-    phases: [
-      { startMonth: 0, endMonth: 0, label: "Discovery", deliverables: ["Levantamento de requisitos", "Definição de arquitetura", "Setup infraestrutura e CI/CD"] },
-      { startMonth: 1, endMonth: 1, label: "V1", isVersion: true, highlight: "V1", deliverables: ["Gestor Lite (fork)", "Controle de acessos básico", "Gestão de estoque"] },
-      { startMonth: 2, endMonth: 5, label: "Integrações & CRM", deliverables: ["CRM e funil comercial", "DRE e controle financeiro", "Comunicação omnichannel (WhatsApp)", "App do vendedor mobile", "Integração Bradesco (originação)", "eConversa (OLX, Facebook, portais)"] },
-      { startMonth: 6, endMonth: 6, label: "V2", isVersion: true, highlight: "V2", deliverables: ["Originação Bradesco completa", "Dashboard executivo", "Analytics de vendas"] },
-      { startMonth: 7, endMonth: 11, label: "IA & Escalabilidade", deliverables: ["Insights IA para lojistas", "Precificação inteligente", "Copiloto IA do Autoline", "Disaster recovery", "Automações inteligentes", "Carteira avançada"] },
-      { startMonth: 12, endMonth: 12, label: "V3", isVersion: true, highlight: "V3", deliverables: ["Plataforma completa com IA", "Automações e fidelização", "Embedded app Bradesco"] },
-    ],
+    bgColor: "rgba(43,127,255,0.15)",
+    borderColor: "rgba(43,127,255,0.4)",
+    months: {
+      0: { items: ["Levantamento de requisitos", "Definição de arquitetura", "Setup infraestrutura e CI/CD"], isDiscovery: true },
+      1: { items: ["Gestor Lite (fork)", "Controle de acessos básico", "Gestão de estoque"], isVersion: "V1" },
+      2: { items: ["CRM e funil comercial", "DRE e controle financeiro"] },
+      3: { items: ["Comunicação omnichannel (WhatsApp, chat)", "App do vendedor mobile"] },
+      4: { items: ["Integração sistemas Bradesco (originação básica)", "Margem e precificação"] },
+      5: { items: ["eConversa (OLX, Facebook, portais)", "Analytics de vendas"] },
+      6: { items: ["Originação Bradesco completa (simulação integrada)", "Dashboard executivo"], isVersion: "V2" },
+      7: { items: ["Insights IA para lojistas", "Sugestões de precificação inteligente"] },
+      8: { items: ["Escalabilidade horizontal", "Alta disponibilidade"] },
+      9: { items: ["Copiloto IA do Autoline (assistente para lojista)"] },
+      10: { items: ["Disaster recovery", "Backup automatizado"] },
+      11: { items: ["Automações inteligentes", "Carteira avançada de relacionamento"] },
+      12: { items: ["Plataforma completa com IA", "Automações e fidelização", "Embedded app Bradesco"], isVersion: "V3" },
+    },
   },
   {
-    name: "Marketplace",
+    name: "Marketplace Autoline",
+    shortName: "MKT",
     icon: ShoppingCart,
     color: "#06B6D4",
-    phases: [
-      { startMonth: 0, endMonth: 0, label: "Discovery", deliverables: ["Discovery UX", "Wireframes", "Definição de catálogo e integrações"] },
-      { startMonth: 1, endMonth: 1, label: "V1", isVersion: true, highlight: "V1", deliverables: ["Catálogo com filtros", "Listagem com fotos", "Busca simples", "Área logada"] },
-      { startMonth: 2, endMonth: 5, label: "Busca IA & App", deliverables: ["Favoritos e alertas", "Busca avançada e SEO", "\"Descubra Meu Carro\" (IA)", "\"Quanto Vale Meu Carro\"", "Filtro por localidade"] },
-      { startMonth: 6, endMonth: 6, label: "V2", isVersion: true, highlight: "V2", deliverables: ["App nativo iOS/Android", "Push notifications", "Busca inteligente IA completa"] },
-      { startMonth: 7, endMonth: 11, label: "SEO & Conversão", deliverables: ["Conteúdo curado Bradesco", "Selos de qualidade", "SEO avançado", "Simulação financeira IA", "Leads pré-aprovados", "Personalização por perfil"] },
-      { startMonth: 12, endMonth: 12, label: "V3", isVersion: true, highlight: "V3", deliverables: ["Experiência premium completa", "IA financeira integrada", "Conteúdo curado"] },
-    ],
+    bgColor: "rgba(6,182,212,0.15)",
+    borderColor: "rgba(6,182,212,0.4)",
+    months: {
+      0: { items: ["Discovery UX", "Wireframes", "Definição de catálogo e integrações"], isDiscovery: true },
+      1: { items: ["Catálogo com filtros (marca, modelo, ano, preço)", "Listagem com fotos", "Busca simples"], isVersion: "V1" },
+      2: { items: ["Área logada com favoritos", "Listas de desejo", "Alertas personalizados"] },
+      3: { items: ["Busca avançada", "Filtros expandidos", "SEO básico"] },
+      4: { items: ["\"Descubra Meu Carro\" (recomendação IA básica)"] },
+      5: { items: ["\"Quanto Vale Meu Carro\" (precificação IA)", "Filtro por localidade"] },
+      6: { items: ["App nativo iOS/Android", "Push notifications", "Busca inteligente IA completa"], isVersion: "V2" },
+      7: { items: ["Conteúdo curado pelo Bradesco", "Selos de qualidade"] },
+      8: { items: ["SEO avançado", "Otimização de conversão"] },
+      9: { items: ["Simulação financeira IA", "Leads pré-aprovados Bradesco"] },
+      10: { items: ["Personalização avançada por perfil de crédito"] },
+      11: { items: ["Otimização de performance", "Testes A/B"] },
+      12: { items: ["Experiência premium completa", "IA financeira", "Conteúdo curado"], isVersion: "V3" },
+    },
   },
   {
     name: "Motor Comercial",
+    shortName: "MOTOR",
     icon: Brain,
     color: "#22C55E",
-    phases: [
-      { startMonth: 0, endMonth: 0, label: "Discovery", deliverables: ["Discovery de dados", "Mapeamento de fontes", "Arquitetura da plataforma"] },
-      { startMonth: 1, endMonth: 1, label: "Coleta de Dados", deliverables: ["Coleta e integração de dados", "Pipeline de ingestão ativo"] },
-      { startMonth: 2, endMonth: 2, label: "V1", isVersion: true, highlight: "V1", deliverables: ["Antecipação de demanda", "Health Score v1 dos lojistas", "Dashboards iniciais"] },
-      { startMonth: 3, endMonth: 5, label: "Modelos Preditivos", deliverables: ["Priorização por dados", "Alertas de performance", "Share-of-wallet real-time", "Leads ultra-qualificados", "Modelos preditivos v1"] },
-      { startMonth: 6, endMonth: 6, label: "V2", isVersion: true, highlight: "V2", deliverables: ["Dados em tempo real", "Refinamento de modelos", "Integração Autoline ↔ GIO"] },
-      { startMonth: 7, endMonth: 11, label: "Inteligência 360°", deliverables: ["Previsão de churn", "Inteligência competitiva", "Visão 360° do ecossistema", "Forecast preditivo", "APIs bidirecionais completas"] },
-      { startMonth: 12, endMonth: 12, label: "V3", isVersion: true, highlight: "V3", deliverables: ["Plataforma de inteligência completa", "Decisões estratégicas por dados"] },
-    ],
+    bgColor: "rgba(34,197,94,0.15)",
+    borderColor: "rgba(34,197,94,0.4)",
+    months: {
+      0: { items: ["Discovery de dados", "Mapeamento de fontes", "Arquitetura da plataforma de dados"], isDiscovery: true },
+      1: { items: ["Coleta e integração de dados dos lojistas", "Pipeline de ingestão ativo"] },
+      2: { items: ["Antecipação de demanda básica", "Health Score v1 dos lojistas", "Dashboards iniciais"], isVersion: "V1" },
+      3: { items: ["Priorização de oportunidades por dados", "Alertas de performance de lojistas"] },
+      4: { items: ["Share-of-wallet em tempo real", "Alertas de cross-sell"] },
+      5: { items: ["Leads ultra-qualificados com perfil de crédito", "Modelos preditivos v1"] },
+      6: { items: ["Dados em tempo real", "Refinamento de modelos", "Integração bidirecional Autoline ↔ GIO"], isVersion: "V2" },
+      7: { items: ["Previsão de churn", "Modelos de retenção"] },
+      8: { items: ["Inteligência competitiva", "Benchmarks de mercado"] },
+      9: { items: ["Visão 360° completa do ecossistema", "Forecast preditivo"] },
+      10: { items: ["Refinamento contínuo de modelos", "Acurácia de previsões"] },
+      11: { items: ["APIs bidirecionais completas entre todos os produtos"] },
+      12: { items: ["Plataforma de inteligência completa", "Decisões estratégicas baseadas em dados"], isVersion: "V3" },
+    },
   },
   {
     name: "Copiloto Comercial",
+    shortName: "COPILOTO",
     icon: Bot,
     color: "#CC092F",
-    phases: [
-      { startMonth: 0, endMonth: 0, label: "Discovery", deliverables: ["Discovery com GEFINS", "Mapeamento de processos", "Definição de MVP"] },
-      { startMonth: 1, endMonth: 1, label: "Visitas & Carteira", deliverables: ["Gestão de visitas + GPS", "Carteira de lojistas básica"] },
-      { startMonth: 2, endMonth: 2, label: "V1", isVersion: true, highlight: "V1", deliverables: ["Health Score + semáforo", "Comunicação rápida", "Piloto 20-30 GEFINS"] },
-      { startMonth: 3, endMonth: 5, label: "IA & Automação", deliverables: ["Priorização por IA", "Alertas automáticos", "Integração Teams + Outlook", "Painel gerencial", "Rollout 50-100 GEFINS", "Kanban + SLAs"] },
-      { startMonth: 6, endMonth: 6, label: "V2", isVersion: true, highlight: "V2", deliverables: ["Painel gerencial completo", "\"Modo Guerra\"", "Rollout ampliado"] },
-      { startMonth: 7, endMonth: 11, label: "Gamificação & BI", deliverables: ["First IA: voz → insights", "Playbooks inteligentes", "Gamificação e ranking", "Gestão de projetos (Trello)", "Power BI integrado"] },
-      { startMonth: 12, endMonth: 12, label: "V3", isVersion: true, highlight: "V3", deliverables: ["100% operacional", "Embedded app Bradesco", "Experiência unificada"] },
-    ],
+    bgColor: "rgba(204,9,47,0.15)",
+    borderColor: "rgba(204,9,47,0.4)",
+    months: {
+      0: { items: ["Discovery com GEFINS", "Mapeamento de processos de campo", "Definição de MVP"], isDiscovery: true },
+      1: { items: ["Gestão de visitas com GPS + registro", "Carteira de lojistas básica"] },
+      2: { items: ["Health Score + semáforo", "Comunicação rápida", "Piloto 20-30 GEFINS"], isVersion: "V1" },
+      3: { items: ["Priorização de visitas por IA", "Alertas automáticos de lojistas em risco"] },
+      4: { items: ["Integração Teams + Outlook", "Gestão de ganhos", "Painel gerencial básico"] },
+      5: { items: ["Rollout 50-100 GEFINS", "Kanban de ações + SLAs"] },
+      6: { items: ["Painel gerencial completo (drill-down)", "\"Modo Guerra\"", "Rollout ampliado"], isVersion: "V2" },
+      7: { items: ["First IA: transcrição de voz → insights", "Resumo de visita por IA"] },
+      8: { items: ["Playbooks inteligentes por IA", "Sugestões \"o que fazer com essa loja?\""] },
+      9: { items: ["Gamificação: pontos, badges, ranking", "Metas por squad em tempo real"] },
+      10: { items: ["Gestão de projetos estilo Trello", "Campanhas e onboarding de lojistas"] },
+      11: { items: ["Power BI integrado", "Comparativos e ranking avançado"] },
+      12: { items: ["100% operacional", "Embedded app Bradesco", "Experiência unificada"], isVersion: "V3" },
+    },
   },
 ];
 
-const TOTAL_MONTHS = 13;
+const months = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 export default function SlideRoadmapEntregas() {
-  const [activePhase, setActivePhase] = useState<{ trackIdx: number; phaseIdx: number } | null>(null);
+  const [activeCell, setActiveCell] = useState<{ track: number; month: number } | null>(null);
 
-  const activeData = activePhase ? tracks[activePhase.trackIdx].phases[activePhase.phaseIdx] : null;
-  const activeTrack = activePhase ? tracks[activePhase.trackIdx] : null;
+  const activeDelivery = activeCell
+    ? tracks[activeCell.track].months[activeCell.month]
+    : null;
+  const activeTrack = activeCell ? tracks[activeCell.track] : null;
 
   return (
-    <div className="flex flex-col h-full overflow-hidden" style={{ padding: "0 clamp(16px, 3vw, 60px)", paddingRight: "clamp(50px, 6vw, 90px)" }}>
+    <div className="flex flex-col h-full overflow-hidden" style={{ padding: "0 clamp(12px, 2vw, 40px)", paddingRight: "clamp(50px, 6vw, 90px)" }}>
       {/* Título */}
       <motion.div
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="text-center shrink-0"
-        style={{ paddingTop: "clamp(10px, 2vh, 28px)", paddingBottom: "clamp(4px, 0.8vh, 12px)" }}
+        style={{ paddingTop: "clamp(10px, 2vh, 32px)", paddingBottom: "clamp(4px, 1vh, 14px)" }}
       >
         <h2
           className="font-extrabold text-[#EDEDEF] tracking-tight"
-          style={{ fontSize: "clamp(22px, 4vh, 52px)", lineHeight: "1.1", marginBottom: "clamp(2px, 0.5vh, 8px)" }}
+          style={{ fontSize: "clamp(20px, 3.5vh, 44px)", lineHeight: "1.1", marginBottom: "clamp(2px, 0.5vh, 8px)" }}
         >
-          Roadmap de Entregas
+          Roadmap de Entregas — 12 Meses
         </h2>
-        <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(11px, 1.4vh, 17px)" }}>
+        <p className="text-[#8A8A8E]" style={{ fontSize: "clamp(10px, 1.3vh, 16px)" }}>
           Valor entregue desde o primeiro mês — passe o mouse para ver as entregas detalhadas
         </p>
       </motion.div>
 
-      {/* Gantt Chart */}
-      <div className="flex-1 flex flex-col justify-center w-full max-w-[1300px] mx-auto" style={{ gap: "clamp(4px, 0.6vh, 10px)" }}>
-        
-        {/* Eixo temporal */}
-        <div className="flex items-end" style={{ paddingLeft: "clamp(100px, 14vw, 200px)", gap: 0 }}>
-          {Array.from({ length: TOTAL_MONTHS }, (_, i) => (
+      {/* Grid principal */}
+      <div className="flex-1 flex flex-col justify-center w-full max-w-[1400px] mx-auto" style={{ gap: "clamp(2px, 0.4vh, 8px)" }}>
+        {/* Header dos meses */}
+        <div className="grid" style={{ gridTemplateColumns: "clamp(80px, 10vw, 140px) repeat(13, 1fr)", gap: "clamp(1px, 0.2vw, 3px)" }}>
+          <div /> {/* Espaço do label */}
+          {months.map((m) => (
             <div
-              key={i}
-              className="text-center font-bold"
-              style={{
-                width: `${100 / TOTAL_MONTHS}%`,
-                fontSize: "clamp(10px, 1.4vh, 18px)",
-                color: [0, 1, 2, 6, 12].includes(i) ? "#EDEDEF" : "#6B6B70",
-                paddingBottom: "clamp(3px, 0.5vh, 8px)",
-              }}
+              key={m}
+              className="text-center font-bold text-[#8A8A8E]"
+              style={{ fontSize: "clamp(8px, 1vh, 13px)", padding: "clamp(2px, 0.3vh, 6px) 0" }}
             >
-              M{i}
+              {m === 0 ? "M0" : `M${m}`}
             </div>
           ))}
-        </div>
-
-        {/* Linha do eixo */}
-        <div className="flex items-center" style={{ paddingLeft: "clamp(100px, 14vw, 200px)", marginTop: "-2px", marginBottom: "clamp(1px, 0.3vh, 4px)" }}>
-          <div className="w-full" style={{ height: "2px", background: "linear-gradient(to right, rgba(43,127,255,0.3), rgba(43,127,255,0.5), rgba(34,197,94,0.5), rgba(204,9,47,0.5))", borderRadius: "1px" }} />
         </div>
 
         {/* Trilhas */}
@@ -143,196 +173,192 @@ export default function SlideRoadmapEntregas() {
           return (
             <motion.div
               key={trackIdx}
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 + trackIdx * 0.1 }}
-              className="flex items-center"
-              style={{ gap: 0, minHeight: "clamp(42px, 6vh, 80px)" }}
+              transition={{ duration: 0.4, delay: 0.1 + trackIdx * 0.08 }}
+              className="grid items-stretch"
+              style={{ gridTemplateColumns: "clamp(80px, 10vw, 140px) repeat(13, 1fr)", gap: "clamp(1px, 0.2vw, 3px)" }}
             >
-              {/* Label */}
+              {/* Label do produto */}
               <div
-                className="flex items-center gap-2 shrink-0"
-                style={{ width: "clamp(100px, 14vw, 200px)", paddingRight: "clamp(8px, 1vw, 20px)" }}
+                className="flex items-center gap-1.5 rounded-l-lg"
+                style={{
+                  padding: "clamp(4px, 0.5vh, 10px) clamp(4px, 0.5vw, 10px)",
+                  background: track.bgColor,
+                  borderLeft: `3px solid ${track.color}`,
+                }}
               >
-                <div
-                  className="flex items-center justify-center rounded-lg shrink-0"
-                  style={{
-                    width: "clamp(26px, 3.5vh, 44px)",
-                    height: "clamp(26px, 3.5vh, 44px)",
-                    background: `${track.color}18`,
-                    border: `1.5px solid ${track.color}40`,
-                  }}
-                >
-                  <Icon style={{ width: "clamp(13px, 1.8vh, 22px)", height: "clamp(13px, 1.8vh, 22px)", color: track.color }} />
-                </div>
-                <span className="font-bold text-[#EDEDEF] leading-tight" style={{ fontSize: "clamp(9px, 1.2vh, 15px)" }}>
-                  {track.name}
+                <Icon style={{ width: "clamp(12px, 1.4vh, 20px)", height: "clamp(12px, 1.4vh, 20px)", color: track.color, flexShrink: 0 }} />
+                <span className="font-bold text-[#EDEDEF] leading-tight" style={{ fontSize: "clamp(7px, 0.9vh, 12px)" }}>
+                  {track.shortName}
                 </span>
               </div>
 
-              {/* Barras Gantt */}
-              <div className="flex-1 relative" style={{ height: "clamp(36px, 5.5vh, 70px)" }}>
-                {/* Grid lines */}
-                <div className="absolute inset-0 flex">
-                  {Array.from({ length: TOTAL_MONTHS }, (_, i) => (
-                    <div key={i} style={{ width: `${100 / TOTAL_MONTHS}%`, borderRight: i < TOTAL_MONTHS - 1 ? "1px solid rgba(255,255,255,0.04)" : "none" }} />
-                  ))}
-                </div>
-
-                {/* Phase bars */}
-                {track.phases.map((phase, phaseIdx) => {
-                  const leftPct = (phase.startMonth / TOTAL_MONTHS) * 100;
-                  const widthPct = ((phase.endMonth - phase.startMonth + 1) / TOTAL_MONTHS) * 100;
-                  const isVersion = phase.isVersion;
-                  const isDiscovery = phase.label === "Discovery";
-                  const isActive = activePhase?.trackIdx === trackIdx && activePhase?.phaseIdx === phaseIdx;
-
+              {/* Células dos meses */}
+              {months.map((m) => {
+                const delivery = track.months[m];
+                if (!delivery) {
                   return (
-                    <motion.div
-                      key={phaseIdx}
-                      initial={{ scaleX: 0, opacity: 0 }}
-                      animate={{ scaleX: 1, opacity: 1 }}
-                      transition={{ duration: 0.4, delay: 0.3 + trackIdx * 0.1 + phaseIdx * 0.05 }}
-                      className="absolute flex items-center justify-center cursor-pointer transition-all duration-200"
-                      style={{
-                        left: `${leftPct}%`,
-                        width: `${widthPct}%`,
-                        top: "8%",
-                        bottom: "8%",
-                        transformOrigin: "left center",
-                        borderRadius: isVersion ? "clamp(4px, 0.6vh, 10px)" : "clamp(3px, 0.4vh, 6px)",
-                        background: isVersion
-                          ? `linear-gradient(135deg, ${track.color}, ${track.color}CC)`
-                          : isDiscovery
-                            ? "rgba(255,255,255,0.05)"
-                            : `${track.color}15`,
-                        border: isActive
-                          ? `2px solid ${track.color}`
-                          : isVersion
-                            ? `2px solid ${track.color}`
-                            : isDiscovery
-                              ? "1px dashed rgba(255,255,255,0.15)"
-                              : `1px solid ${track.color}30`,
-                        boxShadow: isActive
-                          ? `0 0 24px ${track.color}50, 0 4px 16px ${track.color}30`
-                          : isVersion
-                            ? `0 0 20px ${track.color}40, 0 4px 12px ${track.color}20`
-                            : "none",
-                        zIndex: isActive ? 20 : isVersion ? 10 : 1,
-                        transform: isActive && !isVersion ? `scaleY(1.15)` : undefined,
-                      }}
-                      onMouseEnter={() => setActivePhase({ trackIdx, phaseIdx })}
-                      onMouseLeave={() => setActivePhase(null)}
-                    >
-                      <span
-                        className="font-bold text-center leading-none truncate"
-                        style={{
-                          fontSize: isVersion ? "clamp(12px, 1.8vh, 24px)" : "clamp(7px, 0.9vh, 12px)",
-                          color: isVersion ? "#FFFFFF" : isDiscovery ? "#8A8A8E" : `${track.color}CC`,
-                          fontWeight: isVersion ? 900 : 600,
-                          letterSpacing: isVersion ? "0.05em" : "0",
-                          padding: "0 clamp(2px, 0.3vw, 6px)",
-                        }}
-                      >
-                        {phase.label}
-                      </span>
-                    </motion.div>
+                    <div
+                      key={m}
+                      className="rounded-sm bg-white/[0.02] border border-white/[0.04]"
+                      style={{ minHeight: "clamp(32px, 4.5vh, 64px)" }}
+                    />
                   );
-                })}
-              </div>
+                }
+
+                const isActive = activeCell?.track === trackIdx && activeCell?.month === m;
+                const isVersion = delivery.isVersion;
+                const isDiscovery = delivery.isDiscovery;
+
+                return (
+                  <div
+                    key={m}
+                    className="relative rounded-sm cursor-pointer transition-all duration-200"
+                    style={{
+                      minHeight: "clamp(32px, 4.5vh, 64px)",
+                      background: isActive
+                        ? track.bgColor
+                        : isVersion
+                          ? `${track.bgColor}`
+                          : isDiscovery
+                            ? "rgba(255,255,255,0.03)"
+                            : "rgba(255,255,255,0.02)",
+                      border: isActive
+                        ? `2px solid ${track.color}`
+                        : isVersion
+                          ? `1.5px solid ${track.borderColor}`
+                          : isDiscovery
+                            ? "1px solid rgba(255,255,255,0.08)"
+                            : "1px solid rgba(255,255,255,0.04)",
+                      boxShadow: isActive ? `0 0 12px ${track.color}40` : "none",
+                    }}
+                    onMouseEnter={() => setActiveCell({ track: trackIdx, month: m })}
+                    onMouseLeave={() => setActiveCell(null)}
+                  >
+                    <div className="flex flex-col items-center justify-center h-full" style={{ padding: "clamp(1px, 0.2vh, 4px)" }}>
+                      {isVersion && (
+                        <span
+                          className="font-black tracking-wide"
+                          style={{
+                            fontSize: "clamp(8px, 1.1vh, 14px)",
+                            color: track.color,
+                          }}
+                        >
+                          {isVersion}
+                        </span>
+                      )}
+                      {isDiscovery && (
+                        <span
+                          className="font-bold text-[#8A8A8E] uppercase tracking-wider"
+                          style={{ fontSize: "clamp(5px, 0.65vh, 9px)" }}
+                        >
+                          Disc.
+                        </span>
+                      )}
+                      {!isVersion && !isDiscovery && (
+                        <div
+                          className="rounded-full"
+                          style={{
+                            width: "clamp(4px, 0.5vh, 8px)",
+                            height: "clamp(4px, 0.5vh, 8px)",
+                            background: track.color,
+                            opacity: 0.5,
+                          }}
+                        />
+                      )}
+                      {/* Mini label */}
+                      <span
+                        className="text-center text-[#8A8A8E] leading-none mt-0.5 line-clamp-2"
+                        style={{ fontSize: "clamp(4px, 0.55vh, 7px)" }}
+                      >
+                        {delivery.items[0]?.split(" ").slice(0, 3).join(" ")}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </motion.div>
           );
         })}
 
         {/* Legenda */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="flex items-center justify-center"
-          style={{ gap: "clamp(16px, 3vw, 40px)", marginTop: "clamp(4px, 0.8vh, 10px)", fontSize: "clamp(9px, 1.1vh, 14px)" }}
-        >
-          <div className="flex items-center gap-2">
-            <div className="rounded" style={{ width: "clamp(20px, 2.5vh, 32px)", height: "clamp(12px, 1.6vh, 20px)", background: "rgba(255,255,255,0.05)", border: "1px dashed rgba(255,255,255,0.15)" }} />
-            <span className="text-[#8A8A8E] font-medium">Discovery</span>
+        <div className="flex items-center justify-center gap-4 mt-1" style={{ fontSize: "clamp(7px, 0.85vh, 11px)" }}>
+          <div className="flex items-center gap-1.5">
+            <div className="rounded-sm border border-white/[0.08] bg-white/[0.03]" style={{ width: "clamp(10px, 1.2vh, 16px)", height: "clamp(10px, 1.2vh, 16px)" }} />
+            <span className="text-[#8A8A8E]">Discovery</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="rounded" style={{ width: "clamp(20px, 2.5vh, 32px)", height: "clamp(12px, 1.6vh, 20px)", background: "rgba(43,127,255,0.15)", border: "1px solid rgba(43,127,255,0.3)" }} />
-            <span className="text-[#8A8A8E] font-medium">Evolução contínua</span>
+          <div className="flex items-center gap-1.5">
+            <div className="rounded-sm bg-[#2B7FFF]/15 border border-[#2B7FFF]/40" style={{ width: "clamp(10px, 1.2vh, 16px)", height: "clamp(10px, 1.2vh, 16px)" }} />
+            <span className="text-[#8A8A8E]">Marco de Versão (V1/V2/V3)</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="rounded" style={{ width: "clamp(20px, 2.5vh, 32px)", height: "clamp(12px, 1.6vh, 20px)", background: "linear-gradient(135deg, #2B7FFF, #2B7FFFCC)", border: "2px solid #2B7FFF", boxShadow: "0 0 8px #2B7FFF40" }} />
-            <span className="text-[#EDEDEF] font-bold">Release (V1 / V2 / V3)</span>
+          <div className="flex items-center gap-1.5">
+            <div className="rounded-full bg-white/30" style={{ width: "clamp(5px, 0.6vh, 8px)", height: "clamp(5px, 0.6vh, 8px)" }} />
+            <span className="text-[#8A8A8E]">Entrega contínua</span>
           </div>
-        </motion.div>
+          <div className="flex items-center gap-1.5">
+            <ChevronDown style={{ width: "clamp(10px, 1.2vh, 16px)", height: "clamp(10px, 1.2vh, 16px)" }} className="text-[#8A8A8E]" />
+            <span className="text-[#8A8A8E]">Hover para detalhes</span>
+          </div>
+        </div>
 
         {/* Painel de detalhes (hover) */}
-        <div style={{ minHeight: "clamp(50px, 7vh, 90px)", marginTop: "clamp(2px, 0.4vh, 6px)" }}>
-          <AnimatePresence mode="wait">
-            {activeData && activeTrack && activePhase ? (
-              <motion.div
-                key={`${activePhase.trackIdx}-${activePhase.phaseIdx}`}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 6 }}
-                transition={{ duration: 0.15 }}
-                className="rounded-lg backdrop-blur-sm"
-                style={{
-                  padding: "clamp(6px, 1vh, 14px) clamp(12px, 1.5vw, 24px)",
-                  background: "rgba(255,255,255,0.04)",
-                  border: `1px solid ${activeTrack.color}40`,
-                }}
-              >
-                <div className="flex items-center gap-2" style={{ marginBottom: "clamp(4px, 0.6vh, 10px)" }}>
-                  <activeTrack.icon style={{ width: "clamp(14px, 1.6vh, 20px)", height: "clamp(14px, 1.6vh, 20px)", color: activeTrack.color }} />
-                  <span className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(11px, 1.3vh, 17px)" }}>
-                    {activeTrack.name}
-                    <span className="text-[#8A8A8E] font-normal"> — M{activeData.startMonth}{activeData.endMonth !== activeData.startMonth ? `–M${activeData.endMonth}` : ""}</span>
-                    {activeData.highlight && (
-                      <span className="ml-2 px-2 py-0.5 rounded font-black" style={{ background: `${activeTrack.color}30`, color: activeTrack.color, fontSize: "clamp(9px, 1.1vh, 14px)" }}>
-                        {activeData.highlight}
-                      </span>
-                    )}
-                    {activeData.label === "Discovery" && (
-                      <span className="ml-2 px-2 py-0.5 rounded font-bold bg-white/[0.06] text-[#8A8A8E]" style={{ fontSize: "clamp(9px, 1.1vh, 14px)" }}>
-                        DISCOVERY
-                      </span>
-                    )}
-                  </span>
-                </div>
-                <div className="flex flex-wrap" style={{ gap: "clamp(3px, 0.4vw, 8px)" }}>
-                  {activeData.deliverables.map((item, i) => (
-                    <span
-                      key={i}
-                      className="rounded-md bg-white/[0.04] border border-white/[0.08] text-[#C8C8CD] font-medium"
-                      style={{ padding: "clamp(2px, 0.3vh, 5px) clamp(6px, 0.8vw, 12px)", fontSize: "clamp(9px, 1.1vh, 14px)" }}
-                    >
-                      {item}
+        <AnimatePresence mode="wait">
+          {activeDelivery && activeTrack && activeCell ? (
+            <motion.div
+              key={`${activeCell.track}-${activeCell.month}`}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 6 }}
+              transition={{ duration: 0.15 }}
+              className="rounded-lg backdrop-blur-sm"
+              style={{
+                padding: "clamp(6px, 1vh, 14px) clamp(10px, 1.5vw, 24px)",
+                background: "rgba(255,255,255,0.04)",
+                border: `1px solid ${activeTrack.color}40`,
+              }}
+            >
+              <div className="flex items-center gap-2 mb-1.5">
+                <activeTrack.icon style={{ width: "clamp(12px, 1.4vh, 18px)", height: "clamp(12px, 1.4vh, 18px)", color: activeTrack.color }} />
+                <span className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(10px, 1.2vh, 16px)" }}>
+                  {activeTrack.name} — Mês {activeCell.month}
+                  {activeDelivery.isVersion && (
+                    <span className="ml-2 px-2 py-0.5 rounded font-black" style={{ background: `${activeTrack.color}30`, color: activeTrack.color, fontSize: "clamp(8px, 1vh, 13px)" }}>
+                      {activeDelivery.isVersion}
                     </span>
-                  ))}
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="msg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="text-center"
-                style={{ padding: "clamp(6px, 1vh, 14px)" }}
-              >
-                <p style={{ fontSize: "clamp(10px, 1.3vh, 16px)" }}>
-                  <span className="text-[#8A8A8E]">DMS + Marketplace entregam </span>
-                  <span className="text-[#2B7FFF] font-bold">V1 no Mês 1</span>
-                  <span className="text-[#8A8A8E]"> — Motor + Copiloto entregam </span>
-                  <span className="text-[#22C55E] font-bold">V1 no Mês 2</span>
-                  <span className="text-[#8A8A8E]"> — Valor desde o </span>
-                  <span className="text-[#EDEDEF] font-bold">dia zero</span>
-                </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+                  )}
+                  {activeDelivery.isDiscovery && (
+                    <span className="ml-2 px-2 py-0.5 rounded font-bold bg-white/[0.06] text-[#8A8A8E]" style={{ fontSize: "clamp(8px, 1vh, 13px)" }}>
+                      DISCOVERY
+                    </span>
+                  )}
+                </span>
+              </div>
+              <div className="flex flex-wrap" style={{ gap: "clamp(4px, 0.5vw, 10px)" }}>
+                {activeDelivery.items.map((item, i) => (
+                  <span
+                    key={i}
+                    className="rounded-md bg-white/[0.04] border border-white/[0.08] text-[#C8C8CD] font-medium"
+                    style={{ padding: "clamp(2px, 0.3vh, 5px) clamp(6px, 0.8vw, 12px)", fontSize: "clamp(8px, 1vh, 13px)" }}
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="placeholder"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              exit={{ opacity: 0 }}
+              className="text-center"
+              style={{ padding: "clamp(6px, 1vh, 14px)", fontSize: "clamp(8px, 1vh, 13px)" }}
+            >
+              <span className="text-[#555]">Passe o mouse sobre qualquer célula para ver as entregas detalhadas</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       <SlideFooter />

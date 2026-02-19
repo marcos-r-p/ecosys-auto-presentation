@@ -57,7 +57,7 @@ export default function SlideQuemSomos2() {
         {/* Right Side */}
         <div className="w-full lg:w-3/5">
           <motion.div 
-            className="grid grid-cols-2 grid-rows-2 gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-4"
             variants={containerVariants}
           >
             <Shape label="Digitalizar" className="bg-gradient-to-br from-white/5 to-transparent" />

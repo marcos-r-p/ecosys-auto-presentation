@@ -166,7 +166,7 @@ export default function Slide31() {
             <ShoppingCart className="w-4 h-4 text-[#2B7FFF]" />
             <h3 className="text-sm font-bold text-[#2B7FFF]">MARKETPLACE AUTOLINE</h3>
           </div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             {marketplacePhases.map((phase, idx) => (
               <PhaseCard key={idx} phase={phase} delay={0.1 + idx * 0.05} bulletColor="#2B7FFF" />
             ))}
@@ -179,7 +179,7 @@ export default function Slide31() {
             <Database className="w-4 h-4 text-[#EDEDEF]" />
             <h3 className="text-sm font-bold text-[#8A8A8E]">GESTOR AUTOLINE</h3>
           </div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             {dmsPhases.map((phase, idx) => (
               <PhaseCard key={idx} phase={phase} delay={0.15 + idx * 0.05} bulletColor="#8A8A8E" />
             ))}
@@ -193,7 +193,7 @@ export default function Slide31() {
             <h3 className="text-sm font-bold text-[#2B7FFF]">NOVO GIO - COPILOTO DO GEFIN</h3>
             <span className="px-1.5 py-0.5 bg-[#2B7FFF]/20 border border-[#2B7FFF]/50 rounded text-[9px] font-bold text-[#2B7FFF]">NOVO</span>
           </div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             {gioPhases.map((phase, idx) => (
               <PhaseCard key={idx} phase={phase} delay={0.2 + idx * 0.05} bulletColor="#2B7FFF" />
             ))}

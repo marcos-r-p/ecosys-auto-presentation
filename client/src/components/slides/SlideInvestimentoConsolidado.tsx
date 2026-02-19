@@ -16,7 +16,7 @@ import SlideFooter from "../SlideFooter";
 
 const products = [
   {
-    name: "DMS (Gestor Autoline)",
+    name: "DMS (Gestor)",
     icon: Database,
     color: "#2B7FFF",
     bgGradient: "linear-gradient(160deg, rgba(43,127,255,0.12), rgba(43,127,255,0.04))",
@@ -28,7 +28,7 @@ const products = [
     period: "Mês 0 → 12",
   },
   {
-    name: "Marketplace Autoline",
+    name: "Marketplace",
     icon: ShoppingCart,
     color: "#06B6D4",
     bgGradient: "linear-gradient(160deg, rgba(6,182,212,0.12), rgba(6,182,212,0.04))",
@@ -89,7 +89,7 @@ export default function SlideInvestimentoConsolidado() {
 
       {/* Cards dos 4 produtos */}
       <div className="flex-1 flex flex-col justify-center w-full max-w-6xl mx-auto" style={{ gap: "clamp(6px, 1vh, 16px)" }}>
-        <div className="grid grid-cols-4" style={{ gap: "clamp(6px, 0.8vw, 16px)" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" style={{ gap: "clamp(6px, 0.8vw, 16px)" }}>
           {products.map((product, idx) => {
             const Icon = product.icon;
             return (
@@ -180,12 +180,12 @@ export default function SlideInvestimentoConsolidado() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="grid grid-cols-2"
+          className="grid grid-cols-1 md:grid-cols-2"
           style={{ gap: "clamp(6px, 0.8vw, 16px)" }}
         >
           {/* Plataforma Autoline */}
           <div
-            className="rounded-lg flex items-center justify-between"
+            className="rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-2"
             style={{
               padding: "clamp(8px, 1.2vh, 18px) clamp(12px, 1.5vw, 24px)",
               background: "linear-gradient(135deg, rgba(43,127,255,0.08), rgba(6,182,212,0.08))",
@@ -212,7 +212,7 @@ export default function SlideInvestimentoConsolidado() {
 
           {/* Motor + Copiloto */}
           <div
-            className="rounded-lg flex items-center justify-between"
+            className="rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-2"
             style={{
               padding: "clamp(8px, 1.2vh, 18px) clamp(12px, 1.5vw, 24px)",
               background: "linear-gradient(135deg, rgba(34,197,94,0.08), rgba(204,9,47,0.08))",

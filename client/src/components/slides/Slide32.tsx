@@ -97,7 +97,7 @@ export default function Slide32() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="grid grid-cols-3 gap-2"
+          className="grid grid-cols-1 md:grid-cols-3 gap-2"
         >
           <div className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-2.5 text-center">
             <div className="flex items-center justify-center gap-1.5 mb-1">

@@ -98,7 +98,7 @@ export default function SlideInvestimento2() {
             </div>
 
             {/* Summary Row */}
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               <div className="bg-white/[0.06] border border-white/[0.10] rounded-lg p-2.5">
                 <div className="flex items-center gap-1.5 mb-1">
                   <DollarSign className="w-3.5 h-3.5 text-[#2B7FFF]" />

@@ -32,10 +32,7 @@ const ecosysAUTOFeatures = [
 
 export default function Slide10() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden relative">
-      {/* Ambient glow */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-[0.03] pointer-events-none" style={{ background: "radial-gradient(circle, #2B7FFF, transparent 70%)" }} />
-      <div className="absolute bottom-1/3 right-1/3 w-[400px] h-[400px] rounded-full opacity-[0.025] pointer-events-none" style={{ background: "radial-gradient(circle, #8B5CF6, transparent 70%)" }} />
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
       <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
         {/* Header */}
         <motion.div
@@ -46,7 +43,13 @@ export default function Slide10() {
         >
           
           <h2 className="font-extrabold tracking-tight sm: text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
-            Gestor Autoline:{" "}
+            Gestão{" "}
+            <img
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
+              alt="Autoline"
+              className="h-10 inline-block align-middle"
+            />
+            {" "}e ecosys AUTO:{" "}
             <span className="text-[#EDEDEF]">
               Escolha a Versão Ideal para Sua Revenda
             </span>
@@ -62,12 +65,12 @@ export default function Slide10() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative group"
           >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl" style={{ background: "rgba(43,127,255,0.04)" }} />
-            <div className="relative rounded-2xl p-4 h-full transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(43,127,255,0.12)", boxShadow: "0 2px 16px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.03)", backdropFilter: "blur(8px)" }}>
+            <div className="absolute inset-0 bg-white/[0.04] opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl" />
+            <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-4 h-full hover:border-white/[0.08] transition-all">
               <div className="mb-3">
                 
                 <h3 className="text-3xl font-bold text-[#EDEDEF] mb-3">
-                  Gestor Autoline Lite{" "}
+                  Gestor Lite{" "}
                   <img
                     src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/oPnqWOABGquuztOR.png"
                     alt="Autoline"
@@ -108,17 +111,17 @@ export default function Slide10() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="relative group"
           >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl" style={{ background: "rgba(255,255,255,0.04)" }} />
-            <div className="relative rounded-2xl p-4 h-full transition-all" style={{ background: "rgba(255,255,255,0.03)", border: "2px solid rgba(255,255,255,0.1)", boxShadow: "0 2px 16px rgba(0,0,0,0.12), 0 0 20px rgba(255,255,255,0.02), inset 0 1px 0 rgba(255,255,255,0.04)", backdropFilter: "blur(8px)" }}>
+            <div className="absolute inset-0 bg-white/[0.04] opacity-0 group-hover:opacity-30 transition-opacity duration-300 rounded-2xl" />
+            <div className="relative bg-white/[0.04] border-2 border-white/[0.08] rounded-2xl p-4 h-full hover:border-white/[0.08] transition-all">
               <div className="mb-3">
                 <div className="flex items-center gap-2 mb-2">
                   
-                  <span className="px-2 py-0.5 text-xs font-bold rounded-full text-[#EDEDEF]" style={{ background: "rgba(255,255,255,0.06)", boxShadow: "0 0 8px rgba(255,255,255,0.03)" }}>
+                  <span className="px-2 py-0.5 text-xs font-bold rounded-full bg-white/[0.06] text-[#EDEDEF]">
                     PREMIUM
                   </span>
                 </div>
                 <h3 className="text-3xl font-bold text-[#EDEDEF] mb-3">
-                  Gestor Autoline Pro
+                  Gestor Pro
                 </h3>
                 <p className="text-[#8A8A8E] text-sm leading-relaxed">
                   A gestão completa para máxima eficiência, adicionando ferramentas avançadas para revendas estruturadas.

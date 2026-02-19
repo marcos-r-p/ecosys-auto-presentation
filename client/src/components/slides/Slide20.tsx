@@ -1,413 +1,134 @@
 import { motion } from "motion/react";
-import { BarChart3, Briefcase, User, Building2, Database } from "lucide-react";
+import { Database, BarChart3, Users, Briefcase, User, Building2 } from "lucide-react";
 import SlideFooter from "../SlideFooter";
-
-/*
- * Slide 20 — Integrações e Dados: A Inteligência que Conecta
- * EXPANDED: margens reduzidas, grid ampliado, cards e hub central maiores,
- * fontes aumentadas para leitura a distância. Layout e design inalterados.
- */
 
 const stakeholders = [
   {
     id: "lojistas",
+    emoji: "📊",
     title: "Lojistas",
-    description: "Performance operacional e precificação inteligente",
+    description: "Performance operacional, insights de estoque e precificação inteligente",
     icon: BarChart3,
-    position: "left" as const,
-    color: "#2B7FFF",
+    color: "",
   },
   {
     id: "gefins",
-    title: "Força Comercial",
-    subtitle: "(GEFINS)",
-    description: "Visibilidade 360° e priorização de visitas",
+    emoji: "💼",
+    title: "Força Comercial (GEFINS)",
+    description: "Visibilidade 360° da rede de parceiros, priorização inteligente de visitas, alertas preditivos de performance e ferramentas para maximizar resultados em campo",
     icon: Briefcase,
-    position: "top" as const,
-    color: "#2B7FFF",
-  },
-  {
-    id: "bradesco",
-    title: "Bradesco",
-    description: "Inteligência competitiva e decisões baseadas em dados",
-    icon: Building2,
-    position: "right" as const,
-    color: "#CC1E3A",
+    color: "",
   },
   {
     id: "consumidores",
+    emoji: "👤",
     title: "Consumidores",
-    description: "Recomendações personalizadas e jornada otimizada",
+    description: "Recomendações personalizadas e jornada de compra otimizada",
     icon: User,
-    position: "bottom" as const,
-    color: "#2B7FFF",
+    color: "",
+  },
+  {
+    id: "bradesco",
+    emoji: "🏦",
+    title: "Bradesco",
+    description: "Inteligência competitiva, análise de risco em tempo real e decisões estratégicas baseadas em dados",
+    icon: Building2,
+    color: "",
   },
 ];
 
-function hexToRgb(hex: string): string {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  return `${r},${g},${b}`;
-}
-
 export default function Slide20() {
   return (
-    <div
-      className="flex flex-col h-full overflow-hidden"
-      style={{ padding: "clamp(6px, 0.8vh, 12px) clamp(10px, 1.2vw, 30px)" }}
-    >
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center flex-shrink-0"
-        style={{ marginBottom: "clamp(4px, 0.6vh, 10px)" }}
-      >
-        <h2
-          className="font-extrabold tracking-tight text-[#EDEDEF]"
-          style={{ fontSize: "clamp(26px, 3.8vh, 50px)", lineHeight: "1.1", marginBottom: "clamp(3px, 0.5vh, 8px)" }}
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8"
         >
-          Integrações e Dados:{" "}
-          <span className="text-[#2B7FFF]">A Inteligência que Conecta</span>
-        </h2>
-        <p
-          className="text-[#8A8A8E] max-w-5xl mx-auto"
-          style={{ fontSize: "clamp(12px, 1.4vh, 18px)", lineHeight: "1.4" }}
-        >
-          Infraestrutura que transforma dados brutos em inteligência acionável para todo o ecossistema.
-        </p>
-      </motion.div>
-
-      {/* Hub Architecture - Central Layout */}
-      <div className="flex-1 flex items-center justify-center min-h-0 relative">
-        {/* SVG Connection Lines */}
-        <svg
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          style={{ zIndex: 0 }}
-        >
-          <defs>
-            <linearGradient id="lineGradH" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(43,127,255,0.05)" />
-              <stop offset="50%" stopColor="rgba(43,127,255,0.35)" />
-              <stop offset="100%" stopColor="rgba(43,127,255,0.05)" />
-            </linearGradient>
-            <linearGradient id="lineGradV" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="rgba(43,127,255,0.05)" />
-              <stop offset="50%" stopColor="rgba(43,127,255,0.35)" />
-              <stop offset="100%" stopColor="rgba(43,127,255,0.05)" />
-            </linearGradient>
-          </defs>
-          {/* Horizontal line */}
-          <motion.line
-            x1="10%" y1="50%" x2="90%" y2="50%"
-            stroke="url(#lineGradH)"
-            strokeWidth="1.5"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          />
-          {/* Vertical line */}
-          <motion.line
-            x1="50%" y1="5%" x2="50%" y2="95%"
-            stroke="url(#lineGradV)"
-            strokeWidth="1.5"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          />
-        </svg>
-
-        {/* Grid Layout for Hub Architecture */}
-        <div
-          className="relative grid w-full h-full"
-          style={{
-            gridTemplateColumns: "1fr auto 1fr",
-            gridTemplateRows: "1fr auto 1fr",
-            gap: "clamp(6px, 0.8vh, 14px)",
-            maxWidth: "1200px",
-            maxHeight: "clamp(420px, 68vh, 640px)",
-          }}
-        >
-          {/* Top Card - GEFINS (row 1, col 2) */}
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex items-end justify-center"
-            style={{ gridColumn: "2", gridRow: "1" }}
-          >
-            <div
-              className="rounded-xl text-center"
-              style={{
-                padding: "clamp(14px, 2vh, 26px) clamp(20px, 2.5vw, 40px)",
-                background: "rgba(255,255,255,0.025)",
-                border: "1px solid rgba(43,127,255,0.15)",
-                backdropFilter: "blur(12px)",
-                minWidth: "clamp(200px, 22vw, 300px)",
-              }}
-            >
-              <div
-                className="rounded-lg flex items-center justify-center mx-auto"
-                style={{
-                  width: "clamp(40px, 5.5vh, 60px)",
-                  height: "clamp(40px, 5.5vh, 60px)",
-                  background: "rgba(43,127,255,0.1)",
-                  border: "1px solid rgba(43,127,255,0.25)",
-                  marginBottom: "clamp(6px, 0.8vh, 12px)",
-                }}
-              >
-                <Briefcase style={{ width: "clamp(20px, 2.8vh, 32px)", height: "clamp(20px, 2.8vh, 32px)" }} color="#2B7FFF" />
-              </div>
-              <h4
-                className="font-bold text-[#EDEDEF]"
-                style={{ fontSize: "clamp(15px, 2vh, 24px)", lineHeight: "1.2" }}
-              >
-                Força Comercial
-              </h4>
-              <p
-                className="text-[#6B6B70] font-medium"
-                style={{ fontSize: "clamp(9px, 1vh, 12px)" }}
-              >
-                (GEFINS)
-              </p>
-              <p
-                className="text-[#9A9A9E] mt-1"
-                style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.3" }}
-              >
-                Visibilidade 360° e priorização de visitas
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Left Card - Lojistas (row 2, col 1) */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center justify-end"
-            style={{ gridColumn: "1", gridRow: "2" }}
-          >
-            <div
-              className="rounded-xl text-center"
-              style={{
-                padding: "clamp(14px, 2vh, 26px) clamp(16px, 2vw, 32px)",
-                background: "rgba(255,255,255,0.025)",
-                border: "1px solid rgba(43,127,255,0.15)",
-                backdropFilter: "blur(12px)",
-                minWidth: "clamp(190px, 20vw, 280px)",
-              }}
-            >
-              <div
-                className="rounded-lg flex items-center justify-center mx-auto"
-                style={{
-                  width: "clamp(40px, 5.5vh, 60px)",
-                  height: "clamp(40px, 5.5vh, 60px)",
-                  background: "rgba(43,127,255,0.1)",
-                  border: "1px solid rgba(43,127,255,0.25)",
-                  marginBottom: "clamp(6px, 0.8vh, 12px)",
-                }}
-              >
-                <BarChart3 style={{ width: "clamp(20px, 2.8vh, 32px)", height: "clamp(20px, 2.8vh, 32px)" }} color="#2B7FFF" />
-              </div>
-              <h4
-                className="font-bold text-[#EDEDEF]"
-                style={{ fontSize: "clamp(15px, 2vh, 24px)", lineHeight: "1.2" }}
-              >
-                Lojistas
-              </h4>
-              <p
-                className="text-[#9A9A9E] mt-1"
-                style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.3" }}
-              >
-                Performance operacional e precificação inteligente
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Center Hub (row 2, col 2) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex items-center justify-center"
-            style={{ gridColumn: "2", gridRow: "2" }}
-          >
-            <div
-              className="relative rounded-2xl flex flex-col items-center justify-center"
-              style={{
-                width: "clamp(180px, 22vw, 280px)",
-                height: "clamp(180px, 22vw, 280px)",
-                background: "linear-gradient(135deg, rgba(43,127,255,0.12) 0%, rgba(43,127,255,0.04) 100%)",
-                border: "1.5px solid rgba(43,127,255,0.35)",
-                backdropFilter: "blur(16px)",
-                boxShadow: "0 0 40px rgba(43,127,255,0.1), 0 0 80px rgba(43,127,255,0.05), inset 0 0 30px rgba(43,127,255,0.03)",
-              }}
-            >
-              {/* Animated glow ring */}
-              <motion.div
-                className="absolute inset-0 rounded-2xl pointer-events-none"
-                animate={{
-                  boxShadow: [
-                    "0 0 20px rgba(43,127,255,0.08)",
-                    "0 0 40px rgba(43,127,255,0.15)",
-                    "0 0 20px rgba(43,127,255,0.08)",
-                  ],
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              />
-              <div
-                className="rounded-xl flex items-center justify-center"
-                style={{
-                  width: "clamp(48px, 6.5vh, 72px)",
-                  height: "clamp(48px, 6.5vh, 72px)",
-                  background: "rgba(43,127,255,0.15)",
-                  border: "1px solid rgba(43,127,255,0.4)",
-                  marginBottom: "clamp(8px, 1vh, 14px)",
-                }}
-              >
-                <Database style={{ width: "clamp(24px, 3.2vh, 38px)", height: "clamp(24px, 3.2vh, 38px)" }} color="#2B7FFF" />
-              </div>
-              <h3
-                className="font-extrabold text-[#EDEDEF] text-center"
-                style={{ fontSize: "clamp(14px, 1.8vh, 22px)", lineHeight: "1.2" }}
-              >
-                Plataforma de
-              </h3>
-              <h3
-                className="font-extrabold text-[#2B7FFF] text-center"
-                style={{ fontSize: "clamp(14px, 1.8vh, 22px)", lineHeight: "1.2" }}
-              >
-                Dados Autoline
-              </h3>
-              <p
-                className="text-[#6B6B70] text-center mt-1"
-                style={{ fontSize: "clamp(9px, 1vh, 13px)" }}
-              >
-                Centro de Inteligência
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Right Card - Bradesco (row 2, col 3) */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex items-center justify-start"
-            style={{ gridColumn: "3", gridRow: "2" }}
-          >
-            <div
-              className="rounded-xl text-center"
-              style={{
-                padding: "clamp(14px, 2vh, 26px) clamp(16px, 2vw, 32px)",
-                background: "rgba(255,255,255,0.025)",
-                border: "1px solid rgba(204,30,58,0.2)",
-                backdropFilter: "blur(12px)",
-                minWidth: "clamp(190px, 20vw, 280px)",
-              }}
-            >
-              <div
-                className="rounded-lg flex items-center justify-center mx-auto"
-                style={{
-                  width: "clamp(40px, 5.5vh, 60px)",
-                  height: "clamp(40px, 5.5vh, 60px)",
-                  background: "rgba(204,30,58,0.1)",
-                  border: "1px solid rgba(204,30,58,0.25)",
-                  marginBottom: "clamp(6px, 0.8vh, 12px)",
-                }}
-              >
-                <Building2 style={{ width: "clamp(20px, 2.8vh, 32px)", height: "clamp(20px, 2.8vh, 32px)" }} color="#CC1E3A" />
-              </div>
-              <h4
-                className="font-bold text-[#EDEDEF]"
-                style={{ fontSize: "clamp(15px, 2vh, 24px)", lineHeight: "1.2" }}
-              >
-                Bradesco
-              </h4>
-              <p
-                className="text-[#9A9A9E] mt-1"
-                style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.3" }}
-              >
-                Inteligência competitiva e decisões baseadas em dados
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Bottom Card - Consumidores (row 3, col 2) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex items-start justify-center"
-            style={{ gridColumn: "2", gridRow: "3" }}
-          >
-            <div
-              className="rounded-xl text-center"
-              style={{
-                padding: "clamp(14px, 2vh, 26px) clamp(20px, 2.5vw, 40px)",
-                background: "rgba(255,255,255,0.025)",
-                border: "1px solid rgba(43,127,255,0.15)",
-                backdropFilter: "blur(12px)",
-                minWidth: "clamp(200px, 22vw, 300px)",
-              }}
-            >
-              <div
-                className="rounded-lg flex items-center justify-center mx-auto"
-                style={{
-                  width: "clamp(40px, 5.5vh, 60px)",
-                  height: "clamp(40px, 5.5vh, 60px)",
-                  background: "rgba(43,127,255,0.1)",
-                  border: "1px solid rgba(43,127,255,0.25)",
-                  marginBottom: "clamp(6px, 0.8vh, 12px)",
-                }}
-              >
-                <User style={{ width: "clamp(20px, 2.8vh, 32px)", height: "clamp(20px, 2.8vh, 32px)" }} color="#2B7FFF" />
-              </div>
-              <h4
-                className="font-bold text-[#EDEDEF]"
-                style={{ fontSize: "clamp(15px, 2vh, 24px)", lineHeight: "1.2" }}
-              >
-                Consumidores
-              </h4>
-              <p
-                className="text-[#9A9A9E] mt-1"
-                style={{ fontSize: "clamp(11px, 1.3vh, 16px)", lineHeight: "1.3" }}
-              >
-                Recomendações personalizadas e jornada otimizada
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Callout Bottom */}
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.9 }}
-        className="flex-shrink-0"
-        style={{ marginTop: "clamp(4px, 0.6vh, 10px)" }}
-      >
-        <div
-          className="relative rounded-xl overflow-hidden"
-          style={{
-            padding: "clamp(10px, 1.4vh, 18px) clamp(14px, 1.8vw, 32px)",
-            background: "rgba(255,255,255,0.03)",
-            border: "1px solid rgba(43,127,255,0.15)",
-            boxShadow: "0 0 20px rgba(43,127,255,0.04)",
-          }}
-        >
-          <p
-            className="text-center text-[#C5C5C7] font-medium"
-            style={{ fontSize: "clamp(13px, 1.6vh, 20px)", lineHeight: "1.4" }}
-          >
-            <strong className="text-[#2B7FFF]">Visão 360°</strong> do mercado automotivo
-            — dados fluindo entre todos os stakeholders, alimentando decisões inteligentes.
+          
+          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
+            Integrações e Dados:{" "}
+            <span className="text-[#EDEDEF]">
+              A Inteligência que Conecta o Ecossistema
+            </span>
+          </h2>
+          <p className="text-[#8A8A8E] text-lg font-medium max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
+            Este pilar é a infraestrutura tecnológica que coleta, processa e transforma dados brutos em inteligência acionável, criando valor para lojistas, consumidores, força comercial e o Bradesco, garantindo a fluidez de todo o ecossistema Autoline.
           </p>
+        </motion.div>
+
+        {/* Section Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-6"
+        >
+          <h3 className="text-2xl font-bold text-center text-[#EDEDEF]">
+            Para Quem Geramos Valor:
+          </h3>
+        </motion.div>
+
+        {/* Stakeholders Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-3">
+          {stakeholders.map((stakeholder, index) => (
+            <motion.div
+              key={stakeholder.id}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+              className="relative group"
+            >
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-6 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
+                {/* Icon and Emoji */}
+                <div className="flex items-center gap-4 mb-4">
+                  <div
+                    className={`w-14 h-14 rounded-xl bg-white/[0.06] p-1 flex-shrink-0`}
+                  >
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[11px] flex items-center justify-center">
+                      <stakeholder.icon className="w-7 h-7 text-[#EDEDEF]" />
+                    </div>
+                  </div>
+                  
+                  {/* Title with Emoji */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      
+                      <h3 className="text-xl font-bold text-[#EDEDEF]">
+                        {stakeholder.title}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-[#8A8A8E] text-sm leading-relaxed">
+                  {stakeholder.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </motion.div>
+
+        {/* Bottom Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+        >
+          <div className="relative overflow-hidden rounded-2xl bg-white/[0.04] border-2 border-white/[0.08] p-6">
+            <div className="flex items-center justify-center gap-3">
+              <Database className="w-6 h-6 text-[#EDEDEF]" />
+              <span className="text-[#EDEDEF] font-semibold text-lg text-center">
+                Visão 360° do mercado automotivo com dados fluindo entre todos os stakeholders, alimentando decisões inteligentes e impulsionando crescimento
+              </span>
+            </div>
+          </div>
+        </motion.div>
+      </div>
 
       <SlideFooter />
     </div>

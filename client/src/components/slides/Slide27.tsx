@@ -126,7 +126,7 @@ export default function Slide27() {
                 Automação Baseada em Indicadores
               </h4>
               
-              <h5 className="text-base font-bold text-[#EDEDEF] mb-3">Regras Inteligentes (Exemplos):</h5>
+              <h5 className="text-base font-bold text-[#EDEDEF] mb-3">⚙️ Regras Inteligentes (Exemplos):</h5>
               
               <div className="space-y-3">
                 {automationRules.map((rule, idx) => (

@@ -1,247 +1,116 @@
 import { motion } from "motion/react";
-import { Car, DollarSign, TrendingUp, ArrowRight, Zap, Target, CreditCard } from "lucide-react";
+import { Bot, Car, DollarSign, TrendingUp } from "lucide-react";
 import SlideFooter from "../SlideFooter";
 
-/*
- * Slide 17 — IA no Marketplace: Geração de Leads com Crédito Pré-Aprovado
- * Design: Fluxo horizontal de 3 etapas conectadas por setas
- * Hero: Vantagem Bradesco com glow vermelho
- * Resultado: Banner de impacto com conversão e crédito
- * Animação: Revelação sequencial das etapas → vantagem → resultado
- */
-
-const steps = [
+const features = [
   {
-    step: "01",
+    id: "descubra",
+    number: "2.2.1",
     title: "Descubra o Carro Ideal",
-    subtitle: "IA recomenda veículos",
+    description: "Nossa IA recomenda veículos com base no perfil e capacidade financeira do consumidor, gerando leads altamente qualificados para as revendas.",
     icon: Car,
-    bullets: [
-      "Perfil + capacidade financeira",
-      "Leads qualificados para revendas",
-      "Jornada personalizada",
-    ],
-    color: "#3B82F6",
+    color: "",
   },
   {
-    step: "02",
-    title: "Quanto Vale Meu Carro?",
-    subtitle: "Captação de leads de troca",
+    id: "avaliacao",
+    number: "2.2.2",
+    title: "Quanto Vale o Meu Carro?",
+    description: "Ferramenta de avaliação que capta leads de clientes interessados em trocar de veículo, alimentando a base de captação dos lojistas.",
     icon: DollarSign,
-    bullets: [
-      "Avaliação instantânea online",
-      "Leads de troca para lojistas",
-      "Base de captação ampliada",
-    ],
-    color: "#10B981",
+    color: "",
   },
   {
-    step: "03",
+    id: "simulacao",
+    number: "2.2.3",
     title: "Simulação Digital",
-    subtitle: "Crédito antes da revenda",
+    description: "Cada anúncio destaca a simulação de financiamento e seguros Bradesco, permitindo que o consumidor inicie a jornada de crédito antes mesmo do contato com a revenda.",
     icon: TrendingUp,
-    bullets: [
-      "Financiamento + seguros Bradesco",
-      "Crédito pré-aprovado no anúncio",
-      "Consumidor já chega qualificado",
-    ],
-    color: "#F59E0B",
+    color: "",
   },
 ];
 
 export default function Slide17() {
   return (
-    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-3 sm:pt-4 md:pt-5 pb-3 overflow-hidden">
-      <div className="max-w-7xl w-full flex flex-col flex-1">
+    <div className="flex flex-col items-center justify-start h-full px-4 sm:px-8 md:px-12 lg:px-20 xl:px-[120px] pt-4 sm:pt-5 md:pt-6 lg:pt-8 pb-4 sm:pb-5 md:pb-6 lg:pb-8 overflow-hidden">
+      <div className="max-w-7xl w-full flex flex-col gap-3 md:gap-4 lg:gap-6">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-3"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-10"
         >
-          <p className="text-[#8A8A8E] uppercase tracking-[0.2em] mb-1" style={{ fontSize: "clamp(9px, 1.1vh, 13px)" }}>
-            Jornada do consumidor no marketplace
-          </p>
-          <h2
-            className="font-extrabold tracking-tight text-[#EDEDEF]"
-            style={{ fontSize: "clamp(22px, 3.8vh, 44px)", lineHeight: "1.1", marginBottom: "clamp(4px, 0.8vh, 10px)" }}
-          >
-            IA Gerando Leads com{" "}
-            <span className="text-[#E63946]">Crédito Pré-Aprovado</span>
+          
+          <h2 className="font-extrabold tracking-tight text-[#EDEDEF]" style={{ fontSize: 'clamp(24px, 4vh, 48px)', marginBottom: 'clamp(6px, 1vh, 16px)', lineHeight: '1.1' }}>
+            IA no Marketplace:{" "}
+            <span className="text-[#EDEDEF]">
+              Gerando Leads com Crédito Pré-Aprovado
+            </span>
           </h2>
-          <p className="text-[#8A8A8E] max-w-4xl mx-auto" style={{ fontSize: "clamp(11px, 1.4vh, 17px)" }}>
-            Cada interação no Marketplace origina crédito Bradesco antes do contato com a revenda
+          <p className="text-[#8A8A8E] text-xl font-medium max-w-5xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(12px, 1.6vh, 20px)' }}>
+            O Marketplace Autoline potencializa a geração de leads qualificados através de ferramentas de Inteligência Artificial, oferecendo uma experiência de compra personalizada e otimizando a jornada do cliente.
           </p>
         </motion.div>
 
-        {/* Flow: 3 Steps connected by arrows */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="flex-1 flex flex-col justify-center"
-        >
-          <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr] items-start gap-2 mb-4">
-            {steps.map((step, index) => (
-              <>
-                <motion.div
-                  key={step.step}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.2 }}
-                  className="relative"
-                >
-                  {/* Step number badge */}
-                  <div
-                    className="absolute -top-2 left-3 px-2 py-0.5 rounded-full text-white font-bold z-10"
-                    style={{ backgroundColor: step.color, fontSize: "clamp(9px, 1vh, 12px)" }}
-                  >
-                    ETAPA {step.step}
-                  </div>
-
-                  <div
-                    className="bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 pt-5 h-full"
-                    style={{ borderTopColor: step.color, borderTopWidth: "2px" }}
-                  >
-                    {/* Icon + Title */}
-                    <div className="flex items-center gap-2 mb-2">
-                      <div
-                        className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                        style={{ backgroundColor: `${step.color}20` }}
-                      >
-                        <step.icon className="w-5 h-5" style={{ color: step.color }} />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-[#EDEDEF] leading-tight" style={{ fontSize: "clamp(13px, 1.8vh, 20px)" }}>
-                          {step.title}
-                        </h3>
-                      </div>
-                    </div>
-
-                    <p className="text-[#8A8A8E] mb-2" style={{ fontSize: "clamp(10px, 1.2vh, 14px)" }}>
-                      {step.subtitle}
-                    </p>
-
-                    {/* Bullets */}
-                    <div className="space-y-1.5">
-                      {step.bullets.map((bullet, i) => (
-                        <div key={i} className="flex items-start gap-1.5">
-                          <div
-                            className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
-                            style={{ backgroundColor: step.color }}
-                          />
-                          <span className="text-[#C5C5C7]" style={{ fontSize: "clamp(10px, 1.3vh, 15px)" }}>
-                            {bullet}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Arrow between steps */}
-                {index < 2 && (
-                  <motion.div
-                    key={`arrow-${index}`}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.5 + index * 0.2 }}
-                    className="flex items-center justify-center self-center pt-4"
-                  >
-                    <ArrowRight className="w-6 h-6 text-[#8A8A8E]" />
-                  </motion.div>
-                )}
-              </>
-            ))}
-          </div>
-
-          {/* Vantagem Bradesco — Hero Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-            className="mb-3"
-          >
-            <div
-              className="relative overflow-hidden rounded-xl p-4"
-              style={{
-                background: "linear-gradient(135deg, rgba(230,57,70,0.12) 0%, rgba(230,57,70,0.04) 100%)",
-                border: "1.5px solid rgba(230,57,70,0.3)",
-                boxShadow: "0 0 30px rgba(230,57,70,0.08)",
-              }}
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-4 md:mb-3">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.id}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 + index * 0.15 }}
+              className="relative group"
             >
-              {/* Glow effect */}
-              <div
-                className="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-20 blur-3xl"
-                style={{ background: "radial-gradient(circle, #E63946, transparent)" }}
-              />
-
-              <div className="relative flex items-center gap-4">
-                {/* Bradesco icon */}
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-lg bg-[#E63946]/20 border border-[#E63946]/30 flex items-center justify-center">
-                    <CreditCard className="w-6 h-6 text-[#E63946]" />
+<div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-4 h-full hover:border-white/[0.12] hover:bg-white/[0.06] transition-all">
+                <div className="flex justify-center mb-3">
+                  <div
+                    className={`w-16 h-16 rounded-xl bg-white/[0.06] p-1 shadow-2xl`}
+                  >
+                    <div className="w-full h-full bg-[#0A0A0B] rounded-[11px] flex items-center justify-center">
+                      <feature.icon className="w-8 h-8 text-[#EDEDEF]" />
+                    </div>
                   </div>
                 </div>
+                
+                <h3 className="text-2xl font-bold text-[#EDEDEF] text-center mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-[#8A8A8E] text-center leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
-                {/* Content */}
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h4 className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 2vh, 22px)" }}>
-                      Vantagem Bradesco
-                    </h4>
-                    <span
-                      className="px-2 py-0.5 rounded-full text-[#E63946] font-semibold border border-[#E63946]/30"
-                      style={{ fontSize: "clamp(8px, 0.9vh, 11px)", background: "rgba(230,57,70,0.1)" }}
-                    >
-                      DIFERENCIAL COMPETITIVO
-                    </span>
-                  </div>
-                  <p className="text-[#C5C5C7]" style={{ fontSize: "clamp(11px, 1.4vh, 16px)" }}>
-                    Crédito originado <strong className="text-[#E63946]">no início da jornada</strong> — o Bradesco captura dados do consumidor e envia ao lojista um lead com crédito pré-aprovado
-                  </p>
-                </div>
-
-                {/* Metrics */}
-                <div className="flex-shrink-0 flex gap-3">
-                  <div className="text-center">
-                    <div className="flex items-center justify-center gap-1">
-                      <Target className="w-4 h-4 text-[#E63946]" />
-                      <span className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 2vh, 22px)" }}>+Lead</span>
-                    </div>
-                    <span className="text-[#8A8A8E]" style={{ fontSize: "clamp(8px, 0.9vh, 11px)" }}>qualificado</span>
-                  </div>
-                  <div className="text-center">
-                    <div className="flex items-center justify-center gap-1">
-                      <Zap className="w-4 h-4 text-[#E63946]" />
-                      <span className="font-bold text-[#EDEDEF]" style={{ fontSize: "clamp(14px, 2vh, 22px)" }}>+Conversão</span>
-                    </div>
-                    <span className="text-[#8A8A8E]" style={{ fontSize: "clamp(8px, 0.9vh, 11px)" }}>garantida</span>
-                  </div>
+        {/* Bottom Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+        >
+          <div className="relative overflow-hidden rounded-2xl bg-white/[0.04] border-2 border-white/[0.08] p-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-lg bg-white p-0.5 flex-shrink-0">
+                <div className="w-full h-full bg-[#0A0A0B] rounded-[7px] flex items-center justify-center">
+                  <img
+                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/bXyzDtBgMgQFeFGe.svg"
+                    alt="Bradesco"
+                    className="w-6 h-6"
+                  />
                 </div>
               </div>
+              <div>
+                <h4 className="text-xl font-bold text-[#EDEDEF] mb-2">
+                  Vantagem Bradesco
+                </h4>
+                <p className="text-[#8A8A8E] leading-relaxed">
+                  Ao originar o financiamento no início da jornada de compra, o Bradesco captura dados valiosos do consumidor e envia ao lojista um lead com crédito pré-aprovado, aumentando drasticamente a chance de conversão.
+                </p>
+              </div>
             </div>
-          </motion.div>
-
-          {/* Result Banner */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.1 }}
-          >
-            <div
-              className="rounded-lg py-2.5 px-4 text-center"
-              style={{
-                background: "linear-gradient(135deg, rgba(230,57,70,0.15) 0%, rgba(59,130,246,0.1) 100%)",
-                border: "1px solid rgba(230,57,70,0.2)",
-              }}
-            >
-              <p className="text-[#EDEDEF] font-semibold" style={{ fontSize: "clamp(12px, 1.5vh, 18px)" }}>
-                🎯 Cada interação gera um lead com crédito — <span className="text-[#E63946]">mais conversão</span> = <span className="text-[#10B981]">mais receita</span> para o Bradesco
-              </p>
-            </div>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
 
