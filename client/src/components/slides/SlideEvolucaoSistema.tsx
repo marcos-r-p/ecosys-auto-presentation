@@ -122,7 +122,9 @@ export default function SlideEvolucaoSistema() {
                 <img
                   src={phase.image}
                   alt={phase.label}
-                  className="w-[92%] h-[90%] object-contain rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
+                  className={`object-contain rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105 ${
+                    i === 0 ? 'w-[98%] h-[95%]' : 'w-[92%] h-[90%]'
+                  }`}
                   loading="lazy"
                   style={{ filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.5))' }}
                 />
