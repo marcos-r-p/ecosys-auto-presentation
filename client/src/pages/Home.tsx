@@ -37,6 +37,7 @@ const SlideLinhaTempo1 = lazy(() => import("@/components/slides/SlideLinhaTempo1
 const SlideLinhaTempo2 = lazy(() => import("@/components/slides/SlideLinhaTempo2"));
 const SlideEvolucaoSistema = lazy(() => import("@/components/slides/SlideEvolucaoSistema"));
 const SlideEquipeUnificado = lazy(() => import("@/components/slides/SlideEquipeUnificado"));
+const SlideJointVenture = lazy(() => import("@/components/slides/SlideJointVenture"));
 
 // Minimal loading fallback that matches the dark theme
 function SlideFallback() {
@@ -128,6 +129,7 @@ const slideEntries: SlideEntry[] = [
   { type: "content", component: SlideRoadmapEntregas, chapterIndex: 9 },
   { type: "content", component: SlideInvestimentoConsolidado, chapterIndex: 9 },
   { type: "content", component: SlideAquisicaoCodigo, chapterIndex: 9 },
+  { type: "content", component: SlideJointVenture, chapterIndex: 9 },
 ];
 
 const TOTAL_SLIDES = slideEntries.length;
