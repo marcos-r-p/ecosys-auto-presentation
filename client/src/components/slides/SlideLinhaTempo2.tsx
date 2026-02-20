@@ -54,40 +54,64 @@ export default function SlideLinhaTempo2() {
             gap: "2px",
           }}
         >
-          {bgPhotos.map((url, i) => (
-            <div
-              key={i}
-              className="relative overflow-hidden"
-              onMouseEnter={() => setHoveredPhoto(i)}
-              onMouseLeave={() => setHoveredPhoto(null)}
-            >
+          {bgPhotos.map((url, i) => {
+            const isHovered = hoveredPhoto === i;
+            const isOther = hoveredPhoto !== null && hoveredPhoto !== i;
+            return (
               <div
-                className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out"
+                key={i}
+                className="relative overflow-hidden"
                 style={{
-                  backgroundImage: `url(${url})`,
-                  filter: hoveredPhoto === i
-                    ? "blur(0px) brightness(0.85) grayscale(0) saturate(1.1)"
-                    : "blur(2px) brightness(0.3) grayscale(0.4)",
-                  transform: hoveredPhoto === i ? "scale(1.08)" : "scale(1.02)",
+                  zIndex: isHovered ? 2 : 1,
+                  transition: "z-index 0s",
                 }}
-              />
-              {/* Individual cell overlay for extra darkness */}
-              <div
-                className="absolute inset-0 transition-opacity duration-700"
-                style={{
-                  background: "rgba(5, 7, 12, 0.45)",
-                  opacity: hoveredPhoto === i ? 0 : 0.4,
-                }}
-              />
-            </div>
-          ))}
+                onMouseEnter={() => setHoveredPhoto(i)}
+                onMouseLeave={() => setHoveredPhoto(null)}
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${url})`,
+                    filter: isHovered
+                      ? "blur(0px) brightness(1) grayscale(0) saturate(1.15) contrast(1.05)"
+                      : isOther
+                        ? "blur(5px) brightness(0.18) grayscale(0.5) saturate(0.6)"
+                        : "blur(4px) brightness(0.35) grayscale(0.35) saturate(0.8)",
+                    transform: isHovered ? "scale(1.05)" : "scale(1.02)",
+                    transition: "filter 400ms ease-out, transform 400ms ease-out",
+                  }}
+                />
+                {/* Individual cell overlay */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: isHovered
+                      ? "rgba(5, 7, 12, 0)"
+                      : isOther
+                        ? "rgba(5, 7, 12, 0.55)"
+                        : "rgba(5, 7, 12, 0.3)",
+                    transition: "background 400ms ease-out",
+                  }}
+                />
+                {/* Subtle border glow on hover */}
+                {isHovered && (
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      boxShadow: "inset 0 0 20px rgba(43,127,255,0.15), inset 0 0 1px rgba(255,255,255,0.1)",
+                    }}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {/* Global dark overlay to ensure text legibility */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "linear-gradient(180deg, rgba(5,7,12,0.6) 0%, rgba(5,7,12,0.35) 30%, rgba(5,7,12,0.35) 70%, rgba(5,7,12,0.65) 100%)",
+            background: "linear-gradient(180deg, rgba(5,7,12,0.55) 0%, rgba(5,7,12,0.25) 30%, rgba(5,7,12,0.25) 70%, rgba(5,7,12,0.6) 100%)",
           }}
         />
 
@@ -95,7 +119,7 @@ export default function SlideLinhaTempo2() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "radial-gradient(ellipse at center, transparent 40%, rgba(5,7,12,0.45) 100%)",
+            background: "radial-gradient(ellipse at center, transparent 50%, rgba(5,7,12,0.35) 100%)",
           }}
         />
       </div>
