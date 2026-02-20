@@ -118,15 +118,16 @@ export default function SlideEvolucaoSistema() {
               </div>
 
               {/* Screenshot */}
-              <div className="relative w-full overflow-hidden" style={{ height: '260px' }}>
+              <div className="relative w-full overflow-hidden flex items-center justify-center" style={{ height: '260px', background: '#0c111d' }}>
                 <img
                   src={phase.image}
                   alt={phase.label}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="w-[92%] h-[90%] object-contain rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
+                  style={{ filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.5))' }}
                 />
-                {/* Gradient overlay on image */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a] via-transparent to-transparent opacity-80" />
+                {/* Subtle gradient only at bottom for text transition */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0c111d] to-transparent pointer-events-none" />
               </div>
 
               {/* Content */}
