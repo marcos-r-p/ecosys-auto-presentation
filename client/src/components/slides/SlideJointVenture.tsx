@@ -119,7 +119,7 @@ export default function SlideJointVenture() {
 
             <div className="flex flex-col" style={{ gap: "clamp(5px, 0.7vh, 10px)" }}>
               {[
-                { icon: Users, text: "Base de +1.000 revendas ativas", highlight: "Base de Clientes" },
+                { icon: Users, text: "Toda a base de revendas ativas na época da parceria", highlight: "Base de Clientes" },
                 { icon: Cpu, text: "Plataforma Autoline completa (DMS + Marketplace + IA)", highlight: "Tecnologia" },
                 { icon: Target, text: "7 anos de expertise no ecossistema automotivo", highlight: "Know-how" },
               ].map((item, i) => (
