@@ -35,6 +35,7 @@ const SlideQuemSomos2 = lazy(() => import("@/components/slides/SlideQuemSomos2")
 const SlideGoldenCircle = lazy(() => import("@/components/slides/SlideGoldenCircle"));
 const SlideLinhaTempo1 = lazy(() => import("@/components/slides/SlideLinhaTempo1"));
 const SlideLinhaTempo2 = lazy(() => import("@/components/slides/SlideLinhaTempo2"));
+const SlideEvolucaoSistema = lazy(() => import("@/components/slides/SlideEvolucaoSistema"));
 const SlideEquipeUnificado = lazy(() => import("@/components/slides/SlideEquipeUnificado"));
 
 // Minimal loading fallback that matches the dark theme
@@ -77,6 +78,7 @@ const slideEntries: SlideEntry[] = [
   // 02 — Linha do tempo
   { type: "content", component: SlideLinhaTempo1, chapterIndex: 1 },
   { type: "content", component: SlideLinhaTempo2, chapterIndex: 1 },
+  { type: "content", component: SlideEvolucaoSistema, chapterIndex: 1 },
 
   // 03 — Equipe e Governança
   { type: "content", component: SlideEquipeUnificado, chapterIndex: 2 },
