@@ -299,3 +299,45 @@
 .content-overlay .clickable {
   pointer-events: auto;
 }
+
+/* Rotate Device Overlay Animations */
+@keyframes rotate-phone {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-90deg);
+  }
+  70% {
+    transform: rotate(-90deg);
+  }
+  85% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-arrow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(4px);
+  }
+}
+
+.animate-rotate-phone {
+  animation: rotate-phone 3s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.animate-pulse-arrow {
+  animation: pulse-arrow 1.5s ease-in-out infinite;
+}
