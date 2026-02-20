@@ -66,8 +66,8 @@ export default function SlideLinhaTempo2() {
                 style={{
                   backgroundImage: `url(${url})`,
                   filter: hoveredPhoto === i
-                    ? "blur(0px) brightness(0.45) grayscale(0.2)"
-                    : "blur(3px) brightness(0.15) grayscale(0.6)",
+                    ? "blur(0px) brightness(0.85) grayscale(0) saturate(1.1)"
+                    : "blur(2px) brightness(0.3) grayscale(0.4)",
                   transform: hoveredPhoto === i ? "scale(1.08)" : "scale(1.02)",
                 }}
               />
@@ -75,8 +75,8 @@ export default function SlideLinhaTempo2() {
               <div
                 className="absolute inset-0 transition-opacity duration-700"
                 style={{
-                  background: "rgba(5, 7, 12, 0.55)",
-                  opacity: hoveredPhoto === i ? 0.2 : 0.6,
+                  background: "rgba(5, 7, 12, 0.45)",
+                  opacity: hoveredPhoto === i ? 0 : 0.4,
                 }}
               />
             </div>
@@ -87,7 +87,7 @@ export default function SlideLinhaTempo2() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "linear-gradient(180deg, rgba(5,7,12,0.7) 0%, rgba(5,7,12,0.5) 30%, rgba(5,7,12,0.5) 70%, rgba(5,7,12,0.75) 100%)",
+            background: "linear-gradient(180deg, rgba(5,7,12,0.6) 0%, rgba(5,7,12,0.35) 30%, rgba(5,7,12,0.35) 70%, rgba(5,7,12,0.65) 100%)",
           }}
         />
 
@@ -95,7 +95,7 @@ export default function SlideLinhaTempo2() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "radial-gradient(ellipse at center, transparent 40%, rgba(5,7,12,0.6) 100%)",
+            background: "radial-gradient(ellipse at center, transparent 40%, rgba(5,7,12,0.45) 100%)",
           }}
         />
       </div>
