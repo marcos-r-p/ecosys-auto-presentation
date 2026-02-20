@@ -254,3 +254,48 @@
     transform: scale(1.3);
   }
 }
+
+/* ===== Background Photo Grid (SlideLinhaTempo2) ===== */
+.background-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 1fr;
+}
+
+.bg-tile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: blur(6px) brightness(0.45);
+  transform: scale(1);
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.bg-tile:hover {
+  filter: blur(0px) brightness(0.95);
+  transform: scale(1.05);
+  z-index: 3;
+}
+
+.dark-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.content-overlay a,
+.content-overlay button,
+.content-overlay .clickable {
+  pointer-events: auto;
+}

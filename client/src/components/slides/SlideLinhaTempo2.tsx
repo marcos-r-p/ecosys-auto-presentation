@@ -1,8 +1,7 @@
 import { motion } from "motion/react";
-import { useState } from "react";
 import SlideFooter from "../SlideFooter";
 
-/* CDN URLs for the 15 Ecosys historical photos */
+/* CDN URLs for the Ecosys historical photos (18 = 6×3 grid) */
 const bgPhotos = [
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/iJAgUzDKvtHObBkx.jpg",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/jffimSAzaoiAaFJz.jpg",
@@ -19,6 +18,10 @@ const bgPhotos = [
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/ZYxBqsIjSPCmflrX.jpg",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/AuGqXscSNEKjEarZ.jpg",
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/dNSqDAPtHAYTtoZw.jpg",
+  /* Repeat 3 to fill 6×3 = 18 tiles */
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/iJAgUzDKvtHObBkx.jpg",
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/jffimSAzaoiAaFJz.jpg",
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030817825/zJcTVjWwvsemyqxo.jpg",
 ];
 
 const timelineItems = [
@@ -38,94 +41,34 @@ const goal = { year: "2027", label: "Startup mais valiosa", desc: "SaaS Automoti
 const ITEM_COUNT = timelineItems.length + 1;
 
 export default function SlideLinhaTempo2() {
-  const [hoveredPhoto, setHoveredPhoto] = useState<number | null>(null);
-
   return (
-    <div className="h-full w-full flex flex-col px-6 md:px-10 pt-4 pb-1 overflow-hidden relative">
+    <div className="h-full w-full flex flex-col overflow-hidden relative">
 
-      {/* ===== BACKGROUND PHOTO GRID ===== */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Grid of photos: 5 columns x 3 rows */}
-        <div
-          className="absolute inset-0 grid"
-          style={{
-            gridTemplateColumns: "repeat(5, 1fr)",
-            gridTemplateRows: "repeat(3, 1fr)",
-            gap: "2px",
-          }}
-        >
-          {bgPhotos.map((url, i) => {
-            const isHovered = hoveredPhoto === i;
-            const isOther = hoveredPhoto !== null && hoveredPhoto !== i;
-            return (
-              <div
-                key={i}
-                className="relative overflow-hidden"
-                style={{
-                  zIndex: isHovered ? 2 : 1,
-                  transition: "z-index 0s",
-                }}
-                onMouseEnter={() => setHoveredPhoto(i)}
-                onMouseLeave={() => setHoveredPhoto(null)}
-              >
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${url})`,
-                    filter: isHovered
-                      ? "blur(0px) brightness(1) grayscale(0) saturate(1.15) contrast(1.05)"
-                      : isOther
-                        ? "blur(5px) brightness(0.18) grayscale(0.5) saturate(0.6)"
-                        : "blur(4px) brightness(0.35) grayscale(0.35) saturate(0.8)",
-                    transform: isHovered ? "scale(1.05)" : "scale(1.02)",
-                    transition: "filter 400ms ease-out, transform 400ms ease-out",
-                  }}
-                />
-                {/* Individual cell overlay */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: isHovered
-                      ? "rgba(5, 7, 12, 0)"
-                      : isOther
-                        ? "rgba(5, 7, 12, 0.55)"
-                        : "rgba(5, 7, 12, 0.3)",
-                    transition: "background 400ms ease-out",
-                  }}
-                />
-                {/* Subtle border glow on hover */}
-                {isHovered && (
-                  <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      boxShadow: "inset 0 0 20px rgba(43,127,255,0.15), inset 0 0 1px rgba(255,255,255,0.1)",
-                    }}
-                  />
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Global dark overlay to ensure text legibility */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "linear-gradient(180deg, rgba(5,7,12,0.55) 0%, rgba(5,7,12,0.25) 30%, rgba(5,7,12,0.25) 70%, rgba(5,7,12,0.6) 100%)",
-          }}
-        />
-
-        {/* Subtle vignette */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "radial-gradient(ellipse at center, transparent 50%, rgba(5,7,12,0.35) 100%)",
-          }}
-        />
+      {/* ===== LAYER 0: BACKGROUND PHOTO GRID (CSS-only hover) ===== */}
+      <div className="background-grid">
+        {bgPhotos.map((url, i) => (
+          <div
+            key={i}
+            className="bg-tile"
+            style={{
+              backgroundImage: `url(${url})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        ))}
       </div>
 
-      {/* ===== FOREGROUND CONTENT (unchanged layout) ===== */}
-      <div className="relative z-10 flex flex-col h-full">
+      {/* ===== LAYER 1: DARK OVERLAY (always visible, pointer-events none) ===== */}
+      <div
+        className="dark-overlay"
+        style={{
+          background: "linear-gradient(180deg, rgba(5,7,12,0.5) 0%, rgba(5,7,12,0.2) 30%, rgba(5,7,12,0.2) 70%, rgba(5,7,12,0.55) 100%)",
+        }}
+      />
+
+      {/* ===== LAYER 2: CONTENT OVERLAY ===== */}
+      <div className="content-overlay flex flex-col h-full px-6 md:px-10 pt-4 pb-1">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -135,11 +78,11 @@ export default function SlideLinhaTempo2() {
         >
           <h2
             className="font-black tracking-tight text-[#EDEDEF] leading-none"
-            style={{ fontSize: "clamp(24px, 3.5vh, 44px)", textShadow: "0 2px 20px rgba(0,0,0,0.6)" }}
+            style={{ fontSize: "clamp(24px, 3.5vh, 44px)", textShadow: "0 2px 20px rgba(0,0,0,0.7)" }}
           >
             Nossa <span className="text-[#2B7FFF]">Trajetória</span>
           </h2>
-          <p className="text-[#ABABAF] mt-1" style={{ fontSize: "clamp(12px, 1.4vh, 18px)", textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}>
+          <p className="text-[#ABABAF] mt-1" style={{ fontSize: "clamp(12px, 1.4vh, 18px)", textShadow: "0 1px 10px rgba(0,0,0,0.6)" }}>
             Do projeto inicial à parceria estratégica com o Bradesco
           </p>
         </motion.div>
@@ -164,14 +107,14 @@ export default function SlideLinhaTempo2() {
                   >
                     <p
                       className={`font-black leading-none ${isBradesco ? "text-[#CC092F]" : "text-[#2B7FFF]"}`}
-                      style={{ fontSize: "clamp(12px, 1.6vh, 20px)", textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+                      style={{ fontSize: "clamp(12px, 1.6vh, 20px)", textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
                     >
                       {item.year}
                     </p>
-                    <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(11px, 1.4vh, 17px)", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
+                    <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(11px, 1.4vh, 17px)", textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
                       {item.label}
                     </p>
-                    <p className="text-[#ABABAF] mt-0.5 leading-tight" style={{ fontSize: "clamp(9px, 1.1vh, 14px)", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>
+                    <p className="text-[#ABABAF] mt-0.5 leading-tight" style={{ fontSize: "clamp(9px, 1.1vh, 14px)", textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
                       {item.desc}
                     </p>
                   </motion.div>
@@ -202,7 +145,7 @@ export default function SlideLinhaTempo2() {
                   </div>
                 );
               })}
-              {/* Goal - no top connector (moved to bottom) */}
+              {/* Goal - no top connector */}
               <div className="flex justify-center" style={{ width: `${100 / ITEM_COUNT}%` }}>
                 <div className="h-full" style={{ width: "2px", background: "transparent" }} />
               </div>
@@ -307,14 +250,14 @@ export default function SlideLinhaTempo2() {
                   >
                     <p
                       className={`font-black leading-none ${isBradesco ? "text-[#CC092F]" : "text-[#2B7FFF]"}`}
-                      style={{ fontSize: "clamp(12px, 1.6vh, 20px)", textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+                      style={{ fontSize: "clamp(12px, 1.6vh, 20px)", textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
                     >
                       {item.year}
                     </p>
-                    <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(11px, 1.4vh, 17px)", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
+                    <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(11px, 1.4vh, 17px)", textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
                       {item.label}
                     </p>
-                    <p className="text-[#ABABAF] mt-0.5 leading-tight" style={{ fontSize: "clamp(9px, 1.1vh, 14px)", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>
+                    <p className="text-[#ABABAF] mt-0.5 leading-tight" style={{ fontSize: "clamp(9px, 1.1vh, 14px)", textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
                       {item.desc}
                     </p>
                   </motion.div>
@@ -328,13 +271,13 @@ export default function SlideLinhaTempo2() {
                 className="text-center px-1"
                 style={{ width: `${100 / ITEM_COUNT}%` }}
               >
-                <p className="font-black text-[#CC092F] leading-none" style={{ fontSize: "clamp(16px, 2.2vh, 26px)", textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
+                <p className="font-black text-[#CC092F] leading-none" style={{ fontSize: "clamp(16px, 2.2vh, 26px)", textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}>
                   {goal.year}
                 </p>
-                <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(12px, 1.5vh, 18px)", textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}>
+                <p className="font-bold text-[#EDEDEF] mt-1 leading-tight" style={{ fontSize: "clamp(12px, 1.5vh, 18px)", textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
                   {goal.label}
                 </p>
-                <p className="text-[#CC092F] font-semibold mt-0.5 leading-tight" style={{ fontSize: "clamp(10px, 1.2vh, 15px)", textShadow: "0 1px 4px rgba(0,0,0,0.4)" }}>
+                <p className="text-[#CC092F] font-semibold mt-0.5 leading-tight" style={{ fontSize: "clamp(10px, 1.2vh, 15px)", textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
                   {goal.desc}
                 </p>
               </motion.div>
