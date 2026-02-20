@@ -122,11 +122,16 @@ export default function SlideEvolucaoSistema() {
                 <img
                   src={phase.image}
                   alt={phase.label}
-                  className={`object-contain rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105 ${
-                    i === 0 ? 'w-[98%] h-[95%]' : 'w-[92%] h-[90%]'
+                  className={`rounded-lg shadow-lg transition-transform duration-500 group-hover:scale-105 ${
+                    i === 0
+                      ? 'w-full h-full object-cover object-top'
+                      : 'w-[92%] h-[90%] object-contain'
                   }`}
                   loading="lazy"
-                  style={{ filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.5))' }}
+                  style={{
+                    filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.5))',
+                    ...(i === 0 ? { objectPosition: 'center 35%', transform: 'scale(1.15)' } : {}),
+                  }}
                 />
                 {/* Subtle gradient only at bottom for text transition */}
                 <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0c111d] to-transparent pointer-events-none" />
