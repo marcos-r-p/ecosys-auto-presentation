@@ -8,28 +8,13 @@ import SlideBreadcrumb from "@/components/SlideBreadcrumb";
 const Slide1 = lazy(() => import("@/components/slides/Slide1"));
 const Slide2 = lazy(() => import("@/components/slides/Slide2"));
 const Slide4 = lazy(() => import("@/components/slides/Slide4"));
-const Slide5 = lazy(() => import("@/components/slides/Slide5"));
 const Slide6 = lazy(() => import("@/components/slides/Slide6"));
-const Slide9 = lazy(() => import("@/components/slides/Slide9"));
-const Slide10 = lazy(() => import("@/components/slides/Slide10"));
-const Slide11 = lazy(() => import("@/components/slides/Slide11"));
-const Slide12 = lazy(() => import("@/components/slides/Slide12"));
 const Slide15 = lazy(() => import("@/components/slides/Slide15"));
 const Slide16 = lazy(() => import("@/components/slides/Slide16"));
 const Slide17 = lazy(() => import("@/components/slides/Slide17"));
 const Slide18 = lazy(() => import("@/components/slides/Slide18"));
 const Slide19 = lazy(() => import("@/components/slides/Slide19"));
-const Slide20 = lazy(() => import("@/components/slides/Slide20"));
-const Slide21 = lazy(() => import("@/components/slides/Slide21"));
-const Slide23 = lazy(() => import("@/components/slides/Slide23"));
-const Slide24 = lazy(() => import("@/components/slides/Slide24"));
-const Slide25 = lazy(() => import("@/components/slides/Slide25"));
-const Slide26 = lazy(() => import("@/components/slides/Slide26"));
-const Slide27 = lazy(() => import("@/components/slides/Slide27"));
-const Slide28 = lazy(() => import("@/components/slides/Slide28"));
-const SlideRoadmapEntregas = lazy(() => import("@/components/slides/SlideRoadmapEntregas"));
-const SlideInvestimentoConsolidado = lazy(() => import("@/components/slides/SlideInvestimentoConsolidado"));
-const SlideAquisicaoCodigo = lazy(() => import("@/components/slides/SlideAquisicaoCodigo"));
+const SlideObrigado = lazy(() => import("@/components/slides/SlideObrigado"));
 const SlideQuemSomos1 = lazy(() => import("@/components/slides/SlideQuemSomos1"));
 const SlideQuemSomos2 = lazy(() => import("@/components/slides/SlideQuemSomos2"));
 const SlideGoldenCircle = lazy(() => import("@/components/slides/SlideGoldenCircle"));
@@ -37,7 +22,6 @@ const SlideLinhaTempo1 = lazy(() => import("@/components/slides/SlideLinhaTempo1
 const SlideLinhaTempo2 = lazy(() => import("@/components/slides/SlideLinhaTempo2"));
 const SlideEvolucaoSistema = lazy(() => import("@/components/slides/SlideEvolucaoSistema"));
 const SlideEquipeUnificado = lazy(() => import("@/components/slides/SlideEquipeUnificado"));
-const SlideJointVenture = lazy(() => import("@/components/slides/SlideJointVenture"));
 
 // Minimal loading fallback that matches the dark theme
 function SlideFallback() {
@@ -55,11 +39,8 @@ const CHAPTERS = [
   { number: "03", title: "Equipe e Governança", subtitle: "Os executivos por trás da ecosys AUTO" },
   { number: "04", title: "Contexto e Visão", subtitle: "Por que estamos aqui e qual é a oportunidade" },
   { number: "05", title: "A Proposta", subtitle: "O que estamos propondo, para quem e como evoluiu" },
-  { number: "06", title: "Gestor Autoline", subtitle: "Gestão inteligente para lojistas, dados estratégicos para o Bradesco" },
-  { number: "07", title: "Marketplace Autoline", subtitle: "Vitrine digital que conecta lojistas, consumidores e financiamento Bradesco" },
-  { number: "08", title: "Novo GIO: Copiloto Comercial", subtitle: "O copiloto inteligente que transforma estratégia em execução para o GEFIN" },
-  { number: "09", title: "Motor Comercial", subtitle: "Inteligência que antecipa demanda e amplifica resultados" },
-  { number: "10", title: "Investimento e Roadmap", subtitle: "Cronograma, valores e modelo de sustentação" },
+  { number: "06", title: "Marketplace Autoline", subtitle: "Vitrine digital que conecta lojistas, consumidores e financiamento Bradesco" },
+  { number: "07", title: "Encerramento", subtitle: "Vamos transformar o mercado juntos?" },
 ];
 
 // Slide structure
@@ -92,44 +73,19 @@ const slideEntries: SlideEntry[] = [
 
   // 05 — A Proposta
   { type: "separator", chapterIndex: 4, separatorData: CHAPTERS[4] },
-  { type: "content", component: Slide5, chapterIndex: 4 },
   { type: "content", component: Slide6, chapterIndex: 4 },
 
-  // 06 — Gestor Autoline
+  // 06 — Marketplace Autoline
   { type: "separator", chapterIndex: 5, separatorData: CHAPTERS[5] },
-  { type: "content", component: Slide9, chapterIndex: 5 },
-  { type: "content", component: Slide10, chapterIndex: 5 },
-  { type: "content", component: Slide11, chapterIndex: 5 },
-  { type: "content", component: Slide12, chapterIndex: 5 },
+  { type: "content", component: Slide15, chapterIndex: 5 },
+  { type: "content", component: Slide16, chapterIndex: 5 },
+  { type: "content", component: Slide17, chapterIndex: 5 },
+  { type: "content", component: Slide18, chapterIndex: 5 },
+  { type: "content", component: Slide19, chapterIndex: 5 },
 
-  // 07 — Marketplace Autoline
+  // 07 — Encerramento
   { type: "separator", chapterIndex: 6, separatorData: CHAPTERS[6] },
-  { type: "content", component: Slide15, chapterIndex: 6 },
-  { type: "content", component: Slide16, chapterIndex: 6 },
-  { type: "content", component: Slide17, chapterIndex: 6 },
-  { type: "content", component: Slide18, chapterIndex: 6 },
-  { type: "content", component: Slide19, chapterIndex: 6 },
-
-  // 08 — Novo GIO
-  { type: "separator", chapterIndex: 7, separatorData: CHAPTERS[7] },
-  { type: "content", component: Slide23, chapterIndex: 7 },
-  { type: "content", component: Slide28, chapterIndex: 7 },
-  { type: "content", component: Slide27, chapterIndex: 7 },
-  { type: "content", component: Slide24, chapterIndex: 7 },
-  { type: "content", component: Slide26, chapterIndex: 7 },
-  { type: "content", component: Slide25, chapterIndex: 7 },
-
-  // 09 — Motor Comercial
-  { type: "separator", chapterIndex: 8, separatorData: CHAPTERS[8] },
-  { type: "content", component: Slide20, chapterIndex: 8 },
-  { type: "content", component: Slide21, chapterIndex: 8 },
-
-  // 10 — Investimento e Roadmap
-  { type: "separator", chapterIndex: 9, separatorData: CHAPTERS[9] },
-  { type: "content", component: SlideRoadmapEntregas, chapterIndex: 9 },
-  { type: "content", component: SlideInvestimentoConsolidado, chapterIndex: 9 },
-  { type: "content", component: SlideAquisicaoCodigo, chapterIndex: 9 },
-  { type: "content", component: SlideJointVenture, chapterIndex: 9 },
+  { type: "content", component: SlideObrigado, chapterIndex: 6 },
 ];
 
 const TOTAL_SLIDES = slideEntries.length;
